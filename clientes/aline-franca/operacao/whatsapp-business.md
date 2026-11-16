@@ -4,7 +4,7 @@ Pacotes R4 e M1 do `plano.md`. Quem configura: Vinícius, no celular da Aline (o
 
 Todo pedido da Aline chega por aqui: do site, do Google, do anúncio, do Instagram, do cartão e dos parceiros. Por isso o WhatsApp faz três trabalhos: responder rápido, descobrir de onde a pessoa veio (para a planilha de `medicao.md`) e lembrar o tutor do reforço da vacina.
 
-**Textos:** escritos e revisados seguindo a skill copy-chief (modo escrever, depois modo revisar). A skill ainda não tem o canal WhatsApp (a frente 3 está escrevendo `canais/whatsapp.md`); os textos seguiram o núcleo e as regras do setor. Quando o canal existir, vale passar os textos de novo pelo modo revisar.
+**Textos:** escritos e revisados seguindo a skill copy-chief (modo escrever, depois modo revisar), com o núcleo, o setor `veterinaria-br` e o canal `whatsapp.md`. A revisão está no fim do arquivo.
 
 **Antes de ativar qualquer texto:** troque cada `[CONFIRMAR: ...]` pelo dado confirmado pela Aline ou apague o trecho. Nada com `[CONFIRMAR]` vai para o ar. A lista completa está no fim, em "Pendências".
 
@@ -66,20 +66,22 @@ Configurações > Ferramentas comerciais > Mensagem de saudação. Ative e escol
 - Prova: atende cães e gatos em casa; não atende emergência (`perfil.md`).
 - Chamada: mandar as três informações.
 
-**Versão A: pedido direto (recomendada)**
-> Oi! Aqui é a Aline, médica-veterinária. Que bom que você me chamou.
->
-> Para eu te responder mais rápido, me conta:
-> 1. o nome e a idade do seu pet (cão ou gato?)
-> 2. o que você precisa: consulta, vacina ou pet sitter
-> 3. o seu bairro
->
-> Se for uma emergência, não espere minha resposta: procure agora um hospital veterinário 24 horas.
+**Versão A: pedido direto (recomendada)** · cerca de 270 caracteres com o horário preenchido
+```
+Oi! Aqui é a Aline, médica-veterinária. Para eu te responder mais rápido, me conta:
+1. o nome e a idade do seu pet
+2. o que ele precisa: consulta, vacina ou pet sitter
+3. o seu bairro
 
-**Versão B: mais curta, para quem chega pelo celular**
-> Oi! Aqui é a Aline, veterinária. Me conta o nome do seu pet, o que ele precisa e o seu bairro, que eu já te respondo.
->
-> Emergência? Procure agora um hospital veterinário 24 horas: eu não faço atendimento de urgência.
+Respondo [CONFIRMAR: horário, por exemplo "de segunda a sábado, das 8h às 18h"]. Emergência? Procure agora um hospital veterinário 24 horas.
+```
+
+**Versão B: mais curta** · cerca de 205 caracteres com o horário preenchido
+```
+Oi! Aqui é a Aline, veterinária. Me conta o nome do seu pet, o que ele precisa e o seu bairro. Respondo [CONFIRMAR: horário].
+
+Emergência? Procure agora um hospital veterinário 24 horas: eu não atendo urgência.
+```
 
 **Recomendação:** A. A lista numerada faz a pessoa responder tudo de uma vez e poupa três idas e vindas. A linha da emergência fica nas duas porque a Aline não atende urgência e um tutor aflito não pode ficar esperando.
 
@@ -89,15 +91,19 @@ Configurações > Ferramentas comerciais > Mensagem de ausência. Ative com "For
 
 **Briefing:** a pessoa escreveu fora do horário. Ela precisa saber que foi vista, quando terá resposta e o que fazer se for urgente. Chamada: deixar o pedido escrito.
 
-**Versão A: fora do horário (recomendada)**
-> Oi! Agora estou fora do horário de atendimento. Deixe aqui o nome do seu pet, o que ele precisa e o seu bairro, que eu respondo `[CONFIRMAR: "amanhã a partir das 8h" ou outro prazo que a Aline cumpra]`.
->
-> Se for emergência, procure agora um hospital veterinário 24 horas.
+**Versão A: fora do horário (recomendada)** · cerca de 220 caracteres com o prazo preenchido
+```
+Oi! Recebi sua mensagem, mas agora estou fora do horário. Deixe aqui o nome do seu pet, o que ele precisa e o seu bairro, que eu respondo [CONFIRMAR: prazo que a Aline cumpra, por exemplo "amanhã a partir das 8h"].
 
-**Versão B: em atendimento (para usar com horário personalizado, durante uma visita longa ou em dias de agenda cheia)**
-> Oi! Estou em atendimento agora e respondo assim que terminar. Já deixe escrito o nome do seu pet e o que ele precisa.
->
-> Emergência? Procure agora um hospital veterinário 24 horas.
+Emergência? Procure agora um hospital veterinário 24 horas.
+```
+
+**Versão B: em atendimento (com horário personalizado, durante uma visita longa ou em dia de agenda cheia)** · 178 caracteres
+```
+Oi! Estou em atendimento agora e respondo assim que terminar. Já deixe escrito o nome do seu pet e o que ele precisa.
+
+Emergência? Procure agora um hospital veterinário 24 horas.
+```
 
 **Para férias:** use a versão A trocando o prazo por "a partir do dia `__/__`".
 
@@ -116,8 +122,8 @@ Cada lugar que leva ao WhatsApp usa um link com uma frase já escrita. A pessoa 
 | Condomínio | Oi, Aline! Moro no condomínio {nome}. | `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Moro%20no%20condom%C3%ADnio%20` + nome do condomínio + `.` |
 
 Quem coloca cada link:
-- **Site:** frente 2 (em todos os botões de WhatsApp do site). No anúncio, o destino é a página do serviço; para separar quem veio do anúncio, a frente 6 vai pedir na fase 2 uma versão da página com o link "Vi seu anúncio".
-- **Perfil no Google:** frente 4 (campo de site e botão de mensagem, onde o Google permitir link).
+- **Site:** frente 2, em todos os botões de WhatsApp do site.
+- **Perfil no Google e anúncio:** o campo de site do Google não aceita link de WhatsApp (`google/passo-a-passo.md`), e o anúncio leva à página do serviço. Os dois apontam para o site com uma marca no endereço: `https://draalinefranca.com.br/?origem=google` no perfil e `?origem=anuncio` no anúncio. O site lê essa marca e troca a frase dos botões de WhatsApp por "Te achei no Google" ou "Vi seu anúncio no Google". Pedido à frente 2 (site) e à frente 4 (link do perfil), registrado em `andamento/operacao.md`. Enquanto o site não fizer isso, quem vem do Google chega como "Site" e a resposta `/origem` resolve.
 - **Instagram:** frente 5 (link da bio).
 - **Cartão, parceiros e condomínios:** frente 6, em `parcerias.md`.
 
@@ -156,6 +162,8 @@ Briefing comum a todas: respostas curtas, na voz da Aline (primeira pessoa, "voc
 | `/limites` | pediu algo que não é feito em casa (cirurgia, internação, anestesia) | Em casa eu faço consulta, vacina e outros cuidados `[CONFIRMAR: lista, pergunta 10]`. Cirurgia, anestesia geral, transfusão e internação precisam de estrutura de clínica, e a regra do conselho não permite fazer em casa. Nesses casos eu examino, explico e encaminho para `[CONFIRMAR: clínica ou hospital parceiro, pergunta 16]`. |
 | `/emergencia` | o caso parece urgente (sangramento, falta de ar, convulsão, atropelamento, envenenamento) | Isso precisa de atendimento agora. Procure um hospital veterinário 24 horas `[CONFIRMAR: indicar um hospital de referência em Campinas, pergunta 16]`. Eu não faço atendimento de urgência e não quero que você perca tempo esperando minha resposta. |
 | `/petsitter` | perguntou como funciona ou quanto custa o pet sitter | Faço visitas de até 1 hora: comida, água, limpeza da caixa ou do tapete, companhia e, se combinarmos, passeio. Como sou veterinária, fico atenta a qualquer sinal de que ele não está bem e te aviso na hora. Por dia: R$ 50 com 1 visita ou R$ 80 com 2 visitas. Cada animal a mais da mesma casa: R$ 25 ou R$ 40. Medicação à parte, combinada antes. Quais são as datas? |
+| `/horario` | perguntou dias e horários | Atendo `[CONFIRMAR: dias e horários, pergunta 26]`. Qual dia fica melhor para você? |
+| `/pagamento` | perguntou como paga | `[CONFIRMAR: formas de pagamento, parcelamento e recibo, pergunta 21]`. Quer que eu já veja um dia para você? |
 | `/orcamento` | quer orçamento de pet sitter | Para eu montar o orçamento, me conta: o primeiro e o último dia, quantas visitas por dia (1 ou 2), quantos pets e quais, e se algum toma remédio. |
 | `/agendado` | confirmou dia e hora | Combinado! Fica marcado para {dia}, às {hora}. Se puder, deixe a carteira de vacinação separada `[CONFIRMAR com a Aline: o que mais ela pede para preparar, por exemplo deixar o gato num cômodo com a porta fechada]`. Qualquer mudança, me avisa por aqui. |
 | `/salvar` | cliente novo, depois do primeiro atendimento | Salva meu número nos seus contatos? Assim você recebe meus avisos, como o lembrete da próxima vacina do {pet}. |
@@ -189,13 +197,19 @@ Pacote R4. É a forma mais simples de trazer o cliente de volta: quem vacinou um
 - Prova: a Aline aplicou a dose anterior e tem a data.
 - Chamada: responder com o melhor dia.
 
-**Versão A: individual, com o nome do pet (recomendada)**
-> Oi, {tutor}! Aqui é a Aline. A vacina `{nome da vacina}` do {pet} vence em {mês}. Quer marcar o reforço em casa? Me responde com o melhor dia e horário para você.
+Os campos entre chaves (`{tutor}`, `{pet}`, `{vacina}`, `{mês}`) são para preencher com o que está na aba Reforços; não são pendências.
 
-**Versão B: lista de transmissão (não dá para pôr o nome de cada pet)**
-> Oi! Aqui é a Aline. Pela minha agenda, um reforço de vacina do seu pet vence em {mês}. Quer marcar em casa? Me responde com o melhor dia e horário, e eu confirmo qual vacina é.
->
-> Se não quiser mais receber esse aviso, é só me dizer.
+**Versão A: individual, com o nome do pet (recomendada)**
+```
+Oi, {tutor}! Aqui é a Aline. A {vacina} do {pet} vence em {mês}. Fazer o reforço no prazo mantém o calendário de vacinas dele em dia. Quer marcar em casa? Me responde com o melhor dia e horário para você.
+```
+
+**Versão B: lista de transmissão (uma mensagem para todos, sem nome)**
+```
+Oi! Aqui é a Aline. Pela minha agenda, um reforço de vacina do seu pet vence em {mês}. Fazer no prazo mantém o calendário dele em dia. Quer marcar em casa? Me responde com o melhor dia e horário, e eu confirmo qual vacina é.
+
+Se não quiser mais receber esse aviso, é só me dizer.
+```
 
 **Recomendação:** A sempre que der. Na B, o "me responde" abre a conversa individual, onde a Aline confirma o pet e a vacina.
 
@@ -209,7 +223,7 @@ Os textos finais passaram pelo checklist de `referencias/revisao.md`, na ordem d
 2. **Fatos (FATO):** todo dado fora do `perfil.md` (região, horário, preço de ato veterinário, vacinas, transporte, clínica parceira, CRMV) está como `[CONFIRMAR]`. Os preços do pet sitter são os do perfil.
 3. **Ideia e chamada (CLAREZA):** cada texto termina com uma pergunta ou um próximo passo só. Saudação e ausência avisam sobre emergência, porque a Aline não atende urgência e o tutor não pode ficar esperando.
 4. **Voz (VOZ):** primeira pessoa, "você", "tutor", "em casa", "com calma". Sem "bebê", "pais de pet", "especialista", "garantido". Sem emoji. As palavras próprias da Aline ainda não existem no perfil (pergunta 37): ajustar depois da entrevista.
-5. **Canal (CLAREZA):** mensagens curtas, de leitura no celular. Sem arquivo de canal WhatsApp na skill para conferir limites (pedido à frente 3).
+5. **Canal (CLAREZA):** conferido com `canais/whatsapp.md` (publicado pela frente 3 em 16/11/2026): saudação abaixo de ~300 caracteres e com horário de resposta, ausência em até 3 linhas com o caminho para urgência, atalhos curtos sem acento, respostas de até ~400 caracteres terminando na próxima ação, conjunto mínimo (como funciona, região, valores, horário, preparo, pagamento, avaliação), lembrete com campos variáveis e frase de "por que não deixar passar" sem assustar.
 6. **Português:** conferido.
 
 **Veredito:** AJUSTAR. Os textos estão prontos na forma; só podem ser ativados depois das confirmações abaixo.
@@ -218,7 +232,8 @@ Os textos finais passaram pelo checklist de `referencias/revisao.md`, na ordem d
 - [CONFIRMAR: como quer ser chamada no nome do perfil] — Aline, pergunta 36.
 - [CONFIRMAR: número do CRMV-SP] — Aline, pergunta 1.
 - [CONFIRMAR: cidades e bairros atendidos] — Aline, pergunta 25 (descrição, `/regiao`).
-- [CONFIRMAR: dias e horários, e prazo de resposta fora do horário] — Aline, perguntas 17 e 26 (perfil, ausência).
+- [CONFIRMAR: dias e horários, e prazo de resposta fora do horário] — Aline, perguntas 17 e 26 (perfil, saudação, ausência, `/horario`).
+- [CONFIRMAR: formas de pagamento] — Aline, pergunta 21 (`/pagamento`).
 - [CONFIRMAR: o que a consulta inclui, quais vacinas, se emite carteira] — Aline, perguntas 10 e 18 (catálogo, `/consulta`, `/vacina`, `/limites`).
 - [CONFIRMAR: valor da consulta e da vacina, deslocamento] — Aline, perguntas 19 e 20 (`/consulta`).
 - [CONFIRMAR: como transporta vacinas] — Aline, pergunta 14 (`/vacina`).
