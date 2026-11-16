@@ -28,7 +28,9 @@ O código dos sites **não** fica aqui: cada site tem o seu repositório (o da D
 
 ## Como pegar uma tarefa
 
-Cada cliente tem um `plano.md` dividido em pacotes de trabalho (PT). Cada PT diz do que depende, o que entregar e quando está pronto. Um agente pode pegar um PT lendo só este README, o `CLAUDE.md` e o `plano.md` do cliente. Ao terminar, marque o PT como feito na tabela de andamento do `plano.md`.
+Cada cliente tem um `frentes.md`, que divide o plano em frentes paralelas, uma por agente, com as dependências e o prompt de início de cada uma. Comece por ele.
+
+Cada cliente tem um `plano.md` dividido em pacotes de trabalho (PT). Cada PT diz do que depende, o que entregar e quando está pronto. Um agente pode pegar um PT lendo só este README, o `CLAUDE.md` e o `plano.md` do cliente. Ao terminar, registre o que fez em `clientes/<cliente>/andamento/<frente>.md`.
 
 ## Usando a skill copy-chief
 

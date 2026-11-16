@@ -21,5 +21,6 @@
 - Nunca publicar: promessa de resultado, imagem de animal em sofrimento, título de especialista que o cliente não tem registrado, foto de paciente sem autorização registrada em `autorizacoes.md`.
 
 ## Andamento
-- Ao terminar um pacote de trabalho (PT), atualize a tabela de andamento no `plano.md` do cliente com data e link para o que foi entregue.
+- Vários agentes trabalham em paralelo. Leia `clientes/<cliente>/frentes.md`, mexa só nos arquivos da sua frente e registre o que fez em `clientes/<cliente>/andamento/<frente>.md`. Não edite a tabela de andamento do `plano.md`.
+- Faça `git pull --rebase` antes de cada push.
 - Ações que dependem de uma pessoa (criar conta, pagar, gravar vídeo) ficam com o responsável indicado no PT; o agente prepara o material e deixa o passo a passo.
