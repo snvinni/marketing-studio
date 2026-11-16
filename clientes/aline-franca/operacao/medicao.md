@@ -14,6 +14,7 @@ A pergunta que a medição responde é uma só: **de onde vêm os pedidos que vi
 | Números do perfil no Google | aba **Semana** | toda segunda-feira | Perfil da Empresa > Desempenho |
 | Gasto em anúncios | aba **Semana** | toda segunda-feira (só a partir do mês 2) | Google Ads > Campanhas |
 | Cada pet vacinado e o mês do próximo reforço | aba **Reforços** | depois de cada vacina | a Aline (ver `whatsapp-business.md`, seção 9) |
+| Cada parceiro ou condomínio abordado | aba **Parceiros** (as indicações se contam sozinhas) | a cada abordagem | `parcerias.md` |
 
 O resto a planilha calcula sozinha: pedidos por origem na semana, atendimentos fechados, custo por pedido do anúncio e o resumo do mês.
 
