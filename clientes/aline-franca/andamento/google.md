@@ -9,15 +9,14 @@
 - Pedidos para outras frentes: nenhum.
 - Feito: `google/roteiro-verificacao.md`, roteiro do vídeo em cinco trechos (rua, carro e material, maleta e caixa térmica, jaleco e CRMV, fim), com o que o Google exige e o que nunca mostrar.
 - Pendências: confirmar com a Aline se tem jaleco com nome bordado, carimbo, receituário, cartão de visita e se atende de carro (Vinícius). O roteiro tem alternativa para cada caso.
-- Feito: `google/mensagens-avaliacao.md`, com a skill copy-chief (modo escrever): regras do Google e do CFMV para pedir avaliação, pedido aos clientes atuais (2 versões), pedido no dia seguinte ao atendimento (consulta/vacina e pet sitter), um lembrete, e respostas para avaliação boa, neutra e ruim. Nada de troca por desconto ou brinde.
+- Feito: `google/mensagens-avaliacao.md`, com a skill copy-chief (modo escrever) e conferido no modo revisar com os canais `whatsapp.md` e `google-perfil.md` que a frente 3 publicou hoje (veredito AJUSTAR, 5 correções aplicadas): regras do Google e do CFMV para pedir avaliação, pedido aos clientes atuais (2 versões), pedido no dia seguinte ao atendimento (consulta/vacina e pet sitter), um lembrete, e respostas para avaliação boa, neutra e ruim. Nada de troca por desconto ou brinde.
 - Fase 1 concluída. **Fase 2 parada:** `perfil.md` ainda diz que a entrevista não foi feita. `textos-perfil.md` e `publicacoes.md` esperam a frente 1.
 - Pendências:
   - `[LINK]` de avaliação: sai depois do perfil verificado (Vinícius).
   - Assinatura "Aline" no WhatsApp e no Google: pergunta 36 (frente 1).
   - Lista de clientes atuais para pedir avaliação: pergunta 33 (frente 1).
   - Voz das mensagens: ajustar com as palavras da Aline depois da entrevista.
-- Pedidos para outras frentes:
-  - Frente 3: quando os canais `whatsapp.md` e `google-perfil.md` estiverem na skill, avisar; a frente 4 passa `mensagens-avaliacao.md` pelo modo revisar.
+- Pedidos para outras frentes: nenhum.
 
 ### O que o Vinícius faz à mão, nesta ordem
 1. Confirmar com a Aline o material do vídeo: jaleco com nome, carimbo, receituário, cartão de visita, se atende de carro (`roteiro-verificacao.md`).
