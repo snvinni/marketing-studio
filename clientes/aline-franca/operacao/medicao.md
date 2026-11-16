@@ -13,6 +13,7 @@ A pergunta que a medição responde é uma só: **de onde vêm os pedidos que vi
 | Avaliações novas no Google e nota média | aba **Semana** | toda segunda-feira | Perfil da Empresa no Google |
 | Números do perfil no Google | aba **Semana** | toda segunda-feira | Perfil da Empresa > Desempenho |
 | Gasto em anúncios | aba **Semana** | toda segunda-feira (só a partir do mês 2) | Google Ads > Campanhas |
+| Cada pet vacinado e o mês do próximo reforço | aba **Reforços** | depois de cada vacina | a Aline (ver `whatsapp-business.md`, seção 9) |
 
 O resto a planilha calcula sozinha: pedidos por origem na semana, atendimentos fechados, custo por pedido do anúncio e o resumo do mês.
 
@@ -83,7 +84,7 @@ Ao fim de 60 dias, compare o custo por atendimento com o que um atendimento rend
 - **Não mexa nas colunas com fórmula** (cinza claro). Se precisar de outra origem, acrescente na aba **Listas** e avise a frente 6 para atualizar as fórmulas.
 - **Semana começa na segunda-feira.** A aba Semana já vem com 26 semanas a partir de 16/11/2026; para continuar, copie a última linha para baixo. Na aba Semana, a semana conta no mês da sua segunda-feira (a de 30/11 conta em novembro). Na aba Mês, os pedidos contam pela data de cada um. Por isso os totais das duas podem diferir em um ou dois pedidos; vale a aba Mês.
 - **A aba Mês vem pronta até maio de 2027.** Para seguir, copie o bloco do último mês (11 linhas) para baixo e troque a data na coluna Mês.
-- **Planilha gerada por script.** Se precisar recriar, peça à frente 6.
+- **Planilha gerada por script** (`gerar-planilha.py`, nesta pasta): `python3 gerar-planilha.py medicao-modelo.xlsx` recria o modelo em branco. Não rode por cima da planilha já preenchida.
 
 ## Pendências
 - [CONFIRMAR: valor médio de um atendimento, para a regra do anúncio] — Aline, pergunta 19 da entrevista.
