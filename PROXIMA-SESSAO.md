@@ -1,18 +1,16 @@
 # Prompt para continuar em uma nova sessão
 
-Cole o texto abaixo como primeira mensagem de uma sessão nova do Claude Code (Opus 5.5), com o repositório `snvinni/line-vet` selecionado e o arquivo `marketing-studio.bundle` anexado.
+Cole o texto abaixo como primeira mensagem de uma sessão nova do Claude Code (Opus 5.5), com os repositórios `snvinni/marketing-studio` e `snvinni/line-vet` selecionados.
 
 ````
 Vamos continuar o projeto de marketing digital da Dra. Aline França, médica-veterinária que atende a domicílio em Campinas (cães e gatos, com carinho especial por gatos) e faz pet sitter. Eu sou o Vinícius e cuido do marketing dela.
 
 ## Onde está tudo
-- `snvinni/line-vet` (repositório desta sessão, branch `ccr-ddd55fa2-btz5yk`): código do site. Hoje é uma página só de pet sitter, com calculadora de orçamento que envia o pedido pelo WhatsApp. Sem deploy e sem domínio (domínio escolhido: draalinefranca.com.br).
-- `marketing-studio`: repositório do estúdio, com método, modelos, a pasta da Aline e a skill de redação `copy-chief`. Ele ainda NÃO está no GitHub. Anexei o arquivo `marketing-studio.bundle` (um git bundle com todo o histórico).
+- `snvinni/line-vet` (branch `ccr-ddd55fa2-btz5yk`): código do site. Hoje é uma página só de pet sitter, com calculadora de orçamento que envia o pedido pelo WhatsApp. Sem deploy e sem domínio (domínio escolhido: draalinefranca.com.br).
+- `snvinni/marketing-studio` (branch `main`): repositório do estúdio, com método, modelos, a pasta da Aline e a skill de redação `copy-chief`.
 
-## Passo 1: recuperar o marketing-studio
-1. Clone o bundle anexado: `git clone <caminho-do-anexo>/marketing-studio.bundle /home/user/marketing-studio`.
-2. Eu vou criar (ou já criei) o repositório privado vazio `snvinni/marketing-studio` no GitHub. Use o add_repo para conectá-lo a esta sessão, configure o remote `origin` e faça push da branch `main`. Se o acesso falhar, me diga exatamente o que fazer e siga trabalhando localmente.
-3. Leia, nesta ordem: `README.md`, `CLAUDE.md`, `clientes/aline-franca/plano.md` (plano aprovado, com a tabela de andamento na seção 11) e `clientes/aline-franca/perfil.md`.
+## Passo 1: situar-se
+Se algum dos dois repositórios não estiver nesta sessão, conecte com o add_repo. Leia, nesta ordem: `README.md`, `CLAUDE.md`, `clientes/aline-franca/plano.md` (plano aprovado, com a tabela de andamento na seção 11) e `clientes/aline-franca/perfil.md`.
 
 ## Passo 2: fazer a entrevista com a Aline (PT-A1)
 A entrevista ainda não começou. Eu vou passar as respostas da Aline aqui na conversa.
