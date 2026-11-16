@@ -259,6 +259,32 @@ wb["Leia-me"].append(["REFORÇO DE VACINA"])
 wb["Leia-me"].cell(row=wb["Leia-me"].max_row, column=1).font = Font(bold=True, color=AZUL)
 wb["Leia-me"].append(["Aba Reforços: um pet por linha depois de cada vacina. Na última semana do mês, filtre quem vence no mês seguinte e mande o lembrete (operacao/whatsapp-business.md, seção 9)."])
 
+# ---------- Parceiros ----------
+wpa = wb.create_sheet("Parceiros", 5)
+TIPOS = ["Condomínio", "Banho e tosa", "Pet shop", "Adestrador", "Hotel ou creche", "Outro"]
+tit_pa = ["Nome (igual ao Detalhe da aba Pedidos)", "Tipo", "Bairro", "Pessoa de contato", "Abordado em",
+          "Resposta", "Cartões entregues", "Indicações recebidas", "Atendimentos fechados",
+          "Indicações que a Aline fez para ele", "Próximo passo", "Observação"]
+cabecalho(wpa, tit_pa, [26, 15, 16, 18, 12, 14, 10, 11, 11, 13, 30, 30])
+PD = f"Pedidos!$G$2:$G${N_PEDIDOS + 1}"
+for r in range(2, 152):
+    wpa.cell(row=r, column=5).number_format = "DD/MM/YYYY"
+    c = wpa.cell(row=r, column=8, value=f'=IF(A{r}="","",COUNTIFS({PD},A{r}))')
+    c.fill = formula_fill
+    c = wpa.cell(row=r, column=9, value=f'=IF(A{r}="","",COUNTIFS({PD},A{r},{PF},"Sim"))')
+    c.fill = formula_fill
+dv_tipo = DataValidation(type="list", formula1='"' + ",".join(TIPOS) + '"', allow_blank=True)
+dv_tipo.add("B2:B151")
+dv_resp = DataValidation(type="list", formula1='"Aguardando,Topou,Não topou,Sem resposta"', allow_blank=True)
+dv_resp.add("F2:F151")
+wpa.add_data_validation(dv_tipo)
+wpa.add_data_validation(dv_resp)
+wpa.auto_filter.ref = "A1:L151"
+wb["Leia-me"].append([""])
+wb["Leia-me"].append(["PARCEIROS"])
+wb["Leia-me"].cell(row=wb["Leia-me"].max_row, column=1).font = Font(bold=True, color=AZUL)
+wb["Leia-me"].append(["Aba Parceiros: um parceiro ou condomínio por linha. Escreva o nome igual ao que vai na coluna Detalhe da aba Pedidos: assim as indicações se contam sozinhas (operacao/parcerias.md)."])
+
 # realce: taxa e linha "Não sei" acima de 25% dos pedidos
 wsem.conditional_formatting.add(
     f"{L(2 + n_o)}2:{L(2 + n_o)}{N_SEMANAS + 1}",
