@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: outro-ramo-personal
+expected_outcome: |
+  Legenda na voz da Carla, para idosos e filhos, sem vocabulário veterinário e sem regras do CFMV; avisa que as regras do setor educacao-fisica-br não estão mapeadas; sem promessa de resultado.
+context:
+  scaffold_script: place-files.sh

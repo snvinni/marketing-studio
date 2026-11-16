@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: reels-bastidor-gato
+expected_outcome: |
+  Roteiro em tabela (tempo, imagem, fala ou texto na tela) de 15 a 45 segundos, abertura forte sem "Oi, gente", lista do material a gravar e legenda curta com chamada.
+context:
+  scaffold_script: place-files.sh

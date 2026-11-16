@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: carrossel-vacina-gato
+expected_outcome: |
+  Um carrossel de 5 a 7 telas numeradas e uma legenda, na voz da Aline, sem promessa de resultado, com pendências marcadas [CONFIRMAR] para o que o perfil não confirma (quais vacinas ela aplica, CRMV).
+context:
+  scaffold_script: place-files.sh

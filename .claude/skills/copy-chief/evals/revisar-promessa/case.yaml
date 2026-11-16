@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: revisar-promessa
+expected_outcome: |
+  Veredito REFAZER (ou no mínimo AJUSTAR), com problemas BLOQUEANTES para promessa de cura, "100% sem estresse", "melhor veterinária de Campinas" e consulta grátis, e uma versão corrigida que não repete esses problemas.
+context:
+  scaffold_script: place-files.sh

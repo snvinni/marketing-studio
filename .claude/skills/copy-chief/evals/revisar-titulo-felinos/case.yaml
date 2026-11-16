@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: revisar-titulo-felinos
+expected_outcome: |
+  Aponta "especialista em felinos" e "Cat Friendly" como bloqueantes (não confirmados no perfil) e "10 anos" e "2.000 gatinhos" como fatos não confirmados; veredito diferente de APROVADO; versão corrigida com [CONFIRMAR] ou sem esses dados.
+context:
+  scaffold_script: place-files.sh

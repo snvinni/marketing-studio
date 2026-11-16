@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: bio-instagram
+expected_outcome: |
+  Duas ou três opções de bio com no máximo 150 caracteres cada, citando o serviço a domicílio, Campinas e chamada para o WhatsApp, sem títulos não confirmados.
+context:
+  scaffold_script: place-files.sh
