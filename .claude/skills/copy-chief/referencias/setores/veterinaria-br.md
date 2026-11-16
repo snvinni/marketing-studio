@@ -39,5 +39,15 @@ Pode em casa: consulta, exame físico, vacinação, coleta de exames, fluidotera
 - Prova: avaliação pública do Google (nome abreviado), sem frase de cura.
 - Pessoal com limite: por que atende em casa, os próprios animais.
 
+## Por canal
+O formato de cada canal está em `canais/`. Aqui só o que muda por ser veterinário.
+
+- **Perfil no Google:** a descrição termina com nome e CRMV-UF com número (ou `[CONFIRMAR: CRMV]`). Serviços só os da lista "pode em casa" que o perfil confirma. Na resposta a avaliação, nunca cite diagnóstico, exame, medicação ou o nome do animal se a pessoa não citou; nem confirme que o animal é paciente. Elogio do tipo "curou" ou "salvou" não é repetido na resposta.
+- **WhatsApp:** nada de diagnóstico nem receita pela conversa a partir de foto ou descrição; a resposta é "esse sinal pede avaliação; posso ir aí [dia]". Se o perfil diz que não atende emergência, a mensagem de ausência e a saudação dizem isso e mandam para um atendimento 24 horas (parceiro só se o perfil confirmar).
+- **Lembrete de reforço de vacina:** use o nome do animal e a vacina que consta no registro do atendimento (`[nome do pet]`, `[vacina]`, `[mês]`); não invente calendário. Pode dizer que manter a carteira em dia protege o animal; não pode dizer que a vacina garante que ele não vai adoecer.
+- **Autorização de foto:** o pedido é ao tutor, cita o animal pelo nome que vai aparecer (ou nenhum) e diz que o endereço e o rosto do tutor não aparecem. Registro em `autorizacoes.md` antes de qualquer publicação. Foto de animal em sofrimento, ferida ou procedimento não se pede.
+- **Site:** CRMV no rodapé de toda página e na página "Sobre". Na página de cada serviço veterinário, a seção "o que não está incluído" lista o que não é feito em casa e diz que, quando o caso precisa, há encaminhamento. Preço de ato veterinário: "sob consulta" até o CRMV confirmar.
+- **Anúncios:** nada de preço, nem do serviço de pet sitter. Títulos com "veterinário(a) a domicílio", "vacina em casa", cidade. Uma descrição com nome e CRMV. Nada de "urgência", "24 horas" ou "emergência" se o perfil não confirma.
+
 ## Datas úteis
 Campanhas de vacinação antirrábica municipais, Dia Mundial do Gato (8 de agosto), Dia dos Animais (4 de outubro), férias e feriados (pet sitter). Nada de "promoção" nessas datas; use como gancho de orientação.

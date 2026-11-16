@@ -21,7 +21,17 @@ A skill tem um núcleo que vale para qualquer cliente e três camadas que mudam:
 1. **Identifique o cliente.** Procure `clientes/<cliente>/perfil.md` a partir da raiz do repositório. Se o pedido não diz o cliente e há mais de um, pergunte. Se o perfil não existe, pare e diga que é preciso preenchê-lo (modelo em `modelos/perfil-cliente.md`): sem perfil, qualquer texto seria inventado.
 2. **Leia o perfil inteiro.** Anote os fatos confirmados, a voz, as palavras proibidas e os limites. Tudo que está `[CONFIRMAR]` no perfil é desconhecido.
 3. **Carregue o setor** indicado no campo "Setor" do perfil: `referencias/setores/<setor>.md`. Se o arquivo não existe, avise que as regras do setor não foram mapeadas, siga só o núcleo e trate qualquer promessa, preço ou título com cautela máxima.
-4. **Carregue o canal** do pedido: `referencias/canais/<canal>.md`. Canais disponíveis: veja a pasta. Se não houver arquivo para o canal pedido, use o núcleo e diga isso na entrega.
+4. **Carregue o canal** do pedido: `referencias/canais/<canal>.md`. Se o arquivo do setor tem uma seção "Por canal", leia o trecho do canal também. Se não houver arquivo para o canal pedido, use o núcleo e diga isso na entrega.
+
+   | Pedido | Arquivo |
+   |---|---|
+   | bio, legenda, carrossel, Reels, stories | `canais/instagram.md` |
+   | descrição, serviços ou publicação do Google, resposta a avaliação | `canais/google-perfil.md` |
+   | saudação, ausência, resposta rápida, pedido de avaliação, lembrete, pedido de autorização de foto | `canais/whatsapp.md` |
+   | título e descrição de página, abertura, página de serviço, "Sobre", perguntas frequentes | `canais/site.md` |
+   | anúncio do Google (títulos, descrições, sitelinks, frases de destaque) | `canais/anuncios-google.md` |
+
+   Se o canal tem limite de caracteres, conte de verdade (por exemplo, com `python3 -c "print(len('texto'))"`) antes de entregar; não estime.
 5. **Leia `referencias/principios.md`** sempre. No modo revisar, leia também `referencias/revisao.md`.
 
 ## Passo 2: escolher o modo

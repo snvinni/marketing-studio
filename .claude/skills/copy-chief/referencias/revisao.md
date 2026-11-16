@@ -22,7 +22,7 @@ Use na ordem. Cada problema encontrado recebe uma gravidade.
 
 ### 2. Fatos (FATO)
 - Cada número, preço, prazo, lugar e credencial está no perfil como confirmado?
-- Algum fato foi "arredondado" para parecer melhor ("anos de experiência", "centenas de pets")?
+- Algum fato foi "arredondado" para parecer melhor ("anos de experiência", "centenas de clientes")?
 
 ### 3. Ideia e leitor (CLAREZA)
 - Dá para dizer a ideia em uma frase?
@@ -44,4 +44,4 @@ Use na ordem. Cada problema encontrado recebe uma gravidade.
 `[GRAVIDADE] "trecho exato" — por que é problema — como corrigir`
 
 Exemplo:
-`[BLOQUEANTE] "seu gato vai sair curado" — promessa de resultado é vedada pela Resolução CFMV 1.649/2025 — trocar por "vou examinar, explicar o que encontrei e combinar o tratamento com você"`
+`[BLOQUEANTE] "você vai perder 10 kg em um mês" — promessa de resultado é vedada pela regra do conselho do setor (cite a norma do arquivo do setor) — trocar por "montamos juntos um treino que cabe na sua rotina e acompanhamos a cada semana"`

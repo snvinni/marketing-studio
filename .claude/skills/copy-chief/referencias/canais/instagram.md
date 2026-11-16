@@ -4,33 +4,33 @@ O que medir: visitas ao perfil, cliques no link, mensagens e salvamentos. Curtid
 
 ## Nome do perfil (campo "Nome")
 - Até 30 caracteres. Entra na busca do Instagram: coloque o serviço e a cidade.
-- Ex.: `Dra. Aline · Vet em casa Campinas`
+- Ex.: `Ana Souza · Eletricista Sorocaba`
 
 ## Bio
 - Até 150 caracteres. Três linhas: o que faz · para quem · onde/como chamar.
 - Sem frase de efeito vazia. Um emoji no máximo.
 - Última linha leva ao link ("Agende pelo WhatsApp ↓" ou equivalente).
-- Ex.:
+- Ex. (outro ramo):
   ```
-  Veterinária a domicílio para cães e gatos
-  Seu gato fica em casa, sem caixa de transporte
-  Campinas e região · agende pelo WhatsApp ↓
+  Eletricista residencial em Sorocaba
+  Conserto e instalação com hora marcada
+  Peça seu orçamento pelo WhatsApp ↓
   ```
-  (a segunda linha só se o perfil confirmar o foco em gatos)
+  (cada linha só com fato confirmado no perfil)
 
 ## Legenda
 - **Primeira linha** (até ~125 caracteres aparecem antes do "mais"): o gancho. Pergunta ou situação do leitor, ou a promessa do conteúdo.
 - **Corpo:** frases curtas, parágrafos de 1 a 3 linhas, linha em branco entre eles. Até ~1.200 caracteres; o normal é 400 a 800.
 - **Chamada:** uma, no fim. Para mensagem: "Me chama no WhatsApp (link na bio) com ...". Para salvar: "Salva para consultar na hora do reforço."
-- **Hashtags:** 3 a 5, específicas e locais, no fim: `#veterinariacampinas #vetadomicilio #gatoscampinas`. Nada de 30 hashtags genéricas.
+- **Hashtags:** 3 a 5, específicas e locais, no fim (serviço + cidade, como `#eletricistasorocaba`). Nada de 30 hashtags genéricas.
 - **Localização:** marcar o bairro ou a cidade (mencione na entrega).
 
 ## Carrossel
 - 5 a 7 telas. Uma ideia por tela; até ~25 palavras por tela.
-- Tela 1: título que promete o conteúdo ("5 sinais de que seu gato sente dor").
+- Tela 1: título que diz o que a pessoa vai aprender ("5 sinais de que a fiação da casa precisa de revisão").
 - Telas do meio: um item cada, com frase curta e, se couber, o que fazer.
 - Penúltima: o porquê de procurar a profissional (sem diagnosticar à distância).
-- Última: chamada e identificação (nome, CRMV, WhatsApp).
+- Última: chamada e identificação (nome, registro profissional se o setor exigir, WhatsApp).
 - Entregue no formato `Tela 1: ...` / `Tela 2: ...`, mais a legenda separada.
 
 ## Reels

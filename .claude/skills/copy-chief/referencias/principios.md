@@ -7,18 +7,18 @@ Cada texto tem uma única coisa a deixar na cabeça do leitor. Se você precisa 
 
 ## 2. Específico em vez de genérico
 Genérico é o que qualquer concorrente poderia assinar. Específico é o que só este cliente diz.
-- Genérico: "Cuidamos do seu pet com muito amor e dedicação."
-- Específico: "Vou até a sua casa, com a vacina na caixa térmica, e o seu gato nem precisa entrar na caixa de transporte."
+- Genérico: "Cuidamos da sua casa com muito amor e dedicação."
+- Específico: "Chego no horário marcado, forro o chão antes de abrir a parede e levo o entulho comigo."
 Fonte do específico: os fatos e as palavras do `perfil.md`. Sem fato, não há específico; marque `[CONFIRMAR]`.
 
 ## 3. Comece pelo leitor, não pelo cliente
-O leitor quer saber o que ganha ou o que evita. Abra pelo problema, pela situação ou pela pergunta dele. "Seu gato some debaixo da cama quando vê a caixa de transporte?" funciona melhor que "Sou veterinária há X anos".
+O leitor quer saber o que ganha ou o que evita. Abra pelo problema, pela situação ou pela pergunta dele. "O disjuntor cai toda vez que você liga o chuveiro e o micro-ondas juntos?" funciona melhor que "Sou eletricista há X anos".
 
 ## 4. A primeira frase faz o trabalho
 No Instagram, só a primeira linha aparece antes do "mais". No Google, só o começo da descrição. A primeira frase precisa fazer o leitor querer a segunda. Nada de "Olá, pessoal!", "Você sabia?" vazio, ou "Hoje vamos falar sobre".
 
 ## 5. Uma chamada, clara
-Diga exatamente o que fazer: "Me chama no WhatsApp com o nome e a idade do seu gato", "Salva para lembrar na época do reforço". Uma por peça. Chamada vaga ("entre em contato", "saiba mais") só se o canal não permitir outra.
+Diga exatamente o que fazer: "Me chama no WhatsApp com uma foto do quadro de luz", "Salva para lembrar na hora da revisão". Uma por peça. Chamada vaga ("entre em contato", "saiba mais") só se o canal não permitir outra.
 
 ## 6. Prova antes de adjetivo
 Adjetivo sobre si mesmo ("excelente", "o melhor", "referência") não convence e, em saúde, pode ferir regra de publicidade. Mostre: o que faz, como faz, o que o cliente disse (com autorização).
@@ -45,4 +45,4 @@ Eles denunciam texto automático e fazem o cliente parecer genérico.
 Só afirme o que está no perfil como confirmado. Preço, horário, região, formação, título, número, depoimento: tudo vem do perfil ou vira `[CONFIRMAR: o quê]`. É melhor uma pendência visível do que um fato inventado publicado.
 
 ## 10. Leia em voz alta
-Se o cliente não diria a frase numa conversa com um tutor, reescreva.
+Se o cliente não diria a frase numa conversa com um cliente dele, reescreva.
