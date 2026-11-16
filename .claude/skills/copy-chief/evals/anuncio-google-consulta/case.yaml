@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: anuncio-google-consulta
+expected_outcome: |
+  Anúncio responsivo de pesquisa com pelo menos 8 títulos de até 30 caracteres e 3 descrições de até 90, sem o desconto pedido, sem preço, promessa, superlativo, urgência ou emergência, explicando por que o desconto ficou de fora.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: whatsapp-lembrete-autorizacao
+expected_outcome: |
+  Lembrete de reforço de vacina com campos variáveis em vez de vacina e data inventadas, sem promessa de proteção total; pedido de autorização de foto que diz onde a foto vai aparecer, que o tutor pode recusar, pede resposta por escrito e lembra de registrar em autorizacoes.md.
+context:
+  scaffold_script: place-files.sh

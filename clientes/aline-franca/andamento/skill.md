@@ -12,3 +12,12 @@
   - `SKILL.md`: tabela de qual pedido vai para qual canal e a regra de contar caracteres de verdade.
 - Pendências: nenhuma de pessoa.
 - Pedidos para outras frentes: as frentes 2 (site), 4 (Google) e 6 (WhatsApp, anúncios) já podem pedir esses textos à skill.
+
+## 16/11/2026, item 2: casos de teste dos canais novos
+- Feito: quatro casos em `.claude/skills/copy-chief/evals/`, no formato dos existentes:
+  - `google-descricao-avaliacao`: descrição do Google (pede bairros não confirmados) e resposta a avaliação de 1 estrela.
+  - `whatsapp-lembrete-autorizacao`: lembrete de reforço de vacina e pedido de autorização de foto.
+  - `site-pagina-vacinas`: página "Vacinação em casa" com título, descrição e perguntas frequentes.
+  - `anuncio-google-consulta`: anúncio de pesquisa (pede desconto de 10%, que deve ficar de fora).
+- Pendências: nenhuma.
+- Pedidos para outras frentes: nenhum.

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: site-pagina-vacinas
+expected_outcome: |
+  Página de vacinação em casa com título de até 60 caracteres e descrição de até 160, abertura com botão para o WhatsApp, como funciona, perguntas frequentes em forma de pergunta, sem preço inventado, sem afirmar quais vacinas aplica, com nome e CRMV, sem emoji.
+context:
+  scaffold_script: place-files.sh
