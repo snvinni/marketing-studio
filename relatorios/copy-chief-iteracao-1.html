@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "copy-chief", "runs": [{"id": "bio-instagram-with_skill", "prompt": "Faz a bio do Instagram da Dra. Aline Fran\u00e7a com o copy-chief, quero umas op\u00e7\u00f5es. Salva em bio.md", "eval_id": null, "outputs": [{"name": "bio.md", "type": "text", "content": "# Bio do Instagram: Dra. Aline Fran\u00e7a\n\nModo: escrever \u00b7 Canal: Instagram (bio, at\u00e9 150 caracteres; campo \"Nome\", at\u00e9 30) \u00b7 Setor: veterinaria-br\n\n## Briefing\nObjetivo: quem chega ao perfil toca no link e manda mensagem no WhatsApp.\nP\u00fablico: tutores de Campinas com gato que sofre fora de casa, c\u00e3o idoso ou grande, v\u00e1rios animais, ou sem tempo e carro para ir \u00e0 cl\u00ednica.\nUma ideia: a veterin\u00e1ria vai at\u00e9 a sua casa; seu pet n\u00e3o precisa sair.\nProva: \u00e9 m\u00e9dica-veterin\u00e1ria e atende a domic\u00edlio (consulta e vacina\u00e7\u00e3o em casa para c\u00e3es e gatos), com cuidado especial com gatos (perfil).\nChamada: agendar pelo WhatsApp (link na bio).\n\n## Vers\u00e3o A: pelo gato que sofre fora de casa\n```\nVeterin\u00e1ria que atende em casa, em Campinas\nSeu gato fica no canto dele, sem caixa de transporte\nConsulta e vacina \u00b7 agende pelo WhatsApp \u2193\n```\n139 caracteres (com as quebras de linha).\n\n## Vers\u00e3o B: pela praticidade, c\u00e3es e gatos\n```\nVeterin\u00e1ria a domic\u00edlio para c\u00e3es e gatos\nConsulta e vacina em casa, com calma, sem pressa\nCampinas \u00b7 agende pelo WhatsApp \u2193\n```\n124 caracteres.\n\n## Vers\u00e3o C: na voz dela, primeira pessoa\n```\nSeu pet fica em casa. Eu cuido dele.\nM\u00e9dica-veterin\u00e1ria: consulta, vacina e pet sitter\nCampinas \u00b7 me chama no WhatsApp \u2193\n```\n120 caracteres.\n\n## Campo \"Nome\" (entra na busca)\n```\nDra. Aline \u00b7 Vet em Campinas\n```\n28 caracteres. Alternativa: `Vet em casa Campinas \u00b7 Aline` (28).\n\nLink da bio: `https://wa.me/5519981811227` (enquanto o site n\u00e3o estiver no ar).\n\n## Recomenda\u00e7\u00e3o\nVers\u00e3o A. O diferencial dela \u00e9 o cuidado com gatos, e a segunda linha mostra isso com um fato concreto (o gato n\u00e3o sai de casa nem entra na caixa) sem usar t\u00edtulo como \"especialista em felinos\". Se ela quiser divulgar tamb\u00e9m o pet sitter, use a C, que j\u00e1 traz a frase-modelo da voz dela.\n\n## Revis\u00e3o feita nas vers\u00f5es\n- Regras CFMV: sem promessa de resultado (\"sem estresse\", \"garantido\"), sem \"especialista\", \"Cat Friendly\" ou \"Fear Free\", sem compara\u00e7\u00e3o com cl\u00ednicas, sem pre\u00e7o ou promo\u00e7\u00e3o. S\u00f3 servi\u00e7os que podem ser feitos em casa (consulta, vacina\u00e7\u00e3o).\n- Fatos: s\u00f3 o que est\u00e1 confirmado no perfil. A regi\u00e3o aparece como \"Campinas\" e n\u00e3o \"Campinas e regi\u00e3o\" porque as cidades atendidas ainda est\u00e3o a confirmar.\n- Voz: \"voc\u00ea/seu\", palavras do perfil (\"em casa\", \"com calma\", \"sem pressa\"), nada de \"beb\u00ea\", \"pais de pet\" ou \"melhor de Campinas\". Nenhum emoji; s\u00f3 a seta \u2193 apontando para o link.\n- Canal: tr\u00eas linhas (o que faz \u00b7 para quem/diferencial \u00b7 onde/como chamar), todas abaixo de 150 caracteres, \u00faltima linha leva ao link.\n\n## Pend\u00eancias\n- [CONFIRMAR: cidades e bairros atendidos (pergunta 25)] Se ela atende fora de Campinas, trocar \"Campinas\" por \"Campinas e regi\u00e3o\" (cabe nas tr\u00eas vers\u00f5es).\n- [CONFIRMAR: quais vacinas aplica em casa] As vers\u00f5es citam \"vacina\" de forma gen\u00e9rica; confirmar antes de publicar.\n- [CONFIRMAR: usu\u00e1rio do Instagram] para configurar o perfil.\n- [CONFIRMAR: n\u00famero do CRMV-SP] N\u00e3o \u00e9 obrigat\u00f3rio na bio, mas se ela quiser incluir (\"CRMV-SP 00000\"), cabe no lugar de \"Consulta e vacina\" na vers\u00e3o A.\n- Voz provis\u00f3ria: a entrevista ainda n\u00e3o foi feita; ajustar as palavras depois dela.\n- Material necess\u00e1rio: foto de perfil com rosto vis\u00edvel (a \u00fanica dispon\u00edvel \u00e9 a do PDF, 308 px, baixa demais; ver `briefing-fotos.md`).\n"}], "grading": {"expectations": [{"text": "Cada op\u00e7\u00e3o de bio tem no m\u00e1ximo 150 caracteres.", "passed": true, "evidence": "Contado com Python (inclui quebras de linha): A=139, B=124, C=120 caracteres. Campo Nome 28 (limite 30)."}, {"text": "Todas as op\u00e7\u00f5es mencionam atendimento em casa ou a domic\u00edlio e Campinas.", "passed": true, "evidence": "A: 'Veterin\u00e1ria que atende em casa, em Campinas'; B: 'Veterin\u00e1ria a domic\u00edlio... Consulta e vacina em casa... Campinas'; C: 'Seu pet fica em casa. Eu cuido dele.' + 'Campinas \u00b7 me chama no WhatsApp' (C s\u00f3 implica o atendimento em casa pela frase-modelo; aceito)."}, {"text": "Nenhuma op\u00e7\u00e3o usa \"especialista\", \"Cat Friendly\", \"Fear Free\" ou \"melhor\".", "passed": true, "evidence": "Nenhuma das tr\u00eas bios cont\u00e9m 'especialista', 'Cat Friendly', 'Fear Free' ou 'melhor'; os termos s\u00f3 aparecem na se\u00e7\u00e3o de revis\u00e3o como itens evitados."}], "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 36.2}, "eval_feedback": {"suggestions": ["A assertion 2 \u00e9 fraca para a vers\u00e3o C: 'Seu pet fica em casa' s\u00f3 implica atendimento em casa; considerar exigir a men\u00e7\u00e3o expl\u00edcita a 'em casa/a domic\u00edlio' como servi\u00e7o.", "Nenhuma assertion checa se a bio tem chamada para a\u00e7\u00e3o/link ou se evita afirmar fatos [CONFIRMAR] (ex.: vacinas, regi\u00e3o)."], "overall": "Tr\u00eas op\u00e7\u00f5es enxutas, todas dentro do limite, com recomenda\u00e7\u00e3o justificada e pend\u00eancias claras."}}}, {"id": "bio-instagram-without_skill", "prompt": "Faz a bio do Instagram da Dra. Aline Fran\u00e7a com o copy-chief, quero umas op\u00e7\u00f5es. Salva em bio.md", "eval_id": null, "outputs": [{"name": "bio.md", "type": "text", "content": "# Bio do Instagram: Dra. Aline Fran\u00e7a\n\n**Base:** `clientes/aline-franca/perfil.md` (atualizado em 16/11/2026). A entrevista ainda n\u00e3o foi feita, ent\u00e3o todas as op\u00e7\u00f5es usam s\u00f3 fatos confirmados e deixam de fora tudo que est\u00e1 com `[CONFIRMAR]`.\n**Limite do Instagram:** 150 caracteres na bio e 30 no campo Nome. As contagens abaixo incluem as quebras de linha.\n\n## Campo Nome (aparece na busca)\n\n| Op\u00e7\u00e3o | Texto | Caracteres |\n|---|---|---|\n| 1 (recomendada) | `Dra. Aline Fran\u00e7a \u00b7 Vet` | 23 |\n| 2 | `Dra. Aline Fran\u00e7a Veterin\u00e1ria` | 29 |\n\nA busca do Instagram considera o campo Nome. Colocar \"Vet\" ou \"Veterin\u00e1ria\" ajuda quem procura \"veterin\u00e1ria a domic\u00edlio\".\n\n## Op\u00e7\u00f5es de bio\n\n### Op\u00e7\u00e3o A: direta, com a frase dela (recomendada) \u00b7 127 caracteres\n```\nSeu pet fica em casa. Eu cuido dele.\nVeterin\u00e1ria a domic\u00edlio em Campinas\nConsultas, vacinas e pet sitter\nAgende pelo WhatsApp \u2193\n```\nAbre com a frase que o perfil indica como \"soa como ela\". Curta, deixa espa\u00e7o para o CRMV quando o n\u00famero for confirmado.\n\n### Op\u00e7\u00e3o B: foco em gatos \u00b7 129 caracteres\n```\nGato que sofre no transporte? Eu vou at\u00e9 ele.\nVeterin\u00e1ria a domic\u00edlio em Campinas\nC\u00e3es e gatos, com calma e sem pressa\nWhatsApp \u2193\n```\nPuxa pelo diferencial (gatos estressam fora de casa) sem dizer \"especialista em felinos\". Bom se o feed for ter muito conte\u00fado de gato.\n\n### Op\u00e7\u00e3o C: descritiva, lista de servi\u00e7os \u00b7 148 caracteres\n```\nM\u00e9dica-veterin\u00e1ria em Campinas\nConsulta e vacina na sua casa\nCuidado com calma para c\u00e3es e gatos\nPet sitter com olhar cl\u00ednico\nAgende pelo WhatsApp \u2193\n```\nA mais completa. Fica no limite, ent\u00e3o **n\u00e3o sobra espa\u00e7o para o CRMV**: s\u00f3 usar se o registro for para o campo Nome ou para a categoria do perfil.\n\n### Op\u00e7\u00e3o D: benef\u00edcio para o tutor \u00b7 141 caracteres\n```\nVeterin\u00e1ria que vai at\u00e9 a sua casa\nConsulta, vacina e pet sitter em Campinas\nMenos estresse para seu gato e seu c\u00e3o\nFale comigo no WhatsApp \u2193\n```\nExplica o servi\u00e7o pelo ganho do tutor. \"Menos estresse\" descreve o motivo do atendimento em casa, sem prometer resultado.\n\n### Op\u00e7\u00e3o E: enxuta, em t\u00f3picos \u00b7 117 caracteres\n```\nM\u00e9dica-veterin\u00e1ria a domic\u00edlio\nCampinas\nConsulta \u00b7 Vacina \u00b7 Pet sitter\nSeu pet atendido em casa, com calma\nWhatsApp \u2193\n```\nF\u00e1cil de ler de relance. A mais segura para receber o CRMV depois.\n\n## Link da bio\n`https://wa.me/5519981811227`\n\nQuando o site `draalinefranca.com.br` estiver no ar, d\u00e1 para trocar pelo site ou usar os dois links (o Instagram aceita at\u00e9 5). Se quiser mensagem pronta no WhatsApp:\n`https://wa.me/5519981811227?text=Oi%2C%20vim%20pelo%20Instagram`\n\n## Antes de publicar (pend\u00eancias do perfil)\n\n1. **N\u00famero do CRMV-SP** `[CONFIRMAR]`. Em material de divulga\u00e7\u00e3o de veterin\u00e1rio, o registro costuma ser exigido. Assim que vier, acrescentar uma linha `CRMV-SP 00000` (cerca de 15 caracteres). As op\u00e7\u00f5es A, B, D e E t\u00eam espa\u00e7o; a C n\u00e3o.\n2. **Usu\u00e1rio do Instagram** `[CONFIRMAR]`. Sugest\u00f5es, se ainda n\u00e3o existir: `@draalinefranca` (combina com o dom\u00ednio do site), `@draalinefranca.vet`, `@alinefranca.vet`.\n3. **\u00c1rea atendida** `[CONFIRMAR cidades e bairros]`. Por isso as bios dizem s\u00f3 \"Campinas\", sem \"e regi\u00e3o\". Se a entrevista confirmar outras cidades, d\u00e1 para trocar.\n4. **Regras do conselho** ainda n\u00e3o checadas (pergunta 39). As bios evitam pre\u00e7o, promessa de resultado, \"especialista\", \"Cat Friendly\" e \"Fear Free\".\n\n## O que ficou de fora de prop\u00f3sito\n- Pre\u00e7o da consulta e da vacina (n\u00e3o confirmados). O pre\u00e7o do pet sitter j\u00e1 est\u00e1 no site, mas n\u00e3o cabe na bio e n\u00e3o ajuda a decidir.\n- Condom\u00ednio Petra Flamboyant (o perfil diz para n\u00e3o citar em material p\u00fablico).\n- Endere\u00e7o e local de trabalho atual.\n- Emoji: nenhum. O perfil permite no m\u00e1ximo um em canal informal; se quiser, troque o \"\u2193\" por \ud83d\udc3e em uma das linhas, nunca os dois.\n- Palavras proibidas pela voz dela: \"seu beb\u00ea\", \"pais de pet\", \"humano\", \"o melhor de Campinas\", \"garantido\".\n"}], "grading": {"expectations": [{"text": "Cada op\u00e7\u00e3o de bio tem no m\u00e1ximo 150 caracteres.", "passed": true, "evidence": "Contado com Python: A=127, B=129, C=148, D=141, E=117 caracteres. Todas \u003c=150 (C no limite)."}, {"text": "Todas as op\u00e7\u00f5es mencionam atendimento em casa ou a domic\u00edlio e Campinas.", "passed": true, "evidence": "A 'Veterin\u00e1ria a domic\u00edlio em Campinas'; B 'Veterin\u00e1ria a domic\u00edlio em Campinas'; C 'M\u00e9dica-veterin\u00e1ria em Campinas / Consulta e vacina na sua casa'; D 'vai at\u00e9 a sua casa ... em Campinas'; E 'a domic\u00edlio / Campinas'."}, {"text": "Nenhuma op\u00e7\u00e3o usa \"especialista\", \"Cat Friendly\", \"Fear Free\" ou \"melhor\".", "passed": true, "evidence": "Nenhuma bio usa os termos proibidos. D usa 'Menos estresse para seu gato e seu c\u00e3o', que n\u00e3o \u00e9 'melhor' mas beira promessa de resultado."}], "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 41.9}, "eval_feedback": {"suggestions": ["Assertion de termos proibidos n\u00e3o pega promessa impl\u00edcita como 'Menos estresse para seu gato e seu c\u00e3o' (op\u00e7\u00e3o D)."], "overall": "Cinco op\u00e7\u00f5es corretas e bem contadas; um pouco mais prolixo, com afirma\u00e7\u00e3o de CRMV 'costuma ser exigido' e uma op\u00e7\u00e3o (D) que ro\u00e7a promessa de resultado."}}}, {"id": "carrossel-vacina-gato-with_skill", "prompt": "Usa o copy-chief e escreve um carrossel para o Instagram da aline-franca sobre o calend\u00e1rio de vacinas do gato filhote. Salva o resultado em carrossel.md.", "eval_id": null, "outputs": [{"name": "carrossel.md", "type": "text", "content": "# Carrossel Instagram: calend\u00e1rio de vacinas do gato filhote\nCliente: Dra. Aline Fran\u00e7a \u00b7 Setor: veterinaria-br \u00b7 Canal: Instagram (carrossel) \u00b7 Modo: escrever\n\n## Briefing\nObjetivo: o tutor salva o post e manda mensagem no WhatsApp para montar o calend\u00e1rio do filhote.\nP\u00fablico: tutor que acabou de adotar ou comprar um gato filhote em Campinas, inseguro sobre quando e quais vacinas dar, e que teme levar um bichinho t\u00e3o pequeno para a cl\u00ednica.\nUma ideia: o filhote tem um calend\u00e1rio de vacinas, e ele come\u00e7a com exame.\nProva: a Dra. Aline \u00e9 m\u00e9dica-veterin\u00e1ria e faz vacina\u00e7\u00e3o em casa para c\u00e3es e gatos, com cuidado especial com gatos (perfil).\nChamada: mandar mensagem no WhatsApp com a idade do filhote.\n\n> As idades e intervalos abaixo seguem o protocolo usual para filhotes de gato no Brasil, mas s\u00e3o conte\u00fado cl\u00ednico assinado pela Aline: precisam ser conferidos por ela antes de publicar (ver Pend\u00eancias).\n\n## Vers\u00e3o A: guia por idade (para salvar e consultar)\n\nTela 1: Gato filhote: o calend\u00e1rio de vacinas, do primeiro m\u00eas ao primeiro ano\n\nTela 2: Antes da primeira dose, exame. O filhote precisa estar saud\u00e1vel e vermifugado. Vacina aplicada em gato doente pode n\u00e3o proteger como deveria.\n\nTela 3: Por volta de 8 semanas: 1\u00aa dose da vacina polivalente (V3, V4 ou V5). Depois, uma nova dose a cada 3 a 4 semanas, at\u00e9 passar das 16 semanas.\n\nTela 4: A partir de 12 semanas: antirr\u00e1bica. Pode ser no mesmo dia de uma polivalente ou em outra data, conforme o plano do seu filhote.\n\nTela 5: Um ano depois: refor\u00e7o. Da\u00ed em diante, o refor\u00e7o segue o calend\u00e1rio que combinarmos. Anote cada dose na carteira de vacina\u00e7\u00e3o.\n\nTela 6: Cada filhote tem o seu calend\u00e1rio. Idade, sa\u00fade, outros gatos em casa e acesso \u00e0 rua mudam o plano. Por isso ele come\u00e7a com uma consulta.\n\nTela 7: Seu filhote n\u00e3o precisa sair de casa para vacinar. Me chama no WhatsApp com a idade dele.\nDra. Aline Fran\u00e7a \u00b7 M\u00e9dica-veterin\u00e1ria \u00b7 CRMV-SP [CONFIRMAR: n\u00famero]\nVacina\u00e7\u00e3o em casa em Campinas \u00b7 (19) 98181-1227\n\n**Legenda (cerca de 640 caracteres):**\n\n```\nChegou um gato filhote a\u00ed? Este \u00e9 o calend\u00e1rio de vacinas do primeiro ano dele.\n\nTudo come\u00e7a com um exame. A vacina funciona melhor num filhote saud\u00e1vel e vermifugado.\n\nDepois v\u00eam as doses da polivalente, a cada 3 a 4 semanas, at\u00e9 ele passar das 16 semanas. A antirr\u00e1bica entra a partir das 12. Um ano depois, o refor\u00e7o.\n\nAs datas exatas mudam de gato para gato. Por isso eu monto o calend\u00e1rio depois de conhecer o seu filhote e a rotina da casa.\n\nE ele n\u00e3o precisa entrar na caixa de transporte para isso. Eu vou at\u00e9 voc\u00ea e vacino em casa, com calma.\n\nMe chama no WhatsApp (link na bio) com a idade do seu filhote.\n\n#veterinariacampinas #vetadomicilio #gatoscampinas #gatofilhote\n```\n\nLocaliza\u00e7\u00e3o: Campinas.\n\n## Vers\u00e3o B: as d\u00favidas do tutor de primeira viagem\n\nTela 1: Gato filhote em casa? 4 d\u00favidas sobre vacina que eu mais ou\u00e7o\n\nTela 2: \"Ele n\u00e3o sai de casa. Precisa vacinar?\" Precisa. Alguns v\u00edrus entram pela roupa e pelo sapato de quem chega da rua.\n\nTela 3: \"Quando come\u00e7a?\" Por volta de 8 semanas, com doses a cada 3 a 4 semanas at\u00e9 passar das 16. A antirr\u00e1bica vem a partir das 12.\n\nTela 4: \"Uma dose j\u00e1 basta?\" N\u00e3o. A prote\u00e7\u00e3o se forma com a s\u00e9rie completa. At\u00e9 l\u00e1, evite contato do filhote com gatos de fora.\n\nTela 5: \"E a vacina de FeLV?\" Ela pede um teste antes, e nem todo gato precisa. Depende da rotina dele.\n\nTela 6: Quem define o calend\u00e1rio \u00e9 o exame, n\u00e3o a internet. E o exame pode ser em casa, no ambiente que o seu filhote j\u00e1 conhece.\n\nTela 7: Me chama no WhatsApp com a idade do seu filhote.\nDra. Aline Fran\u00e7a \u00b7 M\u00e9dica-veterin\u00e1ria \u00b7 CRMV-SP [CONFIRMAR: n\u00famero]\nVacina\u00e7\u00e3o em casa em Campinas \u00b7 (19) 98181-1227\n\n**Legenda (cerca de 560 caracteres):**\n\n```\n\"Meu gato n\u00e3o sai de casa, precisa mesmo vacinar?\" Precisa. E essa \u00e9 s\u00f3 uma das d\u00favidas que aparecem quando chega um filhote.\n\nNas telas, respondo as quatro que mais escuto: se precisa, quando come\u00e7a, quantas doses e o que fazer com a FeLV.\n\nO calend\u00e1rio certo depende do exame, da idade e da rotina da casa. Por isso eu n\u00e3o passo datas fechadas por mensagem: primeiro conhe\u00e7o o seu gato.\n\nE fa\u00e7o isso na sua casa, sem caixa de transporte e sem sala de espera.\n\nMe chama no WhatsApp (link na bio) com a idade do seu filhote.\n\n#veterinariacampinas #vetadomicilio #gatoscampinas #gatofilhote\n```\n\nLocaliza\u00e7\u00e3o: Campinas.\n\n## Recomenda\u00e7\u00e3o\nUsar a Vers\u00e3o A: carrossel \u00e9 o formato que gera salvamento, e um calend\u00e1rio por idade \u00e9 exatamente o tipo de conte\u00fado que o tutor guarda para consultar na data do refor\u00e7o. A Vers\u00e3o B funciona bem como post seguinte, ou como base para um Reels de perguntas e respostas.\n\n## Revis\u00e3o aplicada (checklist de `referencias/revisao.md`)\n- Regras: nenhuma promessa de resultado (\"protege 100%\", \"sem estresse\"); nenhum t\u00edtulo ou selo; nenhum pre\u00e7o ou promo\u00e7\u00e3o; nenhum paciente ou depoimento. O post orienta, mas n\u00e3o receita: deixa claro que as datas dependem de exame.\n- Fatos: s\u00f3 usa o que o perfil confirma (m\u00e9dica-veterin\u00e1ria, vacina\u00e7\u00e3o em casa de c\u00e3es e gatos, Campinas, WhatsApp). CRMV e protocolo ficam como pend\u00eancia.\n- Voz: primeira pessoa, \"voc\u00ea\", \"tutor\", \"seu gato\", \"em casa\", \"com calma\". Sem \"seu beb\u00ea\", \"especialista\", \"pais de pet\", sem emoji, sem v\u00edcios de texto de IA.\n- Canal: 7 telas, at\u00e9 cerca de 25 palavras por tela (sem contar o bloco de identifica\u00e7\u00e3o da \u00faltima), uma chamada, 4 hashtags locais.\n\n## Pend\u00eancias\n- [CONFIRMAR: protocolo da Aline] idade da 1\u00aa dose (6, 8 ou 9 semanas), intervalo entre doses, at\u00e9 que idade vai a s\u00e9rie, quando entra a antirr\u00e1bica e o intervalo do refor\u00e7o depois do primeiro ano (anual ou outro). O texto n\u00e3o pode ir ao ar com um calend\u00e1rio que ela n\u00e3o usa.\n- [CONFIRMAR: quais vacinas ela aplica em casa] o perfil ainda n\u00e3o diz se ela trabalha com V3, V4 ou V5, nem se aplica FeLV. Se n\u00e3o aplicar FeLV, tirar a Tela 5 da Vers\u00e3o B ou trocar por \"te explico se o seu gato precisa\".\n- [CONFIRMAR: n\u00famero do CRMV-SP] obrigat\u00f3rio na tela de identifica\u00e7\u00e3o.\n- [CONFIRMAR: cidades atendidas] o texto diz s\u00f3 \"Campinas\"; incluir a regi\u00e3o quando a pergunta 25 for respondida.\n- [CONFIRMAR: usu\u00e1rio do Instagram] para a tela final, se ela quiser o @ junto do WhatsApp.\n- Voz: o perfil ainda n\u00e3o tem frases da pr\u00f3pria Aline (entrevista pendente); o tom foi escrito pelas palavras \"usar\" do perfil e ser\u00e1 ajustado depois da entrevista.\n- Regras do setor: `metodo/regras-cfmv.md` n\u00e3o estava dispon\u00edvel; a revis\u00e3o seguiu `referencias/setores/veterinaria-br.md`, tratando os pontos \"A CONFIRMAR\" como proibidos.\n- Material necess\u00e1rio: arte das telas e, se houver foto, de um filhote da pr\u00f3pria Aline ou de banco de imagens. Foto de paciente ou de gato de cliente s\u00f3 com autoriza\u00e7\u00e3o registrada em `autorizacoes.md` (hoje n\u00e3o h\u00e1 nenhuma).\n"}], "grading": {"expectations": [{"text": "O carrossel tem entre 5 e 7 telas numeradas.", "passed": true, "evidence": "Vers\u00e3o A (recomendada) tem 'Tela 1' a 'Tela 7'; Vers\u00e3o B tamb\u00e9m 7 telas."}, {"text": "O texto n\u00e3o afirma como fato confirmado quais vacinas a Aline aplica nem o n\u00famero do CRMV dela; esses pontos aparecem marcados como [CONFIRMAR] ou como pend\u00eancia.", "passed": true, "evidence": "'CRMV-SP [CONFIRMAR: n\u00famero]' na tela 7; pend\u00eancia '[CONFIRMAR: quais vacinas ela aplica em casa]'. O calend\u00e1rio fala de 'polivalente (V3, V4 ou V5)' como protocolo geral, n\u00e3o como servi\u00e7o dela."}, {"text": "N\u00e3o h\u00e1 promessa de resultado (como \"100% protegido\", \"garantido\", \"sem estresse nenhum\").", "passed": true, "evidence": "Nenhum '100%', 'garantido' ou 'sem estresse'. Usa 'Vacina aplicada em gato doente pode n\u00e3o proteger como deveria' e 'Cada filhote tem o seu calend\u00e1rio'."}, {"text": "A legenda termina com uma \u00fanica chamada clara para o WhatsApp ou para salvar o post, e usa no m\u00e1ximo 5 hashtags.", "passed": true, "evidence": "Legenda A termina com 'Me chama no WhatsApp (link na bio) com a idade do seu filhote.' seguida de 4 hashtags (#veterinariacampinas #vetadomicilio #gatoscampinas #gatofilhote). Vers\u00e3o B idem, 4 hashtags."}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 76.2}, "eval_feedback": {"suggestions": ["Nenhuma assertion checa se o conte\u00fado cl\u00ednico (idades/intervalos) foi marcado para valida\u00e7\u00e3o pela Aline, que \u00e9 um risco real neste tipo de post."], "overall": "Duas vers\u00f5es de 7 telas, chamada \u00fanica, 4 hashtags locais e pend\u00eancias cl\u00ednicas bem marcadas."}}}, {"id": "carrossel-vacina-gato-without_skill", "prompt": "Usa o copy-chief e escreve um carrossel para o Instagram da aline-franca sobre o calend\u00e1rio de vacinas do gato filhote. Salva o resultado em carrossel.md.", "eval_id": null, "outputs": [{"name": "carrossel.md", "type": "text", "content": "# Carrossel Instagram: calend\u00e1rio de vacinas do gato filhote\n\n**Cliente:** Dra. Aline Fran\u00e7a (`clientes/aline-franca/perfil.md`)\n**Formato:** carrossel, 8 cards, 1080 x 1350\n**Objetivo:** educar o tutor de gato filhote e abrir conversa no WhatsApp sobre vacina\u00e7\u00e3o em casa\n**Voz:** primeira pessoa, acolhedora, segura, cuidadosa. Sem pre\u00e7o, sem promessa de resultado, sem \"especialista\".\n\n---\n\n## Card 1 (capa)\n\n**T\u00edtulo:** Seu gato filhote chegou. E as vacinas?\n\n**Apoio:** O calend\u00e1rio da primeira vacina\u00e7\u00e3o, explicado com calma.\n\n*Visual:* filhote em casa, num ambiente tranquilo (sof\u00e1, manta). Nada de cl\u00ednica.\n\n---\n\n## Card 2\n\n**T\u00edtulo:** Por que come\u00e7ar cedo\n\n**Texto:** Nas primeiras semanas, o filhote est\u00e1 protegido pelos anticorpos que recebeu da m\u00e3e. Essa prote\u00e7\u00e3o vai caindo aos poucos. As vacinas entram para que ele n\u00e3o fique descoberto nesse caminho.\n\n---\n\n## Card 3\n\n**T\u00edtulo:** 6 a 8 semanas: a primeira dose\n\n**Texto:** \u00c9 quando costuma come\u00e7ar a vacina polivalente (V3, V4 ou V5). Ela protege contra doen\u00e7as comuns e graves em gatos, como panleucopenia, rinotraque\u00edte e calicivirose.\n\n---\n\n## Card 4\n\n**T\u00edtulo:** A cada 3 a 4 semanas: os refor\u00e7os\n\n**Texto:** A polivalente \u00e9 repetida em intervalos de 3 a 4 semanas at\u00e9 o filhote completar cerca de 16 semanas (4 meses). Uma dose s\u00f3 n\u00e3o basta. \u00c9 o conjunto que forma a prote\u00e7\u00e3o.\n\n---\n\n## Card 5\n\n**T\u00edtulo:** A partir de 12 semanas: a antirr\u00e1bica\n\n**Texto:** A vacina contra a raiva \u00e9 aplicada a partir dos 3 meses de idade. Mesmo o gato que nunca sai de casa precisa dela.\n\n---\n\n## Card 6\n\n**T\u00edtulo:** E a vacina contra FeLV?\n\n**Texto:** A FeLV (leucemia felina) \u00e9 avaliada caso a caso, conforme a rotina do gato e os outros animais da casa. Antes de vacinar, o filhote precisa fazer o teste para FeLV e FIV.\n\n---\n\n## Card 7\n\n**T\u00edtulo:** Depois do primeiro ciclo\n\n**Texto:** Vem um refor\u00e7o entre 6 meses e 1 ano de vida. Depois, as doses de manuten\u00e7\u00e3o seguem o intervalo que o veterin\u00e1rio indicar para o seu gato.\n\n**Rodap\u00e9 (pequeno):** Este calend\u00e1rio \u00e9 uma refer\u00eancia. O protocolo do seu filhote \u00e9 definido na consulta, conforme a idade, a sa\u00fade e o hist\u00f3rico dele.\n\n---\n\n## Card 8 (chamada)\n\n**T\u00edtulo:** Vacina sem caixa de transporte\n\n**Texto:** Muito gato sofre no transporte e na cl\u00ednica. Eu vou at\u00e9 a sua casa e vacino seu gato no lugar onde ele se sente seguro. Com calma, sem pressa.\n\n**Chamada:** Me chame no WhatsApp: (19) 98181-1227\n\n**Assinatura:** Dra. Aline Fran\u00e7a \u00b7 M\u00e9dica-veterin\u00e1ria \u00b7 CRMV-SP [CONFIRMAR n\u00famero]\n\n---\n\n## Legenda\n\nChegou um gato filhote em casa? Ent\u00e3o \u00e9 hora de pensar nas vacinas.\n\nNeste carrossel eu explico o calend\u00e1rio de refer\u00eancia da primeira vacina\u00e7\u00e3o: quando come\u00e7a, quantos refor\u00e7os s\u00e3o, quando entra a antirr\u00e1bica e o que acontece depois do primeiro ciclo.\n\nCada filhote \u00e9 um. O protocolo certo para o seu gato \u00e9 definido na consulta, olhando a idade, a sa\u00fade e a rotina dele.\n\nE se o seu gato estressa s\u00f3 de ver a caixa de transporte, eu vou at\u00e9 voc\u00ea. Ele recebe a vacina em casa, no cantinho dele.\n\nPara agendar ou tirar d\u00favidas, me chame no WhatsApp: (19) 98181-1227 (link na bio).\n\nSalve este post para lembrar das datas.\n\n#gatofilhote #vacina\u00e7\u00e3odegatos #vacinaemcasa #veterinariaadomicilio #campinas #tutordegato\n\n---\n\n## Notas para revis\u00e3o (n\u00e3o publicar)\n\n1. **Vacinas oferecidas:** o perfil marca \"Vacina\u00e7\u00e3o em casa\" com `[CONFIRMAR quais vacinas]`. O carrossel fala do calend\u00e1rio em geral e n\u00e3o afirma que a Aline aplica V3, V4, V5, antirr\u00e1bica ou FeLV. Se ela n\u00e3o aplicar alguma, o texto continua correto. Confirmar antes de citar vacinas espec\u00edficas como servi\u00e7o dela.\n2. **Conte\u00fado t\u00e9cnico:** o calend\u00e1rio segue as diretrizes gerais de vacina\u00e7\u00e3o felina (WSAVA): primeira dose de polivalente entre 6 e 8 semanas, refor\u00e7os a cada 3 a 4 semanas at\u00e9 cerca de 16 semanas, refor\u00e7o entre 6 meses e 1 ano, antirr\u00e1bica a partir de 12 semanas, FeLV como vacina avaliada caso a caso com teste pr\u00e9vio. **A Aline precisa revisar e aprovar** os n\u00fameros, porque o post sai em nome dela e ela pode usar protocolo pr\u00f3prio.\n3. **CRMV:** o n\u00famero ainda n\u00e3o est\u00e1 no perfil. Sem ele, o card 8 n\u00e3o deve ir ao ar com o campo vazio; preencher ou retirar a linha de assinatura.\n4. **Regras do conselho:** o perfil manda seguir a coluna \"At\u00e9 confirmar\" de `metodo/regras-cfmv.md`, mas esse arquivo n\u00e3o existe no reposit\u00f3rio. O texto foi escrito de forma conservadora: sem pre\u00e7o, sem promessa de resultado, sem depoimento, sem compara\u00e7\u00e3o com outros profissionais, sem \"especialista\", \"Cat Friendly\" ou \"Fear Free\".\n5. **Instagram e \"link na bio\":** o usu\u00e1rio do Instagram est\u00e1 como `[CONFIRMAR]`. Garantir que o link do WhatsApp (`https://wa.me/5519981811227`) esteja na bio antes de publicar, ou tirar \"(link na bio)\" da legenda.\n6. **Regi\u00e3o:** a legenda n\u00e3o cita bairros nem o condom\u00ednio Petra Flamboyant. A hashtag #campinas \u00e9 a \u00fanica refer\u00eancia geogr\u00e1fica, e Campinas j\u00e1 consta no perfil (cidades e bairros ainda a confirmar).\n7. **Emoji:** nenhum usado. Se quiser, cabe no m\u00e1ximo um na legenda.\n8. **Foto:** a \u00fanica dispon\u00edvel tem 308 px, baixa para o card 1080 x 1350. Para a capa, usar ilustra\u00e7\u00e3o ou foto de banco de filhote at\u00e9 sair o ensaio (ver `briefing-fotos.md`).\n"}], "grading": {"expectations": [{"text": "O carrossel tem entre 5 e 7 telas numeradas.", "passed": false, "evidence": "O carrossel tem 8 cards ('Formato: carrossel, 8 cards'; Card 1 a Card 8), acima do m\u00e1ximo de 7."}, {"text": "O texto n\u00e3o afirma como fato confirmado quais vacinas a Aline aplica nem o n\u00famero do CRMV dela; esses pontos aparecem marcados como [CONFIRMAR] ou como pend\u00eancia.", "passed": true, "evidence": "'CRMV-SP [CONFIRMAR n\u00famero]' no card 8; nota 1: 'o carrossel ... n\u00e3o afirma que a Aline aplica V3, V4, V5, antirr\u00e1bica ou FeLV ... Confirmar antes'."}, {"text": "N\u00e3o h\u00e1 promessa de resultado (como \"100% protegido\", \"garantido\", \"sem estresse nenhum\").", "passed": true, "evidence": "Sem '100%', 'garantido' ou 'sem estresse'. Card 8: 'Eu vou at\u00e9 a sua casa e vacino seu gato no lugar onde ele se sente seguro.'"}, {"text": "A legenda termina com uma \u00fanica chamada clara para o WhatsApp ou para salvar o post, e usa no m\u00e1ximo 5 hashtags.", "passed": false, "evidence": "A legenda tem duas chamadas: 'me chame no WhatsApp: (19) 98181-1227 (link na bio).' e depois 'Salve este post para lembrar das datas.'; e usa 6 hashtags (#gatofilhote #vacina\u00e7\u00e3odegatos #vacinaemcasa #veterinariaadomicilio #campinas #tutordegato)."}], "summary": {"passed": 2, "failed": 2, "total": 4, "pass_rate": 0.5}, "timing": {"executor_duration_seconds": 38.0}, "eval_feedback": {"suggestions": [], "overall": "Conte\u00fado t\u00e9cnico bom e notas de revis\u00e3o \u00fateis, mas excede o n\u00famero de telas, tem chamada dupla e 6 hashtags."}}}, {"id": "outro-ramo-personal-with_skill", "prompt": "Com o copy-chief, escreve uma legenda de Instagram para a cliente studio-movimento sobre por que treinar for\u00e7a ajuda a n\u00e3o cair. Salva em legenda.md", "eval_id": null, "outputs": [{"name": "legenda.md", "type": "text", "content": "# Legenda de Instagram: treino de for\u00e7a e quedas\n**Cliente:** Carla Mendes (Studio Movimento) \u00b7 **Canal:** Instagram, legenda \u00b7 **Modo:** escrever\n\n> **Aviso sobre o setor:** o perfil indica o setor `educacao-fisica-br`, mas o arquivo de regras desse setor ainda n\u00e3o existe na skill (`referencias/setores/educacao-fisica-br.md`). Segui s\u00f3 o n\u00facleo (princ\u00edpios, revis\u00e3o e canal Instagram) com cautela m\u00e1xima em promessas de sa\u00fade: nenhuma vers\u00e3o diz que o treino \"evita\" ou \"acaba com\" quedas, e n\u00e3o h\u00e1 n\u00fameros, estudos ou porcentagens. Antes de publicar, vale conferir o texto com o C\u00f3digo de \u00c9tica do CONFEF/CREF (ver Pend\u00eancias).\n\n## Briefing\nObjetivo: a pessoa manda mensagem no WhatsApp da Carla (link na bio).\nP\u00fablico: pessoas de 60 a 85 anos com medo de cair ou de academia, e filhos que cuidam dos pais e se preocupam com uma queda.\nUma ideia: perna forte segura melhor o corpo num trope\u00e7o, e for\u00e7a se treina em qualquer idade.\nProva: Carla \u00e9 formada em Educa\u00e7\u00e3o F\u00edsica pela USP Ribeir\u00e3o Preto (2014), atende idosos em casa desde 2019 e leva halteres, el\u00e1sticos e colchonete; o treino \u00e9 de for\u00e7a e equil\u00edbrio, na sala de casa.\nChamada: me chama no WhatsApp (link na bio) contando o que mais d\u00e1 inseguran\u00e7a hoje.\n\n## Vers\u00e3o A: pela for\u00e7a do dia a dia (fala com quem vai treinar)\n```\nA for\u00e7a que a gente usa para levantar do sof\u00e1 \u00e9 a mesma que segura voc\u00ea quando o p\u00e9 enrosca no tapete.\n\nCom os anos, a perna perde for\u00e7a e o equil\u00edbrio fica menos firme. \u00c9 a\u00ed que um trope\u00e7o vira queda.\n\nA boa not\u00edcia: for\u00e7a se treina. Em qualquer idade.\n\nNas aulas, a gente treina o que voc\u00ea faz todo dia: [CONFIRMAR: exerc\u00edcios que a Carla usa, ex.: sentar e levantar da cadeira, subir um degrau, ficar firme com apoio na parede].\n\nDevagar e sempre. Sem pressa e sem academia.\n\n\u00c9 na sua sala. Eu levo os halteres, os el\u00e1sticos e o colchonete.\n\nTreinar n\u00e3o garante que ningu\u00e9m vai cair. Mas deixa o corpo mais preparado para se segurar.\n\nMe chama no WhatsApp (link na bio) e me conta o que hoje te d\u00e1 mais inseguran\u00e7a: escada, banho ou cal\u00e7ada.\n\n#personalribeiraopreto #treinoemcasa #treinoparaidosos #ribeiraopreto\n```\nAproximadamente 720 caracteres (com o trecho a confirmar preenchido).\n\n## Vers\u00e3o B: pelo cuidado com os pais (fala com os filhos)\n```\nSua m\u00e3e j\u00e1 se apoiou na mesa para levantar da cadeira? Esse \u00e9 um bom momento para pensar em for\u00e7a.\n\nMuita queda come\u00e7a assim: a perna j\u00e1 n\u00e3o sustenta o corpo como antes, e qualquer desequil\u00edbrio fica mais dif\u00edcil de segurar.\n\nFor\u00e7a e equil\u00edbrio se treinam, em qualquer idade.\n\nEu vou at\u00e9 a casa dela, duas vezes por semana, 50 minutos cada aula. Come\u00e7o com uma avalia\u00e7\u00e3o para entender o que ela consegue fazer hoje, e a gente vai devagar e sempre.\n\nEla n\u00e3o precisa enfrentar academia nem tr\u00e2nsito. Eu levo halteres, el\u00e1sticos e colchonete.\n\nSou formada em Educa\u00e7\u00e3o F\u00edsica pela USP Ribeir\u00e3o Preto e atendo pessoas mais velhas em casa desde 2019.\n\nMe chama no WhatsApp (link na bio) com a idade dela e o que mais preocupa voc\u00ea hoje.\n\n#personalribeiraopreto #treinoemcasa #cuidadocomospais #ribeiraopreto\n```\nAproximadamente 780 caracteres.\n\n## Revis\u00e3o pr\u00f3pria (checklist aplicado)\n- Regras: sem promessa de resultado (\"n\u00e3o garante que ningu\u00e9m vai cair\" na A; a B fala em \"mais dif\u00edcil de segurar\", sem prometer); sem perda de peso nem \"rejuvenescer\"; sem t\u00edtulo al\u00e9m do confirmado.\n- Fatos: forma\u00e7\u00e3o, ano, \"desde 2019\", material, 2 aulas de 50 minutos e avalia\u00e7\u00e3o inicial v\u00eam do perfil. Os exerc\u00edcios da Vers\u00e3o A n\u00e3o est\u00e3o no perfil e ficaram como `[CONFIRMAR]`.\n- Voz: primeira pessoa, calma; usa \"devagar e sempre\" e \"a for\u00e7a que a gente usa para levantar do sof\u00e1\". Nenhuma palavra proibida (\"vov\u00f4\", \"melhor idade\", \"terceira idade\", \"projeto ver\u00e3o\", \"shape\").\n- Canal: gancho na primeira linha (antes do \"mais\"), par\u00e1grafos curtos, uma chamada no fim, 4 hashtags, sem emoji.\n\n## Recomenda\u00e7\u00e3o\nPublique a **Vers\u00e3o B**. Ela fala direto com os filhos, que costumam ser quem procura e contrata, e est\u00e1 pronta para colar, sem nada a confirmar. A Vers\u00e3o A \u00e9 boa para um segundo post voltado a quem vai treinar, depois que a Carla confirmar os exerc\u00edcios.\n\n## Pend\u00eancias\n- [CONFIRMAR: exerc\u00edcios citados na Vers\u00e3o A] perguntar \u00e0 Carla quais movimentos ela realmente usa nas aulas.\n- [CONFIRMAR: regras do CONFEF/CREF para publicidade] o arquivo `referencias/setores/educacao-fisica-br.md` n\u00e3o existe. Criar com base em `veterinaria-br.md` (regras do conselho, o que n\u00e3o prometer, vocabul\u00e1rio) e revisar esta legenda com ele.\n- Material necess\u00e1rio: foto ou v\u00eddeo curto da Carla dando aula numa sala de casa (luz natural). Se aparecer aluno ou aluna, s\u00f3 com autoriza\u00e7\u00e3o registrada.\n- Ao publicar: marcar a localiza\u00e7\u00e3o em Ribeir\u00e3o Preto (zona sul).\n"}], "grading": {"expectations": [{"text": "A entrega avisa que n\u00e3o existe arquivo de regras para o setor educacao-fisica-br (ou que as regras do setor n\u00e3o foram mapeadas).", "passed": true, "evidence": "'Aviso sobre o setor: o perfil indica o setor educacao-fisica-br, mas o arquivo de regras desse setor ainda n\u00e3o existe na skill (referencias/setores/educacao-fisica-br.md).'"}, {"text": "O texto n\u00e3o usa vocabul\u00e1rio ou regras do setor veterin\u00e1rio (tutor, pet, CFMV, CRMV).", "passed": true, "evidence": "As legendas n\u00e3o usam tutor, pet, CFMV ou CRMV. 'veterinaria-br.md' aparece s\u00f3 numa pend\u00eancia interna sugerindo us\u00e1-lo como modelo para criar o arquivo do novo setor, n\u00e3o como vocabul\u00e1rio."}, {"text": "O texto n\u00e3o promete resultado garantido (como \"nunca mais vai cair\") nem usa \"melhor idade\", \"terceira idade\" ou \"vov\u00f4\".", "passed": true, "evidence": "Vers\u00e3o A: 'Treinar n\u00e3o garante que ningu\u00e9m vai cair. Mas deixa o corpo mais preparado para se segurar.' Nenhuma ocorr\u00eancia de 'melhor idade', 'terceira idade' ou 'vov\u00f4' nas legendas (s\u00f3 na revis\u00e3o, como lista de evitados)."}], "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 51.0}, "eval_feedback": {"suggestions": ["Assertion 1 \u00e9 a \u00fanica que diferencia as execu\u00e7\u00f5es; vale adicionar checagem de emoji/hashtags e de afirma\u00e7\u00f5es de sa\u00fade sem base."], "overall": "Avisa da falta das regras do setor, marca [CONFIRMAR] nos exerc\u00edcios e recomenda vers\u00e3o pronta para os filhos; tom s\u00f3brio, 4 hashtags, sem emoji."}}}, {"id": "outro-ramo-personal-without_skill", "prompt": "Com o copy-chief, escreve uma legenda de Instagram para a cliente studio-movimento sobre por que treinar for\u00e7a ajuda a n\u00e3o cair. Salva em legenda.md", "eval_id": null, "outputs": [{"name": "legenda.md", "type": "text", "content": "# Legenda de Instagram: Studio Movimento (@carlamendes.personal)\n\n**Tema:** por que treinar for\u00e7a ajuda a n\u00e3o cair\n**Formato sugerido:** carrossel ou Reels mostrando um exerc\u00edcio de levantar da cadeira na sala de casa\n\n---\n\nMedo de cair n\u00e3o \u00e9 frescura. E n\u00e3o precisa ser motivo para ficar parado.\n\nMuita gente acha que cair \u00e9 s\u00f3 quest\u00e3o de trope\u00e7ar no tapete. Mas, na maioria das vezes, o que faz diferen\u00e7a \u00e9 o que acontece no segundo seguinte: se a perna tem for\u00e7a para segurar o corpo e se o equil\u00edbrio ajuda a recuperar o passo.\n\n\u00c9 a\u00ed que entra o treino de for\u00e7a. \ud83d\udcaa\n\nQuando a gente fortalece pernas, quadril e o meio do corpo:\n\u27a1\ufe0f fica mais f\u00e1cil levantar do sof\u00e1, da cadeira e da cama\n\u27a1\ufe0f subir e descer degrau d\u00e1 mais seguran\u00e7a\n\u27a1\ufe0f o corpo reage melhor quando o p\u00e9 escorrega ou a cal\u00e7ada \u00e9 irregular\n\u27a1\ufe0f e a confian\u00e7a para sair de casa volta junto\n\nN\u00e3o \u00e9 sobre pegar peso de academia. \u00c9 sobre treinar a for\u00e7a que a gente usa para levantar do sof\u00e1, todo dia.\n\nEu levo os halteres, os el\u00e1sticos e o colchonete at\u00e9 a sua sala. A gente come\u00e7a com uma avalia\u00e7\u00e3o, v\u00ea o que o seu corpo pede e vai no seu ritmo. Devagar e sempre. \ud83d\ude42\n\nAtendo pessoas de 60 a 85 anos em casa, na zona sul de Ribeir\u00e3o Preto, desde 2019.\n\nTem algu\u00e9m da fam\u00edlia que anda com receio de cair? Marca essa pessoa aqui ou me chama no WhatsApp (16) 99999-0000 para conversar sem compromisso.\n\nCarla Mendes | Profissional de Educa\u00e7\u00e3o F\u00edsica | CREF 012345-G/SP\n\n#treinodefor\u00e7a #prevencaodequedas #equilibrio #envelhecimentoativo #personaltrainer #treinoemcasa #ribeiraopreto #saude60mais\n\n---\n\n## Notas para revis\u00e3o\n\n- **Voz:** primeira pessoa, tom calmo e bem-humorado; usa as express\u00f5es da Carla (\"devagar e sempre\", \"a for\u00e7a que a gente usa para levantar do sof\u00e1\").\n- **Evitado:** \"vov\u00f4\", \"melhor idade\", \"terceira idade\", \"projeto ver\u00e3o\", \"shape\"; nenhuma promessa de perda de peso ou de \"rejuvenescer\".\n- **Cuidado com afirma\u00e7\u00e3o de sa\u00fade:** o texto diz que a for\u00e7a *ajuda* e deixa o corpo *reagir melhor*, sem garantir que a pessoa nunca vai cair e sem citar n\u00fameros ou estudos que a Carla n\u00e3o forneceu. Se ela quiser incluir uma estat\u00edstica, pedir a fonte antes.\n- **Fatos usados (todos do perfil):** atende em casa desde 2019, leva halteres/el\u00e1sticos/colchonete, p\u00fablico de 60 a 85 anos, zona sul de Ribeir\u00e3o Preto, avalia\u00e7\u00e3o inicial, CREF.\n- **Pre\u00e7o:** n\u00e3o citado (\u00e9 \"sob consulta\").\n- **Para confirmar com a Carla:** se ela topa o uso de emojis e se prefere CTA para WhatsApp ou para direct.\n"}], "grading": {"expectations": [{"text": "A entrega avisa que n\u00e3o existe arquivo de regras para o setor educacao-fisica-br (ou que as regras do setor n\u00e3o foram mapeadas).", "passed": false, "evidence": "N\u00e3o h\u00e1 aviso sobre aus\u00eancia de regras do setor educacao-fisica-br; as notas s\u00f3 listam palavras evitadas e cuidado com afirma\u00e7\u00e3o de sa\u00fade."}, {"text": "O texto n\u00e3o usa vocabul\u00e1rio ou regras do setor veterin\u00e1rio (tutor, pet, CFMV, CRMV).", "passed": true, "evidence": "Nenhuma ocorr\u00eancia de tutor, pet, CFMV ou CRMV no arquivo (grep)."}, {"text": "O texto n\u00e3o promete resultado garantido (como \"nunca mais vai cair\") nem usa \"melhor idade\", \"terceira idade\" ou \"vov\u00f4\".", "passed": true, "evidence": "Usa 'o corpo reage melhor quando o p\u00e9 escorrega' (sem garantia) e as notas dizem 'sem garantir que a pessoa nunca vai cair'. Nenhuma ocorr\u00eancia de 'melhor idade', 'terceira idade' ou 'vov\u00f4' na legenda."}], "summary": {"passed": 2, "failed": 1, "total": 3, "pass_rate": 0.67}, "timing": {"executor_duration_seconds": 23.8}, "eval_feedback": {"suggestions": ["Nenhuma assertion cobre emojis (3 aqui) e n\u00famero de hashtags (8 aqui), que diferem bastante entre as execu\u00e7\u00f5es."], "overall": "Legenda boa e no tom, mas sem aviso de setor n\u00e3o mapeado, com 3 emojis, setas e 8 hashtags; chamada dupla (marcar algu\u00e9m ou WhatsApp)."}}}, {"id": "reels-bastidor-gato-with_skill", "prompt": "preciso de um roteiro de reels de bastidor, mostrando a aline chegando na casa de um cliente pra vacinar um gato. usa o copy-chief. salva em reels.md", "eval_id": null, "outputs": [{"name": "reels.md", "type": "text", "content": "# Reels de bastidor: vacina de gato em casa (Dra. Aline Fran\u00e7a)\n\nCliente: `clientes/aline-franca/perfil.md` \u00b7 Setor: `veterinaria-br` \u00b7 Canal: Instagram (Reels) \u00b7 Modo: escrever\n\n> Voz: o perfil ainda n\u00e3o tem palavras da pr\u00f3pria Aline (entrevista n\u00e3o feita). O texto segue o tom do perfil (acolhedora, segura, cuidadosa; primeira pessoa) e ser\u00e1 ajustado depois da entrevista.\n\n## Briefing\nObjetivo: o tutor de gato de Campinas manda mensagem no WhatsApp para agendar a vacina em casa.\nP\u00fablico: tutor de gato que sofre (e faz o gato sofrer) com caixa de transporte, carro e sala de espera, e adia a vacina por isso.\nUma ideia: a vacina do seu gato pode ser dada em casa, sem caixa de transporte.\nProva: a Aline \u00e9 m\u00e9dica-veterin\u00e1ria, faz vacina\u00e7\u00e3o em casa de c\u00e3es e gatos e j\u00e1 atende gatos (perfil).\nChamada: \"Me chama no WhatsApp (link na bio) com o nome e a idade do seu gato.\"\n\n## Vers\u00e3o A: a chegada, do ponto de vista da Aline\nDura\u00e7\u00e3o: cerca de 30 s. Narra\u00e7\u00e3o em off da Aline ou s\u00f3 texto na tela (funciona sem som).\n\n| Tempo | O que aparece | Texto na tela / fala |\n|---|---|---|\n| 0\u20132 s | M\u00e3o da Aline tocando o interfone ou batendo na porta (sem n\u00famero da casa, sem fachada reconhec\u00edvel) | Tela: \"Hoje a vacina \u00e9 em casa\" |\n| 2\u20136 s | Aline entra; plano dos p\u00e9s e da maleta e da caixa t\u00e9rmica sendo apoiadas no ch\u00e3o | Tela: \"Vacina na caixa t\u00e9rmica\" `[CONFIRMAR: se ela usa caixa t\u00e9rmica]` \u00b7 Fala: \"Trago tudo comigo.\" |\n| 6\u201312 s | Aline sentada no ch\u00e3o da sala, sem se mover em dire\u00e7\u00e3o ao gato. O gato observa de longe | Tela: \"Primeiro, eu espero\" \u00b7 Fala: \"Ele est\u00e1 na casa dele. Eu chego com calma.\" |\n| 12\u201318 s | O gato se aproxima no tempo dele e cheira a m\u00e3o ou a maleta | Tela: \"Ele vem no tempo dele\" |\n| 18\u201324 s | Exame r\u00e1pido (escutar o cora\u00e7\u00e3o, olhar olhos e boca) e a vacina, em plano fechado e sem agulha em destaque | Tela: \"Examino antes de vacinar\" \u00b7 Fala: \"Antes da vacina, eu examino.\" |\n| 24\u201328 s | Aline anotando na carteira de vacina\u00e7\u00e3o | Tela: \"Carteira de vacina\u00e7\u00e3o em dia\" |\n| 28\u201332 s | O gato voltando para o lugar preferido dele (janela, sof\u00e1) | Tela: \"Sem caixa de transporte\" \u00b7 Fala: \"Seu gato fica em casa. Eu cuido dele.\" |\n\nLegenda (cerca de 230 caracteres):\n```\nA vacina do seu gato pode ser em casa, sem caixa de transporte e sem sala de espera.\nEu chego, espero ele se acostumar comigo, examino e vacino.\nMe chama no WhatsApp (link na bio) com o nome e a idade do seu gato.\n#veterinariacampinas #vetadomicilio #gatoscampinas\n```\n\n## Vers\u00e3o B: pelo medo do tutor (a caixa de transporte)\nDura\u00e7\u00e3o: cerca de 25 s. Come\u00e7a pela cena que o tutor conhece.\n\n| Tempo | O que aparece | Texto na tela / fala |\n|---|---|---|\n| 0\u20132 s | Caixa de transporte vazia, porta aberta, num canto | Tela: \"Dia de vacina e cad\u00ea o gato?\" |\n| 2\u20135 s | Gato escondido debaixo da cama ou do sof\u00e1, s\u00f3 os olhos aparecendo | Tela: \"Desta vez, a caixa fica guardada\" |\n| 5\u20139 s | Porta se abrindo; Aline entra com a maleta (sem rosto do tutor) | Tela: \"A veterin\u00e1ria vai at\u00e9 ele\" \u00b7 Fala: \"Oi, eu sou a Aline. Vim vacinar ele aqui mesmo.\" `[CONFIRMAR: como ela se apresenta, pergunta 36]` |\n| 9\u201315 s | Aline no ch\u00e3o, maleta aberta, esperando; o gato sai do esconderijo devagar | Tela: \"Com calma, sem pressa\" |\n| 15\u201320 s | Exame e vacina em plano fechado | Tela: \"Exame e vacina no sof\u00e1 de casa\" |\n| 20\u201325 s | Caixa de transporte ainda fechada no canto; gato deitado ao fundo | Tela: \"Me chama no WhatsApp\" |\n\nLegenda (cerca de 210 caracteres):\n```\nSe a caixa de transporte j\u00e1 \u00e9 uma batalha, a vacina pode ser em casa.\nEu vou at\u00e9 voc\u00eas, com calma, e seu gato fica no lugar dele.\nMe chama no WhatsApp (link na bio) com o nome e a idade do seu gato.\n#vetadomicilio #gatoscampinas #veterinariacampinas\n```\n\n## Vers\u00e3o C: orienta\u00e7\u00e3o pr\u00e1tica (como preparar a casa)\nDura\u00e7\u00e3o: cerca de 30 s. Bastidor com dica \u00fatil, bom para salvar.\n\n| Tempo | O que aparece | Texto na tela / fala |\n|---|---|---|\n| 0\u20132 s | Aline do lado de fora, maleta na m\u00e3o, antes de tocar a campainha | Tela: \"Vou vacinar um gato em casa\" |\n| 2\u20138 s | C\u00f4modo com porta fechada, gato dentro, tutor fechando a janela (m\u00e3os apenas) | Tela: \"1. Deixe o gato num c\u00f4modo fechado\" \u00b7 Fala: \"Pe\u00e7o para deixar ele num c\u00f4modo com a porta fechada.\" |\n| 8\u201314 s | Aline entra no c\u00f4modo e senta no ch\u00e3o | Tela: \"2. N\u00e3o precisa pegar ele antes\" \u00b7 Fala: \"N\u00e3o precisa segurar ele antes de eu chegar.\" |\n| 14\u201320 s | Carteira de vacina\u00e7\u00e3o sendo entregue (sem nome do tutor leg\u00edvel) | Tela: \"3. Separe a carteira de vacina\u00e7\u00e3o\" |\n| 20\u201326 s | Exame e vacina em plano fechado | Tela: \"Examino e vacino ali mesmo\" |\n| 26\u201330 s | Gato relaxado no c\u00f4modo; Aline guardando a maleta | Tela: \"Salva para o dia da vacina\" |\n\nLegenda (cerca de 240 caracteres):\n```\nVacina do gato em casa: tr\u00eas coisas que eu pe\u00e7o antes de chegar.\nC\u00f4modo fechado, ningu\u00e9m precisa segurar ele antes, carteira de vacina\u00e7\u00e3o separada.\nQuer agendar? Me chama no WhatsApp (link na bio) com o nome e a idade do seu gato.\n#vetadomicilio #gatoscampinas\n```\nObserva\u00e7\u00e3o: esta vers\u00e3o tem duas a\u00e7\u00f5es poss\u00edveis (salvar e chamar). Se o objetivo for mensagem, troque a tela final por \"Me chama no WhatsApp\"; se for salvamento, tire a pergunta \"Quer agendar?\" da legenda. As dicas s\u00e3o sugest\u00e3o do est\u00fadio `[CONFIRMAR: se \u00e9 assim que a Aline pede para preparar a casa]`.\n\n## Recomenda\u00e7\u00e3o\nUse a Vers\u00e3o A: \u00e9 o bastidor puro pedido, abre com a\u00e7\u00e3o nos 2 primeiros segundos, mostra o diferencial (o gato fica em casa) sem prometer que ele \"n\u00e3o vai se estressar\" e termina numa chamada s\u00f3. A B \u00e9 a melhor segunda pe\u00e7a para alcance (a caixa de transporte \u00e9 uma dor que o tutor reconhece na hora).\n\n## Pend\u00eancias\n- **Autoriza\u00e7\u00e3o do tutor (BLOQUEANTE para publicar):** n\u00e3o h\u00e1 nenhuma autoriza\u00e7\u00e3o em `autorizacoes.md`. Gravar e publicar o gato e a casa de um cliente s\u00f3 com autoriza\u00e7\u00e3o registrada por escrito. Alternativa enquanto n\u00e3o houver: gravar com um gato da pr\u00f3pria Aline ou de algu\u00e9m pr\u00f3ximo que autorize.\n- **Privacidade:** n\u00e3o mostrar rosto do tutor, n\u00famero da casa, fachada, placa de rua, nome do condom\u00ednio, nome do tutor na carteira de vacina\u00e7\u00e3o. N\u00e3o marcar a localiza\u00e7\u00e3o do cliente; marcar s\u00f3 \"Campinas\".\n- [CONFIRMAR: quais vacinas ela aplica em gatos] antes de nomear qualquer vacina (o roteiro n\u00e3o nomeia nenhuma de prop\u00f3sito).\n- [CONFIRMAR: se ela leva a vacina em caixa t\u00e9rmica] (Vers\u00e3o A, 2\u20136 s).\n- [CONFIRMAR: se ela examina antes de vacinar e como se apresenta, \"Aline\" ou \"Dra. Aline\"] (pergunta 36).\n- [CONFIRMAR: usu\u00e1rio do Instagram e cidades/bairros atendidos] (pergunta 25) antes de usar hashtags locais al\u00e9m de Campinas.\n- Sem pre\u00e7o no v\u00eddeo nem na legenda: valor da vacina ainda n\u00e3o confirmado e ato veterin\u00e1rio fica \"sob consulta\" at\u00e9 a checagem no CRMV.\n- **Material a gravar (celular, vertical, luz natural):** chegada pela porta/interfone (sem n\u00famero); maleta e caixa t\u00e9rmica no ch\u00e3o; Aline sentada esperando (plano aberto, 10 s); o gato se aproximando (gravar bastante, sem pressa); exame e vacina em plano fechado, sem destaque para agulha; carteira de vacina\u00e7\u00e3o com dados cobertos; gato voltando ao lugar dele. Para a Vers\u00e3o B, a caixa de transporte vazia e o gato escondido.\n"}], "grading": {"expectations": [{"text": "O roteiro est\u00e1 organizado por tempo (segundos), com o que aparece e o que \u00e9 dito ou escrito na tela.", "passed": true, "evidence": "Tabelas 'Tempo | O que aparece | Texto na tela / fala' com faixas '0\u20132 s', '2\u20136 s' ... '28\u201332 s' nas tr\u00eas vers\u00f5es."}, {"text": "O roteiro n\u00e3o come\u00e7a com cumprimento como \"Oi, gente\" ou \"Ol\u00e1\".", "passed": true, "evidence": "Vers\u00e3o A come\u00e7a com 'Hoje a vacina \u00e9 em casa'; B com 'Dia de vacina e cad\u00ea o gato?'; C com 'Vou vacinar um gato em casa'. O 'Oi, eu sou a Aline' da B est\u00e1 em 5\u20139 s, n\u00e3o na abertura."}, {"text": "H\u00e1 uma lista do que a Aline precisa gravar ou fotografar.", "passed": true, "evidence": "'Material a gravar (celular, vertical, luz natural): chegada pela porta/interfone (sem n\u00famero); maleta e caixa t\u00e9rmica no ch\u00e3o; Aline sentada esperando...'"}, {"text": "O texto n\u00e3o promete que o gato n\u00e3o vai se estressar nem usa \"especialista em felinos\" ou \"Cat Friendly\".", "passed": true, "evidence": "N\u00e3o promete aus\u00eancia de estresse; a recomenda\u00e7\u00e3o diz explicitamente 'sem prometer que ele \"n\u00e3o vai se estressar\"'. N\u00e3o usa 'especialista em felinos' nem 'Cat Friendly'."}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 47.1}, "eval_feedback": {"suggestions": ["A assertion 3 poderia exigir lista separada (shot list); hoje uma coluna de tabela tamb\u00e9m satisfaria.", "Nenhuma assertion checa autoriza\u00e7\u00e3o do tutor e privacidade da casa, que ambas as execu\u00e7\u00f5es trataram e s\u00e3o cr\u00edticas aqui."], "overall": "Tr\u00eas roteiros cronometrados, abertura com a\u00e7\u00e3o, autoriza\u00e7\u00e3o do tutor marcada como bloqueante e lista de grava\u00e7\u00e3o."}}}, {"id": "reels-bastidor-gato-without_skill", "prompt": "preciso de um roteiro de reels de bastidor, mostrando a aline chegando na casa de um cliente pra vacinar um gato. usa o copy-chief. salva em reels.md", "eval_id": null, "outputs": [{"name": "reels.md", "type": "text", "content": "# Reels de bastidor: vacina\u00e7\u00e3o de gato em casa\n\n**Cliente:** Dra. Aline Fran\u00e7a\n**Formato:** Reels vertical (9:16), 30 a 40 segundos\n**Objetivo:** mostrar como \u00e9 a vacina\u00e7\u00e3o em casa e por que ela \u00e9 mais tranquila para o gato.\n**Fonte:** `clientes/aline-franca/perfil.md` (atualizado em 16/11/2026). Entrevista ainda n\u00e3o feita.\n**Status:** rascunho. N\u00e3o publicar antes de resolver os itens da se\u00e7\u00e3o \"Antes de gravar e publicar\".\n\n---\n\n## Ideia em uma frase\nDo port\u00e3o ao \"pronto\": a Aline chega, espera o gato se acostumar, vacina com calma no lugar dele e vai embora. O gato nem saiu do sof\u00e1.\n\n## Roteiro\n\n| # | Tempo | Imagem (o que filmar) | Texto na tela | Fala da Aline (voz em off ou para a c\u00e2mera) |\n|---|---|---|---|---|\n| 1 | 0\u20133 s | M\u00e3o da Aline tocando a campainha ou abrindo o port\u00e3o, maleta na outra m\u00e3o. Sem mostrar n\u00famero da casa, fachada ou placa da rua. | **Vacina de gato sem caixa de transporte.** | \"Hoje a vacina \u00e9 na casa do paciente.\" |\n| 2 | 3\u20137 s | Tutor abre a porta. Aline entra, deixa a maleta no ch\u00e3o, devagar. Rosto do tutor s\u00f3 se houver autoriza\u00e7\u00e3o por escrito (sen\u00e3o, enquadrar do ombro para baixo). | Sem tr\u00e2nsito. Sem sala de espera. | \"Sem carro, sem caixa, sem sala de espera.\" |\n| 3 | 7\u201313 s | Gato no lugar dele (sof\u00e1, janela, cama). Aline agachada a certa dist\u00e2ncia, deixando ele cheirar a m\u00e3o. Plano fechado no gato olhando para ela. | Primeiro, ele me conhece. | \"Antes de qualquer coisa, eu deixo ele me conhecer. Sem pressa.\" |\n| 4 | 13\u201318 s | Aline conversando com o tutor, anotando ou olhando a carteirinha de vacina\u00e7\u00e3o (sem mostrar nome do tutor, endere\u00e7o ou dados do documento). | Rotina, hist\u00f3rico, carteirinha. | \"Converso com o tutor sobre a rotina e confiro a carteirinha.\" |\n| 5 | 18\u201323 s | Maleta aberta: caixa t\u00e9rmica e material organizado. Close na vacina saindo da caixa t\u00e9rmica (r\u00f3tulo fora de foco ou de costas). | A vacina chega na temperatura certa. | \"A vacina vem refrigerada, do jeito certo.\" |\n| 6 | 23\u201329 s | Exame r\u00e1pido e a aplica\u00e7\u00e3o, com o gato no colo do tutor ou no lugar dele. Plano que n\u00e3o mostre a agulha em close. | No colo de quem ele confia. | \"Ele fica no colo de quem confia. Assim \u00e9 mais tranquilo pra ele.\" |\n| 7 | 29\u201333 s | Gato voltando a deitar ou se espregui\u00e7ando. Aline guardando o material. | Pronto. E ele nem saiu do sof\u00e1. | \"Pronto. E ele continua em casa.\" |\n| 8 | 33\u201338 s | Aline para a c\u00e2mera, sentada ou na porta, de sa\u00edda. Pode usar a foto com o siam\u00eas se n\u00e3o houver grava\u00e7\u00e3o dela. | **Vacina\u00e7\u00e3o em casa \u00b7 Campinas** Agende pelo WhatsApp (link na bio) | \"Seu gato fica em casa. Eu vou at\u00e9 ele. Me chama no WhatsApp.\" |\n\n**\u00c1udio sugerido:** som ambiente baixo (porta, maleta, ronronar se tiver) com m\u00fasica calma por baixo. Evitar m\u00fasica agitada ou \u00e1udio em alta: o tom \u00e9 acolhedor e calmo.\n\n## Legenda (post)\n\n> Gato que odeia caixa de transporte tamb\u00e9m precisa de vacina.\n>\n> Por isso eu vou at\u00e9 ele. Chego com calma, deixo ele me conhecer no espa\u00e7o dele, converso com o tutor sobre a rotina e confiro a carteirinha. A vacina vem refrigerada, e a aplica\u00e7\u00e3o acontece no colo de quem ele confia.\n>\n> Sem tr\u00e2nsito, sem sala de espera, sem cheiro de cl\u00ednica.\n>\n> Atendo c\u00e3es e gatos em casa, em Campinas e regi\u00e3o. Para agendar, me chama no WhatsApp: (19) 98181-1227.\n>\n> Dra. Aline Fran\u00e7a \u00b7 M\u00e9dica-veterin\u00e1ria \u00b7 CRMV-SP [n\u00famero]\n\n**Hashtags (opcional, poucas):** #veterinariaadomicilio #vacinaemgato #gatos #campinas\n\n## Varia\u00e7\u00f5es de gancho (para teste)\n1. \"Vacina de gato sem caixa de transporte.\"\n2. \"Seu gato some quando v\u00ea a caixa de transporte? Olha como \u00e9 a vacina em casa.\"\n3. \"Um dia de vacina\u00e7\u00e3o, do port\u00e3o at\u00e9 o 'pronto'.\"\n\n## Antes de gravar e publicar\n\n**Autoriza\u00e7\u00f5es (obrigat\u00f3rio)**\n- [ ] Autoriza\u00e7\u00e3o por escrito do tutor para gravar dentro da casa e publicar o gato. Se o tutor aparecer de rosto, a autoriza\u00e7\u00e3o precisa cobrir a imagem dele tamb\u00e9m. Registrar em `autorizacoes.md`.\n- [ ] Nada que identifique a casa ou o tutor: n\u00famero, fachada, rua, condom\u00ednio, nome no documento, carteirinha leg\u00edvel, objetos pessoais marcantes. N\u00e3o citar o Petra Flamboyant.\n\n**Pend\u00eancias do perfil (`[CONFIRMAR]`)**\n- [ ] N\u00famero do CRMV-SP para a assinatura da legenda. Sem ele, tirar a linha do CRMV em vez de publicar com \"[n\u00famero]\".\n- [ ] Quais vacinas ela aplica em gatos. O roteiro n\u00e3o cita nenhuma de prop\u00f3sito; n\u00e3o incluir nome de vacina at\u00e9 confirmar.\n- [ ] Cidades e bairros atendidos. At\u00e9 l\u00e1, manter s\u00f3 \"Campinas e regi\u00e3o\".\n- [ ] Usu\u00e1rio do Instagram (para marcar ou citar). \"Link na bio\" s\u00f3 funciona se a bio j\u00e1 tiver o WhatsApp.\n- [ ] Se \"Aline\" \u00e9 como ela quer ser chamada na primeira pessoa (pergunta 36).\n- [ ] Regras do CFMV: o arquivo `metodo/regras-cfmv.md` n\u00e3o foi encontrado neste reposit\u00f3rio. Revisar o roteiro contra a coluna \"At\u00e9 confirmar\" antes de publicar, principalmente a cena 6 (procedimento em v\u00eddeo).\n\n**O que o texto evita de prop\u00f3sito**\n- Pre\u00e7o e taxa de deslocamento (n\u00e3o confirmados).\n- \"Especialista em felinos\", \"Cat Friendly\", \"Fear Free\" e qualquer promessa de resultado (\"sem estresse\", \"100% tranquilo\"). O texto diz \"mais tranquilo\", n\u00e3o \"sem estresse\".\n- \"Seu beb\u00ea\", \"pais de pet\", \"humano\" e emoji (n\u00e3o \u00e9 necess\u00e1rio aqui).\n- Close de agulha (pode afastar quem tem gato e medo de agulha, e chama aten\u00e7\u00e3o para o procedimento em vez do cuidado).\n\n## Dica de grava\u00e7\u00e3o\n- Celular na vertical, luz natural da janela.\n- Gravar cada cena com 2 a 3 segundos de sobra no in\u00edcio e no fim para facilitar o corte.\n- Se o gato se esconder e a vacina n\u00e3o acontecer no dia, isso tamb\u00e9m vira conte\u00fado: \"Hoje ele n\u00e3o quis. Tudo bem, a gente remarca.\" Mostra respeito ao tempo do animal, que \u00e9 o diferencial dela.\n"}], "grading": {"expectations": [{"text": "O roteiro est\u00e1 organizado por tempo (segundos), com o que aparece e o que \u00e9 dito ou escrito na tela.", "passed": true, "evidence": "Tabela '# | Tempo | Imagem (o que filmar) | Texto na tela | Fala da Aline' com faixas de 0\u20133 s a 33\u201338 s."}, {"text": "O roteiro n\u00e3o come\u00e7a com cumprimento como \"Oi, gente\" ou \"Ol\u00e1\".", "passed": true, "evidence": "Abre com 'Vacina de gato sem caixa de transporte.' e a fala 'Hoje a vacina \u00e9 na casa do paciente.'"}, {"text": "H\u00e1 uma lista do que a Aline precisa gravar ou fotografar.", "passed": true, "evidence": "A coluna 'Imagem (o que filmar)' lista as 8 cenas a gravar, e h\u00e1 a se\u00e7\u00e3o 'Dica de grava\u00e7\u00e3o'. N\u00e3o h\u00e1 uma shot list separada, mas o conte\u00fado cobre o que gravar."}, {"text": "O texto n\u00e3o promete que o gato n\u00e3o vai se estressar nem usa \"especialista em felinos\" ou \"Cat Friendly\".", "passed": true, "evidence": "'O texto diz \"mais tranquilo\", n\u00e3o \"sem estresse\"'; 'especialista em felinos' e 'Cat Friendly' s\u00f3 aparecem na lista do que foi evitado."}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 39.1}, "eval_feedback": {"suggestions": ["A legenda afirma 'Campinas e regi\u00e3o' e 'A vacina vem refrigerada' sem confirma\u00e7\u00e3o no perfil; nenhuma assertion pega fatos [CONFIRMAR] afirmados em reels."], "overall": "Roteiro s\u00f3lido e detalhado, mas afirma fatos n\u00e3o confirmados ('Campinas e regi\u00e3o', vacina refrigerada) e deixa 'CRMV-SP [n\u00famero]' na legenda."}}}, {"id": "revisar-promessa-with_skill", "prompt": "Revisa com o copy-chief essa legenda que a gente ia postar no insta da aline-franca e me diz se pode publicar. Salva a revis\u00e3o em revisao.md\n\n\"Seu pet doente? Chama a melhor veterin\u00e1ria de Campinas! Atendo em casa e seu bichinho sai curado, 100% sem estresse. Primeira consulta GR\u00c1TIS s\u00f3 essa semana!! \ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728 #vet #pet #cachorro #gato #amor #fofura #instapet #petlovers\"", "eval_id": null, "outputs": [{"name": "revisao.md", "type": "text", "content": "# Revis\u00e3o copy-chief: legenda de Instagram, Dra. Aline Fran\u00e7a\n\n**Pode publicar?** N\u00e3o. Do jeito que est\u00e1, a legenda fere tr\u00eas regras de publicidade do CFMV (promessa de cura, autopromo\u00e7\u00e3o comparativa e consulta gr\u00e1tis) e pode virar processo \u00e9tico para a Aline. Abaixo est\u00e1 uma vers\u00e3o corrigida que pode ser publicada depois de resolver as pend\u00eancias.\n\n**Texto revisado:**\n\n> Seu pet doente? Chama a melhor veterin\u00e1ria de Campinas! Atendo em casa e seu bichinho sai curado, 100% sem estresse. Primeira consulta GR\u00c1TIS s\u00f3 essa semana!! \ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728 #vet #pet #cachorro #gato #amor #fofura #instapet #petlovers\n\n## Veredito: REFAZER\n\nN\u00e3o basta trocar palavras. A ideia central do post \u00e9 uma promo\u00e7\u00e3o (\"primeira consulta gr\u00e1tis s\u00f3 essa semana\") apoiada em \"melhor de Campinas\" e \"sai curado\", e as tr\u00eas coisas s\u00e3o proibidas. Tirando os trechos proibidos, sobra s\u00f3 \"atendo em casa\", ent\u00e3o a pe\u00e7a precisa de outra ideia: o que o tutor ganha quando a consulta \u00e9 em casa.\n\n## Problemas\n\n1. **[BLOQUEANTE]** \"seu bichinho sai curado\" \u2014 promete resultado e cura, o que a Res. CFMV 1.649/2025 pro\u00edbe e o perfil da Aline veta (\"nunca: promessa de cura ou de resultado\"). Ningu\u00e9m garante cura antes de examinar. \u2014 Trocar pelo que ela faz: \"examino, explico o que encontrei e combinamos o tratamento com voc\u00ea\".\n2. **[BLOQUEANTE]** \"100% sem estresse\" \u2014 \"100%\" \u00e9 garantia, e o setor pro\u00edbe prometer que o animal \"n\u00e3o vai se estressar\". \u2014 Falar do motivo real, sem garantir nada: \"seu pet fica no ambiente dele, sem caixa de transporte e sem sala de espera\", \"com calma e sem pressa\".\n3. **[BLOQUEANTE]** \"Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!\" \u2014 gratuidade e promo\u00e7\u00e3o de ato veterin\u00e1rio s\u00e3o vedadas (pre\u00e7o predat\u00f3rio, brinde, promo\u00e7\u00e3o). A urg\u00eancia \"s\u00f3 essa semana\" tamb\u00e9m tem cara de liquida\u00e7\u00e3o. \u2014 N\u00e3o h\u00e1 alternativa permitida para oferta; tirar. Pre\u00e7o s\u00f3 \"sob consulta\" no privado, depois de confirmar com o CRMV (pergunta 39 da entrevista).\n4. **[BLOQUEANTE]** \"a melhor veterin\u00e1ria de Campinas\" \u2014 superlativo comparativo \u00e9 concorr\u00eancia desleal pelo CFMV e est\u00e1 na lista \"evitar\" do perfil (\"o melhor de Campinas\"). \u2014 Falar s\u00f3 do pr\u00f3prio servi\u00e7o: \"veterin\u00e1ria que atende em casa, em Campinas\".\n5. **[FATO]** \"Primeira consulta\" (pre\u00e7o/condi\u00e7\u00e3o) \u2014 o pre\u00e7o da consulta est\u00e1 `[CONFIRMAR, pergunta 19]` no perfil, ent\u00e3o nenhuma condi\u00e7\u00e3o de pre\u00e7o pode ser publicada, nem mesmo depois de tirar o \"gr\u00e1tis\". \u2014 N\u00e3o citar valor.\n6. **[FATO / regra do setor]** \"Seu pet doente? Chama...\" \u2014 chamar qualquer pet \"doente\" pode sugerir que ela atende urg\u00eancia, e o perfil diz que emerg\u00eancia n\u00e3o \u00e9 com ela. \u2014 Abrir por uma situa\u00e7\u00e3o que n\u00e3o seja de urg\u00eancia e, como a legenda fala de pet que n\u00e3o est\u00e1 bem, dizer para onde ir numa emerg\u00eancia.\n7. **[VOZ]** \"bichinho\", \"Chama a melhor\u2026!\", \"!!\" \u2014 tom de an\u00fancio gritado, longe de \"acolhedora, segura, cuidadosa\" e do exemplo do perfil (\"Seu pet fica em casa. Eu cuido dele.\"). \u2014 Usar \"seu pet\", frases curtas e calmas, sem exclama\u00e7\u00e3o dupla.\n8. **[VOZ]** \"\ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728\" \u2014 cinco emojis, quando o perfil permite no m\u00e1ximo um. O \ud83d\udc89 ainda refor\u00e7a o medo de agulha. \u2014 Deixar um emoji, ou nenhum.\n9. **[CLAREZA]** \"#vet #pet #cachorro #gato #amor #fofura #instapet #petlovers\" \u2014 oito hashtags gen\u00e9ricas, sem nenhuma local. O canal pede de 3 a 5, espec\u00edficas e da regi\u00e3o. \u2014 `#veterinariacampinas #vetadomicilio #veterinarioemcasa`.\n10. **[CLAREZA]** Chamada \"Chama\u2026\" \u2014 n\u00e3o diz onde nem com o qu\u00ea. \u2014 \"Me chama no WhatsApp (link na bio) com o nome do seu pet e o que voc\u00ea notou.\"\n11. **[CLAREZA]** Tudo numa linha s\u00f3 \u2014 no Instagram, o texto fica corrido e dif\u00edcil de ler. \u2014 Par\u00e1grafos curtos com linha em branco entre eles; hashtags no fim.\n\n## Vers\u00e3o corrigida\n\nIdeia em uma frase: *quando o pet n\u00e3o est\u00e1 bem, a consulta pode ser em casa, sem caixa de transporte.*\n\n```\nSeu pet n\u00e3o est\u00e1 bem e s\u00f3 de pensar na caixa de transporte voc\u00ea j\u00e1 desanima?\n\nEu vou at\u00e9 a sua casa. Examino seu pet no lugar onde ele se sente seguro, com calma e sem pressa.\n\nDepois explico o que encontrei e combinamos juntos o tratamento. Se o caso precisar de cirurgia ou interna\u00e7\u00e3o, eu te oriento para onde levar.\n\nEmerg\u00eancia (sangramento, falta de ar, convuls\u00e3o): procure na hora um pronto-atendimento 24h.\n\nMe chama no WhatsApp (link na bio) com o nome do seu pet e o que voc\u00ea notou. \ud83d\udc3e\n\n#veterinariacampinas #vetadomicilio #veterinarioemcasa\n```\n\nAproximadamente 560 caracteres. A primeira linha tem cerca de 80 caracteres e aparece inteira antes do \"mais\". Na publica\u00e7\u00e3o, marque a localiza\u00e7\u00e3o como **Campinas**.\n\n## Pend\u00eancias\n\n- **Promo\u00e7\u00e3o:** nenhuma oferta de consulta gr\u00e1tis, desconto ou \"s\u00f3 essa semana\" pode ir para o ar. Se o objetivo era atrair os primeiros clientes, d\u00e1 para usar conte\u00fado de orienta\u00e7\u00e3o ou de bastidor (ex.: \"como preparo a casa para a visita\") em vez de pre\u00e7o.\n- `[CONFIRMAR, pergunta 10]` o que a consulta a domic\u00edlio inclui. Se ela faz coleta de exames em casa, vale citar.\n- `[CONFIRMAR parceiro]` a cl\u00ednica para onde ela encaminha cirurgia e interna\u00e7\u00e3o. Hoje a legenda diz s\u00f3 \"te oriento para onde levar\", que \u00e9 verdadeiro.\n- `[CONFIRMAR, pergunta 39]` checagem das regras de publicidade com o CRMV-SP. At\u00e9 l\u00e1, vale a regra mais restritiva (sem pre\u00e7o de ato veterin\u00e1rio em post).\n- `[CONFIRMAR, pergunta 25]` cidades e bairros atendidos, antes de usar nomes de bairro na legenda ou nas hashtags.\n- **Material:** a \u00fanica foto dispon\u00edvel \u00e9 a dela com o gato siam\u00eas, com 308 px, baixa demais para o feed. Ela precisa mandar uma foto vertical de celular com luz natural (ex.: chegando com a maleta, ou examinando o pr\u00f3prio pet em casa). Foto de paciente de cliente s\u00f3 com autoriza\u00e7\u00e3o registrada em `autorizacoes.md`.\n- **Voz:** sem a entrevista, a legenda est\u00e1 em tom simples e neutro. Ajustar com as express\u00f5es da Aline depois que `entrevista.md` for feita.\n"}], "grading": {"expectations": [{"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: REFAZER' e 'Pode publicar? N\u00e3o.'"}, {"text": "A revis\u00e3o marca como bloqueante a promessa de cura ou de resultado (\"sai curado\", \"100% sem estresse\").", "passed": true, "evidence": "'1. [BLOQUEANTE] \"seu bichinho sai curado\" \u2014 promete resultado e cura' e '2. [BLOQUEANTE] \"100% sem estresse\"'."}, {"text": "A revis\u00e3o marca como bloqueante a autopromo\u00e7\u00e3o comparativa \"a melhor veterin\u00e1ria de Campinas\".", "passed": true, "evidence": "'4. [BLOQUEANTE] \"a melhor veterin\u00e1ria de Campinas\" \u2014 superlativo comparativo \u00e9 concorr\u00eancia desleal'."}, {"text": "A revis\u00e3o marca como bloqueante a primeira consulta gr\u00e1tis ou promo\u00e7\u00e3o.", "passed": true, "evidence": "'3. [BLOQUEANTE] \"Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!\" \u2014 gratuidade e promo\u00e7\u00e3o de ato veterin\u00e1rio s\u00e3o vedadas'."}, {"text": "A vers\u00e3o corrigida n\u00e3o cont\u00e9m promessa de cura, \"melhor\", \"gr\u00e1tis\" nem mais de 5 hashtags.", "passed": true, "evidence": "Vers\u00e3o corrigida: sem promessa de cura ('combinamos juntos o tratamento'), sem 'melhor', sem 'gr\u00e1tis', 3 hashtags (#veterinariacampinas #vetadomicilio #veterinarioemcasa)."}], "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 50.8}, "eval_feedback": {"suggestions": ["Assertions s\u00e3o todas satisfeitas pelas duas execu\u00e7\u00f5es; para discriminar, checar se a vers\u00e3o corrigida evita afirmar fatos [CONFIRMAR] (ex.: CRMV) e respeita o limite de 1 emoji."], "overall": "Revis\u00e3o completa com 11 problemas classificados e vers\u00e3o corrigida segura, incluindo orienta\u00e7\u00e3o para emerg\u00eancia."}}}, {"id": "revisar-promessa-without_skill", "prompt": "Revisa com o copy-chief essa legenda que a gente ia postar no insta da aline-franca e me diz se pode publicar. Salva a revis\u00e3o em revisao.md\n\n\"Seu pet doente? Chama a melhor veterin\u00e1ria de Campinas! Atendo em casa e seu bichinho sai curado, 100% sem estresse. Primeira consulta GR\u00c1TIS s\u00f3 essa semana!! \ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728 #vet #pet #cachorro #gato #amor #fofura #instapet #petlovers\"", "eval_id": null, "outputs": [{"name": "revisao.md", "type": "text", "content": "# Revis\u00e3o de legenda: Instagram da Dra. Aline Fran\u00e7a\n\n**Data:** 16/11/2026\n**Fonte usada:** `clientes/aline-franca/perfil.md` (atualizado em 16/11/2026). O arquivo `metodo/regras-cfmv.md`, citado no perfil, n\u00e3o existe no reposit\u00f3rio, ent\u00e3o as regras do conselho abaixo seguem o perfil e a regra geral de publicidade veterin\u00e1ria, sem checagem no CRMV.\n\n## Veredito: N\u00c3O PUBLICAR\n\nA legenda promete cura, se declara \"a melhor de Campinas\", oferece consulta gr\u00e1tis por tempo limitado e n\u00e3o traz o CRMV. Esses pontos s\u00e3o proibidos pelo pr\u00f3prio perfil da Aline e podem gerar problema \u00e9tico no conselho. O tom tamb\u00e9m est\u00e1 longe da voz dela. N\u00e3o \u00e9 quest\u00e3o de ajuste fino: precisa ser reescrita.\n\n## Legenda original\n\n> Seu pet doente? Chama a melhor veterin\u00e1ria de Campinas! Atendo em casa e seu bichinho sai curado, 100% sem estresse. Primeira consulta GR\u00c1TIS s\u00f3 essa semana!! \ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728 #vet #pet #cachorro #gato #amor #fofura #instapet #petlovers\n\n## Problemas, do mais grave ao menos grave\n\n| # | Trecho | Problema | Gravidade |\n|---|---|---|---|\n| 1 | \"seu bichinho sai curado\" | Promessa de cura. O perfil diz: **\"Nunca: promessa de cura ou de resultado.\"** Tamb\u00e9m \u00e9 vedado na publicidade veterin\u00e1ria: nenhum profissional pode garantir resultado de tratamento. | Bloqueia |\n| 2 | \"a melhor veterin\u00e1ria de Campinas\" | Autopromo\u00e7\u00e3o por superioridade. Est\u00e1 na lista \"Evitar\" do perfil (\"o melhor de Campinas\") e o c\u00f3digo de \u00e9tica veterin\u00e1rio veda an\u00fancio que se coloque acima dos colegas. Tamb\u00e9m n\u00e3o h\u00e1 prova (zero avalia\u00e7\u00f5es, zero depoimentos). | Bloqueia |\n| 3 | \"Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!\" | (a) Oferecer servi\u00e7o gratuito ou pre\u00e7o como chamariz \u00e9 tratado como capta\u00e7\u00e3o indevida de clientela na publicidade veterin\u00e1ria. At\u00e9 a checagem no CRMV (pergunta 39), o perfil manda seguir a regra mais restritiva. (b) O pre\u00e7o da consulta est\u00e1 `[CONFIRMAR, pergunta 19]`: ningu\u00e9m combinou com a Aline dar consulta de gra\u00e7a. (c) \"S\u00f3 essa semana\" cria urg\u00eancia falsa. | Bloqueia |\n| 4 | \"100% sem estresse\" | Garantia de resultado (\"garantido\" est\u00e1 em \"Evitar\"). Atender em casa **reduz** o estresse, especialmente de gatos, mas n\u00e3o zera. Um gato que n\u00e3o aceita manejo vai se estressar. | Bloqueia |\n| 5 | Sem n\u00famero de CRMV | An\u00fancio de servi\u00e7o veterin\u00e1rio deve identificar o profissional com o n\u00famero de inscri\u00e7\u00e3o no CRMV. O n\u00famero est\u00e1 `[CONFIRMAR]` no perfil, ent\u00e3o a pe\u00e7a n\u00e3o pode sair at\u00e9 ele ser confirmado. | Bloqueia |\n| 6 | \"Seu pet doente? Chama...\" | Pode ser lido como atendimento de urg\u00eancia. O perfil diz que a Aline **n\u00e3o** atende emerg\u00eancia, cirurgia nem interna\u00e7\u00e3o. Um tutor com animal grave pode perder tempo esperando visita em casa. | Alta |\n| 7 | \ud83d\udc36\ud83d\udc31\ud83d\udc89\u2764\ufe0f\u2728 (5 emojis) | O perfil permite no m\u00e1ximo um emoji por texto. A seringa \ud83d\udc89 tamb\u00e9m sugere vacina sem dizer o que est\u00e1 inclu\u00eddo (vacinas est\u00e3o `[CONFIRMAR]`). | M\u00e9dia |\n| 8 | \"Chama\", \"bichinho\", \"!!\", caixa alta em \"GR\u00c1TIS\" | Fora da voz (acolhedora, segura, cuidadosa). Soa como o exemplo de \"n\u00e3o soa como ela\". O perfil prefere \"seu pet\", \"seu gato\", \"com calma\". | M\u00e9dia |\n| 9 | Hashtags (#amor #fofura #instapet #petlovers #vet #pet) | Gen\u00e9ricas, sem rela\u00e7\u00e3o com o servi\u00e7o nem com a cidade; atraem p\u00fablico de fora de Campinas e n\u00e3o clientes. Faltam hashtags locais. | Baixa |\n| 10 | Sem chamada para a\u00e7\u00e3o concreta | N\u00e3o diz como agendar. O contato principal \u00e9 o WhatsApp (19) 98181-1227. | Baixa |\n| 11 | Mistura de primeira pessoa (\"Atendo\") com terceira (\"a melhor veterin\u00e1ria\") | O perfil pede primeira pessoa, \"eu\", falando com \"voc\u00ea\". | Baixa |\n\n## Sugest\u00e3o de legenda (pronta para revis\u00e3o, ainda n\u00e3o para publicar)\n\n> Seu gato se esconde s\u00f3 de ver a caixa de transporte? Eu vou at\u00e9 a sua casa.\n>\n> Sou a Dra. Aline Fran\u00e7a, m\u00e9dica-veterin\u00e1ria em Campinas. Fa\u00e7o a consulta no ambiente que o seu pet j\u00e1 conhece, com calma e sem pressa. Para muitos gatos, isso deixa tudo bem mais tranquilo.\n>\n> N\u00e3o atendo emerg\u00eancias. Se o seu pet estiver em situa\u00e7\u00e3o grave, procure uma cl\u00ednica 24h.\n>\n> Para agendar, me chama no WhatsApp: (19) 98181-1227 (link na bio) \ud83d\udc31\n>\n> Dra. Aline Fran\u00e7a \u00b7 CRMV-SP [N\u00daMERO]\n>\n> #veterinariaadomicilio #veterinariocampinas #gatosdecampinas #campinas #veterinariaemcasa\n\nPor que assim:\n- Usa o diferencial do perfil (atendimento em casa, cuidado com gatos) sem dizer \"especialista em felinos\".\n- \"Deixa tudo bem mais tranquilo para muitos gatos\" em vez de \"100% sem estresse\": verdadeiro e sem garantia.\n- Sem cura, sem \"melhor\", sem pre\u00e7o, sem gr\u00e1tis.\n- Avisa que n\u00e3o \u00e9 para emerg\u00eancia.\n- Um emoji s\u00f3. Primeira pessoa. Frase curta, no tom dela.\n\n## O que falta confirmar antes de publicar qualquer vers\u00e3o\n\n1. **N\u00famero do CRMV-SP** (obrigat\u00f3rio na pe\u00e7a).\n2. **Usu\u00e1rio do Instagram** (perfil ainda `[CONFIRMAR]`) e se a bio j\u00e1 tem o link do WhatsApp.\n3. **Se pode usar \"Aline\" em primeira pessoa** no Instagram (pergunta 36).\n4. **Regras do conselho** (pergunta 39): se houver interesse em promo\u00e7\u00e3o de primeira consulta, s\u00f3 depois de checar com o CRMV-SP, e com o pre\u00e7o definido pela Aline (pergunta 19).\n5. **Para onde ela encaminha emerg\u00eancias** (parceiro `[CONFIRMAR]`), para poder citar na legenda em vez de \"uma cl\u00ednica 24h\".\n6. **Bairros e cidades atendidos** (pergunta 25), se a legenda for citar regi\u00e3o al\u00e9m de Campinas.\n\n## Resumo para quem perguntou\n\nN\u00e3o pode publicar. Quatro trechos s\u00e3o proibidos pelo perfil e arriscam problema no CRMV: \"sai curado\", \"a melhor veterin\u00e1ria de Campinas\", \"100% sem estresse\" e \"primeira consulta GR\u00c1TIS s\u00f3 essa semana\" (al\u00e9m disso, ningu\u00e9m combinou consulta gr\u00e1tis com a Aline). Falta tamb\u00e9m o n\u00famero do CRMV, que ainda n\u00e3o temos. Use a sugest\u00e3o acima depois de confirmar o CRMV e o usu\u00e1rio do Instagram.\n"}], "grading": {"expectations": [{"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: N\u00c3O PUBLICAR'."}, {"text": "A revis\u00e3o marca como bloqueante a promessa de cura ou de resultado (\"sai curado\", \"100% sem estresse\").", "passed": true, "evidence": "Tabela: 'seu bichinho sai curado' | Promessa de cura | Bloqueia; '100% sem estresse' | Garantia de resultado | Bloqueia."}, {"text": "A revis\u00e3o marca como bloqueante a autopromo\u00e7\u00e3o comparativa \"a melhor veterin\u00e1ria de Campinas\".", "passed": true, "evidence": "'a melhor veterin\u00e1ria de Campinas' | Autopromo\u00e7\u00e3o por superioridade | Bloqueia."}, {"text": "A revis\u00e3o marca como bloqueante a primeira consulta gr\u00e1tis ou promo\u00e7\u00e3o.", "passed": true, "evidence": "'Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!' | capta\u00e7\u00e3o indevida de clientela | Bloqueia."}, {"text": "A vers\u00e3o corrigida n\u00e3o cont\u00e9m promessa de cura, \"melhor\", \"gr\u00e1tis\" nem mais de 5 hashtags.", "passed": true, "evidence": "Sugest\u00e3o de legenda sem cura, sem 'melhor', sem 'gr\u00e1tis'; 5 hashtags (#veterinariaadomicilio #veterinariocampinas #gatosdecampinas #campinas #veterinariaemcasa)."}], "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 40.4}, "eval_feedback": {"suggestions": [], "overall": "Igualmente rigorosa no diagn\u00f3stico; a vers\u00e3o sugerida fica no limite de 5 hashtags e deixa 'CRMV-SP [N\u00daMERO]' no texto."}}}, {"id": "revisar-titulo-felinos-with_skill", "prompt": "Revisa esse texto pro site da aline-franca usando o copy-chief e salva em revisao.md: \"Sou especialista em felinos, com certifica\u00e7\u00e3o Cat Friendly, e atendo gatos em Campinas h\u00e1 mais de 10 anos. J\u00e1 cuidei de mais de 2.000 gatinhos.\"", "eval_id": null, "outputs": [{"name": "revisao.md", "type": "text", "content": "# Revis\u00e3o: texto para o site da Dra. Aline Fran\u00e7a\n\n**Texto recebido:**\n> \"Sou especialista em felinos, com certifica\u00e7\u00e3o Cat Friendly, e atendo gatos em Campinas h\u00e1 mais de 10 anos. J\u00e1 cuidei de mais de 2.000 gatinhos.\"\n\n**Canal:** site. N\u00e3o h\u00e1 arquivo `referencias/canais/site.md` na skill; a revis\u00e3o segue o n\u00facleo (`principios.md`, `revisao.md`) e as regras do setor (`setores/veterinaria-br.md`).\n\n## Veredito: REFAZER\n\nOs quatro fatos do texto (t\u00edtulo de especialista, selo Cat Friendly, mais de 10 anos, mais de 2.000 gatos) s\u00e3o a ideia inteira dele, e nenhum pode ser publicado: dois ferem regra do setor e o perfil pro\u00edbe de forma expl\u00edcita, e os outros dois n\u00e3o est\u00e3o confirmados. Sem eles n\u00e3o sobra texto. Por isso n\u00e3o basta trocar palavras; \u00e9 preciso refazer a partir do que o perfil confirma.\n\n## Problemas\n\n1. [BLOQUEANTE] \"Sou especialista em felinos\" \u2014 o perfil da Aline pro\u00edbe (\"Nunca: 'especialista em felinos' ... sem t\u00edtulo ou certifica\u00e7\u00e3o confirmada\") e p\u00f5e \"especialista\" na lista de palavras a evitar. Pelas regras do setor (Res. CFMV 1.649/2025), anunciar t\u00edtulo ou especialidade n\u00e3o confirmada \u00e9 vedado e pode virar processo \u00e9tico. \u2014 Tirar. Usar o que o perfil confirma: \"atendimento pensado para gatos\", \"cuido do seu gato em casa, com calma\".\n2. [BLOQUEANTE] \"com certifica\u00e7\u00e3o Cat Friendly\" \u2014 selo n\u00e3o confirmado; o perfil lista \"Cat Friendly\" entre o que nunca deve aparecer, e o arquivo do setor o cita como exemplo de selo a barrar. \u2014 Tirar. Se a Aline tiver o certificado, ela manda o comprovante, o perfil \u00e9 atualizado e s\u00f3 ent\u00e3o o selo entra.\n3. [FATO] \"atendo gatos em Campinas h\u00e1 mais de 10 anos\" \u2014 tempo de experi\u00eancia n\u00e3o consta no perfil (a entrevista ainda n\u00e3o foi feita). Tamb\u00e9m n\u00e3o est\u00e1 confirmado que ela atenda gatos especificamente h\u00e1 tanto tempo. \u2014 Tirar ou marcar `[CONFIRMAR: ano de formatura e h\u00e1 quanto tempo atende gatos]`.\n4. [FATO] \"J\u00e1 cuidei de mais de 2.000 gatinhos\" \u2014 n\u00famero n\u00e3o confirmado, com cara de arredondado para impressionar. O perfil diz s\u00f3 que ela \"j\u00e1 tem clientes felinos\". \u2014 Tirar. Se houver n\u00famero real e verific\u00e1vel, entra com `[CONFIRMAR]` at\u00e9 a Aline mandar.\n5. [CLAREZA] Abertura \u2014 o texto come\u00e7a pela Aline (\"Sou...\") e n\u00e3o pelo tutor. No site, a primeira frase tem que falar do problema de quem l\u00ea: o gato que sofre com a caixa de transporte e com a cl\u00ednica, que \u00e9 justamente o diferencial do perfil. \u2014 Abrir pela situa\u00e7\u00e3o do tutor.\n6. [CLAREZA] Sem chamada \u2014 texto de site precisa de um pr\u00f3ximo passo. \u2014 Fechar com o WhatsApp do perfil: (19) 98181-1227.\n7. [BLOQUEANTE] Falta identifica\u00e7\u00e3o obrigat\u00f3ria \u2014 em site, as regras do setor exigem nome do profissional e CRMV-UF com n\u00famero. O n\u00famero ainda n\u00e3o est\u00e1 confirmado. \u2014 Incluir \"Dra. Aline Fran\u00e7a \u00b7 CRMV-SP [CONFIRMAR n\u00famero]\".\n8. [VOZ] \"gatinhos\" \u2014 diminutivo que soa mais como marketing do que como a voz do perfil (acolhedora, segura, cuidadosa; \"seu gato\"). Em contexto de prova de experi\u00eancia, ainda infantiliza o argumento. \u2014 Usar \"gatos\" ou \"seu gato\".\n\n## Vers\u00e3o corrigida\n\n> Seu gato se esconde quando v\u00ea a caixa de transporte? Ent\u00e3o eu vou at\u00e9 ele.\n>\n> Sou m\u00e9dica-veterin\u00e1ria e atendo gatos em casa, em Campinas e regi\u00e3o `[CONFIRMAR: cidades e bairros]`. Seu gato fica no lugar que conhece, e o atendimento acontece com calma, sem pressa, no tempo dele.\n>\n> Me chama no WhatsApp com o nome e a idade do seu gato: (19) 98181-1227.\n>\n> Dra. Aline Fran\u00e7a \u00b7 CRMV-SP `[CONFIRMAR: n\u00famero]`\n\nPor que assim: abre pelo medo do tutor (principal argumento do perfil para gatos), usa s\u00f3 fatos confirmados (\u00e9 veterin\u00e1ria, atende em casa, tem cuidado especial com gatos), n\u00e3o promete que o gato \"n\u00e3o vai se estressar\" e tem uma chamada s\u00f3.\n\n## Pend\u00eancias\n\n- `[CONFIRMAR: n\u00famero do CRMV-SP]` \u2014 obrigat\u00f3rio no site; sem ele o texto n\u00e3o vai ao ar.\n- `[CONFIRMAR: cidades e bairros atendidos]` (pergunta 25 da entrevista).\n- Se a Aline tiver de fato p\u00f3s-gradua\u00e7\u00e3o ou t\u00edtulo em medicina felina, ou o certificado Cat Friendly: pedir o documento, registrar no perfil e s\u00f3 depois usar. At\u00e9 l\u00e1, nada de \"especialista\" nem de selo.\n- `[CONFIRMAR: tempo de experi\u00eancia e n\u00famero de atendimentos]` \u2014 se existirem e forem verific\u00e1veis, podem entrar numa vers\u00e3o futura como prova.\n- Voz: o perfil ainda n\u00e3o tem palavras da pr\u00f3pria Aline (entrevista pendente). A vers\u00e3o acima usa as palavras listadas no perfil e deve ser ajustada depois da entrevista.\n- N\u00e3o h\u00e1 regra de canal para site na skill (`referencias/canais/site.md` n\u00e3o existe); formato e tamanho seguiram o n\u00facleo.\n"}], "grading": {"expectations": [{"text": "A revis\u00e3o sinaliza \"especialista em felinos\" e \"Cat Friendly\" como problema por n\u00e3o estarem confirmados no perfil.", "passed": true, "evidence": "'1. [BLOQUEANTE] \"Sou especialista em felinos\" \u2014 o perfil da Aline pro\u00edbe ... sem t\u00edtulo ou certifica\u00e7\u00e3o confirmada' e '2. [BLOQUEANTE] \"com certifica\u00e7\u00e3o Cat Friendly\" \u2014 selo n\u00e3o confirmado'."}, {"text": "A revis\u00e3o sinaliza \"h\u00e1 mais de 10 anos\" e \"mais de 2.000 gatinhos\" como fatos n\u00e3o confirmados.", "passed": true, "evidence": "'3. [FATO] \"h\u00e1 mais de 10 anos\" \u2014 tempo de experi\u00eancia n\u00e3o consta no perfil' e '4. [FATO] \"mais de 2.000 gatinhos\" \u2014 n\u00famero n\u00e3o confirmado'."}, {"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: REFAZER'."}, {"text": "A vers\u00e3o corrigida n\u00e3o afirma t\u00edtulo de especialista, certifica\u00e7\u00e3o, tempo de experi\u00eancia nem n\u00famero de atendimentos como fato.", "passed": true, "evidence": "Vers\u00e3o corrigida: 'Sou m\u00e9dica-veterin\u00e1ria e atendo gatos em casa, em Campinas e regi\u00e3o [CONFIRMAR...]' \u2014 sem t\u00edtulo, certifica\u00e7\u00e3o, tempo ou n\u00famero de atendimentos."}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 34.3}, "eval_feedback": {"suggestions": [], "overall": "Diagn\u00f3stico completo, inclusive identifica\u00e7\u00e3o obrigat\u00f3ria com CRMV e chamada para WhatsApp na vers\u00e3o corrigida."}}}, {"id": "revisar-titulo-felinos-without_skill", "prompt": "Revisa esse texto pro site da aline-franca usando o copy-chief e salva em revisao.md: \"Sou especialista em felinos, com certifica\u00e7\u00e3o Cat Friendly, e atendo gatos em Campinas h\u00e1 mais de 10 anos. J\u00e1 cuidei de mais de 2.000 gatinhos.\"", "eval_id": null, "outputs": [{"name": "revisao.md", "type": "text", "content": "# Revis\u00e3o de texto: site da Dra. Aline Fran\u00e7a\n\n**Data:** 16/11/2026\n**Fonte consultada:** `clientes/aline-franca/perfil.md` (atualizado em 16/11/2026; entrevista ainda n\u00e3o feita)\n\n## Texto original\n\n> Sou especialista em felinos, com certifica\u00e7\u00e3o Cat Friendly, e atendo gatos em Campinas h\u00e1 mais de 10 anos. J\u00e1 cuidei de mais de 2.000 gatinhos.\n\n## Veredito\n\n**N\u00e3o publicar como est\u00e1.** Das quatro afirma\u00e7\u00f5es do texto, tr\u00eas s\u00e3o proibidas ou n\u00e3o t\u00eam base no perfil. A quarta (atender gatos em Campinas) pode ser usada.\n\n## Problemas, frase por frase\n\n| Trecho | Problema | Base no perfil |\n|---|---|---|\n| \"Sou especialista em felinos\" | **Proibido.** \"Especialista\" est\u00e1 na lista de palavras a evitar e \"especialista em felinos\" est\u00e1 em \"Nunca\". N\u00e3o h\u00e1 t\u00edtulo de especialista confirmado. Afirmar especialidade sem t\u00edtulo tamb\u00e9m \u00e9 risco \u00e9tico no CRMV. | Voz > Evitar; Limites > Nunca |\n| \"com certifica\u00e7\u00e3o Cat Friendly\" | **Proibido.** \"Cat Friendly\" est\u00e1 em \"Nunca\" porque n\u00e3o h\u00e1 certifica\u00e7\u00e3o confirmada. | Limites > Nunca |\n| \"atendo gatos em Campinas\" | **Pode.** Ela j\u00e1 tem clientes felinos e atende em Campinas. | Fatos que podem ser afirmados; Identifica\u00e7\u00e3o |\n| \"h\u00e1 mais de 10 anos\" | **N\u00e3o confirmado.** Tempo de atua\u00e7\u00e3o n\u00e3o aparece em nenhum lugar do perfil. N\u00e3o pode ser publicado. | Ausente |\n| \"J\u00e1 cuidei de mais de 2.000 gatinhos\" | **N\u00e3o confirmado.** N\u00famero inventado ou sem fonte. Al\u00e9m disso, \"gatinhos\" foge do tom (o perfil pede \"seu gato\"). | Ausente; Voz > Usar |\n\n## Proposta de texto (s\u00f3 com fatos confirmados)\n\n**Op\u00e7\u00e3o 1 (recomendada):**\n\n> Sou m\u00e9dica-veterin\u00e1ria e atendo em casa, em Campinas. Tenho um cuidado especial com gatos, que sofrem mais com a caixa de transporte e a cl\u00ednica. Aqui, seu gato fica no lugar que ele conhece, e a consulta acontece com calma, sem pressa.\n\n**Op\u00e7\u00e3o 2 (mais curta, para t\u00edtulo ou destaque):**\n\n> Seu gato fica em casa. Eu vou at\u00e9 ele.\n\n**Op\u00e7\u00e3o 3 (com o \"amor por gatos\", que \u00e9 fato confirmado):**\n\n> Sou m\u00e9dica-veterin\u00e1ria, amo gatos e sei o quanto sair de casa estressa o seu. Por isso eu vou at\u00e9 voc\u00eas, em Campinas, e atendo no tempo dele.\n\nTodas usam primeira pessoa, falam com o tutor (\"voc\u00ea\", \"seu gato\") e seguem o tom acolhedor, seguro e cuidadoso.\n\n## O que perguntar \u00e0 Aline antes de voltar a falar em experi\u00eancia\n\nSe ela quiser incluir prova de experi\u00eancia, confirmar na entrevista:\n\n1. **H\u00e1 quanto tempo \u00e9 formada e atende gatos?** Com o ano de formatura d\u00e1 para escrever algo como \"atendo desde 20XX\".\n2. **Tem algum t\u00edtulo, p\u00f3s-gradua\u00e7\u00e3o ou curso em medicina felina?** S\u00f3 com o documento em m\u00e3os d\u00e1 para citar, e com o nome exato do curso, sem usar \"especialista\" a menos que haja t\u00edtulo de especialista reconhecido.\n3. **Tem alguma certifica\u00e7\u00e3o (Cat Friendly Practice/ISFM, Fear Free)?** S\u00f3 citar com certificado v\u00e1lido e em nome dela.\n4. **Quantos gatos j\u00e1 atendeu?** S\u00f3 publicar n\u00famero que ela consiga sustentar (por registro de prontu\u00e1rio, por exemplo). Se n\u00e3o tiver, n\u00e3o usar n\u00famero.\n5. **N\u00famero do CRMV-SP**, para incluir no rodap\u00e9 ou na assinatura do texto.\n\nQuando essas respostas chegarem, atualizar `perfil.md` e reescrever o trecho.\n"}], "grading": {"expectations": [{"text": "A revis\u00e3o sinaliza \"especialista em felinos\" e \"Cat Friendly\" como problema por n\u00e3o estarem confirmados no perfil.", "passed": true, "evidence": "Tabela: 'Sou especialista em felinos' | Proibido ... N\u00e3o h\u00e1 t\u00edtulo de especialista confirmado; 'com certifica\u00e7\u00e3o Cat Friendly' | Proibido ... n\u00e3o h\u00e1 certifica\u00e7\u00e3o confirmada."}, {"text": "A revis\u00e3o sinaliza \"h\u00e1 mais de 10 anos\" e \"mais de 2.000 gatinhos\" como fatos n\u00e3o confirmados.", "passed": true, "evidence": "'h\u00e1 mais de 10 anos' | N\u00e3o confirmado; 'J\u00e1 cuidei de mais de 2.000 gatinhos' | N\u00e3o confirmado."}, {"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'N\u00e3o publicar como est\u00e1.'"}, {"text": "A vers\u00e3o corrigida n\u00e3o afirma t\u00edtulo de especialista, certifica\u00e7\u00e3o, tempo de experi\u00eancia nem n\u00famero de atendimentos como fato.", "passed": true, "evidence": "Op\u00e7\u00f5es 1 a 3 s\u00f3 dizem 'Sou m\u00e9dica-veterin\u00e1ria e atendo em casa, em Campinas', 'amo gatos' etc.; nenhuma afirma t\u00edtulo, certifica\u00e7\u00e3o, tempo ou n\u00famero."}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "timing": {"executor_duration_seconds": 25.1}, "eval_feedback": {"suggestions": ["As duas execu\u00e7\u00f5es passam em tudo; considerar assertion sobre incluir CTA/identifica\u00e7\u00e3o (CRMV) na vers\u00e3o corrigida para texto de site."], "overall": "Correta e clara, com tr\u00eas op\u00e7\u00f5es de texto e perguntas para a Aline; falta chamada para a\u00e7\u00e3o e identifica\u00e7\u00e3o com CRMV."}}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "copy-chief", "skill_path": "\u003cpath/to/skill>", "executor_model": "\u003cmodel-name>", "analyzer_model": "\u003cmodel-name>", "timestamp": "2026-11-16T12:41:50Z", "evals_run": ["bio-instagram", "carrossel-vacina-gato", "outro-ramo-personal", "reels-bastidor-gato", "revisar-promessa", "revisar-titulo-felinos"], "runs_per_configuration": 1}, "runs": [{"eval_id": "bio-instagram", "eval_name": "bio-instagram", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 3, "failed": 0, "total": 3, "time_seconds": 36.2, "tokens": 80949, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Cada op\u00e7\u00e3o de bio tem no m\u00e1ximo 150 caracteres.", "passed": true, "evidence": "Contado com Python (inclui quebras de linha): A=139, B=124, C=120 caracteres. Campo Nome 28 (limite 30)."}, {"text": "Todas as op\u00e7\u00f5es mencionam atendimento em casa ou a domic\u00edlio e Campinas.", "passed": true, "evidence": "A: 'Veterin\u00e1ria que atende em casa, em Campinas'; B: 'Veterin\u00e1ria a domic\u00edlio... Consulta e vacina em casa... Campinas'; C: 'Seu pet fica em casa. Eu cuido dele.' + 'Campinas \u00b7 me chama no WhatsApp' (C s\u00f3 implica o atendimento em casa pela frase-modelo; aceito)."}, {"text": "Nenhuma op\u00e7\u00e3o usa \"especialista\", \"Cat Friendly\", \"Fear Free\" ou \"melhor\".", "passed": true, "evidence": "Nenhuma das tr\u00eas bios cont\u00e9m 'especialista', 'Cat Friendly', 'Fear Free' ou 'melhor'; os termos s\u00f3 aparecem na se\u00e7\u00e3o de revis\u00e3o como itens evitados."}], "notes": []}, {"eval_id": "carrossel-vacina-gato", "eval_name": "carrossel-vacina-gato", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 76.2, "tokens": 84575, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O carrossel tem entre 5 e 7 telas numeradas.", "passed": true, "evidence": "Vers\u00e3o A (recomendada) tem 'Tela 1' a 'Tela 7'; Vers\u00e3o B tamb\u00e9m 7 telas."}, {"text": "O texto n\u00e3o afirma como fato confirmado quais vacinas a Aline aplica nem o n\u00famero do CRMV dela; esses pontos aparecem marcados como [CONFIRMAR] ou como pend\u00eancia.", "passed": true, "evidence": "'CRMV-SP [CONFIRMAR: n\u00famero]' na tela 7; pend\u00eancia '[CONFIRMAR: quais vacinas ela aplica em casa]'. O calend\u00e1rio fala de 'polivalente (V3, V4 ou V5)' como protocolo geral, n\u00e3o como servi\u00e7o dela."}, {"text": "N\u00e3o h\u00e1 promessa de resultado (como \"100% protegido\", \"garantido\", \"sem estresse nenhum\").", "passed": true, "evidence": "Nenhum '100%', 'garantido' ou 'sem estresse'. Usa 'Vacina aplicada em gato doente pode n\u00e3o proteger como deveria' e 'Cada filhote tem o seu calend\u00e1rio'."}, {"text": "A legenda termina com uma \u00fanica chamada clara para o WhatsApp ou para salvar o post, e usa no m\u00e1ximo 5 hashtags.", "passed": true, "evidence": "Legenda A termina com 'Me chama no WhatsApp (link na bio) com a idade do seu filhote.' seguida de 4 hashtags (#veterinariacampinas #vetadomicilio #gatoscampinas #gatofilhote). Vers\u00e3o B idem, 4 hashtags."}], "notes": []}, {"eval_id": "outro-ramo-personal", "eval_name": "outro-ramo-personal", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 3, "failed": 0, "total": 3, "time_seconds": 51.0, "tokens": 78574, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "A entrega avisa que n\u00e3o existe arquivo de regras para o setor educacao-fisica-br (ou que as regras do setor n\u00e3o foram mapeadas).", "passed": true, "evidence": "'Aviso sobre o setor: o perfil indica o setor educacao-fisica-br, mas o arquivo de regras desse setor ainda n\u00e3o existe na skill (referencias/setores/educacao-fisica-br.md).'"}, {"text": "O texto n\u00e3o usa vocabul\u00e1rio ou regras do setor veterin\u00e1rio (tutor, pet, CFMV, CRMV).", "passed": true, "evidence": "As legendas n\u00e3o usam tutor, pet, CFMV ou CRMV. 'veterinaria-br.md' aparece s\u00f3 numa pend\u00eancia interna sugerindo us\u00e1-lo como modelo para criar o arquivo do novo setor, n\u00e3o como vocabul\u00e1rio."}, {"text": "O texto n\u00e3o promete resultado garantido (como \"nunca mais vai cair\") nem usa \"melhor idade\", \"terceira idade\" ou \"vov\u00f4\".", "passed": true, "evidence": "Vers\u00e3o A: 'Treinar n\u00e3o garante que ningu\u00e9m vai cair. Mas deixa o corpo mais preparado para se segurar.' Nenhuma ocorr\u00eancia de 'melhor idade', 'terceira idade' ou 'vov\u00f4' nas legendas (s\u00f3 na revis\u00e3o, como lista de evitados)."}], "notes": []}, {"eval_id": "reels-bastidor-gato", "eval_name": "reels-bastidor-gato", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 47.1, "tokens": 81754, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O roteiro est\u00e1 organizado por tempo (segundos), com o que aparece e o que \u00e9 dito ou escrito na tela.", "passed": true, "evidence": "Tabelas 'Tempo | O que aparece | Texto na tela / fala' com faixas '0\u20132 s', '2\u20136 s' ... '28\u201332 s' nas tr\u00eas vers\u00f5es."}, {"text": "O roteiro n\u00e3o come\u00e7a com cumprimento como \"Oi, gente\" ou \"Ol\u00e1\".", "passed": true, "evidence": "Vers\u00e3o A come\u00e7a com 'Hoje a vacina \u00e9 em casa'; B com 'Dia de vacina e cad\u00ea o gato?'; C com 'Vou vacinar um gato em casa'. O 'Oi, eu sou a Aline' da B est\u00e1 em 5\u20139 s, n\u00e3o na abertura."}, {"text": "H\u00e1 uma lista do que a Aline precisa gravar ou fotografar.", "passed": true, "evidence": "'Material a gravar (celular, vertical, luz natural): chegada pela porta/interfone (sem n\u00famero); maleta e caixa t\u00e9rmica no ch\u00e3o; Aline sentada esperando...'"}, {"text": "O texto n\u00e3o promete que o gato n\u00e3o vai se estressar nem usa \"especialista em felinos\" ou \"Cat Friendly\".", "passed": true, "evidence": "N\u00e3o promete aus\u00eancia de estresse; a recomenda\u00e7\u00e3o diz explicitamente 'sem prometer que ele \"n\u00e3o vai se estressar\"'. N\u00e3o usa 'especialista em felinos' nem 'Cat Friendly'."}], "notes": []}, {"eval_id": "revisar-promessa", "eval_name": "revisar-promessa", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 50.8, "tokens": 82181, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: REFAZER' e 'Pode publicar? N\u00e3o.'"}, {"text": "A revis\u00e3o marca como bloqueante a promessa de cura ou de resultado (\"sai curado\", \"100% sem estresse\").", "passed": true, "evidence": "'1. [BLOQUEANTE] \"seu bichinho sai curado\" \u2014 promete resultado e cura' e '2. [BLOQUEANTE] \"100% sem estresse\"'."}, {"text": "A revis\u00e3o marca como bloqueante a autopromo\u00e7\u00e3o comparativa \"a melhor veterin\u00e1ria de Campinas\".", "passed": true, "evidence": "'4. [BLOQUEANTE] \"a melhor veterin\u00e1ria de Campinas\" \u2014 superlativo comparativo \u00e9 concorr\u00eancia desleal'."}, {"text": "A revis\u00e3o marca como bloqueante a primeira consulta gr\u00e1tis ou promo\u00e7\u00e3o.", "passed": true, "evidence": "'3. [BLOQUEANTE] \"Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!\" \u2014 gratuidade e promo\u00e7\u00e3o de ato veterin\u00e1rio s\u00e3o vedadas'."}, {"text": "A vers\u00e3o corrigida n\u00e3o cont\u00e9m promessa de cura, \"melhor\", \"gr\u00e1tis\" nem mais de 5 hashtags.", "passed": true, "evidence": "Vers\u00e3o corrigida: sem promessa de cura ('combinamos juntos o tratamento'), sem 'melhor', sem 'gr\u00e1tis', 3 hashtags (#veterinariacampinas #vetadomicilio #veterinarioemcasa)."}], "notes": []}, {"eval_id": "revisar-titulo-felinos", "eval_name": "revisar-titulo-felinos", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 34.3, "tokens": 79229, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "A revis\u00e3o sinaliza \"especialista em felinos\" e \"Cat Friendly\" como problema por n\u00e3o estarem confirmados no perfil.", "passed": true, "evidence": "'1. [BLOQUEANTE] \"Sou especialista em felinos\" \u2014 o perfil da Aline pro\u00edbe ... sem t\u00edtulo ou certifica\u00e7\u00e3o confirmada' e '2. [BLOQUEANTE] \"com certifica\u00e7\u00e3o Cat Friendly\" \u2014 selo n\u00e3o confirmado'."}, {"text": "A revis\u00e3o sinaliza \"h\u00e1 mais de 10 anos\" e \"mais de 2.000 gatinhos\" como fatos n\u00e3o confirmados.", "passed": true, "evidence": "'3. [FATO] \"h\u00e1 mais de 10 anos\" \u2014 tempo de experi\u00eancia n\u00e3o consta no perfil' e '4. [FATO] \"mais de 2.000 gatinhos\" \u2014 n\u00famero n\u00e3o confirmado'."}, {"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: REFAZER'."}, {"text": "A vers\u00e3o corrigida n\u00e3o afirma t\u00edtulo de especialista, certifica\u00e7\u00e3o, tempo de experi\u00eancia nem n\u00famero de atendimentos como fato.", "passed": true, "evidence": "Vers\u00e3o corrigida: 'Sou m\u00e9dica-veterin\u00e1ria e atendo gatos em casa, em Campinas e regi\u00e3o [CONFIRMAR...]' \u2014 sem t\u00edtulo, certifica\u00e7\u00e3o, tempo ou n\u00famero de atendimentos."}], "notes": []}, {"eval_id": "bio-instagram", "eval_name": "bio-instagram", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 3, "failed": 0, "total": 3, "time_seconds": 41.9, "tokens": 71645, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Cada op\u00e7\u00e3o de bio tem no m\u00e1ximo 150 caracteres.", "passed": true, "evidence": "Contado com Python: A=127, B=129, C=148, D=141, E=117 caracteres. Todas \u003c=150 (C no limite)."}, {"text": "Todas as op\u00e7\u00f5es mencionam atendimento em casa ou a domic\u00edlio e Campinas.", "passed": true, "evidence": "A 'Veterin\u00e1ria a domic\u00edlio em Campinas'; B 'Veterin\u00e1ria a domic\u00edlio em Campinas'; C 'M\u00e9dica-veterin\u00e1ria em Campinas / Consulta e vacina na sua casa'; D 'vai at\u00e9 a sua casa ... em Campinas'; E 'a domic\u00edlio / Campinas'."}, {"text": "Nenhuma op\u00e7\u00e3o usa \"especialista\", \"Cat Friendly\", \"Fear Free\" ou \"melhor\".", "passed": true, "evidence": "Nenhuma bio usa os termos proibidos. D usa 'Menos estresse para seu gato e seu c\u00e3o', que n\u00e3o \u00e9 'melhor' mas beira promessa de resultado."}], "notes": []}, {"eval_id": "carrossel-vacina-gato", "eval_name": "carrossel-vacina-gato", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.5, "passed": 2, "failed": 2, "total": 4, "time_seconds": 38.0, "tokens": 71176, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O carrossel tem entre 5 e 7 telas numeradas.", "passed": false, "evidence": "O carrossel tem 8 cards ('Formato: carrossel, 8 cards'; Card 1 a Card 8), acima do m\u00e1ximo de 7."}, {"text": "O texto n\u00e3o afirma como fato confirmado quais vacinas a Aline aplica nem o n\u00famero do CRMV dela; esses pontos aparecem marcados como [CONFIRMAR] ou como pend\u00eancia.", "passed": true, "evidence": "'CRMV-SP [CONFIRMAR n\u00famero]' no card 8; nota 1: 'o carrossel ... n\u00e3o afirma que a Aline aplica V3, V4, V5, antirr\u00e1bica ou FeLV ... Confirmar antes'."}, {"text": "N\u00e3o h\u00e1 promessa de resultado (como \"100% protegido\", \"garantido\", \"sem estresse nenhum\").", "passed": true, "evidence": "Sem '100%', 'garantido' ou 'sem estresse'. Card 8: 'Eu vou at\u00e9 a sua casa e vacino seu gato no lugar onde ele se sente seguro.'"}, {"text": "A legenda termina com uma \u00fanica chamada clara para o WhatsApp ou para salvar o post, e usa no m\u00e1ximo 5 hashtags.", "passed": false, "evidence": "A legenda tem duas chamadas: 'me chame no WhatsApp: (19) 98181-1227 (link na bio).' e depois 'Salve este post para lembrar das datas.'; e usa 6 hashtags (#gatofilhote #vacina\u00e7\u00e3odegatos #vacinaemcasa #veterinariaadomicilio #campinas #tutordegato)."}], "notes": []}, {"eval_id": "outro-ramo-personal", "eval_name": "outro-ramo-personal", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.67, "passed": 2, "failed": 1, "total": 3, "time_seconds": 23.8, "tokens": 68156, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "A entrega avisa que n\u00e3o existe arquivo de regras para o setor educacao-fisica-br (ou que as regras do setor n\u00e3o foram mapeadas).", "passed": false, "evidence": "N\u00e3o h\u00e1 aviso sobre aus\u00eancia de regras do setor educacao-fisica-br; as notas s\u00f3 listam palavras evitadas e cuidado com afirma\u00e7\u00e3o de sa\u00fade."}, {"text": "O texto n\u00e3o usa vocabul\u00e1rio ou regras do setor veterin\u00e1rio (tutor, pet, CFMV, CRMV).", "passed": true, "evidence": "Nenhuma ocorr\u00eancia de tutor, pet, CFMV ou CRMV no arquivo (grep)."}, {"text": "O texto n\u00e3o promete resultado garantido (como \"nunca mais vai cair\") nem usa \"melhor idade\", \"terceira idade\" ou \"vov\u00f4\".", "passed": true, "evidence": "Usa 'o corpo reage melhor quando o p\u00e9 escorrega' (sem garantia) e as notas dizem 'sem garantir que a pessoa nunca vai cair'. Nenhuma ocorr\u00eancia de 'melhor idade', 'terceira idade' ou 'vov\u00f4' na legenda."}], "notes": []}, {"eval_id": "reels-bastidor-gato", "eval_name": "reels-bastidor-gato", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 39.1, "tokens": 71119, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O roteiro est\u00e1 organizado por tempo (segundos), com o que aparece e o que \u00e9 dito ou escrito na tela.", "passed": true, "evidence": "Tabela '# | Tempo | Imagem (o que filmar) | Texto na tela | Fala da Aline' com faixas de 0\u20133 s a 33\u201338 s."}, {"text": "O roteiro n\u00e3o come\u00e7a com cumprimento como \"Oi, gente\" ou \"Ol\u00e1\".", "passed": true, "evidence": "Abre com 'Vacina de gato sem caixa de transporte.' e a fala 'Hoje a vacina \u00e9 na casa do paciente.'"}, {"text": "H\u00e1 uma lista do que a Aline precisa gravar ou fotografar.", "passed": true, "evidence": "A coluna 'Imagem (o que filmar)' lista as 8 cenas a gravar, e h\u00e1 a se\u00e7\u00e3o 'Dica de grava\u00e7\u00e3o'. N\u00e3o h\u00e1 uma shot list separada, mas o conte\u00fado cobre o que gravar."}, {"text": "O texto n\u00e3o promete que o gato n\u00e3o vai se estressar nem usa \"especialista em felinos\" ou \"Cat Friendly\".", "passed": true, "evidence": "'O texto diz \"mais tranquilo\", n\u00e3o \"sem estresse\"'; 'especialista em felinos' e 'Cat Friendly' s\u00f3 aparecem na lista do que foi evitado."}], "notes": []}, {"eval_id": "revisar-promessa", "eval_name": "revisar-promessa", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 40.4, "tokens": 71614, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'## Veredito: N\u00c3O PUBLICAR'."}, {"text": "A revis\u00e3o marca como bloqueante a promessa de cura ou de resultado (\"sai curado\", \"100% sem estresse\").", "passed": true, "evidence": "Tabela: 'seu bichinho sai curado' | Promessa de cura | Bloqueia; '100% sem estresse' | Garantia de resultado | Bloqueia."}, {"text": "A revis\u00e3o marca como bloqueante a autopromo\u00e7\u00e3o comparativa \"a melhor veterin\u00e1ria de Campinas\".", "passed": true, "evidence": "'a melhor veterin\u00e1ria de Campinas' | Autopromo\u00e7\u00e3o por superioridade | Bloqueia."}, {"text": "A revis\u00e3o marca como bloqueante a primeira consulta gr\u00e1tis ou promo\u00e7\u00e3o.", "passed": true, "evidence": "'Primeira consulta GR\u00c1TIS s\u00f3 essa semana!!' | capta\u00e7\u00e3o indevida de clientela | Bloqueia."}, {"text": "A vers\u00e3o corrigida n\u00e3o cont\u00e9m promessa de cura, \"melhor\", \"gr\u00e1tis\" nem mais de 5 hashtags.", "passed": true, "evidence": "Sugest\u00e3o de legenda sem cura, sem 'melhor', sem 'gr\u00e1tis'; 5 hashtags (#veterinariaadomicilio #veterinariocampinas #gatosdecampinas #campinas #veterinariaemcasa)."}], "notes": []}, {"eval_id": "revisar-titulo-felinos", "eval_name": "revisar-titulo-felinos", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 25.1, "tokens": 70000, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "A revis\u00e3o sinaliza \"especialista em felinos\" e \"Cat Friendly\" como problema por n\u00e3o estarem confirmados no perfil.", "passed": true, "evidence": "Tabela: 'Sou especialista em felinos' | Proibido ... N\u00e3o h\u00e1 t\u00edtulo de especialista confirmado; 'com certifica\u00e7\u00e3o Cat Friendly' | Proibido ... n\u00e3o h\u00e1 certifica\u00e7\u00e3o confirmada."}, {"text": "A revis\u00e3o sinaliza \"h\u00e1 mais de 10 anos\" e \"mais de 2.000 gatinhos\" como fatos n\u00e3o confirmados.", "passed": true, "evidence": "'h\u00e1 mais de 10 anos' | N\u00e3o confirmado; 'J\u00e1 cuidei de mais de 2.000 gatinhos' | N\u00e3o confirmado."}, {"text": "O veredito n\u00e3o \u00e9 APROVADO.", "passed": true, "evidence": "'N\u00e3o publicar como est\u00e1.'"}, {"text": "A vers\u00e3o corrigida n\u00e3o afirma t\u00edtulo de especialista, certifica\u00e7\u00e3o, tempo de experi\u00eancia nem n\u00famero de atendimentos como fato.", "passed": true, "evidence": "Op\u00e7\u00f5es 1 a 3 s\u00f3 dizem 'Sou m\u00e9dica-veterin\u00e1ria e atendo em casa, em Campinas', 'amo gatos' etc.; nenhuma afirma t\u00edtulo, certifica\u00e7\u00e3o, tempo ou n\u00famero."}], "notes": []}], "run_summary": {"with_skill": {"pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0}, "time_seconds": {"mean": 49.2667, "stddev": 15.0346, "min": 34.3, "max": 76.2}, "tokens": {"mean": 81210.3333, "stddev": 2168.0858, "min": 78574, "max": 84575}}, "without_skill": {"pass_rate": {"mean": 0.8617, "stddev": 0.2209, "min": 0.5, "max": 1.0}, "time_seconds": {"mean": 34.7167, "stddev": 8.0691, "min": 23.8, "max": 41.9}, "tokens": {"mean": 70618.3333, "stddev": 1345.5465, "min": 68156, "max": 71645}}, "delta": {"pass_rate": "+0.14", "time_seconds": "+14.5", "tokens": "+10592"}}, "notes": ["Asser\u00e7\u00f5es de revisar-promessa, revisar-titulo-felinos e reels passam nas duas configura\u00e7\u00f5es: n\u00e3o discriminam. A diferen\u00e7a real nesses casos apareceu fora delas (sem a skill, o reels afirmou 'Campinas e regi\u00e3o' e 'vacina refrigerada' sem confirma\u00e7\u00e3o; a revis\u00e3o de t\u00edtulo n\u00e3o trouxe chamada nem CRMV).", "A skill ganha onde h\u00e1 regra de formato (carrossel: 7 telas, 1 chamada, 4 hashtags vs 8 cards, 2 chamadas, 6 hashtags) e onde o cliente \u00e9 de outro ramo (avisou que o setor n\u00e3o est\u00e1 mapeado).", "Custo da skill: cerca de +15 s e +10 mil tokens por tarefa, pela leitura das refer\u00eancias."]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + escapeHtml(summary.passed || 0) + ' passed, ' + escapeHtml(summary.failed || 0) + ' failed of ' + escapeHtml(summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML.replace(/"/g, "&quot;");
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += escapeHtml(metadata.timestamp) + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + escapeHtml(metadata.evals_run.join(", ")) + " &mdash; ";
+      html += escapeHtml(metadata.runs_per_configuration || "?") + (metadata.runs_per_configuration === 1 ? " run" : " runs") + " per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+      // With a single configuration there is nothing to compare: only its column is shown
+      const compare = cells => configs.length >= 2 ? cells : "";
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th>" + compare("<th>" + escapeHtml(labelB) + "</th><th>Delta</th>") + "</tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += compare("<td>" + fmtStat(b.pass_rate, true) + "</td>");
+      html += compare('<td class="' + deltaClass(delta.pass_rate) + '">' + escapeHtml(delta.pass_rate || "—") + "</td>") + "</tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += compare("<td>" + fmtStat(b.time_seconds, false) + "</td>");
+        html += compare('<td class="' + deltaClass(delta.time_seconds) + '">' + escapeHtml(delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td>") + "</tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += compare("<td>" + fmtStat(b.tokens, false) + "</td>");
+        html += compare('<td class="' + deltaClass(delta.tokens) + '">' + escapeHtml(delta.tokens || "—") + "</td>") + "</tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        // Numeric ids first, then ids that are names
+        const rank = id => typeof id === "number" ? 0 : 1;
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) =>
+          rank(a) - rank(b) || (rank(a) ? String(a).localeCompare(String(b)) : a - b));
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = escapeHtml(config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()));
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + escapeHtml(run.run_number) + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + escapeHtml(r.passed || 0) + "/" + escapeHtml(r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + escapeHtml(r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + escapeHtml(run.run_number) + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

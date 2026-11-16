@@ -38,3 +38,7 @@ Em uma sessão do Claude Code aberta neste repositório, peça por exemplo:
 - "Revisa com o copy-chief esta legenda: ..."
 
 A skill lê `clientes/<cliente>/perfil.md`, carrega as regras do setor e do canal, e entrega o texto com as pendências marcadas `[CONFIRMAR]`.
+
+## Relatórios
+
+`relatorios/` guarda os resultados dos testes da skill copy-chief (abra o `.html` no navegador: aba "Outputs" mostra cada texto gerado, aba "Benchmark" compara com e sem a skill).

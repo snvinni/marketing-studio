@@ -335,7 +335,7 @@ Fotos pesadas não entram no Git: ficam no Drive, com o link anotado em `briefin
 | E1. Repositório `marketing-studio` | agente | feito | 2026-11-16 | este repositório |
 | E2. Pasta da Aline | agente | feito | 2026-11-16 | `clientes/aline-franca/` |
 | K1. Skill copy-chief | agente | feito | 2026-11-16 | `.claude/skills/copy-chief/` |
-| K2. Testes da skill | agente | ver `evals/` | 2026-11-16 | `.claude/skills/copy-chief/evals/` |
+| K2. Testes da skill | agente | feito (com skill 23/23, sem skill 20/23) | 2026-11-16 | `relatorios/copy-chief-iteracao-1.html` |
 | A1. Entrevista | Vinícius + Aline | a fazer | | `entrevista.md` |
 | A2. Fotos | Aline | a fazer | | `briefing-fotos.md` |
 | A3. Checagem CRMV-SP | Aline | a fazer | | `entrevista.md`, bloco 6 |
