@@ -119,21 +119,20 @@ Cada lugar que leva ao WhatsApp usa um link com uma frase já escrita. A pessoa 
 | Instagram | Oi, Aline! Vim pelo Instagram. | `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Vim%20pelo%20Instagram.` |
 | Cartão ou ímã | Oi, Aline! Peguei seu cartão. | `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Peguei%20seu%20cart%C3%A3o.` |
 | Parceiro | Oi, Aline! Peguei seu cartão no {parceiro}. | `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Peguei%20seu%20cart%C3%A3o%20no%20` + nome do parceiro com `%20` no lugar dos espaços + `.` |
-| Condomínio | Oi, Aline! Moro no condomínio {nome}. | `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Moro%20no%20condom%C3%ADnio%20` + nome do condomínio + `.` |
 
 Quem coloca cada link:
 - **Site:** frente 2, em todos os botões de WhatsApp do site.
 - **Perfil no Google e anúncio:** o campo de site do Google não aceita link de WhatsApp (`google/passo-a-passo.md`), e o anúncio leva à página do serviço. Os dois apontam para o site com uma marca no endereço: `https://draalinefranca.com.br/?origem=google` no perfil e `?origem=anuncio` no anúncio. O site lê essa marca e troca a frase dos botões de WhatsApp por "Te achei no Google" ou "Vi seu anúncio no Google". Pedido à frente 2 (site) e à frente 4 (link do perfil), registrado em `andamento/operacao.md`. Enquanto o site não fizer isso, quem vem do Google chega como "Site" e a resposta `/origem` resolve.
 - **Instagram:** frente 5 (link da bio).
-- **Cartão, parceiros e condomínios:** frente 6, em `parcerias.md`.
+- **Cartão e parceiros:** frente 6, em `parcerias.md`.
 
 Se a pessoa apagar a frase ou chegar por outro caminho, use a resposta rápida `/origem`.
 
 ## 7. Etiquetas
 
-Na lista de conversas, toque e segure uma conversa > ícone de etiqueta > Nova etiqueta. São 15 etiquetas. O aplicativo limita a quantidade; se não deixar criar todas, junte `Cartão ou ímã` com `Parceiro` e anote o detalhe na planilha.
+Na lista de conversas, toque e segure uma conversa > ícone de etiqueta > Nova etiqueta. São 14 etiquetas. O aplicativo limita a quantidade; se não deixar criar todas, junte `Cartão ou ímã` com `Parceiro` e anote o detalhe na planilha.
 
-**Origem** (uma cor só para todas, por exemplo azul): `Perfil no Google`, `Site`, `Anúncio Google`, `Instagram`, `Indicação de cliente`, `Parceiro`, `Condomínio`, `Cartão ou ímã`, `Já é cliente`, `Não sei`. São as mesmas da planilha (`medicao.md`), escritas igual.
+**Origem** (uma cor só para todas, por exemplo azul): `Perfil no Google`, `Site`, `Anúncio Google`, `Instagram`, `Indicação de cliente`, `Parceiro`, `Cartão ou ímã`, `Já é cliente`, `Não sei`. São as mesmas da planilha (`medicao.md`), escritas igual.
 
 **Situação** (outra cor para cada):
 - `Novo pedido`: chegou, ainda sem resposta completa.
@@ -219,7 +218,7 @@ Se não quiser mais receber esse aviso, é só me dizer.
 
 Os textos finais passaram pelo checklist de `referencias/revisao.md`, na ordem de gravidade:
 
-1. **Regras (BLOQUEANTE):** nenhuma promessa de resultado. `/gato` diz de propósito "não dá para prometer que ele não vai estranhar" (o arquivo do setor proíbe prometer que o gato não vai se estressar). Nenhum título ("especialista", "Cat Friendly"). O desconto do animal adicional aparece em reais, sem percentual: o "50% de desconto" do material do Petra Flamboyant é ponto a confirmar no CRMV e, até lá, não se usa. `/limites` diz o que não é feito em casa e que há encaminhamento, como o setor exige. Nada de diagnóstico ou receita por mensagem.
+1. **Regras (BLOQUEANTE):** nenhuma promessa de resultado. `/gato` diz de propósito "não dá para prometer que ele não vai estranhar" (o arquivo do setor proíbe prometer que o gato não vai se estressar). Nenhum título ("especialista", "Cat Friendly"). O desconto do animal adicional aparece em reais, sem percentual: o "50% de desconto" do material antigo de pet sitter é ponto a confirmar no CRMV e, até lá, não se usa. `/limites` diz o que não é feito em casa e que há encaminhamento, como o setor exige. Nada de diagnóstico ou receita por mensagem.
 2. **Fatos (FATO):** todo dado fora do `perfil.md` (região, horário, preço de ato veterinário, vacinas, transporte, clínica parceira, CRMV) está como `[CONFIRMAR]`. Os preços do pet sitter são os do perfil.
 3. **Ideia e chamada (CLAREZA):** cada texto termina com uma pergunta ou um próximo passo só. Saudação e ausência avisam sobre emergência, porque a Aline não atende urgência e o tutor não pode ficar esperando.
 4. **Voz (VOZ):** primeira pessoa, "você", "tutor", "em casa", "com calma". Sem "bebê", "pais de pet", "especialista", "garantido". Sem emoji. As palavras próprias da Aline ainda não existem no perfil (pergunta 37): ajustar depois da entrevista.

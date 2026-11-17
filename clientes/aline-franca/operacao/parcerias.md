@@ -2,7 +2,7 @@
 
 Pacotes R1, R2 e R3 do `plano.md` (Trilha F). Quem faz: Vinícius prepara a lista e o material; a Aline vai às conversas (ou o Vinícius vai em nome dela, combinado antes). Controle na aba **Parceiros** de `medicao-modelo.xlsx`.
 
-A ideia: negócios que já falam com tutores todos os dias (o banho e tosa, o pet shop, o síndico) passam a ter o cartão da Aline para dar a quem precisa de veterinária em casa. Em troca, a Aline passa a indicar esses negócios quando um tutor pergunta. Sem dinheiro no meio.
+A ideia: negócios que já falam com tutores todos os dias (o banho e tosa, o pet shop, o adestrador) passam a ter o cartão da Aline para dar a quem precisa de veterinária em casa. Em troca, a Aline passa a indicar esses negócios quando um tutor pergunta. Sem dinheiro no meio.
 
 **Textos:** escritos e revisados seguindo a skill copy-chief (núcleo, setor `veterinaria-br`, canal `whatsapp.md` para as mensagens). A revisão está no fim.
 
@@ -24,11 +24,10 @@ O Código de Ética do médico-veterinário (Resolução CFMV 1.138/2016) trata 
 
 ## 2. Quem abordar
 
-A região atendida ainda não está confirmada `[CONFIRMAR: cidades e bairros, pergunta 25]`. Comece pelos bairros onde a Aline já tem clientes e pelos vizinhos do Petra Flamboyant.
+A região atendida ainda não está confirmada `[CONFIRMAR: cidades e bairros, pergunta 25]`. Comece pelos bairros onde a Aline já tem clientes.
 
 | Tipo | Por que faz sentido | O que a Aline oferece | Como achar |
 |---|---|---|---|
-| **Condomínios** (síndico, administradora, zelador) | Muitos tutores no mesmo endereço; a Aline pode agendar visitas seguidas | Material para o mural e para o grupo de moradores (seção 4) | Condomínios grandes nos bairros atendidos; clientes atuais que moram em condomínio podem apresentar ao síndico |
 | **Banho e tosa** (sem veterinário) | O tosador vê pele, ouvido, unha e dente do animal toda semana e é o primeiro a quem o tutor pergunta "isso é normal?" | Cartões para entregar quando o tutor precisar de veterinária; a Aline indica o banho e tosa a quem pergunta | Google Maps: "banho e tosa" + bairro |
 | **Pet shops sem veterinário** | O tutor compra ração e pergunta sobre vacina e vermífugo no balcão | Cartões no balcão; indicação para vacina em casa | Google Maps: "pet shop" + bairro; confira no perfil ou na visita se tem veterinário próprio. Se tiver, não aborde |
 | **Adestradores** | Atendem em casa também e conhecem cães idosos, grandes ou difíceis de levar à clínica | Cartões; indicação mútua | Instagram e Google: "adestrador Campinas"; grupos de tutores |
@@ -36,7 +35,7 @@ A região atendida ainda não está confirmada `[CONFIRMAR: cidades e bairros, p
 
 **Ritmo sugerido:** duas abordagens por semana. Em dois meses são uns 15 parceiros, o bastante para a medição mostrar quais trazem pedido.
 
-**Prioridade:** 1) condomínios com clientes atuais, 2) banho e tosa e pet shops a até 10 minutos desses condomínios, 3) adestradores, 4) hotéis e creches.
+**Prioridade:** 1) banho e tosa e pet shops perto de onde a Aline já tem clientes, 2) adestradores, 3) hotéis e creches.
 
 ## 3. Mensagens de abordagem
 
@@ -74,83 +73,16 @@ Oi, {nome}! Sou a Aline França, médica-veterinária, e atendo cães e gatos em
 4. Perguntar: que tipo de cliente eles atendem? Já tiveram cliente pedindo veterinário em casa?
 5. Deixar 20 cartões com o link deste parceiro (seção 5.3) e anotar na aba Parceiros.
 
-### 3.2 Síndico ou administradora de condomínio
+## 4. Material para deixar com o parceiro
 
-**Briefing**
-- Objetivo: o síndico autorizar o material no mural ou no grupo de moradores.
-- Público: síndico cuidadoso com o que entra no grupo do prédio; não quer parecer que está vendendo algo aos moradores.
-- Uma ideia: um serviço útil para os moradores com pet, sem custo para o condomínio.
-- Prova: ela já atende moradores de outro condomínio (o Petra Flamboyant, que **não** pode ser citado em material público; pode ser dito em conversa se a Aline autorizar `[CONFIRMAR com a Aline]`).
-- Chamada: "posso te mandar o material para você ver antes?"
+Além do cartão (seção 5), a frente 2 mantém um material de parceria em `line-vet/materiais/`: uma página sobre a Aline, sem nome de lugar, que o parceiro pode receber por WhatsApp ou ter impressa no balcão. O arquivo HTML é da frente 2; a frente 6 define o conteúdo:
 
-**Versão A: pedindo para mostrar antes (recomendada)**
-```
-Oi, {nome}! Aqui é a Aline França, médica-veterinária. Atendo cães e gatos em casa aqui em Campinas: consulta, vacina e pet sitter para quem viaja.
-
-Preparei um material curto para os moradores do {condomínio} que têm pet, com meu contato. Não tem custo para o condomínio. Posso te mandar para você ver antes e dizer se pode ir para o mural ou para o grupo?
-```
-
-**Versão B: para um cliente que mora lá encaminhar ao síndico** (a Aline manda para o cliente, que repassa se quiser; assim nenhum dado dele sai sem ele decidir)
-```
-Oi, {nome do cliente}! Você acha que o síndico do {condomínio} toparia um material meu para os moradores que têm pet? Se puder repassar esta mensagem para ele, fico muito agradecida:
-
-"Sou a Aline França, médica-veterinária, e atendo cães e gatos em casa, aqui em Campinas. Posso mandar um material curto para os moradores, sem custo para o condomínio? Envio antes para aprovação. WhatsApp (19) 98181-1227."
-```
-
-**Recomendação:** A quando já há o contato do síndico. B quando o caminho é um cliente que mora no condomínio.
-
-## 4. Material por condomínio (modelo do Petra Flamboyant)
-
-O material do Petra Flamboyant (`line-vet/materiais/Pet-Sitter-Dra-Aline-Franca-Petra-Flamboyant.html`) é uma página só para os moradores, mandada como arquivo. Ele serve de modelo, mas **o arquivo HTML é da frente 2**: a frente 6 define o conteúdo; a frente 2 gera a versão de cada condomínio (pedido em `andamento/operacao.md`).
-
-### 4.1 O que o modelo tem e o que muda por condomínio
-
-| Parte do Petra | No novo condomínio |
-|---|---|
-| Título "Pet sitter para os moradores do Petra Flamboyant" | "Veterinária em casa e pet sitter para os moradores do {condomínio}" (ver 4.2) |
-| "Seu pet fica em casa. Eu cuido dele." | Mantém (é a frase de exemplo da voz da Aline no `perfil.md`) |
-| Apresentação, como funciona, o que faço em cada visita, olhar de veterinária | Mantém |
-| Valores do pet sitter | Mantém, **sem** "50% de desconto": trocar por "valor reduzido para cada animal a mais da mesma casa" com os valores em reais (`metodo/regras-cfmv.md`, desconto em destaque é ponto a confirmar) |
-| Calculadora com "Bloco e apartamento no Petra Flamboyant" | Troca pelo nome do condomínio |
-| Botões de WhatsApp | Link com a frase "Oi, Aline! Moro no condomínio {nome}." (seção 5.3) |
-| Sem taxa de deslocamento (só Petra) | `[CONFIRMAR com a Aline: cobra deslocamento neste condomínio?, pergunta 20]`. Não escrever nada sobre deslocamento até confirmar |
-| Não fala da consulta veterinária em casa | **Acrescentar** uma seção curta (4.2), porque a veterinária a domicílio é o carro-chefe |
-
-### 4.2 Seção nova: veterinária em casa
-
-Texto para a frente 2 encaixar depois da apresentação. Briefing: o morador com pet precisa saber, em três linhas, que ela também atende consulta e vacina ali mesmo. Chamada: chamar no WhatsApp.
-
-```
-Também sou sua veterinária, sem sair do condomínio
-
-Consulta e vacina para cães e gatos aqui no seu apartamento, sem caixa de transporte e sem sala de espera. Gatos costumam sofrer menos assim. Cirurgia, anestesia geral e internação não são feitas em casa; quando o caso pede, eu encaminho.
-
-Valores sob consulta. [CONFIRMAR: o que mostrar, perguntas 19 e 39]
-
-[Botão] Falar com a Aline
-```
-
-### 4.3 Texto para o grupo de moradores ou o mural
-
-Para o síndico (ou um morador) mandar no grupo, ou para imprimir em A5 no mural com o QR code.
-
-**Versão A: veterinária em casa (recomendada)**
-```
-Moradores com pet: a Dra. Aline França, médica-veterinária, atende cães e gatos aqui no {condomínio}, no seu apartamento. Consulta, vacina e pet sitter para quando você viajar.
-
-Contato pelo WhatsApp: (19) 98181-1227 ou pelo link {link do condomínio}
-CRMV-SP [CONFIRMAR: número]
-```
-
-**Versão B: perto das férias e feriados (pet sitter)**
-```
-Vai viajar nas férias? A Dra. Aline França, médica-veterinária, cuida do seu pet aqui no {condomínio}, sem tirá-lo de casa: visitas de até 1 hora para comida, água, limpeza e companhia.
-
-Reservas pelo WhatsApp: (19) 98181-1227 ou {link do condomínio}
-CRMV-SP [CONFIRMAR: número]
-```
-
-**Recomendação:** A no primeiro envio. B em novembro e junho, antes das férias, se o síndico permitir um segundo envio.
+- **Os dois serviços:** veterinária em casa (consulta e vacina, o carro-chefe) e pet sitter.
+- **O que não é feito em casa:** cirurgia, anestesia geral e internação, com encaminhamento quando o caso pede.
+- **Valores:** pet sitter com os valores do `perfil.md` e "valor reduzido para cada animal a mais da mesma casa", sem "50% de desconto". Consulta e vacina "sob consulta" até as perguntas 19 e 39.
+- **CRMV-SP** no rodapé.
+- **Botões de WhatsApp** com a frase do parceiro: "Oi, Aline! Peguei seu cartão no {parceiro}." (seção 5.3).
+- **Nada sobre deslocamento** até a Aline confirmar (pergunta 20).
 
 ## 5. Cartão e ímã com QR code
 
@@ -164,7 +96,7 @@ CRMV-SP [CONFIRMAR: número]
 
 **Briefing**
 - Objetivo: quem pega o cartão chamar no WhatsApp quando precisar.
-- Público: tutor no balcão do pet shop, na portaria ou em casa (ímã).
+- Público: tutor no balcão do pet shop ou do banho e tosa, ou em casa (ímã).
 - Uma ideia: veterinária que vai até a sua casa.
 - Prova: médica-veterinária, CRMV, cães e gatos, pet sitter (perfil).
 - Chamada: apontar a câmera para o QR.
@@ -212,7 +144,6 @@ O QR leva para o WhatsApp com uma frase pronta, e a frase diz de onde a pessoa v
 |---|---|---|
 | Geral (entregue pela Aline, ímã) | Oi, Aline! Peguei seu cartão. | Cartão ou ímã |
 | No parceiro X | Oi, Aline! Peguei seu cartão no {X}. | Parceiro · Detalhe: {X} |
-| No condomínio Y | Oi, Aline! Moro no condomínio {Y}. | Condomínio · Detalhe: {Y} |
 
 Para montar o link de um parceiro: comece com `https://wa.me/5519981811227?text=Oi%2C%20Aline%21%20Peguei%20seu%20cart%C3%A3o%20no%20`, acrescente o nome do parceiro trocando cada espaço por `%20` (e letras com acento pelo código, ou escreva sem acento), e termine com `.`. Exemplo para "Banho e Tosa Exemplo": `...no%20Banho%20e%20Tosa%20Exemplo.`
 
@@ -238,7 +169,7 @@ Oi, {nome}! Recebi uma indicação de vocês esta semana. Obrigada pela confian�
 
 Checklist de `referencias/revisao.md`, nos textos finais:
 
-1. **Regras (BLOQUEANTE):** sem comissão, desconto ou brinde por indicação (seção 1). O "50% de desconto" do material do Petra sai do modelo. Nenhuma promessa: a seção 4.2 diz "gatos costumam sofrer menos assim", argumento que o setor aceita, sem prometer que o gato não vai se estressar. O que não é feito em casa aparece junto com o encaminhamento. CRMV em todo material impresso, como o setor exige. O Petra Flamboyant não aparece em material público.
+1. **Regras (BLOQUEANTE):** sem comissão, desconto ou brinde por indicação (seção 1). O "50% de desconto" do material antigo de pet sitter não volta. Nenhuma promessa: a versão B do cartão diz só que o gato não precisa entrar na caixa de transporte, o que decorre do atendimento em casa, sem prometer que ele não vai se estressar. O que não é feito em casa aparece junto com o encaminhamento. CRMV em todo material impresso, como o setor exige.
 2. **Fatos (FATO):** região, CRMV, deslocamento e valores de ato veterinário estão como `[CONFIRMAR]`. Os preços e o que o pet sitter inclui são os do `perfil.md`. "Seu gato não precisa entrar na caixa de transporte" decorre do serviço em casa, não de um dado novo.
 3. **Ideia e chamada (CLAREZA):** cada mensagem tem uma chamada: marcar a visita, mandar o material para aprovação, chamar no WhatsApp.
 4. **Voz (VOZ):** primeira pessoa, "você", "tutor", "em casa". Sem "especialista", "o melhor", "seu bebê". Sem emoji. A frase "Seu pet fica em casa. Eu cuido dele." vem do exemplo de voz do perfil.
@@ -250,9 +181,8 @@ Checklist de `referencias/revisao.md`, nos textos finais:
 ## Pendências
 - [CONFIRMAR com o CRMV-SP: artigo do Código de Ética sobre indicação e captação de clientes] — Aline, junto com a pergunta 39.
 - [CONFIRMAR: cidades e bairros atendidos] — Aline, pergunta 25 (lista de parceiros, cartão).
-- [CONFIRMAR: número do CRMV-SP] — Aline, pergunta 1 (cartão, mural).
-- [CONFIRMAR: cobra deslocamento em outros condomínios?] — Aline, pergunta 20.
+- [CONFIRMAR: número do CRMV-SP] — Aline, pergunta 1 (cartão, material do parceiro).
+- [CONFIRMAR: cobra deslocamento e como varia por bairro?] — Aline, pergunta 20.
 - [CONFIRMAR: o que mostrar de valores da consulta e da vacina] — Aline, perguntas 19 e 39.
-- [CONFIRMAR: pode citar o Petra Flamboyant em conversa com outros síndicos?] — Aline.
 - Material necessário: arte do cartão e do ímã (Vinícius, com as cores do site); orçamento de gráfica.
-- Pedido à frente 2: gerar o material por condomínio a partir do Petra, com as mudanças da seção 4.1 e a seção 4.2.
+- Frente 2: material de parceria sem nome de lugar, com o conteúdo da seção 4 (em andamento na frente 2).

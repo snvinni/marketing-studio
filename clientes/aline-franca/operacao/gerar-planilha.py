@@ -12,7 +12,7 @@ saida = sys.argv[1]
 
 ORIGENS = [
     "Perfil no Google", "Site", "Anúncio Google", "Instagram",
-    "Indicação de cliente", "Parceiro", "Condomínio", "Cartão ou ímã",
+    "Indicação de cliente", "Parceiro", "Cartão ou ímã",
     "Já é cliente", "Não sei",
 ]
 SERVICOS = ["Consulta em casa", "Vacina em casa", "Pet sitter", "Outro"]
@@ -45,7 +45,7 @@ linhas = [
     ("", False),
     ("TODO DIA (2 minutos)", True),
     ("Aba Pedidos: uma linha para cada pedido novo que chegou. Preencha Data, Tutor (só o primeiro nome), Pet, Origem, Serviço e, quando souber, Fechou?.", False),
-    ("A Origem é a mesma etiqueta usada no WhatsApp Business. Se a origem for Parceiro ou Condomínio, escreva qual em Detalhe.", False),
+    ("A Origem é a mesma etiqueta usada no WhatsApp Business. Se a origem for Parceiro, escreva qual em Detalhe.", False),
     ("", False),
     ("TODA SEGUNDA-FEIRA (10 minutos)", True),
     ("Aba Semana, na linha da semana que passou: avaliações novas e nota no Google, números do perfil no Google (Desempenho) e gasto em anúncios.", False),
@@ -93,7 +93,7 @@ def cabecalho(ws, titulos, larguras):
 # ---------- Pedidos ----------
 wp = wb.create_sheet("Pedidos", 1)
 tit_p = ["Data", "Semana (segunda)", "Mês", "Tutor (primeiro nome)", "Pet", "Origem",
-         "Detalhe (qual parceiro, condomínio...)", "Serviço", "Fechou?", "Valor (R$)", "Observação"]
+         "Detalhe (qual parceiro)", "Serviço", "Fechou?", "Valor (R$)", "Observação"]
 cabecalho(wp, tit_p, [12, 14, 11, 18, 14, 20, 28, 18, 12, 12, 40])
 for r in range(2, N_PEDIDOS + 2):
     wp.cell(row=r, column=1).number_format = "DD/MM/YYYY"
@@ -261,7 +261,7 @@ wb["Leia-me"].append(["Aba Reforços: um pet por linha depois de cada vacina. Na
 
 # ---------- Parceiros ----------
 wpa = wb.create_sheet("Parceiros", 5)
-TIPOS = ["Condomínio", "Banho e tosa", "Pet shop", "Adestrador", "Hotel ou creche", "Outro"]
+TIPOS = ["Banho e tosa", "Pet shop", "Adestrador", "Hotel ou creche", "Outro"]
 tit_pa = ["Nome (igual ao Detalhe da aba Pedidos)", "Tipo", "Bairro", "Pessoa de contato", "Abordado em",
           "Resposta", "Cartões entregues", "Indicações recebidas", "Atendimentos fechados",
           "Indicações que a Aline fez para ele", "Próximo passo", "Observação"]
@@ -283,7 +283,7 @@ wpa.auto_filter.ref = "A1:L151"
 wb["Leia-me"].append([""])
 wb["Leia-me"].append(["PARCEIROS"])
 wb["Leia-me"].cell(row=wb["Leia-me"].max_row, column=1).font = Font(bold=True, color=AZUL)
-wb["Leia-me"].append(["Aba Parceiros: um parceiro ou condomínio por linha. Escreva o nome igual ao que vai na coluna Detalhe da aba Pedidos: assim as indicações se contam sozinhas (operacao/parcerias.md)."])
+wb["Leia-me"].append(["Aba Parceiros: um parceiro por linha. Escreva o nome igual ao que vai na coluna Detalhe da aba Pedidos: assim as indicações se contam sozinhas (operacao/parcerias.md)."])
 
 # realce: taxa e linha "Não sei" acima de 25% dos pedidos
 wsem.conditional_formatting.add(
