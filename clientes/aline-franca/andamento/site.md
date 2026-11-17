@@ -197,3 +197,26 @@ Pedido do Vinícius: "podemos ter uma parte no sobre, com um carrosel de fotos. 
     | Sobre | Retrato com os gatos dela | Sem jaleco, olhando para a câmera, na casa dela; meio corpo. Os animais são dela, então não precisa de autorização. |
     | Atendimento | A caminho do atendimento | Saindo do carro com a maleta e a caixa térmica, numa rua arborizada; corpo inteiro, de lado ou de costas. Sem placa, número de casa nem fachada. |
     | Dúvidas | Conversa antes de examinar | Sentada, anotando ou explicando, com um cão tranquilo deitado ao lado; tutor fora do quadro ou de costas; três quartos. |
+
+## 17/11/2026: variante com o fundo azul e cor própria para o pet sitter
+
+Pedido do Vinícius, depois de ver as paletas: "da para o fundo ser azulzinho ? e o do pet sitter outra cor ?"
+
+- Feito (branch `previa/paletas`, `3fb9148`; nada na `ccr-ddd55fa2-btz5yk`): três variantes a partir da B, com o fundo do site em azul claro, texto em azul-tinta `#1B2B38` e cartões, faixas e espaço das fotos em creme quente `#F7F1E6`. O pet sitter ganha cor própria na abertura, nos itálicos, nos botões e na calculadora.
+  - **D:** fundo `#EEF4F8`, pet sitter salmão (abertura `#F9E4D8`, texto e botão `#8A3B28`).
+  - **E:** fundo `#E6EFF5`, pet sitter amarelo-manteiga (abertura `#F7EBC4`, texto e botão `#6B4E10`).
+  - **F (recomendada):** fundo da E com o pet sitter salmão.
+  - **Contrastes** (WCAG AA, conferidos à mão e com axe nas nove páginas, em 390 e 1440 px; 113 testes passam):
+    - Texto sobre o fundo azul: 12,4 a 13,1:1.
+    - Azul principal: 5,9 a 6,2:1; branco no botão azul: 6,9:1.
+    - Texto do pet sitter: 6,6 a 6,9:1; branco no botão do pet sitter: 7,7:1.
+    - Borda de campo sobre o fundo: 3,0 a 3,2:1.
+    - WhatsApp: branco 5,4:1.
+  - **Verde-sálvia descartado:** fica quase igual ao verde do WhatsApp (1,14:1 entre os dois), e um botão de orçamento verde ao lado do botão verde do WhatsApp confunde.
+  - **Prévia** (com login da Vercel): https://line-vet-git-previa-paletas-vinisnascimento00-6369s-projects.vercel.app/paletas, ou qualquer página com `?paleta=d`, `e` ou `f`.
+- **Avaliação franca:** o fundo azul funciona, desde que cartões e faixas fiquem em creme quente; sem isso, fica com cara de clínica.
+  - O ganho é a identidade: o site fica "azul" de verdade, e o pet sitter se separa bem da veterinária.
+  - A perda é um pouco do calor de papel que o creme dá.
+  - O tom `#EEF4F8` (D) parece quase branco em muitas telas; `#E6EFF5` (E e F) se lê como azul.
+  - Se o Vinícius preferir mais acolhimento, a B (creme com faixas azuis) continua uma boa escolha.
+- Pendências: o Vinícius escolher entre B, D, E e F. Só então a paleta vai para a `ccr-ddd55fa2-btz5yk`.
