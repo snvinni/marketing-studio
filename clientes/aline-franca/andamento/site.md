@@ -74,3 +74,28 @@ Código em `snvinni/line-vet`, branch `ccr-ddd55fa2-btz5yk`.
 - Pedidos para outras frentes:
   - **Frente 6:** o pedido (c) está atendido. O arquivo do Petra citado em `operacao/parcerias.md`, seção 4, não existe mais. O modelo agora é `line-vet/materiais/modelo-condominio.html`, e a versão de cada condomínio, inclusive a do Petra, sai do gerador. Atualize a referência.
   - **Frente 6:** em `whatsapp-business.md`, a seção 6 usa a etiqueta Condomínio. Nos links, a frase do botão da veterinária termina com "Queria saber sobre consulta e vacina em casa.", e a do orçamento continua com "Gostaria de um orçamento de pet sitter.". A primeira frase é sempre a mesma.
+
+## 17/11/2026: site sem residencial e prévia do site inteiro
+
+Pedido do Vinícius: "eu nao quero nada relacionado a residentcial / Vamos deixar a pagina agnostica / e como ficaria o site como um todo ? a versao com vet a domiciolo e pet sitter".
+
+- Feito:
+  - **Sem residencial** (line-vet `6f2529e`, na `ccr-ddd55fa2-btz5yk`).
+    - O material por condomínio virou uma apresentação única, `materiais/modelo.html`, para mandar a qualquer contato ou parceiro. Não cita condomínio nem lugar; o campo de "bloco e apartamento" voltou a ser "bairro e cidade".
+    - O gerador não pede mais nome e grava `materiais/Dra-Aline-Franca.html`, com a frase "Oi, Aline! Vi sua apresentação."
+    - READMEs sem Petra Flamboyant. Nenhuma menção a condomínio ou residencial sobrou no line-vet.
+    - A página do Petra já tinha saído do Git no `8a2a13a` e só existe no histórico; não havia o que apagar. Apaguei só uma cópia gerada de teste ("Residencial Exemplo"), que não estava no Git.
+    - As entradas anteriores deste arquivo sobre o material por condomínio ficam como histórico.
+  - **Prévia do site inteiro** (line-vet `2e7a26e`, branch `previa/site-completo`, **não** publicada na `ccr-ddd55fa2-btz5yk`).
+    - Nove páginas: início, veterinária a domicílio, vacinas em casa, gatos, pet sitter, sobre, atendimento, dúvidas e privacidade.
+    - Textos provisórios, escritos com as regras da skill copy-chief (canal site, setor veterinária) e só com fatos do perfil. O resto está marcado `[CONFIRMAR]`.
+    - Toda página tem a faixa "Prévia, rascunho" e `noindex`.
+    - Em 390 px, o botão de WhatsApp aparece sem rolar em todas as páginas.
+  - **Testes:** 91 passam. A conferência de publicação (`PUBLICAR=1`) barra as nove páginas enquanto houver `[CONFIRMAR]`, faixa de rascunho, `noindex` ou CRMV sem número.
+- Pendências:
+  - **Ok do Vinícius** para levar a prévia à `ccr-ddd55fa2-btz5yk`. Mesmo com o ok, nada vai ao ar com `[CONFIRMAR]`.
+  - **Entrevista:** os textos finais saem pela copy-chief a partir do perfil.
+  - **Fotos:** gatos e sobre têm espaço reservado para elas.
+- Pedidos para outras frentes (o coordenador trata com o Vinícius):
+  - `plano.md`, `perfil.md` e os arquivos das frentes 4 e 6 ainda falam em condomínio; não editei.
+  - **Frente 6:** a frase da apresentação é "Oi, Aline! Vi sua apresentação." Se for usar etiqueta para ela no WhatsApp Business, é essa a frase.
