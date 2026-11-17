@@ -148,3 +148,52 @@ Pedido do Vinícius: "podemos ter uma parte no sobre, com um carrosel de fotos. 
     3. **De 2 a 3 fotos com pacientes em momento calmo**, como o exame no sofá (item 9) ou a mão fazendo carinho (desejável "mãos"). Precisam de autorização escrita do tutor, com a finalidade "site", e sem rosto do tutor, criança, endereço ou fachada (LGPD).
     4. **Uma foto de pet sitter com afeto** (item 12): brincando ou servindo ração.
     5. **Formato:** foto vertical também, porque a galeria usa recorte de retrato (4:5), e luz natural. Para a galeria, de 6 a 9 fotos no total.
+
+## 17/11/2026: prévia na Vercel, paletas e uma foto por página
+
+- Feito:
+  - **Prévia no ar:** https://line-vet.vercel.app (produção da `ccr-ddd55fa2-btz5yk`).
+    - Abre sem login; os endereços de cada deploy e de outras branches pedem login da Vercel.
+    - Testei as nove páginas nesse endereço, em 390 e 1440 px: status 200, imagens, fontes, links internos e WhatsApp certos, sem erro no console e sem rolagem lateral.
+    - Testes, guia de estilo, scripts e material de parceria dão 404.
+    - A faixa de rascunho e o `noindex` continuam. A conferência `PUBLICAR=1` é só para o site final, não para a prévia.
+    - O plano Hobby da Vercel é para uso não comercial; para o site final com domínio, decidir no PT-S12 (Vercel Pro ou Cloudflare Pages).
+  - **GitHub Pages abandonado:** o script `scripts/gerar-pages.mjs` e a branch `gh-pages` ficaram sem uso. Dá para apagar os dois com o ok do Vinícius.
+  - **Paletas (discovery, nada aplicado no site):** três opções com o azul principal, na branch `previa/paletas`.
+    - Prévia (com login da Vercel): https://line-vet-git-previa-paletas-vinisnascimento00-6369s-projects.vercel.app/paletas
+    - Qualquer página abre em `?paleta=a|b|c`.
+    - Pesquisa, tabela de cores e contrastes no adendo de `site/pesquisa-design.md`. Recomendo a **B · Azul profundo**.
+    - O botão do WhatsApp continua verde.
+  - **Uma foto por página** (line-vet `b04c125` e `63dcede`): cada abertura tem um arco vertical 4:5 com a descrição da foto que vai ali.
+    - A foto atual da Aline continua no bloco "Oi, eu sou a Aline" do início.
+    - O arco é o formato combinado para as fotos novas.
+  - 101 testes passam.
+- Pendências:
+  - O Vinícius escolhe a paleta; só então ela é aplicada no site.
+  - O Vinícius manda a mensagem de validação à Aline (texto abaixo).
+- **Mensagem para a Aline** (o Vinícius manda):
+  > Oi, Aline! Montei um rascunho do seu site para você dar uma olhada: https://line-vet.vercel.app
+  > É só um rascunho: não está no Google e só você tem o link. Os quadros tracejados são espaços para as suas fotos, e o que está em amarelo [CONFIRMAR] é o que preciso que você me confirme.
+  > Quando puder, me diz:
+  > 1. Os textos parecem você? Tem frase que você não diria?
+  > 2. Os serviços estão certos? O que você faz em casa e o que não faz.
+  > 3. Os preços do pet sitter estão certos? E consulta e vacina: posso mostrar o valor ou deixo "sob consulta"?
+  > 4. Em quais bairros e horários você atende?
+  > 5. O que está errado ou faltando?
+  > Pode responder por áudio ou mandar print da parte que quer mudar. Obrigado!
+- Pedidos para outras frentes:
+  - **Frente 1: fotos de abertura, uma por página.** Para incluir no pedido de fotos à Aline; não editei o `briefing-fotos.md`.
+    - **Regras para todas,** para formarem uma identidade: luz natural de janela, sem flash; casas de verdade, sem estúdio; vertical 4:5; a Aline olhando para o animal (menos no Sobre); jaleco nas de atendimento.
+    - **Paciente** só com autorização escrita do tutor (`autorizacoes.md`, finalidade "site").
+    - **LGPD:** sem rosto do tutor ou de criança, sem endereço, placa, número da casa ou fachada.
+
+    | Página | Foto | Detalhes |
+    |---|---|---|
+    | Início | A Aline com um gato no colo | De jaleco, sorrindo para a câmera; sentada no chão ou no sofá; meio corpo. De preferência um gato dela. |
+    | Veterinária em casa | Consulta na sala, na altura dele | Ajoelhada, examinando um cão deitado no tapete com o estetoscópio; maleta aberta ao lado; corpo inteiro, de lado. Tutor fora do quadro ou só as mãos. |
+    | Vacinas | A vacina na mão, a carteira ao lado | Detalhe fechado, de cima: as mãos dela aplicando a vacina num gato ou cão calmo no sofá; caixa térmica e carteira de vacinação à vista. |
+    | Gatos | O gato chega no tempo dele | Agachada, com a mão estendida sem tocar; um gato se aproximando; câmera baixa, perto de arranhador ou janela. |
+    | Pet sitter | Uma visita enquanto o tutor viaja | Brincando com varinha ou servindo a ração; tigelas à vista; cozinha ou área de serviço, casa sem ninguém; luz da tarde. |
+    | Sobre | Retrato com os gatos dela | Sem jaleco, olhando para a câmera, na casa dela; meio corpo. Os animais são dela, então não precisa de autorização. |
+    | Atendimento | A caminho do atendimento | Saindo do carro com a maleta e a caixa térmica, numa rua arborizada; corpo inteiro, de lado ou de costas. Sem placa, número de casa nem fachada. |
+    | Dúvidas | Conversa antes de examinar | Sentada, anotando ou explicando, com um cão tranquilo deitado ao lado; tutor fora do quadro ou de costas; três quartos. |

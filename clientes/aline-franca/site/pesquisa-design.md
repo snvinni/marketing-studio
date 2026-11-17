@@ -383,3 +383,45 @@ Pedido do Vinícius: uma parte no Sobre com fotos da Aline, a maioria com animai
 - **CFMV:** foto de paciente só com autorização escrita do tutor, registrada em `autorizacoes.md`; nunca resultado de tratamento nem animal em sofrimento (`metodo/regras-cfmv.md`).
 - **LGPD e Código Civil (art. 20):** a imagem de uma pessoa é dado pessoal, e o uso comercial pede autorização específica, com finalidade e prazo ([Migalhas](https://www.migalhas.com.br/depeso/394075/protecao-de-dados-pessoais-no-uso-de-imagem-e-voz), [Normas Legais, modelo de termo](https://www.normaslegais.com.br/guia/clientes/termo-de-autorizacao-para-uso-de-imagem-e-voz.htm)). Na prática: evitar rosto de tutor, de criança, endereço, número da casa e fachada. Se o tutor aparecer, a autorização dele é separada da autorização do pet. Fontes de divulgação jurídica, não da ANPD.
 - **Os animais da própria Aline** não precisam de autorização de terceiros. São o melhor começo.
+
+---
+
+## Adendo (17/11/2026): paleta com o azul como cor principal
+
+Pedido do Vinícius: "Quero uma paleta de cores que tenha o azulzinho como principal (quero que pesquise sobre qual paleta ficaria bom, veja as melhores de designers renomados)".
+
+**Referências**
+- **Sanzo Wada, *A Dictionary of Color Combinations*** (1933–34; seleção de 348 combinações publicada pela Seigensha em 2010). É uma referência clássica entre designers ([Wada Sanzo Colors](https://wada-sanzo-colors.com/about); versão digital em [sanzo-wada.dmbk.io](https://sanzo-wada.dmbk.io), dados abertos em [mattdesl/dictionary-of-colour-combinations](https://github.com/mattdesl/dictionary-of-colour-combinations)). Combinações com azul e um tom quente que serviram de base:
+  - **nº 1:** English Red e Cerulean Blue.
+  - **nº 99:** Pale Lemon Yellow e Cerulean Blue.
+  - **nº 186:** Hay's Russet, Ochraceous Salmon e Blue.
+- **Pentagram:**
+  - [MedExpress](https://pentagram.com/work/medexpress): equilibrou os azuis clínicos com uma série de tons mais quentes.
+  - [Roche](https://www.pentagram.com/work/roche): saiu de azul e cinza para uma gama "mais vibrante, humana e quente", com um azul mais rico no centro.
+- **Koto, [Huma](https://www.designweek.co.uk/issues/14-19-april-2020/huma-rebrand):** cores frias e quentes inspiradas no tempo e no céu, para fugir da cara "fria e estéril" do setor.
+- **Guia da PetDesk para clínicas veterinárias** ([PetDesk](https://petdesk.com/blog/the-psychology-of-color-in-veterinary-marketing)): uma cor forte, um destaque complementar e neutros.
+- **Cautela:** que o azul "passa confiança" é uma regra prática de design, não um achado sólido de pesquisa ([99designs](https://99designs.com/logo-design/business-of-color/healthcare)).
+
+**Resumo:** o azul fica na frente; um tom quente (terracota, salmão, ruivo) tira a cara de clínica; o fundo creme e a tipografia editorial evitam a cara de SaaS.
+
+**Opções** (branch `previa/paletas` do line-vet; contrastes WCAG AA conferidos à mão e com axe nas nove páginas):
+
+| | A · Azul e terracota | B · Azul profundo (Wada 186) | C · Azul e areia (Wada 99) |
+|---|---|---|---|
+| Fundo | creme #F6F1E9 | creme #F5F0E6 | areia #F7F2E1 |
+| Texto | #2B2420 (13,6:1) | #1F2A33 (12,9:1) | #24302F (12,2:1) |
+| Principal (botão, links, itálico) | #2F6F87 (5,0:1; branco 5,6:1) | #1D5F86 (6,1:1; branco 6,9:1) | #0E6E7E (5,3:1; branco 5,9:1) |
+| Faixa | azul claro #E4EEF1 | azul claro #E2ECF3 na abertura; bilhete e rodapé em azul escuro #173F57 (creme 9,8:1) | água #DDEFF0 |
+| Apoio | terracota só em enfeite | ruivo #7A3A2C (7,5:1) e salmão ocre #D8A37B | ocre #7A5A12 (5,7:1) e manteiga #E8C766 |
+| Pet sitter | itálicos terracota, botões azuis | abertura salmão, itálicos ruivos, botões azuis | itálicos ocre, faixas manteiga, botões azuis |
+
+**Recomendação: B.**
+- É a que mais põe o azul na frente e a mais própria: faixa azul na abertura, bilhete e rodapé em azul escuro.
+- Mantém um tom quente próximo da terracota de hoje, então a identidade continua reconhecível.
+- Tem o maior contraste das três.
+- A é a mais segura, mas muda pouco. C se afasta da identidade atual e o petróleo lembra spa ou clínica.
+
+**Botão do WhatsApp: continua verde** (`#167A3E`, branco 5,4:1).
+- O verde avisa na hora que o toque abre o WhatsApp.
+- A Meta só protege o desenho e a cor do logotipo, não a cor do botão ([Meta](https://www.meta.com/pt-br/brand/resources/whatsapp/whatsapp-brand/)).
+- Fica restrito aos botões de WhatsApp; o resto segue o azul.
