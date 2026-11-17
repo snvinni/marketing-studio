@@ -220,3 +220,16 @@ Pedido do Vinícius, depois de ver as paletas: "da para o fundo ser azulzinho ? 
   - O tom `#EEF4F8` (D) parece quase branco em muitas telas; `#E6EFF5` (E e F) se lê como azul.
   - Se o Vinícius preferir mais acolhimento, a B (creme com faixas azuis) continua uma boa escolha.
 - Pendências: o Vinícius escolher entre B, D, E e F. Só então a paleta vai para a `ccr-ddd55fa2-btz5yk`.
+
+## 17/11/2026: fundo contínuo (paletas G e H)
+
+O Vinícius não gostou dos cortes de cor da página de vacinas ("eu nao gostei dessa transicao de cores"): cabeçalho creme, abertura em faixa azul, creme de novo, com uma linha fina em cada corte.
+
+- Feito (branch `previa/paletas`; nada na `ccr-ddd55fa2-btz5yk`): duas variantes com um fundo só na página inteira, cabeçalho incluído. Sem faixas de ponta a ponta, sem linhas finas entre seções (separação por espaço), cor só em elementos contidos e uma única mudança de cor, no rodapé. Passam na acessibilidade nas nove páginas (117 testes).
+  - **G (recomendada):** azul claro contínuo `#E6EFF5`; rodapé um tom mais fundo `#D3E1EB` (mudança suave); pet sitter salmão no arco da foto, nos itálicos, nos botões e nos cartões.
+  - **H:** creme contínuo, azul no arco da foto, nos cartões, no bilhete e nos botões; rodapé azul escuro `#173F57` (mudança intencional); pet sitter ruivo, também nos botões.
+  - Prévia (com login da Vercel): https://line-vet-git-previa-paletas-vinisnascimento00-6369s-projects.vercel.app/vacinas-em-casa?paleta=g (ou `?paleta=h`).
+- O que o Vinícius viu e não é defeito do site atual:
+  - **Arco da foto vazio à direita:** a captura era de uma versão anterior da prévia das paletas, montada antes das fotos por página. Desde `3fb9148` o arco aparece em 1440 px; conferi na prévia e no endereço da Aline.
+  - **Botão redondo escuro na borda direita:** não é do site, que não tem nenhum elemento fixo no computador. É, muito provavelmente, a barra de ferramentas da Vercel, que aparece nas prévias para quem está logado. A Aline não vê. Dá para esconder pelo próprio botão ou em Settings → General → Vercel Toolbar.
+- Pendências: o Vinícius escolher entre G e H (ou outra). Só então a paleta vai para a `ccr-ddd55fa2-btz5yk`.
