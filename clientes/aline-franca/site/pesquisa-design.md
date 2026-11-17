@@ -353,3 +353,33 @@ Li o texto das páginas. A ferramenta não mostra imagens, então quando digo "f
 11. **Marca WhatsApp.** O resumo da página da Meta sugere não usar "WhatsApp" como verbo. Não consegui ver as regras completas de botão nem de tamanho mínimo.
 12. **Páginas que não abri:** homevets.co.uk (erro SSL), vetstoyou.pt (domínio não resolve), petlove.com.br (403), Fast Company (403), Cats Only Veterinary House Calls (403), PDF do guia de cookies da ANPD (veio sem texto), manual de publicidade do CRMV-SP 2024 (404), página de "Contato" da NN/g (404), FAQ oficial do Cloudflare Web Analytics.
 13. **Fotos dos exemplos.** Não vi as imagens dos sites citados, só textos e nomes de arquivo.
+
+---
+
+## Adendo (17/11/2026): fotos da Aline no Sobre (carrossel ou outra forma)
+
+Pedido do Vinícius: uma parte no Sobre com fotos da Aline, a maioria com animais, com destaque, para criar afeto.
+
+**Carrossel que passa sozinho, não.**
+- Em teste da Nielsen Norman Group, as pessoas não viram uma informação que estava no slide mais visível de um carrossel automático. Carrossel lembra anúncio, e anúncio a gente aprende a ignorar. O artigo original não abriu; li resumos em [Yale Usability](https://usability.yale.edu/usability-best-practices/hero-imagescarousels), [ConversionXL](https://conversionxl.com/blog/dont-use-automatic-image-sliders-or-carousels) e [Smashing Magazine](https://uxdesign.smashingmagazine.com/2022/04/designing-better-carousel-ux).
+- A WCAG 2.2.2 (nível A) exige poder pausar, parar ou esconder qualquer movimento que comece sozinho e dure mais de 5 segundos. A W3C pede botão de pausa em carrossel automático ([W3C WAI, tutorial de carrosséis](https://www.w3.org/WAI/tutorials/carousels/animations/)).
+
+**O que as pessoas fazem com galerias.**
+- No celular, quase todo mundo arrasta com o dedo; os pontinhos de navegação passam despercebidos. Mostrar as miniaturas evita que fotos fiquem escondidas ([Baymard: miniaturas](https://baymard.com/blog/always-use-thumbnails-additional-images), [Baymard: gestos no celular](https://baymard.com/blog/mobile-image-gestures)). A maior parte das diretrizes da Baymard é paga; li os resumos públicos.
+
+**Fotos reais criam vínculo.**
+- As pessoas olham fotos de gente real que trabalha ali e ignoram fotos genéricas. No "Sobre", o retrato ajuda a associar o serviço a uma pessoa ([NN/g, Photos as Web Content](https://www.nngroup.com/articles/photos-as-web-content/)).
+
+**Decisão.**
+- Celular: uma faixa que se arrasta com o dedo, com a próxima foto aparecendo na borda.
+- Computador: um mosaico com uma foto em destaque e todas à vista.
+- Nada passa sozinho. É só CSS (`scroll-snap`, [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Overflow/Carousels)), funciona sem JavaScript e dá para rolar pelo teclado.
+
+**Desempenho.**
+- Cada foto em 480 e 960 px, AVIF ou WebP com JPEG de reserva, `width` e `height` declarados e carregamento adiado (`loading="lazy"`), como na seção 4.
+- Seis fotos de cerca de 40 KB no celular cabem no limite de 1 MB por página do PT-S9.
+
+**Regras.**
+- **CFMV:** foto de paciente só com autorização escrita do tutor, registrada em `autorizacoes.md`; nunca resultado de tratamento nem animal em sofrimento (`metodo/regras-cfmv.md`).
+- **LGPD e Código Civil (art. 20):** a imagem de uma pessoa é dado pessoal, e o uso comercial pede autorização específica, com finalidade e prazo ([Migalhas](https://www.migalhas.com.br/depeso/394075/protecao-de-dados-pessoais-no-uso-de-imagem-e-voz), [Normas Legais, modelo de termo](https://www.normaslegais.com.br/guia/clientes/termo-de-autorizacao-para-uso-de-imagem-e-voz.htm)). Na prática: evitar rosto de tutor, de criança, endereço, número da casa e fachada. Se o tutor aparecer, a autorização dele é separada da autorização do pet. Fontes de divulgação jurídica, não da ANPD.
+- **Os animais da própria Aline** não precisam de autorização de terceiros. São o melhor começo.

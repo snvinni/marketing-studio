@@ -124,3 +124,27 @@ Pedido do Vinícius: "eu nao quero nada relacionado a residentcial / Vamos deixa
   - Entrevista: textos finais pela copy-chief, e depois tirar a faixa e o `noindex`.
   - Fotos.
   - Ao ligar a Vercel (PT-S12): a branch de produção vai mostrar a prévia. Só ligar depois que a conferência de publicação passar.
+
+## 17/11/2026: fotos da Aline no Sobre
+
+Pedido do Vinícius: "podemos ter uma parte no sobre, com um carrosel de fotos. A maioria vai ser fotos com animais. [...] Pesquise sobre e vamos adequar isso na pagina."
+
+- Feito:
+  - **Pesquisa** no adendo de `site/pesquisa-design.md`, com fontes.
+    - Carrossel que passa sozinho é ignorado e fere a WCAG 2.2.2.
+    - No celular, as pessoas arrastam com o dedo.
+    - Fotos reais criam vínculo.
+  - **Galeria no Sobre** (line-vet `82ded72`, na `ccr-ddd55fa2-btz5yk`): seção "Eu e os bichos", logo depois da abertura.
+    - No celular, uma faixa que se arrasta, com a próxima foto aparecendo na borda.
+    - No computador, um mosaico de 3 colunas com a primeira foto em destaque.
+    - Nada passa sozinho, funciona sem JavaScript e rola pelo teclado.
+    - Seis espaços reservados, com legendas `[CONFIRMAR]`.
+  - 99 testes passam, incluindo a acessibilidade do Sobre.
+- Pendências: as fotos. Ao chegarem, vão para `assets/fotos/` em 480 e 960 px (PT-S9), e cada foto de paciente precisa de linha em `autorizacoes.md`.
+- Pedidos para outras frentes:
+  - **Frente 1 (pedido de fotos à Aline):** a galeria pede fotos que o `briefing-fotos.md` ainda não cobre bem. Não editei o briefing.
+    1. **De 3 a 5 fotos espontâneas da Aline com os próprios animais**, sem pose, em casa: carinho, colo, brincando. O item 13 hoje pede só "os próprios animais"; para criar afeto, ela precisa aparecer junto. Não precisam de autorização de terceiros.
+    2. **Uma foto forte para o destaque:** a Aline com um gato no colo, olhando para ele, em casa, na vertical e na horizontal, com espaço em volta para recorte. Pode ser o item 2, com essa orientação.
+    3. **De 2 a 3 fotos com pacientes em momento calmo**, como o exame no sofá (item 9) ou a mão fazendo carinho (desejável "mãos"). Precisam de autorização escrita do tutor, com a finalidade "site", e sem rosto do tutor, criança, endereço ou fachada (LGPD).
+    4. **Uma foto de pet sitter com afeto** (item 12): brincando ou servindo ração.
+    5. **Formato:** foto vertical também, porque a galeria usa recorte de retrato (4:5), e luz natural. Para a galeria, de 6 a 9 fotos no total.
