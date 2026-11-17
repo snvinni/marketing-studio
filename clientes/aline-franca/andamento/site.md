@@ -243,3 +243,24 @@ O Vinícius não gostou dos cortes de cor da página de vacinas ("eu nao gostei 
   - Teste que barra cache longo em `site.css` e `site.js`.
 - **Erro meu no caminho:** ao juntar a correção na `previa/paletas`, um conflito foi publicado com os marcadores no HTML (`aa0ec4a`). Corrigi em seguida, num commit novo (`3534394`), sem reescrever o histórico. Afetou só a prévia das paletas, protegida por login; a branch principal e o endereço da Aline não foram afetados.
 - O botão redondo escuro à direita, que aparece na captura, é a barra de ferramentas da Vercel (só para quem está logado).
+
+## 17/11/2026: seletor de cores na página e seis paletas novas
+
+Pedido do Vinícius: "eu nao gostei do contraste no geral mesmo. Quero que veja mais opcoes de paleta de cores, e coloque para eu testar uma opcao de mudar diretamente na pagina. para eu conseguir validar com a aline".
+
+- Feito (line-vet `0b1ce56` na `previa/paletas` e `fb03be0` na `ccr-ddd55fa2-btz5yk`, que é o endereço que a Aline abre sem login):
+  - **Botão "Cores" na faixa amarela de rascunho**, em todas as páginas. Abre a lista de paletas e troca o visual na hora.
+    - A escolha vale para as outras páginas e fica salva no aparelho.
+    - `?paleta=nevoa` no endereço também escolhe, e "Copiar o link com esta paleta" gera o link para mandar.
+    - A aparência padrão continua a **Atual**: quem abre o site só vê o botão a mais.
+    - Funciona no teclado (Esc fecha) e no celular.
+  - **Seis paletas novas**, em três níveis de contraste: Névoa e Lavanda (suave), Pêssego e Areia e sálvia (médio), Linho e marinho e Azul claro (forte). Tabela com as contas no adendo de `site/pesquisa-design.md`.
+  - **O pet sitter agora fica numa família de cor só.** Antes o azul de apoio brigava com o ruivo do botão e dos títulos; é a causa mais provável do "contraste" que incomodou.
+  - **Fundo contínuo, sem faixas e sem linhas entre seções**; só o rodapé muda de cor.
+  - Testado **no endereço real**, em 390 e 1440 px: botão nas nove páginas, 7 opções, escolha guardada ao andar e ao recarregar, sem erro no console.
+  - 146 testes passam: acessibilidade de cada paleta nas nove páginas, fundo contínuo, o seletor e a prévia sem JavaScript. Verifiquei os testes derrubando de propósito uma cor e uma faixa.
+  - Sai `paletas.html` (as paletas A a H). `scripts/paletas.py` gera `assets/paletas.css` e a lista do botão e confere o contraste.
+- **Decisão que tomei por conta própria:** levei o seletor à `ccr-ddd55fa2-btz5yk`, e não só à prévia com login, porque é a única que a Aline abre. O combinado era não levar paleta nenhuma ao site antes de o Vinícius escolher, e isso se mantém (o padrão é a Atual). Se ele preferir, dá para tirar com `git revert fb03be0`.
+- **Antes de publicar o site final:** a conferência `PUBLICAR=1` barra o site se sobrar `paletas.css`, `previa.js` ou `data-paleta`. A paleta escolhida entra no `:root` de `assets/site.css` (passo a passo no README).
+- Pendências: o Vinícius e a Aline escolherem a paleta; o Vinícius mandar a mensagem de validação à Aline, agora dizendo que ela pode trocar as cores no botão "Cores".
+- Pedidos para outras frentes: nenhum.

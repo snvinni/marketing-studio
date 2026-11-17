@@ -425,3 +425,33 @@ Pedido do Vinícius: "Quero uma paleta de cores que tenha o azulzinho como princ
 - O verde avisa na hora que o toque abre o WhatsApp.
 - A Meta só protege o desenho e a cor do logotipo, não a cor do botão ([Meta](https://www.meta.com/pt-br/brand/resources/whatsapp/whatsapp-brand/)).
 - Fica restrito aos botões de WhatsApp; o resto segue o azul.
+
+---
+
+## Adendo (17/11/2026): mais paletas e seletor na própria página
+
+Feedback do Vinícius sobre a Azul claro (G): "eu nao gostei do contraste no geral mesmo". Ele não disse se era contraste demais ou de menos, então a resposta foi cobrir a faixa inteira: paletas **suaves** (texto e cores mais próximos do fundo, as duas famílias de cor vizinhas), **médias** e **fortes**, todas dentro do mínimo de acessibilidade (WCAG 2.2 AA).
+
+**O que mudou na lógica das cores** (a causa mais provável da sensação de contraste):
+- No pet sitter, o azul era a cor de apoio (subtítulo, números, patinhas, sublinhado) ao lado de um botão e títulos ruivos. Duas cores fortes brigando na mesma tela. Agora o pet sitter fica numa **família de cor só**.
+- Nas páginas de veterinária, o apoio é do mesmo azul (Névoa e Lavanda) ou um tom quente discreto (as demais).
+- Fundo contínuo, sem faixas e sem linhas entre seções; só o rodapé muda de cor.
+
+**Referências usadas** (as combinações da Sanzo Wada, em `mattdesl/dictionary-of-colour-combinations`, escurecidas só o necessário para texto e botão passarem no contraste; não são os tons exatos do livro):
+- nº 194 (Seashell Pink, Olympic Blue, Jasper Red): Pêssego.
+- nº 135 e 294 (Sulpher Yellow, Salvia Blue): Areia e sálvia.
+- nº 274 (Olympic Blue, Light Mauve): Lavanda.
+- Névoa, Linho e marinho e Azul claro são do próprio projeto.
+
+| Paleta | Contraste | Fundo | Texto | Principal (branco no botão) | Pet sitter | Rodapé |
+|---|---|---|---|---|---|---|
+| Névoa | suave | #EEF3F6 | 10,5:1 | #376E87 (5,0:1) | rosa-poeira #9A4F55 (5,2:1) | #DDE7EE |
+| Lavanda | suave | #F5F4F8 | 12,1:1 | #3E6694 (5,4:1) | lavanda #7A5490 (5,5:1) | #E6E3EE |
+| Pêssego | médio | #FBF5F0 | 11,6:1 | #3D6496 (5,6:1) | terracota #A2482A (5,6:1) | #F1E6DE |
+| Areia e sálvia | médio | #F5F1E6 | 11,0:1 | #496B91 (4,9:1) | ocre #84621A (5,0:1) | #EAE3D2 |
+| Linho e marinho | forte | #F2EEE7 | 11,6:1 | #2B4C6F (7,7:1) | terracota #9A5238 (5,0:1) | marinho #22384F (10,4:1) |
+| Azul claro | forte | #E6EFF5 | 12,4:1 | #1D5F86 (5,9:1) | salmão #8A3B28 (6,6:1) | #D3E1EB |
+
+Todos os pares de texto e fundo que o site usa (texto, texto suave, apagado; azul, pet sitter e apoio sobre fundo, cartão e faixas), a borda de campo (3:1) e o rodapé são conferidos por `scripts/paletas.py`; a checagem de acessibilidade (axe) roda em cada paleta, nas nove páginas, em 390 e 1440 px.
+
+O botão do WhatsApp segue verde (`#167A3E`, branco 5,4:1).
