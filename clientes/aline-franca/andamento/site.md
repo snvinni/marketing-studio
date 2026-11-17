@@ -112,3 +112,15 @@ Pedido do Vinícius: "eu nao quero nada relacionado a residentcial / Vamos deixa
     - Sem nome, sai a versão geral: "Oi, Aline! Peguei seu cartão."
   - **Correção:** a calculadora do material estava quebrada desde a versão agnóstica (`6f2529e`). O teste novo (`tests/materiais.spec.js`) achou o erro; está corrigido.
 - Pendências: o material sai como rascunho enquanto houver 4 pontos `[CONFIRMAR]` (perguntas 10, 16, 19 e 39, e o número do CRMV).
+
+## 17/11/2026: prévia levada à branch principal
+
+- Feito: com o ok do Vinícius ("Levar agora"), as nove páginas da prévia estão na `ccr-ddd55fa2-btz5yk` do line-vet (`f69f477`, README em `bd4466d`), por cima do material de parceria.
+  - Continuam: a faixa "Prévia, rascunho", o `noindex` e os pontos `[CONFIRMAR]`.
+  - A conferência `PUBLICAR=1 npx playwright test publicacao` barra as nove páginas até a entrevista.
+  - Antes do push conferi que a branch não publica sozinha: o repositório é privado e não tem deploys no GitHub, nem status ou checagens nos commits, nem webhooks, nem GitHub Pages. A Vercel ainda não está ligada.
+  - 95 testes passam.
+- Pendências:
+  - Entrevista: textos finais pela copy-chief, e depois tirar a faixa e o `noindex`.
+  - Fotos.
+  - Ao ligar a Vercel (PT-S12): a branch de produção vai mostrar a prévia. Só ligar depois que a conferência de publicação passar.
