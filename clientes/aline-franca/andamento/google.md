@@ -27,3 +27,8 @@
 6. Copiar o link de avaliação (passo 12), colar nas mensagens e mandar para a Aline.
 7. A Aline pede avaliação aos clientes atuais, poucos por dia, e depois de cada atendimento.
 8. Depois da entrevista: avisar a frente 4 para a fase 2 (descrição, serviços, horários, áreas, publicações).
+
+## 17/11/2026
+- Feito: tirei dos arquivos da frente 4 as menções a condomínio e ao Petra Flamboyant, a pedido da frente 2 (repassado pela coordenação), pela decisão do Vinícius de não ter nada relacionado a condomínio ou residencial no projeto. Os avisos continuam, de forma genérica: `google/passo-a-passo.md` ("endereço de terceiros"), `google/roteiro-verificacao.md` ("endereço de terceiros") e `google/mensagens-avaliacao.md` ("grupo de moradores, do bairro"). O grep por condom, residencial e Petra nos arquivos da frente não acha mais nada.
+- Pendências: as mesmas de 16/11.
+- Pedidos para outras frentes: nenhum.

@@ -122,7 +122,7 @@ Toque em `Parar gravação`. Assista. Se tudo apareceu legível, toque em `Fazer
 | Rosto de qualquer outra pessoa (vizinho, cliente, o próprio Vinícius) | Regra do Google; reprova |
 | CPF, RG, cartão de banco, extrato | Dado sensível; regra do Google |
 | Casa de cliente, pet de cliente, ficha de paciente | Privacidade do cliente; e não é o endereço cadastrado |
-| Condomínio Petra Flamboyant ou outro endereço que não seja o cadastrado | O Google confere se a rua bate com o endereço do perfil |
+| Endereço de terceiros, ou qualquer endereço que não seja o cadastrado | O Google confere se a rua bate com o endereço do perfil |
 | Animal doente, ferido ou em atendimento | Regra do CFMV; e não ajuda a verificar |
 | Cortes, pausas, trechos gravados antes | Regra do Google; reprova |
 

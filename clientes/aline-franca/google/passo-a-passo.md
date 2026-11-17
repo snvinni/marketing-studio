@@ -58,7 +58,7 @@ O Google pode pedir o endereço mesmo assim, para a verificação. Se pedir:
 - Coloque o **endereço real da casa da Aline**, completo e correto.
 - Esse endereço **não aparece** para o público quando o perfil é de área de atendimento. Confira no passo 8.
 - **Não faça, de jeito nenhum:**
-  - endereço de outra pessoa, de um parceiro, de um pet shop ou do condomínio Petra Flamboyant;
+  - endereço de terceiros: de outra pessoa, de um parceiro, de um pet shop ou de um cliente;
   - endereço "no centro de Campinas" para aparecer em mais buscas;
   - caixa postal ou escritório virtual (o Google não aceita).
 - **Por quê:** endereço falso é a causa mais comum de suspensão. E a verificação por vídeo vai mostrar a rua desse endereço: se não bater, reprova.

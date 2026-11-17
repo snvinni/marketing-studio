@@ -21,7 +21,7 @@ Vêm da política do Google para avaliações e do CFMV. Quebrar qualquer uma po
 | Um lembrete, uma vez só | Insistir, cobrar, ou pedir para a pessoa avaliar ali na hora, na frente dela |
 | Dizer "escreva do jeito que achar justo" | Pedir "5 estrelas" ou pedir para citar palavras ("veterinária a domicílio em Campinas") |
 | | Pedir para parente, amigo que não é cliente ou para o Vinícius avaliar |
-| | Mandar o link num grupo de condomínio ou numa lista de transmissão |
+| | Mandar o link num grupo de moradores, do bairro ou numa lista de transmissão |
 
 **Clientes atuais:** espalhe os pedidos ao longo de uma ou duas semanas, poucos por dia. O Google trata volume fora do comum como sinal de avaliação falsa, e o perfil é novo.
 
