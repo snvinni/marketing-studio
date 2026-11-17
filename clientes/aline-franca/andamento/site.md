@@ -99,3 +99,16 @@ Pedido do Vinícius: "eu nao quero nada relacionado a residentcial / Vamos deixa
 - Pedidos para outras frentes (o coordenador trata com o Vinícius):
   - `plano.md`, `perfil.md` e os arquivos das frentes 4 e 6 ainda falam em condomínio; não editei.
   - **Frente 6:** a frase da apresentação é "Oi, Aline! Vi sua apresentação." Se for usar etiqueta para ela no WhatsApp Business, é essa a frase.
+
+## 17/11/2026: material de parceria com o conteúdo da frente 6
+
+- Feito (line-vet, na `ccr-ddd55fa2-btz5yk`; o material fica fora do deploy):
+  - `materiais/modelo.html` segue `operacao/parcerias.md`, seção 4.
+    - **Veterinária em casa primeiro:** consulta e vacina; cirurgia, anestesia geral e internação ficam na clínica, com encaminhamento; valores "sob consulta".
+    - **Depois o pet sitter:** "valor reduzido" para cada animal a mais, sem 50%.
+    - CRMV no rodapé. Nada sobre deslocamento.
+  - **Gerador:** `node materiais/gerar.mjs "Nome do parceiro"` (use `--na` quando o nome pede "na").
+    - Os botões saem com "Oi, Aline! Peguei seu cartão no {parceiro}." (seção 5.3). O nome do parceiro aparece só na mensagem, não na página.
+    - Sem nome, sai a versão geral: "Oi, Aline! Peguei seu cartão."
+  - **Correção:** a calculadora do material estava quebrada desde a versão agnóstica (`6f2529e`). O teste novo (`tests/materiais.spec.js`) achou o erro; está corrigido.
+- Pendências: o material sai como rascunho enquanto houver 4 pontos `[CONFIRMAR]` (perguntas 10, 16, 19 e 39, e o número do CRMV).
