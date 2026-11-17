@@ -47,3 +47,30 @@ Código em `snvinni/line-vet`, branch `ccr-ddd55fa2-btz5yk`.
 - Pedidos para outras frentes:
   - **Frente 6:** os pedidos (a) frase de origem e (b) `?origem=google`, `?origem=anuncio` e `?origem=instagram` estão atendidos. A frase vai na última linha da mensagem. O pedido (c), material por condomínio a partir do arquivo do Petra Flamboyant, ainda não foi feito: é trabalho à parte, aguardando o Vinícius dizer quando.
   - **Frente 1:** a pesquisa traz uma lista de fotos em ordem de prioridade (`site/pesquisa-design.md`, seção 3). Vale conferir se o `briefing-fotos.md` cobre: retrato em casa, a Aline no chão com um gato, mãos vacinando, a mala e a caixa térmica.
+
+## 17/11/2026: material por condomínio (pedido c da frente 6)
+
+- Feito (`line-vet`, commit `70d8eed`, pasta `materiais/`, fora do deploy):
+  - **Modelo** `materiais/modelo-condominio.html`, com o texto do Petra e as mudanças de `operacao/parcerias.md`, seção 4:
+    - **Desconto:** sem "50% de desconto"; agora "Cada animal a mais · da mesma casa, com valor reduzido", com os mesmos valores em reais (R$ 25 e R$ 40).
+    - **Veterinária em casa:** seção nova, em azul, logo depois da abertura, com o texto da 4.2 e o botão "Falar com a Aline".
+    - **Título:** "Veterinária em casa e pet sitter para os moradores do {condomínio}".
+    - **CRMV:** passa a constar no rodapé.
+    - **Deslocamento:** nada escrito, como pede a 4.1.
+  - **Gerador** `materiais/gerar.mjs`. Rode `node materiais/gerar.mjs "Nome do Condomínio"` (com `--da` se o nome pedir "da" e "na"). Ele faz três coisas:
+    - troca o nome do condomínio e monta os links de WhatsApp com "Oi, Aline! Moro no condomínio {nome}." (seção 6 de `whatsapp-business.md`);
+    - embute o CSS do site, as fontes e a foto. O arquivo tem 226 KB e abre sem internet: conferi que não faz nenhum pedido fora do arquivo;
+    - mantém a faixa amarela "Rascunho, não enviar" enquanto sobrar `[CONFIRMAR]`.
+
+    Instruções em `materiais/README.md`.
+  - **Petra Flamboyant:** a versão nova, gerada pelo modelo, é `materiais/Dra-Aline-Franca-Petra-Flamboyant.html`. O arquivo antigo `Pet-Sitter-Dra-Aline-Franca-Petra-Flamboyant.html`, que tinha o "50% de desconto", saiu da pasta e continua no histórico do Git.
+  - **Mensagem do orçamento:** começa com a frase do condomínio, e o bloco e o apartamento vêm numa linha à parte. A conta continua a mesma: 2 animais, 1 visita, 2 dias dão R$ 150.
+  - **Conferido:** capturas em 390 e 1440 px, com e sem JavaScript, na aparência do site, e sem rolagem lateral no celular.
+- Pendências (todas da Aline):
+  - O material **não pode ser enviado** enquanto tiver `[CONFIRMAR]`. Faltam dois pontos:
+    - o número do CRMV-SP (pergunta 1);
+    - o que mostrar dos valores de consulta e vacina (perguntas 19 e 39).
+  - O Petra também ficou como rascunho, porque a seção de veterinária e o CRMV são novos. Se precisar reenviar ao Petra antes da entrevista, a versão antiga está no histórico do Git, mas tem o "50% de desconto".
+- Pedidos para outras frentes:
+  - **Frente 6:** o pedido (c) está atendido. O caminho do arquivo do Petra mudou para `line-vet/materiais/Dra-Aline-Franca-Petra-Flamboyant.html`. Atualize a referência em `operacao/parcerias.md`, seção 4.
+  - **Frente 6:** em `whatsapp-business.md`, a seção 6 usa a etiqueta Condomínio. Nos links, a frase do botão da veterinária termina com "Queria saber sobre consulta e vacina em casa.", e a do orçamento continua com "Gostaria de um orçamento de pet sitter.". A primeira frase é sempre a mesma.
