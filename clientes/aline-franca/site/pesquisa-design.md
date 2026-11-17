@@ -455,3 +455,27 @@ Feedback do Vinícius sobre a Azul claro (G): "eu nao gostei do contraste no ger
 Todos os pares de texto e fundo que o site usa (texto, texto suave, apagado; azul, pet sitter e apoio sobre fundo, cartão e faixas), a borda de campo (3:1) e o rodapé são conferidos por `scripts/paletas.py`; a checagem de acessibilidade (axe) roda em cada paleta, nas nove páginas, em 390 e 1440 px.
 
 O botão do WhatsApp segue verde (`#167A3E`, branco 5,4:1).
+
+---
+
+## Adendo (17/11/2026): mais paletas, para veterinária e design moderno
+
+Pedido do Vinícius: "procure mais opções de paletas; veja as que melhor combinam com vet e sites com designs modernos".
+
+**O que a pesquisa mostrou** (fontes de marketing e agências; são opinião, não dado):
+- **Veterinária:** o azul domina porque passa calma e confiança, mas pode parecer frio se usado sozinho. Balancear com neutros e um acento quente ([PetDesk, dez/2025](https://petdesk.com/blog/the-psychology-of-color-in-veterinary-marketing); [LifeLearn, ago/2025](https://www.lifelearn.com/2025/08/26/color-psychology-how-veterinary-practices-can-use-it-in-marketing-and-branding/)). Precedente de azul com tom quente: o rebrand da IVC Evidensia, com azul-petróleo, marinho e coral ([Made Good Designs](https://madegooddesigns.com/veterinary-branding/)); a busca trouxe a descrição de segunda mão, não o material oficial da marca.
+- **Design de sites em 2026:** a fórmula que mais se repete é base calma e quente, mais **um acento só**, mais textura visível, e uma tendência "feita por gente" contra o site de modelo pronto ([Network Solutions](https://www.networksolutions.com/blog/website-design-trends/); [Cascade Web Dev, sobre o branco-nuvem em sites](https://cascadewebdev.com/blog/2025-12-12/why-pantones-cloud-dancer”-is-the-perfect-starting-point-for-website-design-in-2026.html)).
+- **Cor de 2026 da Pantone: Cloud Dancer** (11-4201), um branco suave. A recepção entre designers foi **dividida**: uns o veem como calma e respiro, outros como seguro demais ([Print Monthly](https://www.printmonthly.co.uk/?p=13614); [Wallpaper](https://www.wallpaper.com/design-interiors/pantone-colour-of-the-year-2026-cloud-dancer-white)). Há quem peça mais saturação ([FM, "The Case for Bolder Color in 2026"](https://wpengine.fm.co/stills/cloud-dancer-bold-colors/)).
+- **Cobalto contra ouro** aparece como combinação de contraste forte para pequenos negócios ([Small Business Expo](https://www.thesmallbusinessexpo.com/blog/design-trends-for-2025-in-web-design-and-graphic-design/)).
+- **Não confirmado:** uma busca trouxe a combinação "azul-ardósia + canela + branco-nuvem + areia" com códigos de cor, mas não consegui achar a página de origem. Usei só a ideia; os tons da Nuvem são derivados por mim e conferidos no contraste.
+- **Verde-musgo e sálvia** (PetDesk sugere azul com verde para clínicas de bem-estar) ficaram de fora: no pet sitter, um botão verde ao lado do botão verde do WhatsApp confunde.
+- **Modo escuro** é comum em sites modernos, mas é uma decisão maior (muda todos os componentes); ficou de fora por ora.
+
+**As quatro novas** (contrastes WCAG AA conferidos por `scripts/paletas.py` e pelo axe nas nove páginas, em 390 e 1440 px). Saiu a Azul claro, que o Vinícius rejeitou.
+
+| Paleta | Contraste | Ideia | Fundo | Texto | Principal (branco no botão) | Pet sitter |
+|---|---|---|---|---|---|---|
+| Do logo | médio | cores do próprio logo: azul #4890B0, creme e caramelo da pelagem, marrom-cacau no texto | #F8F3EC | 13,2:1 | #2F7494 (5,2:1) | caramelo (5,1:1) |
+| Nuvem | suave | branco-nuvem, azul-ardósia, canela; acento quente só no pet sitter | #F0EEE9 | 11,1:1 | ardósia (5,0:1) | canela (4,8:1) |
+| Tinta azul | médio | papel quente com o texto em azul-tinta, como impresso editorial; pet sitter em tijolo | #F6F3EC | 10,4:1 | azul (5,3:1) | tijolo (5,5:1) |
+| Cobalto e ouro | forte | cobalto vivo e ouro; rodapé cobalto escuro | #FAF7F0 | 14,8:1 | cobalto (6,6:1) | ouro-escuro (5,2:1) |

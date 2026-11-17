@@ -282,3 +282,21 @@ Pedido do Vinícius: "temos um logo, para add no site" (e, depois: "depois vou p
   - Dá para aumentar o logo no rodapé ou no Sobre quando houver o arquivo em alta.
   - A imagem de compartilhamento do link (`assets/og.jpg`, a que aparece no WhatsApp) continua a de antes; posso refazer com o logo se o Vinícius quiser.
 - Pedidos para outras frentes: **frentes 4, 5 e 6:** o logo existe e é redondo, formato ideal para a foto do perfil do Google, do Instagram e do WhatsApp Business. Usar o original em alta definição (Drive), não os arquivos do site.
+
+## 17/11/2026: quatro paletas novas no seletor
+
+Pedido do Vinícius: "procure mais opcoes de paletas; veja as que melhores combinam com vet e sites com designs modernos".
+
+- Feito (line-vet `8028993`, na `ccr-ddd55fa2-btz5yk`): quatro paletas novas no botão "Cores", a partir de pesquisa nova (adendo em `site/pesquisa-design.md`, com fontes e ressalvas):
+  - **Do logo:** o azul do círculo, o creme e o caramelo da pelagem do gato e marrom-cacau no texto. Mede as cores do logo que o Vinícius mandou.
+  - **Nuvem:** branco-nuvem (cor de 2026 da Pantone), azul-ardósia e canela.
+  - **Tinta azul:** papel quente e texto em azul-tinta, como impresso editorial.
+  - **Cobalto e ouro:** azul cobalto vivo e ouro; a mais ousada.
+  - **Saiu a Azul claro**, que ele rejeitou. O botão agora tem 10 opções (a Atual e nove paletas).
+  - Todas passam no contraste e na checagem de acessibilidade nas nove páginas; 163 testes passam. Testado no endereço real, em 390 e 1440 px: as 10 opções aparecem, cada uma troca o fundo e não há erro.
+- Ressalvas honestas:
+  - As fontes de tendência são blogs de agências e de gráficas: opinião, não dado.
+  - A recepção ao branco-nuvem da Pantone foi dividida.
+  - Uma combinação de cores que vi citada ("azul-ardósia + canela") eu não consegui rastrear até a fonte; usei só a ideia.
+  - Modo escuro e verde-musgo ficaram de fora (explicação no adendo).
+- Pendências: o Vinícius e a Aline escolherem a paleta; só então ela entra em `assets/site.css` e o seletor sai.
