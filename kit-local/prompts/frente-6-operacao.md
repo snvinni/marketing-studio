@@ -10,7 +10,7 @@ Antes de qualquer coisa, entenda o contexto. Leia: README.md, CLAUDE.md, cliente
 Fase 1 (faça agora), em clientes/aline-franca/operacao/:
 - medicao.md e uma planilha modelo (.xlsx): pedidos por semana e por origem, atendimentos fechados, avaliações novas, números do perfil no Google, gasto em anúncios, e como decidir todo mês o que reforçar e o que cortar.
 - whatsapp-business.md: passo a passo de configuração, catálogo de serviços, mensagem de saudação e de ausência, respostas rápidas, etiquetas por origem do contato e a lista de transmissão para lembrete de reforço de vacina. Textos pela skill copy-chief.
-- parcerias.md: quem abordar em Campinas (condomínios, banho e tosa, pet shops sem veterinário, adestradores, hotéis), mensagem de abordagem, proposta de indicação cruzada sem comissão que fira o código de ética, e o texto de um cartão com QR code para o WhatsApp.
+- parcerias.md: quem abordar em Campinas (banho e tosa, pet shops sem veterinário, adestradores, hotéis), mensagem de abordagem, proposta de indicação cruzada sem comissão que fira o código de ética, e o texto de um cartão com QR code para o WhatsApp.
 
 Onde depender de dado que o perfil.md ainda não confirma (bairros, preços, horários), use [CONFIRMAR: ...] e liste a pendência.
 

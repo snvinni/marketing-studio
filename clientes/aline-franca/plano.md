@@ -23,7 +23,7 @@ Plano aprovado em 16/11/2026. Foi escrito para ser executado aos poucos, por age
 | `index.html` | Site público atual, uma página só, com CSS e JS embutidos. Hoje fala só de pet sitter. |
 | `assets/aline.jpg` | Única foto (308 px, recortada do PDF original). |
 | `assets/og.jpg` | Imagem de prévia para compartilhamento. |
-| `materiais/Pet-Sitter-Dra-Aline-Franca-Petra-Flamboyant.html` | Versão exclusiva do condomínio, enviada como arquivo. Fora do deploy (`.vercelignore`). |
+| `materiais/` | Material de apresentação para enviar como arquivo a parceiros e contatos, sem endereço nem público específico. Fora do deploy (`.vercelignore`). |
 | `vercel.json`, `robots.txt`, `sitemap.xml`, `favicon.svg`, `README.md` | Configuração de publicação. |
 
 **Identidade visual (manter):** fundo creme `#F6F1E9`, tinta `#2B2420`, azul `#4F96B0` / `#2F6F87`, terracota `#C0704A`. Títulos em Fraunces (com itálico azul), corpo em Figtree, assinatura em Caveat. Texto em primeira pessoa. Sem cara de SaaS: sem cartões de preço, sem selos, sem fonte mono.
@@ -97,7 +97,7 @@ Plano aprovado em 16/11/2026. Foi escrito para ser executado aos poucos, por age
 
 **Bloco 5: Clientes e prova**
 29. Quantos clientes ativos tem? Quantos são de gatos?
-30. Como chegaram até ela (indicação, condomínio, Instagram)?
+30. Como chegaram até ela (indicação, Instagram, Google)?
 31. O que os tutores mais elogiam? O que mais perguntam antes de contratar?
 32. Quais medos ouve com frequência ("meu gato não deixa", "vacina em casa é segura?")?
 33. Três a cinco tutores que topariam avaliar no Google e ceder foto do pet.
@@ -318,7 +318,7 @@ Fotos pesadas não entram no Git: ficam no Drive, com o link anotado em `briefin
 - **PT-P2:** revisão semanal dos termos; decisão em 60 dias pelo custo por pedido.
 
 ## 9. Trilha F: Indicações e parcerias
-- **PT-R1:** material por condomínio no modelo do Petra Flamboyant (arquivo em `materiais/`).
+- **PT-R1:** material de apresentação agnóstico, sem público específico, para mandar a parceiros e contatos (arquivo em `materiais/` no `line-vet`).
 - **PT-R2:** lista de banho e tosa, pet shops sem veterinário, adestradores e hotéis para indicação cruzada.
 - **PT-R3:** cartão ou ímã com QR code do WhatsApp.
 - **PT-R4:** lembrete de reforço de vacina por lista de transmissão.
