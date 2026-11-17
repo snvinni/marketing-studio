@@ -63,14 +63,14 @@ Código em `snvinni/line-vet`, branch `ccr-ddd55fa2-btz5yk`.
     - mantém a faixa amarela "Rascunho, não enviar" enquanto sobrar `[CONFIRMAR]`.
 
     Instruções em `materiais/README.md`.
-  - **Petra Flamboyant:** a versão nova, gerada pelo modelo, é `materiais/Dra-Aline-Franca-Petra-Flamboyant.html`. O arquivo antigo `Pet-Sitter-Dra-Aline-Franca-Petra-Flamboyant.html`, que tinha o "50% de desconto", saiu da pasta e continua no histórico do Git.
+  - **Petra Flamboyant:** não tem mais arquivo próprio, a pedido do Vinícius (commit `8a2a13a`). Ele é um condomínio como os outros: `node materiais/gerar.mjs "Petra Flamboyant"`. As versões geradas não ficam no Git (`materiais/.gitignore`). O arquivo antigo `Pet-Sitter-Dra-Aline-Franca-Petra-Flamboyant.html`, que tinha o "50% de desconto", saiu da pasta e continua no histórico do Git.
   - **Mensagem do orçamento:** começa com a frase do condomínio, e o bloco e o apartamento vêm numa linha à parte. A conta continua a mesma: 2 animais, 1 visita, 2 dias dão R$ 150.
   - **Conferido:** capturas em 390 e 1440 px, com e sem JavaScript, na aparência do site, e sem rolagem lateral no celular.
 - Pendências (todas da Aline):
   - O material **não pode ser enviado** enquanto tiver `[CONFIRMAR]`. Faltam dois pontos:
     - o número do CRMV-SP (pergunta 1);
     - o que mostrar dos valores de consulta e vacina (perguntas 19 e 39).
-  - O Petra também ficou como rascunho, porque a seção de veterinária e o CRMV são novos. Se precisar reenviar ao Petra antes da entrevista, a versão antiga está no histórico do Git, mas tem o "50% de desconto".
+  - Gerado para o Petra, o material também sai como rascunho, porque a seção de veterinária e o CRMV são novos. Se precisar reenviar ao Petra antes da entrevista, a versão antiga está no histórico do Git, mas tem o "50% de desconto".
 - Pedidos para outras frentes:
-  - **Frente 6:** o pedido (c) está atendido. O caminho do arquivo do Petra mudou para `line-vet/materiais/Dra-Aline-Franca-Petra-Flamboyant.html`. Atualize a referência em `operacao/parcerias.md`, seção 4.
+  - **Frente 6:** o pedido (c) está atendido. O arquivo do Petra citado em `operacao/parcerias.md`, seção 4, não existe mais. O modelo agora é `line-vet/materiais/modelo-condominio.html`, e a versão de cada condomínio, inclusive a do Petra, sai do gerador. Atualize a referência.
   - **Frente 6:** em `whatsapp-business.md`, a seção 6 usa a etiqueta Condomínio. Nos links, a frase do botão da veterinária termina com "Queria saber sobre consulta e vacina em casa.", e a do orçamento continua com "Gostaria de um orçamento de pet sitter.". A primeira frase é sempre a mesma.
