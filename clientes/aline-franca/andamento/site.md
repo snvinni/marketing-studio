@@ -264,3 +264,21 @@ Pedido do Vinícius: "eu nao gostei do contraste no geral mesmo. Quero que veja 
 - **Antes de publicar o site final:** a conferência `PUBLICAR=1` barra o site se sobrar `paletas.css`, `previa.js` ou `data-paleta`. A paleta escolhida entra no `:root` de `assets/site.css` (passo a passo no README).
 - Pendências: o Vinícius e a Aline escolherem a paleta; o Vinícius mandar a mensagem de validação à Aline, agora dizendo que ela pode trocar as cores no botão "Cores".
 - Pedidos para outras frentes: nenhum.
+
+## 17/11/2026: logo da Aline no site
+
+Pedido do Vinícius: "temos um logo, para add no site" (e, depois: "depois vou pegar ele em alta definicao").
+
+- Feito (line-vet `6ce027d`, na `ccr-ddd55fa2-btz5yk`):
+  - **Logo no cabeçalho de todas as páginas**, ao lado do nome escrito (52 px no computador, 44 no celular). O nome continua, porque o texto do anel ("Aline França / Médica Veterinária") não se lê em tamanho pequeno. No celular a linha da marca tem a mesma altura do botão Menu: o cabeçalho não ficou mais alto.
+  - **Ícone da aba do navegador e do celular** trocados pelo logo, e `logo` nos dados estruturados do Google.
+  - **Material de parceria** com o logo embutido no arquivo.
+  - Funciona com todas as paletas do seletor de cores. O azul do logo (#4995AE) é praticamente o azul de enfeite que o site já usa (#4F96B0).
+  - Testado no endereço real, em 390 e 1440 px: logo carrega nas nove páginas, sem erro. 151 testes passam.
+- **O arquivo que recebi é uma captura de 510 px de diâmetro.** Serve para o cabeçalho e os ícones, mas não para cartão, impressão ou ampliação.
+- **Quando chegar o logo em alta definição**, `python3 scripts/logo.py caminho/do/logo.png` (na pasta `line-vet`) refaz o recorte e todos os tamanhos, e atualiza as páginas sozinho. O arquivo do cabeçalho leva um código no nome, então o navegador não mostra o logo antigo por 7 dias. Se o logo vier com fundo branco, passar `--centro X,Y --raio R`. Se vier em SVG, avisar: dá para usar direto e ficar nítido em qualquer tamanho.
+- Pendências:
+  - Vinícius: guardar o logo original em alta definição no Drive da Aline e anotar o link (`briefing-fotos.md` é da frente 1; o logo não é foto, então vale uma linha em `clientes/aline-franca/` onde a frente 1 achar melhor).
+  - Dá para aumentar o logo no rodapé ou no Sobre quando houver o arquivo em alta.
+  - A imagem de compartilhamento do link (`assets/og.jpg`, a que aparece no WhatsApp) continua a de antes; posso refazer com o logo se o Vinícius quiser.
+- Pedidos para outras frentes: **frentes 4, 5 e 6:** o logo existe e é redondo, formato ideal para a foto do perfil do Google, do Instagram e do WhatsApp Business. Usar o original em alta definição (Drive), não os arquivos do site.
