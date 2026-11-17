@@ -32,7 +32,6 @@ Fonte de verdade para todo texto escrito sobre a Aline. A skill copy-chief lê e
 - Faz visitas de pet sitter de até 1 hora, com olhar clínico, e avisa o tutor se notar alteração. (PDF)
 - Antes da primeira visita de pet sitter, coleta rotina, alimentação, contatos, medicações e veterinário de referência. (PDF)
 - Ama gatos e já tem clientes felinos. (Vinícius)
-- Atende moradores do condomínio Petra Flamboyant sem taxa de deslocamento. (Vinícius) — não citar em material público.
 
 ## Voz
 - **Pessoa:** primeira pessoa, "eu". Fala direto com o tutor ("você").

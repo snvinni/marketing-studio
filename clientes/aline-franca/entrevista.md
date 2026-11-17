@@ -9,7 +9,7 @@
 - WhatsApp: (19) 98181-1227.
 - Médica-veterinária; usa "Dra. Aline França" no material atual.
 - Ama gatos e já tem clientes felinos.
-- Já atende como pet sitter no condomínio Petra Flamboyant, com tabela de preços (ver `perfil.md`).
+- Já atende como pet sitter, com tabela de preços (ver `perfil.md`).
 - Tem Instagram profissional (usuário não anotado).
 - Foto atual: com um gato siamês no colo, jaleco "Medicina Veterinária".
 
@@ -98,7 +98,7 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 
 29. Quantos clientes ativos tem? Como se dividem por espécie?
     > 
-30. Como os clientes chegaram até você (indicação, condomínio, Instagram, Google)?
+30. Como os clientes chegaram até você (indicação, Instagram, Google)?
     > 
 31. O que os tutores mais elogiam? O que mais perguntam antes de contratar?
     > 
