@@ -19,3 +19,31 @@ Código em `snvinni/line-vet`, branch `ccr-ddd55fa2-btz5yk`.
 - Pedidos para outras frentes:
   - **Frente 6:** o pedido de origem nos botões do site está atendido (ver acima). A frase vem na **última** linha da mensagem, não na primeira, porque a primeira é o pedido do cliente ("Olá, Aline! Gostaria de um orçamento..."). As palavras são as mesmas das etiquetas. A frase genérica "Oi, Aline! Vim pelo seu site." da tabela da seção 6 não é usada no site.
   - **Frente 4:** o link do site no perfil do Google deve ser `https://draalinefranca.com.br/?origem=google`, quando o site estiver no ar.
+
+## 17/11/2026: design e núcleo do site (antes da entrevista)
+
+- Feito (todos no `line-vet`, branch `ccr-ddd55fa2-btz5yk`):
+  - **Pesquisa de mercado e boas práticas** guardada em `clientes/aline-franca/site/pesquisa-design.md` (com as fontes). Conclusões que guiaram o resto: CRMV visível em todas as páginas, contraste, fontes leves e sem Google, WhatsApp como ação principal sem bolha flutuante, uma página de Atendimento em vez de páginas de bairro, avaliações só com link para o Google, medição sem cookie.
+  - **Contraste (WCAG 2.2 AA)** (commit `78e4560`). Três cores reprovavam e foram trocadas por tons um pouco mais escuros:
+    - texto secundário (era 4,4:1);
+    - subtítulos em terracota;
+    - botão de WhatsApp (era 3,1:1).
+
+    As bordas de campo também ficaram mais visíveis. Um teste automático com axe-core roda em todas as páginas.
+  - **Cor por serviço** (`78e4560`): na veterinária e nas páginas gerais, azul na frente e terracota de apoio; no pet sitter (`class="svc-pet"`), o contrário. O bloco "olhar de médica-veterinária" continua azul.
+  - **Fontes no próprio site** (`78e4560`), em `assets/fontes/`. Caíram de 215 KB para 109 KB e o visitante não é mais enviado ao Google. O desenho dos títulos e a altura das páginas não mudaram.
+  - **Celular** (`5b30612`):
+    - **Barra de WhatsApp:** aparece quando o botão do topo sai da tela e some na calculadora e no bilhete final.
+    - **Cabeçalho-modelo:** os dois serviços ficam sempre à vista, com o ponto da cor de cada um.
+  - **Medição pronta** (`5b30612`): cada botão de WhatsApp diz a página e a posição. A contagem só liga quando houver Umami na página (ver pendências).
+  - **Guia de estilo** (`fabce74`), em `guia-de-estilo.html`, fora do deploy. Tem as peças das oito páginas, nas versões de veterinária e de pet sitter, e um formulário curto que vira mensagem de WhatsApp (para o PT-S3). Os textos são de exemplo; o que depende da entrevista está marcado `[CONFIRMAR]`.
+  - `?origem=instagram` aceito (`f572d1c`), a pedido da frente 6.
+  - 69 testes passam em 390 e 1440 px.
+- Pendências:
+  - Fase 2 continua esperando a entrevista.
+  - **Medição:** o Vinícius precisa criar a conta no Umami (grátis até 100 mil eventos por mês, sem cookie) e me passar o código do site. A Vercel só conta cliques no plano pago; a Cloudflare não conta cliques.
+  - **Preço de consulta e vacina:** o manual do CFMV de 2026 permite mostrar valor "em termos discretos". O "sob consulta" do projeto é mais rígido do que a norma exige. Decisão da Aline, de preferência depois da checagem no CRMV-SP.
+  - **Cor por serviço na página inicial atual:** `/` está provisoriamente em terracota, porque mostra o conteúdo de pet sitter. Volta ao azul com a página inicial nova (PT-S2).
+- Pedidos para outras frentes:
+  - **Frente 6:** os pedidos (a) frase de origem e (b) `?origem=google`, `?origem=anuncio` e `?origem=instagram` estão atendidos. A frase vai na última linha da mensagem. O pedido (c), material por condomínio a partir do arquivo do Petra Flamboyant, ainda não foi feito: é trabalho à parte, aguardando o Vinícius dizer quando.
+  - **Frente 1:** a pesquisa traz uma lista de fotos em ordem de prioridade (`site/pesquisa-design.md`, seção 3). Vale conferir se o `briefing-fotos.md` cobre: retrato em casa, a Aline no chão com um gato, mãos vacinando, a mala e a caixa térmica.
