@@ -23,11 +23,13 @@ Use na ordem. Cada problema encontrado recebe uma gravidade.
 ### 2. Fatos (FATO)
 - Cada número, preço, prazo, lugar e credencial está no perfil como confirmado?
 - Algum fato foi "arredondado" para parecer melhor ("anos de experiência", "centenas de clientes")?
+- Todo fato não confirmado está marcado `[CONFIRMAR]` no próprio texto, em cada versão e em cada parte (roteiro, tela, legenda)? Estar só na lista de pendências não basta.
 
 ### 3. Ideia e leitor (CLAREZA)
 - Dá para dizer a ideia em uma frase?
 - A primeira frase é sobre o leitor e faz querer ler a segunda?
-- Tem uma chamada clara, e só uma?
+- Tem uma chamada clara, e só uma? Se há mais de uma versão, cada uma tem a sua?
+- Traz a identificação que o setor exige no canal (nome, registro), em cada versão?
 
 ### 4. Voz (VOZ)
 - Soa como as frases de exemplo do perfil? Usa as palavras dele?

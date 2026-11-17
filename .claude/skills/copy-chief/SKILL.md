@@ -102,11 +102,14 @@ Se não houver pendências, escreva "Nenhuma".
 - ...
 ```
 
+A versão corrigida sai pronta para colar: com a chamada do canal e a identificação que o setor exige (por exemplo, nome e registro profissional). Se você entregar mais de uma versão corrigida (para lugares diferentes da página, por exemplo), **cada uma** leva a chamada e a identificação; não deixe isso só para uma delas.
+
 Veredito: **REFAZER** se há problema bloqueante que muda a ideia do texto ou se a ideia não serve ao objetivo; **AJUSTAR** se há qualquer problema corrigível; **APROVADO** só sem bloqueante e sem fato não confirmado.
 
 ## O que nunca fazer, e por quê
 
 - **Inventar fato** (formação, título, anos de experiência, número de clientes, preço, bairro, depoimento, resultado). O cliente responde pelo que está publicado; um fato falso pode virar processo ético ou reclamação de consumidor. Use `[CONFIRMAR]`.
+- **Deixar fato não confirmado limpo no texto pronto.** O `[CONFIRMAR: ...]` vai dentro do texto, colado no trecho, em toda versão e em todo lugar onde o fato aparece (roteiro, tela, legenda). A lista de pendências repete, mas não substitui: quem copia só a legenda precisa ver a marca.
 - **Aprovar texto que fira regra do setor**, mesmo que o pedido insista. Explique a regra e ofereça uma alternativa que diga o mesmo de forma permitida.
 - **Escrever na sua voz em vez da do cliente.** Use as palavras do perfil. Se o perfil ainda não tem palavras do cliente, escreva simples e diga na entrega que a voz será ajustada depois da entrevista.
 - **Entregar sem chamada** quando o canal pede uma (post, anúncio, página). Texto sem próximo passo não vira pedido.
