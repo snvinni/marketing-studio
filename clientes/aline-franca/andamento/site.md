@@ -233,3 +233,13 @@ O Vinícius não gostou dos cortes de cor da página de vacinas ("eu nao gostei 
   - **Arco da foto vazio à direita:** a captura era de uma versão anterior da prévia das paletas, montada antes das fotos por página. Desde `3fb9148` o arco aparece em 1440 px; conferi na prévia e no endereço da Aline.
   - **Botão redondo escuro na borda direita:** não é do site, que não tem nenhum elemento fixo no computador. É, muito provavelmente, a barra de ferramentas da Vercel, que aparece nas prévias para quem está logado. A Aline não vê. Dá para esconder pelo próprio botão ou em Settings → General → Vercel Toolbar.
 - Pendências: o Vinícius escolher entre G e H (ou outra). Só então a paleta vai para a `ccr-ddd55fa2-btz5yk`.
+
+## 17/11/2026: "está tudo creme" (cache do CSS)
+
+- **Causa:** o `vercel.json` guardava tudo de `/assets/` por 7 dias no navegador, inclusive `site.css`, `site.js` e `paletas.css`, que mudam sem trocar de endereço. O Vinícius abriu a prévia com o HTML novo e o CSS antigo: a paleta G não existia no CSS guardado, então ficou tudo creme. O espaço da foto também apareceu sem estilo (pata gigante e lista com bolinhas).
+- **Correção** (line-vet `c01ef28` na `ccr-ddd55fa2-btz5yk`; `3534394` na `previa/paletas`):
+  - Cache de 7 dias só para fontes e imagens; CSS e JS são conferidos a cada visita. Conferido no ar: `site.css` com `max-age=0, must-revalidate`.
+  - Links com `?v=2`, para abandonar as cópias já guardadas.
+  - Teste que barra cache longo em `site.css` e `site.js`.
+- **Erro meu no caminho:** ao juntar a correção na `previa/paletas`, um conflito foi publicado com os marcadores no HTML (`aa0ec4a`). Corrigi em seguida, num commit novo (`3534394`), sem reescrever o histórico. Afetou só a prévia das paletas, protegida por login; a branch principal e o endereço da Aline não foram afetados.
+- O botão redondo escuro à direita, que aparece na captura, é a barra de ferramentas da Vercel (só para quem está logado).
