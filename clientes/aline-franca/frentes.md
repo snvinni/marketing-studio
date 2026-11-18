@@ -40,7 +40,7 @@ ONDA 3 (depois do site no ar)
 | Responder a entrevista (ou passar as respostas da Aline) | Vinícius + Aline | Frentes 2, 4 e 5 |
 | Conferir os pontos de publicidade no CRMV-SP | Aline | Preços, fotos e depoimentos no site |
 | Mandar as fotos (pedido em `briefing-fotos.md`) | Aline | Site fase 3, perfil no Google, Instagram |
-| Registrar `draalinefranca.com.br` e publicar o site | Vinícius | Google Ads, link nos perfis |
+| Registrar `alinefranca.vet.br` (no CPF da Aline) e publicar o site | Vinícius | Google Ads, link nos perfis |
 | Criar o Perfil da Empresa no Google e gravar o vídeo de verificação | Vinícius + Aline | Avaliações, Maps |
 | Pedir avaliações aos clientes atuais | Aline (mensagem pronta pela frente 4) | Google Ads |
 | Publicar posts e responder mensagens | Vinícius | — |

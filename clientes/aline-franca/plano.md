@@ -30,7 +30,7 @@ Plano aprovado em 16/11/2026. Foi escrito para ser executado aos poucos, por age
 
 **Peças que já existem e devem ser reaproveitadas:** calculadora de pet sitter (lógica em `index.html`, bloco `<script>`, funções `compute`, `render`, `message`), recibo do orçamento, lista com patinhas, linha do tempo "como funciona", bloco de citação azul, bilhete de fechamento, e o comportamento sem JavaScript (classes `js`, `no-js`, `js-only`, `nojs-msg`).
 
-**Dados fixos:** WhatsApp `5519981811227`. Preços de pet sitter: 1 animal R$ 50 (1 visita) / R$ 80 (2 visitas); adicional R$ 25 / R$ 40; exóticos R$ 50 por gaiola por visita; medicação R$ 10 a R$ 60 a combinar. Domínio escolhido: `draalinefranca.com.br`.
+**Dados fixos:** WhatsApp `5519981811227`. Preços de pet sitter: 1 animal R$ 50 (1 visita) / R$ 80 (2 visitas); adicional R$ 25 / R$ 40; exóticos R$ 50 por gaiola por visita; medicação R$ 10 a R$ 60 a combinar. Domínio escolhido: `alinefranca.vet.br` (decisão de 17/11/2026; substitui `draalinefranca.com.br`).
 
 ## 3. O que a pesquisa mostrou
 
