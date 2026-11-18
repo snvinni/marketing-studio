@@ -1,7 +1,7 @@
 # Entrevista com o cliente ("anamnese")
 
 **Cliente:** Aline França
-**Data:** 17/11/2026 (blocos 1 e 2)
+**Data:** 17/11/2026 (blocos 1, 2 e 4)
 **Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
 **Formato:** conversa por escrito com o agente (Claude Code)
 
@@ -70,7 +70,7 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 16. Tem clínica ou hospital parceiro para internação, cirurgia e emergência? Pode citar o nome?
     > Não tem clínica parceira fixa para encaminhar. Orienta o tutor a procurar a clínica de confiança dele ou um hospital 24 h.
 17. Atende urgência? Em que horários responde? O que orienta fora do horário?
-    > Atende urgência só se tiver agenda, sem prometer. Responde mensagens em horário comercial. Fora disso, orientar hospital 24 h.
+    > Atende urgência só se tiver agenda, sem prometer. Responde mensagens ao longo do dia, assim que puder (corrigido no bloco 4). Urgência fora da agenda dela: orientar hospital 24 h.
 18. Emite carteira de vacinação, receita, prontuário digital?
     > Emite carteira de vacinação, receita e prontuário digital.
 18a. Outros serviços que não são veterinários (pet sitter, passeio, hospedagem)? Como funcionam?
@@ -94,13 +94,13 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 4: Área e agenda
 
 25. Cidades e bairros que atende de verdade. Até quantos quilômetros ou minutos?
-    > 
+    > Campinas, Valinhos e Vinhedo. Bairro combinado caso a caso; nos textos: "consulte seu bairro". Sem limite fixo em km.
 26. Dias e horários. Fim de semana e feriado.
-    > 
+    > Dias úteis à noite, até 21h. Sábado o dia todo. Não atende domingo nem feriado.
 27. Antecedência para agendar. Quantos atendimentos faz por dia.
-    > 
+    > Agenda no mesmo dia, se tiver vaga. Faz 1 a 2 atendimentos por dia.
 28. Como prefere receber pedidos: WhatsApp, ligação, formulário.
-    > 
+    > WhatsApp e formulário (no site). Não quer ligação.
 
 ## Bloco 5: Clientes e prova
 

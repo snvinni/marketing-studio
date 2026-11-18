@@ -1,5 +1,14 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: bloco 4 (Área e agenda)
+- Feito: bloco 4 gravado em `entrevista.md` (perguntas 25 a 28). Corrigida a 17: ela responde mensagens ao longo do dia, assim que puder.
+  - Área: Campinas, Valinhos e Vinhedo; bairro combinado caso a caso ("consulte seu bairro").
+  - Agenda: dias úteis à noite até 21h e sábado o dia todo. Sem domingo e feriado. Mesmo dia se tiver vaga; 1 a 2 atendimentos por dia.
+  - Pedidos: WhatsApp e formulário no site. Sem ligação.
+- Pedidos para outras frentes:
+  - **Frente 2 (Site):** página de área com as três cidades, sem lista de bairros. O formulário é desejado; não pôr botão de ligar.
+  - **Frente 4 (Google):** área de atendimento: Campinas, Valinhos e Vinhedo. Horário: seg a sex até 21h (início `[PENDENTE]`), sábado o dia todo, domingo fechado.
+
 ## 17/11/2026: bloco 2 (Serviços)
 - Feito: bloco 2 respondido e gravado em `entrevista.md` (perguntas 10 a 18a).
   - Só cães e gatos. Cavalos são paixão, não atendimento.
