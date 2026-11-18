@@ -1,5 +1,19 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: bloco 5 (Clientes e prova)
+- Feito: bloco 5 gravado em `entrevista.md` (perguntas 29 a 34).
+  - Menos de 10 clientes ativos, vindos de indicação e do trabalho anterior. O número não vai para texto público.
+  - Elogios: paciência e calma, explica tudo, carinho com o animal, atualizações no pet sitter.
+  - Dúvidas comuns: "meu gato não deixa", quanto custa, o que acontece se precisar de exame.
+  - 3 a 5 tutores topam avaliar no Google; ela vai mandar prints de depoimentos e pedir autorização.
+- **Correção no bloco 4: horário de atendimento é só interno.** Ela encaixa os atendimentos conforme a rotina do outro trabalho, e isso não pode ficar público. Texto público: "com hora marcada".
+- Pendências: prints dos depoimentos e autorizações (Aline); frase marcante de tutor; quantos clientes são de gatos.
+- Pedidos para outras frentes:
+  - **Todas:** não publicar horário de atendimento em nenhum canal; usar "com hora marcada". Não publicar número de clientes.
+  - **Frente 4 (Google):** no Perfil da Empresa, não preencher horário de funcionamento (ou usar a opção sem horário fixo). Corrige o pedido do bloco 4.
+  - **Frentes 2 e 4:** a FAQ deve responder "meu gato não deixa ninguém pegar", "quanto custa e cobra deslocamento" e "e se precisar de exame".
+  - **Frente 4:** a lista de tutores para pedir avaliação existe (3 a 5); a mensagem de pedido pode ser preparada.
+
 ## 17/11/2026: bloco 4 (Área e agenda)
 - Feito: bloco 4 gravado em `entrevista.md` (perguntas 25 a 28). Corrigida a 17: ela responde mensagens ao longo do dia, assim que puder.
   - Área: Campinas, Valinhos e Vinhedo; bairro combinado caso a caso ("consulte seu bairro").
@@ -7,7 +21,7 @@
   - Pedidos: WhatsApp e formulário no site. Sem ligação.
 - Pedidos para outras frentes:
   - **Frente 2 (Site):** página de área com as três cidades, sem lista de bairros. O formulário é desejado; não pôr botão de ligar.
-  - **Frente 4 (Google):** área de atendimento: Campinas, Valinhos e Vinhedo. Horário: seg a sex até 21h (início `[PENDENTE]`), sábado o dia todo, domingo fechado.
+  - **Frente 4 (Google):** área de atendimento: Campinas, Valinhos e Vinhedo. Horário: ver o bloco 5 abaixo (não publicar).
 
 ## 17/11/2026: bloco 2 (Serviços)
 - Feito: bloco 2 respondido e gravado em `entrevista.md` (perguntas 10 a 18a).

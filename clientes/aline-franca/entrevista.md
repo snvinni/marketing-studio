@@ -1,7 +1,7 @@
 # Entrevista com o cliente ("anamnese")
 
 **Cliente:** Aline França
-**Data:** 17/11/2026 (blocos 1, 2 e 4)
+**Data:** 17/11/2026 (blocos 1, 2, 4 e 5)
 **Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
 **Formato:** conversa por escrito com o agente (Claude Code)
 
@@ -96,7 +96,8 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 25. Cidades e bairros que atende de verdade. Até quantos quilômetros ou minutos?
     > Campinas, Valinhos e Vinhedo. Bairro combinado caso a caso; nos textos: "consulte seu bairro". Sem limite fixo em km.
 26. Dias e horários. Fim de semana e feriado.
-    > Dias úteis à noite, até 21h. Sábado o dia todo. Não atende domingo nem feriado.
+    > **Só interno, nunca público** (site, Google, Instagram): ela encaixa os atendimentos conforme a rotina do outro trabalho, e isso não pode ficar público. Nos textos: "com hora marcada".
+    > Interno: dias úteis à noite, até 21h; sábado o dia todo; não atende domingo nem feriado.
 27. Antecedência para agendar. Quantos atendimentos faz por dia.
     > Agenda no mesmo dia, se tiver vaga. Faz 1 a 2 atendimentos por dia.
 28. Como prefere receber pedidos: WhatsApp, ligação, formulário.
@@ -105,17 +106,19 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 5: Clientes e prova
 
 29. Quantos clientes ativos tem? Como se dividem por espécie?
-    > 
+    > Menos de 10 clientes ativos, somando veterinária e pet sitter (quantos são de gatos: `[PENDENTE]`). **Número não vai para texto público.**
 30. Como os clientes chegaram até você (indicação, Instagram, Google)?
-    > 
+    > Indicação e tutores do trabalho anterior. Ainda nada por Instagram ou Google.
 31. O que os tutores mais elogiam? O que mais perguntam antes de contratar?
-    > 
+    > Elogios: paciência e calma, explica tudo, carinho com o animal, atualizações durante o pet sitter.
+    > Perguntam antes de contratar: quanto custa; o que acontece se precisar de exame.
+    > Frase de tutor marcante, palavra por palavra: `[PENDENTE]`.
 32. Quais medos ouve com frequência? (Ex.: "meu gato não deixa ninguém pegar", "vacina em casa é segura?")
-    > 
+    > "Meu gato não deixa ninguém pegar"; quanto custa (e se cobra deslocamento); o que acontece se precisar de exame ou clínica. (O medo "vacina em casa é segura?" não foi marcado.)
 33. Três a cinco tutores que topariam avaliar no Google e ceder foto do pet.
-    > 
+    > 3 a 5 tutores topam avaliar no Google e ceder foto do pet. Nomes ficam com a Aline e o Vinícius, fora do Git.
 34. Tem depoimentos em mensagem que possam ser usados (com autorização)?
-    > 
+    > Tem depoimentos em mensagem; vai mandar prints e pedir autorização a cada tutor. Autorizações vão para `autorizacoes.md`. Uso público depende também da pergunta 39 (CRMV).
 
 ## Bloco 6: Marca, regras e limites
 
