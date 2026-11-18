@@ -2,7 +2,11 @@
 
 O código do site fica no repositório **`snvinni/line-vet`** (branch `ccr-ddd55fa2-btz5yk` até o primeiro merge). Este arquivo diz o que construir; os pacotes de trabalho detalhados estão na seção 5 de `../plano.md` (PT-S1 a PT-S12).
 
-## Estado atual (17/11/2026)
+## Estado atual (17/11/2026, depois da entrevista)
+- **Fase 2 feita:** as nove páginas têm os textos da entrevista (ver `textos.md`), sem nenhum `[CONFIRMAR]`. Faltam as fotos (fase 3), a escolha da paleta e tirar as marcas de prévia (faixa de rascunho, `noindex`, seletor de cores). A conferência `PUBLICAR=1` lista isso.
+- O nome público é "Aline França", **sem "Dra."** (pedido dela).
+
+## Estado antes da entrevista (17/11/2026)
 - **Na branch `ccr-ddd55fa2-btz5yk`:** `index.html` e `pet-sitter.html` (o pet sitter com a calculadora), estilo e scripts em `assets/`, fontes no próprio site, guia de estilo (`guia-de-estilo.html`, fora do ar).
 - **Na branch `previa/site-completo`:** prévia das nove páginas (as oito do plano e a de privacidade), com textos provisórios marcados `[CONFIRMAR]`. Não vai ao ar sem o ok do Vinícius.
 - `materiais/`: apresentação da Aline para mandar como arquivo a qualquer contato, sem citar lugar (fora do deploy).

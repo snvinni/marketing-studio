@@ -300,3 +300,25 @@ Pedido do Vinícius: "procure mais opcoes de paletas; veja as que melhores combi
   - Uma combinação de cores que vi citada ("azul-ardósia + canela") eu não consegui rastrear até a fonte; usei só a ideia.
   - Modo escuro e verde-musgo ficaram de fora (explicação no adendo).
 - Pendências: o Vinícius e a Aline escolherem a paleta; só então ela entra em `assets/site.css` e o seletor sai.
+
+## 17/11/2026: fase 2 do site (PT-S2 a S5, S7 e S8), depois da entrevista
+
+Pedido do coordenador, com a fase 2 liberada pelo `perfil.md` ("Fonte: entrevista de 17/11/2026"). Textos pela skill copy-chief, canal site; o raciocínio, as versões e a revisão estão em `site/textos.md`. Tudo na `ccr-ddd55fa2-btz5yk`, sobre a paleta atual, com um commit por PT.
+
+- Feito (line-vet):
+  - **Nome sem "Dra."** (`8183c28`): saiu de cabeçalho, títulos, rodapé, dados estruturados, comentários, testes, material de parceria e nomes de arquivo. Rodapé de toda página com "Aline França · médica-veterinária · CRMV-SP nº 66561", aviso de que não faz emergência (hospital 24 horas) e link do Instagram @mv.alinefranca. `assets/og.jpg` refeita (dizia "Dra. Aline França · pet sitter").
+  - **PT-S2** página inicial (`7ebae87`). **PT-S3** veterinária a domicílio (`73ef399`). **PT-S4** vacinas (`77d5c90`). **PT-S5** gatos (`e9dd9f3`). **PT-S7** Sobre (`63dc81c`). **PT-S8** atendimento e dúvidas (`c00fdca`).
+  - **Pet sitter e privacidade** (`34e1a61`): "valor reduzido" no lugar de "50% de desconto" (tabela e calculadora); Campinas, Valinhos e Vinhedo; CRMV e e-mail dela na privacidade. **Material de parceria** pronto para enviar, sem a faixa de rascunho: gerar com `node materiais/gerar.mjs "Parceiro"`, arquivo `Aline-Franca-<parceiro>.html`.
+  - **Testes:** 329 passam. `tests/conteudo.spec.js` confere as regras do perfil nas nove páginas (sem "Dra.", sem palavra proibida, sem horário, sem preço de veterinária, sem percentual, sem o que ela não anuncia, sem botão de ligar, sem `[CONFIRMAR]`); os formulários de atendimento e de veterinária montam a mensagem certa.
+- **Resultado:** nenhum `[CONFIRMAR]` sobrou no texto das nove páginas. O que ainda barra a publicação (`PUBLICAR=1`) não é texto: a faixa de rascunho (9 páginas), os espaços de foto marcados `[aguardando foto]` (8 páginas), o `noindex` (9) e o seletor de cores (9).
+- **Ficou de fora de propósito** (não está na entrevista, e eu não inventei): tabela do calendário de vacinas; lembrete de reforço pelo WhatsApp; "examino antes de vacinar"; dicas de como preparar a casa para a visita de um gato; o bloco de avaliações do Google (volta quando o perfil existir). Ver a tabela de pendências em `site/textos.md`.
+- **Onde o domínio `draalinefranca.com.br` aparece** (não troquei nada, como pedido; a decisão é do Vinícius): `canonical` e `og:url` das nove páginas, `url` e `logo` dos dados estruturados do pet sitter, `sitemap.xml` (9 endereços), `robots.txt` (1), `README.md` (3) e `tests/publicacao.spec.js` (1). Se mudar, é uma troca em lote.
+- **Algumas frases do site são minhas, derivadas do que ela disse.** A Aline precisa ler com atenção, antes de validar: cuidados paliativos e eutanásia (lista e dúvida), a frase da Milka, o trabalho em medicamentos, as vacinas de cães, "atendo todos na mesma visita", a lista do que fica na clínica e "Depende do gato…". Lista completa em `site/textos.md`.
+- Pendências:
+  - Aline, via frente 1: fotos; calendário de vacinas e se quer lembrete de reforço; dicas para preparar a casa (opcional); palavras que ela gosta.
+  - Vinícius: o domínio; a escolha da paleta; mandar o rascunho à Aline para validar.
+  - Frente 2: atualizar a privacidade quando a medição for ligada; fase 3 (fotos) quando chegarem.
+- Pedidos para outras frentes:
+  - **Frente 1:** perguntas curtas para a Aline: (1) calendário de vacinas de filhote e de adulto, para uma tabela; (2) se ela quer oferecer lembrete de reforço pelo WhatsApp; (3) dicas para o tutor preparar a casa antes da visita de um gato (ou se aprova as comuns); (4) se ela concorda com o texto de paliativos e eutanásia. `briefing-fotos.md` ainda diz "Dra. Aline França" no cabeçalho (arquivo da frente 1).
+  - **Frente 4:** o site diz Campinas, Valinhos e Vinhedo, sem horário, sem ligação; o link do perfil do Google continua `?origem=google`.
+  - **Frente 6:** o material de parceria está pronto e sem "Dra."; frase dos botões "Oi, Aline! Peguei seu cartão no {parceiro}."
