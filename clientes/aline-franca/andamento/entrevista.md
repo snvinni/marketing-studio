@@ -1,5 +1,17 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: bloco 2 (Serviços)
+- Feito: bloco 2 respondido e gravado em `entrevista.md` (perguntas 10 a 18a).
+  - Só cães e gatos. Cavalos são paixão, não atendimento.
+  - Em casa: consulta, vacinas (V8/V10, antirrábica, felina, gripe e giárdia), vermifugação, medicação e curativos, atestados de saúde e viagem, filhotes, idosos e crônicos, paliativos e eutanásia.
+  - **Não faz em casa:** coleta de exames, exames de imagem, fluidoterapia, microchip, internação, cirurgia. Não tem clínica parceira fixa: orienta a clínica de confiança do tutor ou um hospital 24 h.
+  - Urgência só se tiver agenda, sem prometer; responde em horário comercial.
+  - Duração da consulta: sem número ("o tempo que for preciso, sem pressa").
+  - Fora da veterinária, só pet sitter.
+- Pedidos para outras frentes:
+  - **Frentes 2 e 4:** não anunciar coleta de exames, fluidoterapia, microchip nem atendimento de urgência. Não citar clínica parceira.
+  - **Frente 2 (fotos e site):** a maleta tem estetoscópio, termômetro, balança, material de curativo, toalha e petiscos; vacinas vão em caixa térmica com termômetro.
+
 ## 17/11/2026: bloco 1 (Quem é a Aline)
 - Feito: bloco 1 respondido e gravado em `entrevista.md` (perguntas 1 a 9).
   - **Nome sem "Dra.":** ela quer aparecer como "Aline França". CRMV-SP 66561.

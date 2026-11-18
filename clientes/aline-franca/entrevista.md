@@ -1,7 +1,7 @@
 # Entrevista com o cliente ("anamnese")
 
 **Cliente:** Aline França
-**Data:** 17/11/2026 (bloco 1)
+**Data:** 17/11/2026 (blocos 1 e 2)
 **Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
 **Formato:** conversa por escrito com o agente (Claude Code)
 
@@ -52,25 +52,29 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 2: Serviços
 
 10. Lista completa do que faz em casa: consulta, vacinas (quais), vermifugação, coleta de sangue e outros exames, microchip, curativos, medicação injetável, fluidoterapia, atestado de saúde e de viagem, cuidados paliativos, eutanásia domiciliar, orientação de filhotes, acompanhamento de idosos e crônicos.
-    > 
+    > Faz em casa: consulta clínica; vacinas (V8/V10 para cães, antirrábica, polivalente felina V3/V4/V5, gripe canina e giárdia); vermifugação; medicação injetável e curativos; atestado de saúde e de viagem; orientação de filhotes; acompanhamento de idosos e crônicos; cuidados paliativos; eutanásia domiciliar.
+    > **Não faz em casa:** coleta de sangue e outros exames, fluidoterapia, microchip.
 11. O que você **não** faz em casa e para onde encaminha?
-    > 
+    > Encaminha: exames de sangue e urina, exames de imagem, internação e cirurgia, emergência grave. (Cirurgia, anestesia geral, transfusão e quimioterapia injetável são proibidas em casa pela Res. CFMV 1.690/2026.)
 12. Quais espécies atende? Algum serviço só para algumas espécies?
-    > 
+    > Só cães e gatos como veterinária. Cavalos são paixão, não atendimento. Exóticos só no pet sitter (preço por gaiola, ver bloco 3).
 13. Para o tipo de paciente do item 6: o que faz de diferente (manejo, tempo, ambiente, materiais)? Atende os mais difíceis (ariscos, idosos, casas com muitos animais)?
-    > 
+    > Gatos: manejo gentil (toalha, pouca contenção, voz baixa, poucos movimentos). Gato arisco: atende, com limite; se o gato ficar estressado demais, não insiste e combina outro caminho com o tutor.
+    > Atende bem casas com muitos animais e idosos frágeis. Gatos ariscos e cães grandes ou bravos não foram marcados como ponto forte.
 14. Quanto dura uma visita? O que leva na maleta? Como transporta vacinas e medicamentos (caixa térmica, termômetro)?
-    > 
+    > Duração: varia; não quer dar número. Nos textos: "o tempo que for preciso, sem pressa".
+    > Maleta: estetoscópio e termômetro, balança, material de curativo, toalha e petiscos.
+    > Vacinas e medicamentos: caixa térmica com termômetro.
 15. Quais laboratórios usa e como entrega resultado?
-    > 
+    > Não se aplica: não colhe exames em casa; encaminha (pergunta 11).
 16. Tem clínica ou hospital parceiro para internação, cirurgia e emergência? Pode citar o nome?
-    > 
+    > Não tem clínica parceira fixa para encaminhar. Orienta o tutor a procurar a clínica de confiança dele ou um hospital 24 h.
 17. Atende urgência? Em que horários responde? O que orienta fora do horário?
-    > 
+    > Atende urgência só se tiver agenda, sem prometer. Responde mensagens em horário comercial. Fora disso, orientar hospital 24 h.
 18. Emite carteira de vacinação, receita, prontuário digital?
-    > 
+    > Emite carteira de vacinação, receita e prontuário digital.
 18a. Outros serviços que não são veterinários (pet sitter, passeio, hospedagem)? Como funcionam?
-    > 
+    > Só pet sitter (visitas de até 1 hora), como no PDF. Não faz passeio avulso, hospedagem nem pernoite.
 
 ## Bloco 3: Preços e condições
 
