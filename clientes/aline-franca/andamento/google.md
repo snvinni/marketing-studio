@@ -5,7 +5,7 @@
 - Pendências:
   - Área atendida além de Campinas: pergunta 25 da entrevista (frente 1).
   - Horários: entrevista (frente 1).
-  - Site no campo de contato: só quando `draalinefranca.com.br` estiver no ar (Vinícius).
+  - Site no campo de contato: só quando `alinefranca.vet.br` estiver no ar (Vinícius). Domínio trocado em 17/11; antes era `draalinefranca.com.br`.
 - Pedidos para outras frentes: nenhum.
 - Feito: `google/roteiro-verificacao.md`, roteiro do vídeo em cinco trechos (rua, carro e material, maleta e caixa térmica, jaleco e CRMV, fim), com o que o Google exige e o que nunca mostrar.
 - Pendências: confirmar com a Aline se tem jaleco com nome bordado, carimbo, receituário, cartão de visita e se atende de carro (Vinícius). O roteiro tem alternativa para cada caso.
@@ -31,4 +31,9 @@
 ## 17/11/2026
 - Feito: tirei dos arquivos da frente 4 as menções a condomínio e ao Petra Flamboyant, a pedido da frente 2 (repassado pela coordenação), pela decisão do Vinícius de não ter nada relacionado a condomínio ou residencial no projeto. Os avisos continuam, de forma genérica: `google/passo-a-passo.md` ("endereço de terceiros"), `google/roteiro-verificacao.md` ("endereço de terceiros") e `google/mensagens-avaliacao.md` ("grupo de moradores, do bairro"). O grep por condom, residencial e Petra nos arquivos da frente não acha mais nada.
 - Pendências: as mesmas de 16/11.
+- Pedidos para outras frentes: nenhum.
+
+## 17/11/2026 (domínio)
+- Feito: troquei o domínio do site de `draalinefranca.com.br` para `alinefranca.vet.br` em `google/passo-a-passo.md` (tabela "Tenha em mãos" e passo 6) e na pendência "Site no campo de contato" deste andamento, a pedido da frente 2 (repassado pela coordenação). Segue o `perfil.md` (commit 78d1483 da frente 1). O grep por "draalinefranca" nos arquivos da frente só acha a menção de histórico na pendência.
+- Pendências: `alinefranca.vet.br` ainda não registrado nem com disponibilidade conferida (Vinícius). O campo de site no Google continua em branco até o site estar no ar.
 - Pedidos para outras frentes: nenhum.

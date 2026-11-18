@@ -19,7 +19,7 @@ Para o Vinícius seguir com a Aline do lado. PT-G1 do `plano.md`.
 | Endereço da Aline | o endereço real de onde ela trabalha (a casa dela) | Só para o Google. **Fica oculto.** Não vai para nenhum arquivo deste repositório. |
 | Área atendida | `Campinas` por enquanto | Outras cidades e bairros: `[CONFIRMAR, pergunta 25]` |
 | Horários | — | `[CONFIRMAR]`, sai da entrevista (fase 2, `textos-perfil.md`) |
-| Site | deixar em branco | O domínio `draalinefranca.com.br` ainda não está no ar |
+| Site | deixar em branco | O domínio `alinefranca.vet.br` ainda não está no ar |
 | Celular com o app Google Maps ou Google | da Aline ou seu, com a conta dona do perfil | Para a verificação por vídeo |
 
 ### De quem é a conta
@@ -71,7 +71,7 @@ O Google pode pedir o endereço mesmo assim, para a verificação. Se pedir:
 
 ### 6. Contato
 - **Telefone:** `(19) 98181-1227`.
-- **Site:** deixe em branco por enquanto. Quando `draalinefranca.com.br` estiver no ar, coloque o endereço do site.
+- **Site:** deixe em branco por enquanto. Quando `alinefranca.vet.br` estiver no ar, coloque o endereço do site.
 - **Não faça:** colocar o link do Instagram ou do WhatsApp no campo de site. A diretriz do Google não aceita página de rede social como site.
 - Se o Google oferecer um botão de mensagem ou de WhatsApp, pode ativar com o mesmo número.
 
