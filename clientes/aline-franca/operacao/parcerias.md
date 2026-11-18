@@ -1,16 +1,16 @@
-# Parcerias e indicações em Campinas
+# Parcerias e indicações em Campinas, Valinhos e Vinhedo
 
 Pacotes R1, R2 e R3 do `plano.md` (Trilha F). Quem faz: Vinícius prepara a lista e o material; a Aline vai às conversas (ou o Vinícius vai em nome dela, combinado antes). Controle na aba **Parceiros** de `medicao-modelo.xlsx`.
 
 A ideia: negócios que já falam com tutores todos os dias (o banho e tosa, o pet shop, o adestrador) passam a ter o cartão da Aline para dar a quem precisa de veterinária em casa. Em troca, a Aline passa a indicar esses negócios quando um tutor pergunta. Sem dinheiro no meio.
 
-**Textos:** escritos e revisados seguindo a skill copy-chief (núcleo, setor `veterinaria-br`, canal `whatsapp.md` para as mensagens). A revisão está no fim.
+**Textos:** escritos e revisados com a skill copy-chief (núcleo, setor `veterinaria-br`, canal `whatsapp.md` para as mensagens), a partir do `perfil.md` da entrevista de 17/11/2026. A revisão está no fim.
 
 ---
 
 ## 1. A regra: indicação de confiança, sem comissão
 
-O Código de Ética do médico-veterinário (Resolução CFMV 1.138/2016) trata da forma de conseguir clientes, e a resolução de publicidade (1.649/2025) proíbe concorrência desleal e venda casada. O artigo exato sobre pagar ou receber por indicação não foi conferido `[CONFIRMAR com o CRMV-SP junto com os pontos da pergunta 39]`. Até lá, pela regra do `CLAUDE.md` (na dúvida, trate como proibido):
+O Código de Ética do médico-veterinário (Resolução CFMV 1.138/2016) trata da forma de conseguir clientes, e a resolução de publicidade (1.649/2025) proíbe concorrência desleal e venda casada. O artigo exato sobre pagar ou receber por indicação não foi conferido, e a Aline decidiu não consultar o CRMV-SP (`perfil.md`, Limites). Por isso vale, sem prazo, a regra do `CLAUDE.md`: na dúvida, trate como proibido.
 
 | Pode | Não pode |
 |---|---|
@@ -24,14 +24,14 @@ O Código de Ética do médico-veterinário (Resolução CFMV 1.138/2016) trata 
 
 ## 2. Quem abordar
 
-A região atendida ainda não está confirmada `[CONFIRMAR: cidades e bairros, pergunta 25]`. Comece pelos bairros onde a Aline já tem clientes.
+A Aline atende Campinas, Valinhos e Vinhedo. Comece pelos bairros onde ela já tem clientes, para que as indicações caiam perto da rota dela (o deslocamento é cobrado pela distância).
 
 | Tipo | Por que faz sentido | O que a Aline oferece | Como achar |
 |---|---|---|---|
 | **Banho e tosa** (sem veterinário) | O tosador vê pele, ouvido, unha e dente do animal toda semana e é o primeiro a quem o tutor pergunta "isso é normal?" | Cartões para entregar quando o tutor precisar de veterinária; a Aline indica o banho e tosa a quem pergunta | Google Maps: "banho e tosa" + bairro |
 | **Pet shops sem veterinário** | O tutor compra ração e pergunta sobre vacina e vermífugo no balcão | Cartões no balcão; indicação para vacina em casa | Google Maps: "pet shop" + bairro; confira no perfil ou na visita se tem veterinário próprio. Se tiver, não aborde |
-| **Adestradores** | Atendem em casa também e conhecem cães idosos, grandes ou difíceis de levar à clínica | Cartões; indicação mútua | Instagram e Google: "adestrador Campinas"; grupos de tutores |
-| **Hotéis e creches para pets** | O tutor que viaja escolhe entre hotel e pet sitter; quem não pode deixar o pet fora de casa precisa do pet sitter, e vice-versa | Indicação mútua conforme o caso; cartões | Google Maps: "hotel para cachorro", "creche para cães" + Campinas |
+| **Adestradores** | Atendem em casa também e conhecem cães idosos, grandes ou difíceis de levar à clínica | Cartões; indicação mútua | Instagram e Google: "adestrador" + Campinas, Valinhos ou Vinhedo; grupos de tutores |
+| **Hotéis e creches para pets** | O tutor que viaja escolhe entre hotel e pet sitter; quem não pode deixar o pet fora de casa precisa do pet sitter, e vice-versa | Indicação mútua conforme o caso; cartões | Google Maps: "hotel para cachorro", "creche para cães" + cidade |
 
 **Ritmo sugerido:** duas abordagens por semana. Em dois meses são uns 15 parceiros, o bastante para a medição mostrar quais trazem pedido.
 
@@ -52,7 +52,7 @@ As mensagens vão com o nome da Aline. Quem manda pelo WhatsApp é ela ou o Vin�
 
 **Versão A: pela indicação mútua (recomendada)**
 ```
-Oi, {nome}! Aqui é a Aline França, médica-veterinária. Atendo cães e gatos em casa, aqui em Campinas: consulta, vacina e pet sitter.
+Oi, {nome}! Aqui é a Aline França, médica-veterinária. Atendo cães e gatos em casa, em Campinas, Valinhos e Vinhedo: consulta, vacina e pet sitter.
 
 Quero ter um {banho e tosa / pet shop / adestrador / hotel} de confiança para indicar aos tutores que atendo, e deixar meus cartões com vocês para quando um cliente precisar de veterinária em casa. Sem custo e sem comissão para nenhum lado.
 
@@ -78,11 +78,12 @@ Oi, {nome}! Sou a Aline França, médica-veterinária, e atendo cães e gatos em
 Além do cartão (seção 5), a frente 2 mantém um material de parceria em `line-vet/materiais/`: uma página sobre a Aline, sem nome de lugar, que o parceiro pode receber por WhatsApp ou ter impressa no balcão. O arquivo HTML é da frente 2; a frente 6 define o conteúdo:
 
 - **Os dois serviços:** veterinária em casa (consulta e vacina, o carro-chefe) e pet sitter.
-- **O que não é feito em casa:** cirurgia, anestesia geral e internação, com encaminhamento quando o caso pede.
-- **Valores:** pet sitter com os valores do `perfil.md` e "valor reduzido para cada animal a mais da mesma casa", sem "50% de desconto". Consulta e vacina "sob consulta" até as perguntas 19 e 39.
-- **CRMV-SP** no rodapé.
+- **O que não é feito em casa:** exames, cirurgia, anestesia geral e internação; nesses casos ela orienta o tutor a procurar a clínica de confiança dele ou um hospital 24 horas.
+- **Valores:** pet sitter com os valores do `perfil.md` e "valor reduzido para cada animal a mais da mesma casa", sem "50% de desconto". Consulta e vacina: "valores pelo WhatsApp" (a Aline passa caso a caso).
+- **Nome e CRMV:** "Aline França · médica-veterinária · CRMV-SP 66561" no rodapé, sem "Dra.".
 - **Botões de WhatsApp** com a frase do parceiro: "Oi, Aline! Peguei seu cartão no {parceiro}." (seção 5.3).
-- **Nada sobre deslocamento** até a Aline confirmar (pergunta 20).
+- **Deslocamento:** não citar valor; se precisar, "o deslocamento é combinado na conversa".
+- **Horário:** só "com hora marcada"; os dias e horários dela não aparecem.
 
 ## 5. Cartão e ímã com QR code
 
@@ -104,13 +105,13 @@ Além do cartão (seção 5), a frente 2 mantém um material de parceria em `lin
 **Versão A: pela casa (recomendada)**
 ```
 FRENTE
-Dra. Aline França
-Médica-veterinária · CRMV-SP [CONFIRMAR: número]
+Aline França
+Médica-veterinária · CRMV-SP 66561
 
-Seu pet fica em casa. Eu cuido dele.
+Seu pet fica em casa, no conforto dele.
 
 Consulta e vacina em casa · Pet sitter
-Cães e gatos · Campinas e região [CONFIRMAR: região, pergunta 25]
+Cães e gatos · Campinas, Valinhos e Vinhedo
 
 VERSO
 [QR code]
@@ -122,13 +123,13 @@ alinefranca.vet.br [só quando o site estiver no ar]
 **Versão B: pelos gatos**
 ```
 FRENTE
-Dra. Aline França
-Médica-veterinária · CRMV-SP [CONFIRMAR: número]
+Aline França
+Médica-veterinária · CRMV-SP 66561
 
 Seu gato não precisa entrar na caixa de transporte.
 
 Consulta e vacina em casa para gatos e cães · Pet sitter
-Campinas e região [CONFIRMAR: região, pergunta 25]
+Campinas, Valinhos e Vinhedo
 
 VERSO
 (igual à versão A)
@@ -170,19 +171,14 @@ Oi, {nome}! Recebi uma indicação de vocês esta semana. Obrigada pela confian�
 Checklist de `referencias/revisao.md`, nos textos finais:
 
 1. **Regras (BLOQUEANTE):** sem comissão, desconto ou brinde por indicação (seção 1). O "50% de desconto" do material antigo de pet sitter não volta. Nenhuma promessa: a versão B do cartão diz só que o gato não precisa entrar na caixa de transporte, o que decorre do atendimento em casa, sem prometer que ele não vai se estressar. O que não é feito em casa aparece junto com o encaminhamento. CRMV em todo material impresso, como o setor exige.
-2. **Fatos (FATO):** região, CRMV, deslocamento e valores de ato veterinário estão como `[CONFIRMAR]`. Os preços e o que o pet sitter inclui são os do `perfil.md`. "Seu gato não precisa entrar na caixa de transporte" decorre do serviço em casa, não de um dado novo.
-3. **Ideia e chamada (CLAREZA):** cada mensagem tem uma chamada: marcar a visita, mandar o material para aprovação, chamar no WhatsApp.
-4. **Voz (VOZ):** primeira pessoa, "você", "tutor", "em casa". Sem "especialista", "o melhor", "seu bebê". Sem emoji. A frase "Seu pet fica em casa. Eu cuido dele." vem do exemplo de voz do perfil.
+2. **Fatos (FATO):** CRMV, cidades, o que é feito e o que não é feito em casa e o encaminhamento vêm do `perfil.md` da entrevista. Valores da veterinária, deslocamento e horário ficam fora, como o perfil pede. Sem "Dra.". Os preços e o que o pet sitter inclui são os do perfil. "Seu gato não precisa entrar na caixa de transporte" decorre do serviço em casa, não de um dado novo.
+3. **Ideia e chamada (CLAREZA):** cada mensagem tem uma chamada: marcar a visita, deixar os cartões, chamar no WhatsApp.
+4. **Voz (VOZ):** primeira pessoa, "você", "tutor", "em casa". Sem "especialista", "o melhor", "seu bebê". Sem emoji. A frase "Seu pet fica em casa, no conforto dele." vem do exemplo de voz do perfil.
 5. **Canal (CLAREZA):** mensagens de WhatsApp curtas, em bloco, com campos variáveis entre chaves. Cartão: texto que cabe em 9 × 5 cm. Não há arquivo de canal para impresso na skill; foi usado o núcleo.
 6. **Português:** conferido.
 
-**Veredito:** AJUSTAR. Prontos na forma; dependem das confirmações abaixo.
+**Veredito:** APROVADO.
 
 ## Pendências
-- [CONFIRMAR com o CRMV-SP: artigo do Código de Ética sobre indicação e captação de clientes] — Aline, junto com a pergunta 39.
-- [CONFIRMAR: cidades e bairros atendidos] — Aline, pergunta 25 (lista de parceiros, cartão).
-- [CONFIRMAR: número do CRMV-SP] — Aline, pergunta 1 (cartão, material do parceiro).
-- [CONFIRMAR: cobra deslocamento e como varia por bairro?] — Aline, pergunta 20.
-- [CONFIRMAR: o que mostrar de valores da consulta e da vacina] — Aline, perguntas 19 e 39.
 - Material necessário: arte do cartão e do ímã (Vinícius, com as cores do site); orçamento de gráfica.
 - Frente 2: material de parceria sem nome de lugar, com o conteúdo da seção 4 (em andamento na frente 2).

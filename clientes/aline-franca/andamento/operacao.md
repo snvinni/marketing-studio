@@ -33,5 +33,17 @@
 - Pedidos para outras frentes:
   - **Frente 4 (Google):** o link do campo de site passa a ser `https://alinefranca.vet.br/?origem=google`.
 
+## 17/11/2026: textos preenchidos com a entrevista
+- Feito (a partir do `perfil.md` reescrito pela frente 1):
+  - `operacao/whatsapp-business.md`: sem nenhum `[CONFIRMAR]`. Nome "Aline França · Veterinária" (sem "Dra."), CRMV-SP 66561, e-mail, Instagram, Campinas, Valinhos e Vinhedo, catálogo com o que a consulta inclui e as vacinas, valores da veterinária só pelo WhatsApp, pagamento, manejo de gato, encaminhamento à clínica do tutor ou hospital 24 horas. Horário só interno: perfil comercial "com hora marcada" e ausência por horário personalizado. Nova resposta `/sintoma` (17 respostas rápidas). Revisado com a skill copy-chief: três correções, veredito APROVADO.
+  - `operacao/parcerias.md`: sem `[CONFIRMAR]`. Cartão com "Aline França", CRMV-SP 66561 e as três cidades; regra de indicação sem prazo (a Aline decidiu não consultar o CRMV-SP); conteúdo do material de parceria com valores pelo WhatsApp, sem horário e sem valor de deslocamento. Veredito APROVADO.
+  - `operacao/medicao.md`: meta de 3 a 5 atendimentos veterinários por semana em maio de 2027 na revisão do mês; a conta do custo por atendimento do anúncio fica com o Vinícius e a Aline, fora do Git, porque os valores dela não ficam nos arquivos.
+  - Planilha e gerador sem "Dra.".
+- Pendências:
+  - Decidir quem responde o quê no WhatsApp e se o número já usa o WhatsApp comum (Aline e Vinícius).
+  - Arte do catálogo, do cartão e do ímã; orçamento de gráfica (Vinícius).
+- Pedidos para outras frentes:
+  - **Frente 2:** o material de parceria segue `operacao/parcerias.md`, seção 4, agora sem pendências (nome sem "Dra.", CRMV-SP 66561, valores pelo WhatsApp, sem horário).
+
 ## Fase 2 (Google Ads)
 Aguardando o Vinícius avisar que o site está no ar e o perfil no Google tem 10 avaliações.

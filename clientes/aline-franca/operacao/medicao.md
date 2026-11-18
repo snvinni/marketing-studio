@@ -42,7 +42,7 @@ Conta como pedido: alguém que pergunta preço, disponibilidade ou quer marcar c
 ### Números do perfil no Google
 No painel do Perfil da Empresa, em "Desempenho", anote os números da semana anterior:
 - **Visualizações** do perfil (pessoas que viram o perfil na busca e no Maps).
-- **Ligações** feitas pelo botão do perfil.
+- **Ligações** feitas pelo botão do perfil. A Aline não atende ligação; se o perfil não tiver telefone, deixe em branco.
 - **Cliques no site.**
 - **Conversas ou cliques no WhatsApp**, se o painel mostrar.
 
@@ -51,6 +51,8 @@ O Google às vezes mostra os números por mês e com atraso de alguns dias. Se n
 ## 2. Revisão do mês: o que reforçar e o que cortar
 
 Na primeira segunda-feira de cada mês, abra a aba **Mês** e responda, na coluna "Decisão", três perguntas. A revisão leva 15 minutos.
+
+**A meta que guia a revisão:** 3 a 5 atendimentos veterinários por semana em maio de 2027 (`perfil.md`). Hoje a Aline faz 1 a 2 por dia de atendimento, encaixados no outro trabalho. Compare os atendimentos fechados do mês com essa meta: se a agenda dela encher antes, o trabalho passa a ser escolher os canais que trazem os atendimentos certos (consulta e vacina, perto da rota), não trazer mais pedidos.
 
 **1. De onde vieram os atendimentos fechados?** Olhe "Fechados" por origem, não "Pedidos". Origem que traz pedido mas não fecha pode estar atraindo o público errado (gente procurando emergência, cirurgia, preço baixo).
 
@@ -76,7 +78,7 @@ O anúncio começa no mês 2, com até R$ 300 por mês, depois de o site estar n
 - **Custo por pedido** = gasto ÷ pedidos com origem "Anúncio Google".
 - **Custo por atendimento** = gasto ÷ atendimentos fechados com origem "Anúncio Google".
 
-Ao fim de 60 dias, compare o custo por atendimento com o que um atendimento rende para a Aline `[CONFIRMAR: valor médio de uma consulta ou vacina, pergunta 19 da entrevista]`. Se o custo por atendimento passa de um terço desse valor `[CONFIRMAR com a Aline essa margem]`, revise palavras e anúncios (frente 6, fase 2) antes de aumentar a verba. Se não houver nenhum atendimento em 60 dias, pause.
+Ao fim de 60 dias, compare o custo por atendimento com o que um atendimento rende para a Aline. Os valores dela não ficam nos arquivos (`perfil.md`): a conta é feita pelo Vinícius com a Aline, fora do Git. Regra sugerida: se o custo por atendimento passa de um terço do valor médio de uma consulta ou vacina, revise palavras e anúncios (frente 6, fase 2) antes de aumentar a verba; a Aline e o Vinícius podem mudar essa margem. Se não houver nenhum atendimento em 60 dias, pause.
 
 ## 3. Cuidados
 
@@ -87,6 +89,5 @@ Ao fim de 60 dias, compare o custo por atendimento com o que um atendimento rend
 - **Planilha gerada por script** (`gerar-planilha.py`, nesta pasta): `python3 gerar-planilha.py medicao-modelo.xlsx` recria o modelo em branco. Não rode por cima da planilha já preenchida.
 
 ## Pendências
-- [CONFIRMAR: valor médio de um atendimento, para a regra do anúncio] — Aline, pergunta 19 da entrevista.
-- [CONFIRMAR: margem aceitável de custo por atendimento] — Vinícius e Aline.
-- As frases de origem nos links de WhatsApp dependem do site (frente 2), do perfil no Google (frente 4) e do Instagram (frente 5). Pedido registrado em `andamento/operacao.md`.
+- Na revisão dos 60 dias do anúncio, o Vinícius e a Aline fazem a conta do custo por atendimento com o valor médio dela, fora do Git.
+- As frases de origem dependem do site no ar (frente 2), do perfil no Google (frente 4) e da bio do Instagram (frente 5).

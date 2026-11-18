@@ -1,4 +1,4 @@
-"""Gera a planilha modelo de medição da Dra. Aline França (frente 6)."""
+"""Gera a planilha modelo de medição da Aline França (frente 6)."""
 import sys
 from datetime import date, timedelta
 
@@ -40,7 +40,7 @@ wb = Workbook()
 ws = wb.active
 ws.title = "Leia-me"
 linhas = [
-    ("Planilha de medição: Dra. Aline França", True),
+    ("Planilha de medição: Aline França", True),
     ("Pergunta que ela responde: de onde vêm os pedidos que viram atendimento?", False),
     ("", False),
     ("TODO DIA (2 minutos)", True),
