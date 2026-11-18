@@ -1,18 +1,19 @@
-# Perfil do cliente: Dra. Aline França
+# Perfil do cliente: Aline França
 
 Fonte de verdade para todo texto escrito sobre a Aline. A skill copy-chief lê este arquivo antes de escrever. Campo com `[CONFIRMAR]` não pode ser afirmado em texto publicado.
 
-**Atualizado em:** 16/11/2026
-**Fonte:** conversas com o Vinícius e o PDF de pet sitter da Aline. **A entrevista (`entrevista.md`) ainda não foi feita.** Ao fazê-la, reescreva este arquivo.
+**Atualizado em:** 17/11/2026
+**Fonte:** conversas com o Vinícius, o PDF de pet sitter da Aline e o bloco 1 da entrevista (17/11/2026). **A entrevista (`entrevista.md`) ainda não terminou.** Só a identificação abaixo já vem dela; ao terminar, este arquivo será reescrito.
 
 ## Identificação
-- **Nome público:** Dra. Aline França
-- **Como chamar:** "Dra. Aline França" no nome completo; "Aline" no texto em primeira pessoa e no WhatsApp `[CONFIRMAR, pergunta 36]`
-- **Registro profissional:** CRMV-SP `[CONFIRMAR número]`
+- **Nome público:** Aline França, **sem "Dra."** (pedido dela, entrevista, pergunta 1)
+- **Como chamar:** "Aline França" no nome completo; "Aline" no texto em primeira pessoa e no WhatsApp `[CONFIRMAR, pergunta 36]`
+- **Registro profissional:** CRMV-SP 66561
+- **Formação:** Medicina Veterinária, UniFAJ, 2023. Pós-graduação concluída em urgências e emergências intensivas (não é título de especialista: nunca escrever "especialista").
 - **Setor:** `veterinaria-br`
 - **Cidade e região atendida:** Campinas e região `[CONFIRMAR cidades e bairros, pergunta 25]`
 - **Contato principal:** WhatsApp (19) 98181-1227 · link `https://wa.me/5519981811227`
-- **Site:** `draalinefranca.com.br` (domínio escolhido, ainda não registrado). Código em `snvinni/line-vet`.
+- **Site:** `draalinefranca.com.br` (domínio escolhido, ainda não registrado; tem "dra" no nome, o que ela não quer mais: decisão do Vinícius). Código em `snvinni/line-vet`.
 - **Instagram:** `[CONFIRMAR usuário]`
 - **Perfil no Google:** ainda não existe
 

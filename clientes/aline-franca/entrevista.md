@@ -1,9 +1,9 @@
 # Entrevista com o cliente ("anamnese")
 
-**Cliente:** Dra. Aline França
-**Data:**
-**Quem entrevistou:**
-**Formato:** conversa gravada (com autorização) · áudios no WhatsApp · formulário
+**Cliente:** Aline França
+**Data:** 17/11/2026 (bloco 1)
+**Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
+**Formato:** conversa por escrito com o agente (Claude Code)
 
 ## O que já sabemos (confirmar na entrevista)
 - WhatsApp: (19) 98181-1227.
@@ -27,23 +27,27 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 1: Quem é você
 
 1. Nome completo como quer aparecer, número do registro profissional e estado.
-   > 
+   > Aline França, **sem "Dra."**. CRMV-SP 66561.
 2. Onde se formou e em que ano. Pós-graduação, residência, cursos (inclusive em andamento).
-   > 
+   > Medicina Veterinária na UniFAJ, formada em 2023. Pós-graduação concluída em urgências e emergências intensivas (instituição e ano `[PENDENTE]`). Desde os 14 anos fez cursos de auxiliar de veterinária.
 3. Tem título de especialista registrado no conselho? Alguma certificação (por exemplo, ligada a felinos ou a manejo com pouco estresse)?
-   > 
+   > Nenhum dos dois. A pós não é título de especialista registrado: pode-se dizer "pós-graduação em urgências e emergências", nunca "especialista". "Especialista em felinos", "Cat Friendly" e "Fear Free" continuam proibidos.
 4. Onde já trabalhou (clínicas, hospitais, plantões)? Ainda trabalha em algum lugar?
-   > 
+   > Já trabalhou em clínica ou hospital e em plantões; não quer os locais citados. Hoje também é promotora técnica numa indústria de produtos veterinários. **Não citar a empresa**; nos textos, generalizar ("também trabalho na área de medicamentos veterinários").
 5. Por que escolheu essa profissão? E por que atender em casa?
-   > 
+   > Nas palavras dela: "Sempre amei os animais e tive uma infância repleta deles." "Comecei aos 14 anos cursos de auxiliar de veterinária e nunca me desviei desse caminho."
+   > Em casa: sem um motivo específico; oferece o atendimento domiciliar "pelo conforto do paciente". Também atende em clínicas parceiras, combinado com o tutor, mas **isso não vai para os textos**.
 6. Tem algum tipo de paciente pelo qual tem carinho especial? De onde vem isso? Tem animais? Nomes, idades, histórias.
-   > 
+   > "Minhas grandes paixões são os gatos e os cavalos, mas amo o mundo animal em seu todo." "O que me motiva cada vez mais é poder estar perto dessas almas tão queridas, que nos ensinam cada dia mais."
+   > Tem três gatas, todas vira-latas resgatadas em algum momento da vida: Fumaça, Mel e Coral (idades `[PENDENTE]`).
+   > A gata do logo é a **Milka**: foi resgatada, a família acabou ficando com ela ("conquistou todos nós") e ela faleceu. Foi ela que inspirou o logo. **Pode ser contada em texto público.**
 7. Um atendimento que marcou e que pode ser contado (sem identificar o tutor).
-   > 
+   > Meia-Noite, um gato de ONG, caso desafiador, "mas sempre se mostrou um amor". Morreu uma semana antes da Milka; foi uma das perdas de paciente mais difíceis para ela. **Só referência interna: não contar em texto público.**
 8. Como você se descreveria para um tutor em três frases?
-   > 
+   > "Empenhada, cuidadosa e comprometida."
 9. Do que você não abre mão num atendimento?
-   > 
+   > Tempo sem pressa, explicar tudo ao tutor e não forçar o animal. Com gato que se esconde ou não deixa pegar: manejo gentil (toalha, pouca contenção, voz baixa, poucos movimentos).
+   > Obs.: estes três itens foram escolhidos entre exemplos que o agente sugeriu; não são frases dela.
 
 ## Bloco 2: Serviços
 
