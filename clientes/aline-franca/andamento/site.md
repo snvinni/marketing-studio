@@ -322,3 +322,17 @@ Pedido do coordenador, com a fase 2 liberada pelo `perfil.md` ("Fonte: entrevist
   - **Frente 1:** perguntas curtas para a Aline: (1) calendário de vacinas de filhote e de adulto, para uma tabela; (2) se ela quer oferecer lembrete de reforço pelo WhatsApp; (3) dicas para o tutor preparar a casa antes da visita de um gato (ou se aprova as comuns); (4) se ela concorda com o texto de paliativos e eutanásia. `briefing-fotos.md` ainda diz "Dra. Aline França" no cabeçalho (arquivo da frente 1).
   - **Frente 4:** o site diz Campinas, Valinhos e Vinhedo, sem horário, sem ligação; o link do perfil do Google continua `?origem=google`.
   - **Frente 6:** o material de parceria está pronto e sem "Dra."; frase dos botões "Oi, Aline! Peguei seu cartão no {parceiro}."
+
+## 17/11/2026: domínio alinefranca.vet.br no site
+
+Pedido do coordenador, pela decisão do Vinícius (`perfil.md`, `78d1483`): o domínio passa de `draalinefranca.com.br` para `alinefranca.vet.br`.
+
+- Feito (line-vet `392de34`, na `ccr-ddd55fa2-btz5yk`): troca em `canonical`, `og:url` e `og:image` das nove páginas, em `url`, `image` e `logo` dos dados estruturados do pet sitter, no `sitemap.xml` (9 endereços), no `robots.txt` e em `tests/publicacao.spec.js`; passo a passo do domínio reescrito no `README.md`. Em `site/textos.md`, a linha de pendência do domínio. As entradas antigas deste arquivo ficam como histórico.
+  - Conferido no endereço real: o `canonical`, o sitemap, o robots.txt, a imagem de compartilhamento e os dados do Google já usam o endereço novo.
+  - Novo teste: o endereço é o mesmo em todo lugar e o antigo não volta (verificado estragando de propósito um `canonical` e o sitemap). 351 testes passam.
+- **O que descobri ao conferir o registro** (consulta pública do registro.br, 17/11/2026):
+  - `alinefranca.vet.br` **não consta como registrado**. É só uma consulta; vale a checagem final no momento de registrar.
+  - `draalinefranca.com.br` **aparece como já registrado**, com servidores de "estacionamento" (por outra pessoa). A troca foi a decisão certa; o endereço antigo não era nosso.
+  - **Não consegui confirmar as regras do `.vet.br`.** O `perfil.md` diz que é categoria de veterinários e aceita CPF. A norma antiga que o lista (CGI.br, 2005) consta como revogada, e não achei a regra atual. Antes de pagar, conferir no registro.br se pedem comprovação do CRMV e como.
+- Pendências: Vinícius registra `alinefranca.vet.br` no CPF da Aline e liga o domínio na Vercel (passos no README). Até lá, o site abre em `line-vet.vercel.app` e, com o `canonical` já apontando para o endereço novo, quem abrir por lá recebe um sinal para um endereço que ainda não responde. Por isso vale ligar o domínio **antes** de tirar o `noindex`.
+- Pedidos para outras frentes: **frente 4:** o link do site no perfil do Google passa a ser `https://alinefranca.vet.br/?origem=google`, quando o domínio estiver no ar.

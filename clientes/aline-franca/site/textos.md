@@ -79,4 +79,4 @@ Cada bloco traz o briefing de cinco linhas da skill, o título e a descrição (
 | Palavras que ela gosta (para afinar a voz) | Aline |
 | Bloco de avaliações do Google na página inicial | volta quando o perfil existir (frente 4) |
 | Atualizar o texto de privacidade quando a medição de cliques for ligada | frente 2 |
-| Domínio `draalinefranca.com.br` tem "dra" | Vinícius |
+| Registrar `alinefranca.vet.br` (no CPF da Aline; conferir no registro.br o que o `.vet.br` pede para comprovar o CRMV). O domínio já está no site | Vinícius |
