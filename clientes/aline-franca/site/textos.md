@@ -2,6 +2,24 @@
 
 Escritos em 17/11/2026 a partir de `perfil.md` e `entrevista.md` (entrevista de 17/11/2026), com o núcleo, o setor `veterinaria-br` e o canal `site` da skill. Os textos estão no `line-vet` (branch `ccr-ddd55fa2-btz5yk`); aqui ficam o raciocínio e o que falta. A fonte de verdade continua sendo o perfil.
 
+## Revisão de 18/11/2026: textos diretos (pedido do Vinícius)
+O Vinícius achou os textos da fase 2 poéticos e com detalhe que não ajuda o tutor (o exemplo dele: "a vacina chega em caixa térmica, com termômetro"). Ele pediu texto direto e explicativo, mais serviços citados e os sites de referência dele como base (ver `concorrentes.md`). As nove páginas foram reescritas. O que vale agora:
+- **Cada frase responde a uma pergunta do tutor:** o que é, se serve para o meu pet, como marco, onde atende, quanto custa, o que acontece depois. Saíram caixa térmica, termômetro, maleta, "com quem entende de bicho", "cantinho" e as metáforas nos títulos.
+- **H1 com o serviço e o lugar:** "Veterinária a domicílio em Campinas, Valinhos e Vinhedo"; "Consulta veterinária em casa, em Campinas"; "Vacinas para cães e gatos em casa"; "Veterinária para gatos, na sua casa"; "Pet sitter com olhar de veterinária"; "Onde eu atendo e como marcar"; "Perguntas frequentes".
+- **Títulos de seção dizem o assunto:** "O que eu faço na sua casa", "A consulta em casa, passo a passo", "As vacinas que eu aplico", "Perguntas frequentes".
+- **Grade de serviços** no início, na veterinária e em gatos. São 13 itens, todos da entrevista: consulta clínica, check-up de rotina, filhotes, pets idosos, doença crônica, vacinas, vermifugação, medicação injetável, curativos, atestado de saúde, atestado para viagem, cuidados paliativos e eutanásia em casa. O pet sitter aparece à parte.
+- **Vacinas:** um cartão por espécie. Cães: V8 ou V10, antirrábica, gripe canina e giárdia. Gatos: V3, V4 ou V5 e antirrábica. O passo a passo é: manda a foto da carteira, combinamos, aplico em casa.
+- **Dúvidas:** 12 perguntas do jeito que o tutor pergunta. Cada resposta começa respondendo ("Sim", "Não", "Depende").
+- **Tamanho:** as páginas não ficaram mais curtas. O início foi de 488 para 661 palavras, porque ganhou a grade de serviços e quatro dúvidas. Vacinas, gatos e dúvidas também cresceram; Sobre e veterinária encolheram. O que saiu foi a voltas; o que entrou é informação.
+- **Para a Aline validar, além da lista abaixo:**
+  - "Check-up de rotina" como nome de serviço;
+  - giárdia listada como vacina de cães;
+  - "Me manda uma foto da carteira de vacinação" como primeiro passo da vacina;
+  - "Dá para aproveitar a visita da vacina para uma consulta? Sim.";
+  - "Gato é uma das minhas paixões".
+
+Os briefings da fase 2, mais abaixo, ficam como histórico; os títulos e as aberturas citados neles foram trocados.
+
 ## Regras que valeram em todas as páginas
 - Nome: **"Aline França", sem "Dra."**; "Aline" em primeira pessoa. CRMV-SP 66561 no rodapé de toda página e no Sobre.
 - Cidades: **Campinas, Valinhos e Vinhedo**, "consulte o seu bairro", sem lista de bairros.

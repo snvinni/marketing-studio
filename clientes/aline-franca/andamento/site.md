@@ -336,3 +336,44 @@ Pedido do coordenador, pela decisão do Vinícius (`perfil.md`, `78d1483`): o do
   - **Não consegui confirmar as regras do `.vet.br`.** O `perfil.md` diz que é categoria de veterinários e aceita CPF. A norma antiga que o lista (CGI.br, 2005) consta como revogada, e não achei a regra atual. Antes de pagar, conferir no registro.br se pedem comprovação do CRMV e como.
 - Pendências: Vinícius registra `alinefranca.vet.br` no CPF da Aline e liga o domínio na Vercel (passos no README). Até lá, o site abre em `line-vet.vercel.app` e, com o `canonical` já apontando para o endereço novo, quem abrir por lá recebe um sinal para um endereço que ainda não responde. Por isso vale ligar o domínio **antes** de tirar o `noindex`.
 - Pedidos para outras frentes: **frente 4:** o link do site no perfil do Google passa a ser `https://alinefranca.vet.br/?origem=google`, quando o domínio estiver no ar.
+
+## 18/11/2026: textos diretos e mais serviços
+
+Pedido do Vinícius: os textos da fase 2 estavam ruins, poéticos e com detalhe que não ajuda o tutor (exemplo dele: "a vacina chega em caixa térmica, com termômetro"). Ele pediu texto direto e explicativo e mais serviços citados, tomando como referência seis sites de veterinária a domicílio que mandou. Ele também decidiu:
+- reescrever todas as páginas;
+- citar só os serviços confirmados;
+- pedir à Aline os serviços extras.
+
+- **Pesquisa:** `site/concorrentes.md`. Aviso: o vetresponsa.com.br parece invadido (links de apostas no rodapé).
+- **Feito no line-vet** (`ccr-ddd55fa2-btz5yk`), com um commit por bloco:
+  - `9bee3e2`: início e veterinária, com a grade de serviços nova (`.servicos`);
+  - `7be753e`: vacinas e gatos;
+  - `131b5c3`: Sobre, atendimento e dúvidas;
+  - `4bf6ef1`: pet sitter, material de parceria, faixa de prévia e teste dos textos diretos.
+- **Como ficou:**
+  - O topo de cada página diz o serviço e o lugar.
+  - Os títulos de seção dizem o assunto.
+  - Há grade com 13 serviços confirmados.
+  - O "como funciona" está em passos.
+  - As dúvidas estão no jeito do tutor.
+  - Saíram caixa térmica, termômetro, maleta, "com quem entende de bicho" e "cantinho". Este último era diminutivo, que o perfil proíbe.
+  - Detalhes em `site/textos.md`.
+- **Conferência:**
+  - Passam 375 testes. Um teste novo confere que nenhuma página traz a logística e que o início e a veterinária citam os serviços.
+  - No ar (line-vet.vercel.app), as nove páginas foram conferidas em 390 e 1440 px: H1 novos, sem caixa térmica, sem "Dra.", com CRMV, sem rolagem lateral e sem erro.
+  - O que ainda barra a publicação continua igual: fotos, faixa de prévia, `noindex` e seletor de cores. Nenhum `[CONFIRMAR]`.
+- **Pedido para a frente 1:** mandar à Aline uma lista para ela marcar sim ou não. Os que ela marcar entram na grade de serviços. Itens:
+  - corte de unhas;
+  - aplicação e orientação de antipulgas e carrapatos;
+  - limpeza de ouvido;
+  - orientação de alimentação;
+  - consulta de pele;
+  - atestado para viagem internacional;
+  - orientação de comportamento.
+- **Também pedir que ela confirme estes textos:**
+  - "check-up de rotina" como nome de serviço;
+  - giárdia como vacina de cães;
+  - "me manda uma foto da carteira de vacinação" como primeiro passo da vacina;
+  - aproveitar a visita da vacina para uma consulta;
+  - "gato é uma das minhas paixões".
+- **Pendências:** as de antes (fotos, paleta, domínio) e a validação da Aline.
