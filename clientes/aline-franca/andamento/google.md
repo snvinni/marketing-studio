@@ -37,3 +37,7 @@
 - Feito: troquei o domínio do site de `draalinefranca.com.br` para `alinefranca.vet.br` em `google/passo-a-passo.md` (tabela "Tenha em mãos" e passo 6) e na pendência "Site no campo de contato" deste andamento, a pedido da frente 2 (repassado pela coordenação). Segue o `perfil.md` (commit 78d1483 da frente 1). O grep por "draalinefranca" nos arquivos da frente só acha a menção de histórico na pendência.
 - Pendências: `alinefranca.vet.br` ainda não registrado nem com disponibilidade conferida (Vinícius). O campo de site no Google continua em branco até o site estar no ar.
 - Pedidos para outras frentes: nenhum.
+
+## 17/11/2026 (fase 2)
+- Entrevista feita (perfil: "Fonte: entrevista de 17/11/2026"); o Vinícius aprovou a fase 2.
+- Feito: `google/textos-perfil.md`, com a skill copy-chief (escrever e revisar, veredito AJUSTAR, 3 correções): nome `Aline França` (sem "Dra."), categorias, área (Campinas, Valinhos, Vinhedo), horário `Aberto sem horário normal` (horário dela não é público), contato só por WhatsApp (chat do Google e telefone escondido depois), descrição em duas versões (672 e 668 caracteres), 10 serviços sem preço, fotos.
