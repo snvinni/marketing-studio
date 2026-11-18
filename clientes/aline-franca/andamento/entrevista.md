@@ -1,5 +1,17 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: bloco 3 (Preços e condições)
+- Feito: bloco 3 gravado em `entrevista.md` (perguntas 19 a 24).
+  - Preços da veterinária só pelo WhatsApp; valores não ficam nos arquivos nem nos textos.
+  - Deslocamento varia pela distância, combinado na conversa.
+  - Pix, dinheiro e cartão com parcelamento; recibo se o tutor pedir; sem nota fiscal.
+  - Sem regra formal de cancelamento. Sem pacotes.
+  - Tabela do pet sitter continua valendo, sem limite fixo de visitas por dia.
+- Pedidos para outras frentes:
+  - **Frentes 2, 4 e 6:** não publicar preço de consulta nem de vacina; usar "valores pelo WhatsApp". Na FAQ "quanto custa?", responder que o valor depende do atendimento e da distância e é passado pelo WhatsApp.
+  - **Frente 6 (Operação):** as respostas prontas do WhatsApp não levam valores da veterinária; a Aline passa caso a caso.
+  - **Frente 2:** a tabela do pet sitter segue como está até a resposta do CRMV (pergunta 39, bloco 6).
+
 ## 17/11/2026: bloco 5 (Clientes e prova)
 - Feito: bloco 5 gravado em `entrevista.md` (perguntas 29 a 34).
   - Menos de 10 clientes ativos, vindos de indicação e do trabalho anterior. O número não vai para texto público.

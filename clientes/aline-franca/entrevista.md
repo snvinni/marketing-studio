@@ -1,7 +1,7 @@
 # Entrevista com o cliente ("anamnese")
 
 **Cliente:** Aline França
-**Data:** 17/11/2026 (blocos 1, 2, 4 e 5)
+**Data:** 17/11/2026 (blocos 1 a 5)
 **Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
 **Formato:** conversa por escrito com o agente (Claude Code)
 
@@ -79,17 +79,17 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 3: Preços e condições
 
 19. Preço da consulta, de cada vacina, da coleta, do retorno. Quer mostrar no site ou só "sob consulta"?
-    > 
+    > Preços da veterinária (consulta, retorno, vacinas) **só pelo WhatsApp**, caso a caso. Não registrar valores nos arquivos nem publicar. Nos textos: "valores pelo WhatsApp".
 20. Cobra deslocamento? Como varia por bairro ou cidade?
-    > 
+    > Cobra deslocamento, que varia pela distância; combinado na conversa. Valores não registrados.
 21. Formas de pagamento. Parcelamento. Nota fiscal ou recibo.
-    > 
+    > Pix, dinheiro e cartão, com parcelamento (número de parcelas não definido para os textos). Recibo, se o tutor pedir. Não emite nota fiscal.
 22. Política de cancelamento e de atraso.
-    > 
+    > Sem regra formal de cancelamento ou atraso; combina na conversa e pede aviso.
 23. Preços dos serviços complementares continuam valendo? Tem limite por dia?
-    > 
+    > A tabela do pet sitter continua valendo: 1 animal R$ 50 (1 visita/dia) ou R$ 80 (2 visitas/dia); animal adicional da mesma casa R$ 25 / R$ 40; exóticos R$ 50 por gaiola por visita; medicação R$ 10 a R$ 60, a combinar. Sem limite fixo de visitas por dia; depende da agenda.
 24. Tem ou quer ter pacotes (filhote, vacinas do ano, idoso)?
-    > 
+    > Não quer pacotes. Só atendimento avulso.
 
 ## Bloco 4: Área e agenda
 
