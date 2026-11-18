@@ -102,7 +102,7 @@ Aline França, CRMV-SP 66561
 ## Revisão (copy-chief, modo revisar, 17/11/2026)
 **Veredito da primeira versão: AJUSTAR.** Corrigido nesta versão:
 1. [CLAREZA] Semana 3: "preencho a carteira na hora". "Na hora" não está no perfil; ficou "preencho a carteira de vacinação".
-2. [CLAREZA] Semana 4: o gancho era "Vai viajar no fim do ano?". Trocado por "nas férias": a agenda dela em feriados não está nos textos públicos, e o post não deve sugerir visita no Natal ou no Ano-Novo antes de ela confirmar.
+2. [CLAREZA] Semana 4: o gancho era "Vai viajar no fim do ano?". Trocado por "nas férias": a agenda dela em feriados não está nos textos públicos, e o post não deve sugerir visita no Natal ou no Ano-Novo antes de ela confirmar. (Confirmado depois, em 17/11: ela atende nesses feriados. Ver pendências.)
 3. [BLOQUEANTE, canal] O botão de cada post usava o link `wa.me` do WhatsApp. A Central proíbe link de mensagens nos botões. Sem botão até o site estar no ar.
 
 Conferido sem problema: uma ideia e uma chamada por post; nome e CRMV-SP em todos; nenhum "Dra.", "especialista", diminutivo, promessa, preço, telefone, link, hashtag ou emoji; nenhum serviço fora do perfil; todos entre 283 e 376 caracteres (o canal pede de 150 a 300 como normal e até 1.500; os quatro passam um pouco do normal porque levam a linha de identificação, e o começo de cada um já carrega a ideia).
@@ -110,7 +110,7 @@ Conferido sem problema: uma ideia e uma chamada por post; nome e CRMV-SP em todo
 ## Pendências
 - Nenhum `[CONFIRMAR]` nos textos.
 - Fotos 1, 2 ou 13, 6 e 12 de `briefing-fotos.md` (Aline).
-- Pergunta interna, não vai para texto: a Aline faz pet sitter em feriados (25/12 e 1/1)? O perfil diz que ela não atende domingo nem feriado, mas não diz se isso vale para o pet sitter. Responder antes de fechar visitas de fim de ano (Vinícius pergunta à Aline).
+- Respondida em 17/11/2026: o pet sitter funciona nos feriados de 25/12 e 1/1 (Vinícius: "funciona sim"). O texto da semana 4 continua com "nas férias", que vale para dezembro e janeiro. Quando a frente 1 registrar isso no `perfil.md`, dá para trocar o começo por "Vai viajar no fim do ano?" sem mudar o resto.
 - Botões: só quando o site estiver no ar (Vinícius). As páginas citadas são as do site da frente 2 (`site/textos.md`).
 
 ---

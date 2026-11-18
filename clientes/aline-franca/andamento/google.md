@@ -47,7 +47,7 @@
   - Site `alinefranca.vet.br` no ar: campo de site e botões das publicações (Vinícius).
   - Fotos de `briefing-fotos.md` e o logo em quadrado (Aline e Vinícius).
   - Confirmar com a Aline: jaleco com nome bordado, carimbo, cartão de visita, se atende de carro (vídeo de verificação).
-  - Pergunta interna: pet sitter em feriados (25/12 e 1/1)?
+  - Pergunta interna: pet sitter em feriados (25/12 e 1/1)? **Fechada em 17/11** (ver registro abaixo).
 - Pedidos para outras frentes: nenhum.
 
 ### O que o Vinícius faz à mão, nesta ordem (substitui a lista de 16/11)
@@ -62,3 +62,6 @@
 9. Com o site no ar: preencher o campo de site e pôr o botão `Saiba mais` nas publicações.
 - Feito: conferi os pontos que a frente 2 mandou pela coordenação (nome sem "Dra.", cães e gatos nas três cidades, sem horário, sem preço da veterinária nem número de clientes, nada de coleta, fluidoterapia, microchip, urgência ou clínica parceira, site `alinefranca.vet.br`). Todos já estavam nos arquivos da frente 4. Acrescentei em `google/textos-perfil.md` a tabela das opções de horário no Google e o efeito de cada uma, e o que fazer com "com hora marcada" (não há atributo na Central; vai no texto).
 - Diferença com o pedido, seguindo o perfil: o serviço de pet sitter cita exóticos, porque o perfil e a entrevista (pergunta 12) dizem "exóticos só no pet sitter". Na veterinária, só cães e gatos.
+- Feito: pendência do pet sitter em feriados fechada. O Vinícius respondeu em 17/11/2026 que o pet sitter funciona em 25/12 e 1/1 ("funciona sim"). Em `google/publicacoes.md`, a semana 4 continua com "nas férias" e ganhou a nota de que o começo pode virar "Vai viajar no fim do ano?" depois que o `perfil.md` registrar a resposta. O horário do perfil não muda (continua sem horário normal).
+- Pedidos para outras frentes:
+  - frente 1: registrar no perfil.md que o pet sitter atende nos feriados de 25/12 e 1/1 (resposta do Vinícius em 17/11).
