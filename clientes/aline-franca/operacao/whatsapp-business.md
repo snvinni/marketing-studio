@@ -29,7 +29,7 @@ Configurações > Ferramentas comerciais > Perfil comercial.
 | Endereço | **Deixe em branco.** A Aline atende na casa do tutor; o endereço dela não aparece em lugar nenhum (`perfil.md`, Limites). |
 | Horário de funcionamento | `[CONFIRMAR: dias e horários, pergunta 26]`. Use "Horário personalizado". |
 | E-mail | `[CONFIRMAR: e-mail profissional, pergunta 35]` ou em branco |
-| Site | `https://draalinefranca.com.br` só quando o site estiver no ar. Até lá, em branco. |
+| Site | `https://alinefranca.vet.br` só quando o site estiver no ar. Até lá, em branco. |
 | Instagram | `[CONFIRMAR: usuário, pergunta 35]` |
 
 ### 2.1 Descrição do perfil
@@ -122,7 +122,7 @@ Cada lugar que leva ao WhatsApp usa um link com uma frase já escrita. A pessoa 
 
 Quem coloca cada link:
 - **Site:** frente 2, em todos os botões de WhatsApp do site.
-- **Perfil no Google e anúncio:** o campo de site do Google não aceita link de WhatsApp (`google/passo-a-passo.md`), e o anúncio leva à página do serviço. Os dois apontam para o site com uma marca no endereço: `https://draalinefranca.com.br/?origem=google` no perfil e `?origem=anuncio` no anúncio. O site lê essa marca e troca a frase dos botões de WhatsApp por "Te achei no Google" ou "Vi seu anúncio no Google". Pedido à frente 2 (site) e à frente 4 (link do perfil), registrado em `andamento/operacao.md`. Enquanto o site não fizer isso, quem vem do Google chega como "Site" e a resposta `/origem` resolve.
+- **Perfil no Google e anúncio:** o campo de site do Google não aceita link de WhatsApp (`google/passo-a-passo.md`), e o anúncio leva à página do serviço. Os dois apontam para o site com uma marca no endereço: `https://alinefranca.vet.br/?origem=google` no perfil e `?origem=anuncio` no anúncio. O site lê essa marca e troca a frase dos botões de WhatsApp por "Te achei no Google" ou "Vi seu anúncio no Google". Pedido à frente 2 (site) e à frente 4 (link do perfil), registrado em `andamento/operacao.md`. Enquanto o site não fizer isso, quem vem do Google chega como "Site" e a resposta `/origem` resolve.
 - **Instagram:** frente 5 (link da bio).
 - **Cartão e parceiros:** frente 6, em `parcerias.md`.
 

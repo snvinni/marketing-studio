@@ -14,7 +14,7 @@
   - Arte do catálogo, do cartão e do ímã; orçamento de gráfica (Vinícius).
 - Pedidos para outras frentes:
   - **Frente 2 (site):** (a) em todos os botões de WhatsApp, usar o link com a frase "Oi, Aline! Vim pelo seu site." (`operacao/whatsapp-business.md`, seção 6); (b) ler `?origem=google` e `?origem=anuncio` no endereço e trocar a frase dos botões por "Te achei no Google." / "Vi seu anúncio no Google."; (c) material de parceria com o conteúdo de `operacao/parcerias.md`, seção 4 (sem "50% de desconto", com a veterinária em casa e o link com a frase do parceiro).
-  - **Frente 4 (Google):** no campo de site do perfil, usar `https://draalinefranca.com.br/?origem=google` quando o site estiver no ar, para a medição separar quem veio do Google.
+  - **Frente 4 (Google):** no campo de site do perfil, usar `https://alinefranca.vet.br/?origem=google` quando o site estiver no ar, para a medição separar quem veio do Google.
   - **Frente 5 (Instagram):** no link da bio, usar o link com a frase "Oi, Aline! Vim pelo Instagram." (`operacao/whatsapp-business.md`, seção 6), ou o site com `?origem=instagram` se a bio apontar para o site (nesse caso, a frente 2 inclui essa origem também).
   - **Frente 3 (skill):** não há canal para material impresso (cartão, ímã); usei o núcleo. Fica como sugestão de canal futuro.
 
@@ -26,6 +26,12 @@
   - `operacao/gerar-planilha.py` e `operacao/medicao-modelo.xlsx`: 9 origens em vez de 10, tipos de parceiro sem condomínio; planilha gerada de novo e conferida.
 - Pedidos para outras frentes:
   - **Frente 2:** os botões do material de parceria usam a frase do parceiro ("Oi, Aline! Peguei seu cartão no {parceiro}."); a frase de condomínio não existe mais na medição.
+
+## 17/11/2026: domínio novo
+- Decisão do Vinícius, repassada pela frente 2: o site passa a ser `alinefranca.vet.br`, no lugar de `draalinefranca.com.br` (`perfil.md`, commit 78d1483).
+- Feito: domínio trocado em `operacao/parcerias.md` (verso do cartão), `operacao/medicao.md` (origem Site), `operacao/whatsapp-business.md` (campo Site do perfil e links `?origem=`) e no pedido à frente 4 acima. A planilha e o gerador não citam o domínio.
+- Pedidos para outras frentes:
+  - **Frente 4 (Google):** o link do campo de site passa a ser `https://alinefranca.vet.br/?origem=google`.
 
 ## Fase 2 (Google Ads)
 Aguardando o Vinícius avisar que o site está no ar e o perfil no Google tem 10 avaliações.

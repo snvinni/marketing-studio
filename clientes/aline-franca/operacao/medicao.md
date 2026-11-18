@@ -28,7 +28,7 @@ Conta como pedido: alguém que pergunta preço, disponibilidade ou quer marcar c
 | Origem | Quando usar |
 |---|---|
 | Perfil no Google | achou no Google Maps ou na busca, pelo perfil da empresa |
-| Site | veio pelo botão do site `draalinefranca.com.br` |
+| Site | veio pelo botão do site `alinefranca.vet.br` |
 | Anúncio Google | clicou no anúncio (só a partir do mês 2) |
 | Instagram | veio pelo Instagram |
 | Indicação de cliente | um tutor que já foi atendido indicou |

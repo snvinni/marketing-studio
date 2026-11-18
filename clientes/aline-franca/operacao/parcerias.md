@@ -116,7 +116,7 @@ VERSO
 [QR code]
 Aponte a câmera e me chame no WhatsApp
 (19) 98181-1227
-draalinefranca.com.br [só quando o site estiver no ar]
+alinefranca.vet.br [só quando o site estiver no ar]
 ```
 
 **Versão B: pelos gatos**
