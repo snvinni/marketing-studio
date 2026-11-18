@@ -1,5 +1,13 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: novo domínio
+- Feito: o Vinícius trocou o domínio para **`alinefranca.vet.br`** (no lugar de `draalinefranca.com.br`, que tinha "dra"). `perfil.md` atualizado.
+  - Na lista de categorias do registro.br (registro.br/dominio/categorias), `VET.BR` (Veterinários) aparece no filtro de CPF e não tem asterisco de restrição. Dá para registrar no CPF da Aline, sem CNPJ.
+- Pendências: conferir se `alinefranca.vet.br` está livre e registrar no CPF da Aline (Vinícius, com os dados da Aline). Se não estiver livre, voltar aqui para escolher outro.
+- Pedidos para outras frentes:
+  - **Frente 2 (Site):** trocar `draalinefranca.com.br` por `alinefranca.vet.br` no `line-vet` (canonical, sitemap, metatags, README) e no `plano.md`/arquivos da frente que citem o domínio.
+  - **Frentes 4, 5 e 6:** usar `alinefranca.vet.br` onde o site for citado (perfil no Google, bio do Instagram, links de medição).
+
 ## 17/11/2026: entrevista concluída e perfil reescrito
 - Feito:
   - `entrevista.md`: as 42 perguntas respondidas (blocos 1 a 6). Algumas têm detalhes `[PENDENTE]` (lista abaixo).

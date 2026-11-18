@@ -14,7 +14,7 @@ Fonte de verdade para todo texto escrito sobre a Aline. A skill copy-chief lê e
 - **Cidade e região atendida:** Campinas, Valinhos e Vinhedo. Bairro combinado caso a caso; nos textos, "consulte seu bairro".
 - **Contato principal:** WhatsApp (19) 98181-1227 · link `https://wa.me/5519981811227`. Também formulário no site. **Sem ligação.**
 - **E-mail:** mv.alinefranca@gmail.com
-- **Site:** `draalinefranca.com.br` (domínio escolhido, ainda não registrado). Tem "dra" no nome, que ela não usa mais: o Vinícius decide se troca antes de registrar. Código em `snvinni/line-vet`.
+- **Site:** `alinefranca.vet.br` (decisão do Vinícius em 17/11/2026, no lugar de `draalinefranca.com.br`, que tinha "dra"). Ainda não registrado e sem disponibilidade conferida. O `.vet.br` é categoria de veterinários e aceita CPF no registro.br: registrar no CPF da Aline. Código em `snvinni/line-vet`.
 - **Instagram:** @mv.alinefranca (única rede)
 - **Perfil no Google:** ainda não existe
 - **Empresa:** não tem CNPJ nem MEI; atende como pessoa física.
