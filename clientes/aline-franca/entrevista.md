@@ -1,13 +1,13 @@
 # Entrevista com o cliente ("anamnese")
 
 **Cliente:** Aline França
-**Data:** 17/11/2026 (blocos 1 a 5)
+**Data:** 17/11/2026 (blocos 1 a 6)
 **Quem entrevistou:** agente da frente 1, com as respostas passadas pelo Vinícius
 **Formato:** conversa por escrito com o agente (Claude Code)
 
-## O que já sabemos (confirmar na entrevista)
+## O que já sabíamos antes da entrevista
 - WhatsApp: (19) 98181-1227.
-- Médica-veterinária; usa "Dra. Aline França" no material atual.
+- Médica-veterinária; usava "Dra. Aline França" no material antigo (na entrevista, pediu para tirar o "Dra.").
 - Ama gatos e já tem clientes felinos.
 - Já atende como pet sitter, com tabela de preços (ver `perfil.md`).
 - Tem Instagram profissional (usuário não anotado).
@@ -123,22 +123,23 @@ As perguntas foram escritas para médico-veterinário que atende a domicílio. P
 ## Bloco 6: Marca, regras e limites
 
 35. Usuário do Instagram. Outras redes. E-mail profissional.
-    > 
+    > Instagram: @mv.alinefranca. E-mail profissional: mv.alinefranca@gmail.com. Sem outras redes.
 36. Como quer ser chamado(a): com título ("Dra."), só o primeiro nome, nome completo?
-    > 
+    > Sem "Dra.". Em primeira pessoa e no WhatsApp: "Aline" ("Oi, eu sou a Aline"). "Aline França" só em título e assinatura.
 37. Palavras que gosta e que não gosta de ver associadas a você.
-    > 
+    > Não quer: "seu bebê" ou "filho" para o pet; "pais de pet"; "especialista"; diminutivos e gírias ("peludinho", "au-au", "miau" em excesso). Palavras que gosta: `[PENDENTE]`.
 38. Algo que não quer que apareça (endereço, vida pessoal, local de trabalho atual).
-    > 
+    > Não aparecem: endereço; horário de atendimento (bloco 4); locais onde já trabalhou; nome da empresa do trabalho atual; atendimento em clínica parceira; número de clientes; história do Meia-Noite. O outro trabalho pode aparecer só de forma genérica ("também trabalho na área de medicamentos veterinários").
 39. Já consultou o conselho (CRMV) sobre publicidade? Respostas para cada ponto "a confirmar" de `metodo/regras-cfmv.md`:
-    - Tabela de preços no site:
-    - Desconto para o segundo animal:
-    - Fotos de pacientes:
-    - Depoimentos de tutores:
-    - Termos como "especialista em felinos" ou "Cat Friendly":
+    > Não consultou e não vai consultar ("não precisa", 17/11/2026). **Nada foi confirmado**, então vale a coluna "Até confirmar" de `metodo/regras-cfmv.md`, sem prazo:
+    - Tabela de preços no site: não confirmado. Veterinária "sob consulta" (ela já decidiu passar valores só pelo WhatsApp). Pet sitter: evitar preço em anúncio.
+    - Desconto para o segundo animal: não confirmado. "Valor reduzido para o segundo animal", sem percentual em destaque.
+    - Fotos de pacientes: não confirmado. Só com autorização escrita do tutor em `autorizacoes.md`; nunca resultado de tratamento.
+    - Depoimentos de tutores: não confirmado. Público só avaliação do Google, com nome abreviado. Os prints de WhatsApp (pergunta 34) ficam como referência interna.
+    - Termos como "especialista em felinos" ou "Cat Friendly": proibidos (ela não tem título nem certificação; pergunta 3). Usar "atendimento pensado para gatos".
 40. Tem CNPJ ou MEI? Nome fantasia?
-    > 
+    > Não tem CNPJ nem MEI. Atende como pessoa física.
 41. Concorrentes ou colegas que admira e por quê.
-    > 
+    > Não tem referência.
 42. Meta para 6 meses: quantos atendimentos por semana quer ter?
-    > 
+    > 3 a 5 atendimentos veterinários por semana daqui a 6 meses (cabe na rotina com o outro trabalho).
