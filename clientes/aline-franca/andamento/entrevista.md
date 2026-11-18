@@ -1,5 +1,54 @@
 # Andamento: frente 1 (Entrevista)
 
+## 17/11/2026: entrevista concluída e perfil reescrito
+- Feito:
+  - `entrevista.md`: as 42 perguntas respondidas (blocos 1 a 6). Algumas têm detalhes `[PENDENTE]` (lista abaixo).
+  - Bloco 6: Instagram @mv.alinefranca, e-mail mv.alinefranca@gmail.com, sem outras redes; ela se apresenta como "Aline"; sem CNPJ/MEI; meta de 3 a 5 atendimentos por semana em 6 meses.
+  - **Pergunta 39:** ela não vai consultar o CRMV-SP. Nada confirmado: vale a coluna "Até confirmar" de `metodo/regras-cfmv.md`, sem prazo.
+  - `perfil.md` reescrito a partir da entrevista (modelo `modelos/perfil-cliente.md`), com a linha "Fonte: entrevista de 17/11/2026". **As fases que dependiam da entrevista estão liberadas** (Site fase 2, Google fase 2, Instagram).
+  - Mensagem do pedido de fotos pronta (abaixo), entregue ao Vinícius.
+- Pendências e quem resolve:
+  | Pendência | Quem |
+  |---|---|
+  | Mandar o pedido de fotos (com o link da pasta do Drive) | Vinícius |
+  | Decidir se o domínio `draalinefranca.com.br` muda (ela não usa mais "Dra.") antes de registrar | Vinícius |
+  | Instituição e ano da pós-graduação | Aline |
+  | Idades da Fumaça, da Mel e da Coral | Aline |
+  | Prints de depoimentos e autorizações (só uso interno) | Aline |
+  | Palavras que ela gosta; frase marcante de tutor; quantos clientes são de gatos | Aline (não trava nada) |
+  | Pedir avaliação aos 3 a 5 tutores quando o perfil no Google existir | Aline, com mensagem da frente 4 |
+- Pedidos para outras frentes (resumo do que muda com a entrevista; detalhes nos registros abaixo e em `perfil.md`):
+  - **Todas:** "Aline França", **sem "Dra."**; nada de horário, preço da veterinária, número de clientes, nome de empresa ou locais de trabalho, clínica parceira, condomínio. Depoimento público só de avaliação do Google. Desconto só como "valor reduzido", sem percentual.
+  - **Frente 2 (Site):** `briefing-fotos.md` não é arquivo da frente 1 e ainda diz "Dra. Aline França" no cabeçalho; a mensagem abaixo substitui a de lá. Ajustar o cabeçalho e o item 13 (as gatas dela: Fumaça, Mel e Coral; foto da Milka, se houver).
+  - **Frente 3 (Skill):** o perfil novo proíbe "Dra." e define as palavras proibidas; conferir se algum caso de `evals/` assume "Dra. Aline".
+  - **Frente 4 (Google):** perfil sem horário, área Campinas, Valinhos e Vinhedo; ela não quer ligação (WhatsApp como canal principal).
+  - **Frente 5 (Instagram):** usuário @mv.alinefranca. Liberada para começar.
+
+### Mensagem do pedido de fotos (para o Vinícius mandar)
+
+> Oi, Aline! Para o site novo, o perfil no Google e o Instagram ficarem com a sua cara, preciso de fotos reais suas e dos atendimentos. Nada de estúdio: celular serve.
+>
+> **Como tirar:** luz de janela, lente limpa, sem filtro e sem flash. Uma na vertical e outra na horizontal.
+> **Como mandar:** como *documento* no WhatsApp (assim não perde qualidade) ou nesta pasta: {link do Drive}.
+> **Importante:** foto com pet de cliente só com autorização do tutor por mensagem; pode encaminhar a autorização junto. Nada de animal machucado, ferida ou sangue, e nada de endereço, receita ou rosto do tutor aparecendo.
+>
+> Não precisa mandar tudo de uma vez. As 5 primeiras já ajudam muito:
+> 1. Você de jaleco, sorrindo, com fundo claro
+> 2. Você com um gato no colo (pode ser a Fumaça, a Mel ou a Coral)
+> 3. Você com um cão
+> 4. Chegando a uma casa com a maleta
+> 5. A maleta aberta, com estetoscópio, termômetro, balança e o resto organizado
+> 6. A caixa térmica das vacinas com o termômetro
+> 7. Vacinando um gato
+> 8. Vacinando um cão
+> 9. Examinando um gato em casa (sofá, cama, arranhador)
+> 10. Examinando um cão no chão da sala
+> 11. Preenchendo a carteira de vacinação
+> 12. No pet sitter: servindo ração, limpando a caixa de areia, brincando
+> 13. Suas gatas, Fumaça, Mel e Coral, e uma foto da Milka, se tiver (ela inspirou o logo)
+>
+> Se der, também: o diploma e a carteira do CRMV, suas mãos com um animal, um filhote, um idoso e um vídeo de 10 a 20 segundos de um atendimento calmo.
+
 ## 17/11/2026: bloco 3 (Preços e condições)
 - Feito: bloco 3 gravado em `entrevista.md` (perguntas 19 a 24).
   - Preços da veterinária só pelo WhatsApp; valores não ficam nos arquivos nem nos textos.
