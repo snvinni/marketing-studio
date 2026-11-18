@@ -41,3 +41,4 @@
 ## 17/11/2026 (fase 2)
 - Entrevista feita (perfil: "Fonte: entrevista de 17/11/2026"); o Vinícius aprovou a fase 2.
 - Feito: `google/textos-perfil.md`, com a skill copy-chief (escrever e revisar, veredito AJUSTAR, 3 correções): nome `Aline França` (sem "Dra."), categorias, área (Campinas, Valinhos, Vinhedo), horário `Aberto sem horário normal` (horário dela não é público), contato só por WhatsApp (chat do Google e telefone escondido depois), descrição em duas versões (672 e 668 caracteres), 10 serviços sem preço, fotos.
+- Feito: `google/publicacoes.md`, as quatro primeiras publicações semanais (apresentação, gato que não deixa pegar, vacina em casa, pet sitter nas férias), com a skill copy-chief (escrever e revisar, AJUSTAR, 3 correções), foto e botão de cada uma e tabela de registro. Sem botão até o site estar no ar: a Central proíbe link de mensagens (`wa.me`) nos botões.
