@@ -2,7 +2,7 @@
 
 ## 17/11/2026: perfil, linha editorial e calendário
 - Feito (todos os textos pela skill copy-chief, canal `instagram`, modo escrever e depois revisar; a revisão de cada peça está no próprio arquivo):
-  - `instagram/perfil.md` (PT-I2): três opções de nome (recomendado `Veterinária em casa Campinas`, 28 caracteres), três bios (130 a 139 caracteres, todas com CRMV-SP 66561), link da bio com a frase de origem da frente 6, configurações (só WhatsApp, sem "Ligar", sem endereço), cinco destaques com o conteúdo de cada um, cuidados com stories.
+  - `instagram/perfil.md` (PT-I2): três opções de nome (corrigido no registro seguinte), três bios (130 a 139 caracteres, todas com CRMV-SP 66561), link da bio com a frase de origem da frente 6, configurações (só WhatsApp, sem "Ligar", sem endereço), cinco destaques com o conteúdo de cada um, cuidados com stories.
   - `instagram/linha-editorial.md` (PT-I3): quatro pilares (em casa, gatos, orientação, prova), 5 ideias por pilar, cada uma com a pergunta da entrevista de onde saiu; o que ficou de fora de propósito.
   - `instagram/calendario.md` (PT-I4): 8 posts de 24/11 a 18/12, terça e sexta, alternando carrossel e Reels, dois por pilar. Cada post com briefing, dois ganchos, telas ou roteiro em tabela, legenda contada, chamada, material e revisão. Nenhum pet de cliente: só as gatas dela.
   - `instagram/diagnostico.md` (PT-I1): **esqueleto**. Lista as capturas que o Vinícius precisa mandar; o diagnóstico em si espera por elas.
@@ -34,7 +34,22 @@ Todos feitos em casa, com as gatas dela; nenhum depende de autorização.
   3. **`setores/veterinaria-br.md`, "Obrigatório":** lista site, Google e anúncios, mas não o Instagram. O canal diz "registro profissional se o setor exigir" na última tela do carrossel, e o setor não diz se exige. Usei CRMV na bio, na última tela de carrossel e na tela final de Reels. Sugestão: incluir o Instagram.
   4. **Stories e localização:** `canais/instagram.md` diz "sempre marcar a localização". Para quem atende em casa e não publica horário nem endereço, story em tempo real com bairro mostra onde e quando a profissional está. Sugestão: "marcar a cidade, postar depois do atendimento" quando o perfil esconde horário ou endereço.
   5. **Marca de produto em foto ou vídeo:** nem o setor nem o canal falam disso. Sugestão de regra no setor: nada de rótulo de medicamento, vacina ou ração em quadro (evita publicidade de produto e, aqui, a empresa onde ela trabalha).
+  7. **Limite do nome do perfil:** `canais/instagram.md` diz "até 30 caracteres", mas o nome atual da Aline tem 64 e está no ar. Conferir a fonte e corrigir o canal.
   6. **Limite da legenda de Reels:** o canal diz "até 300 caracteres" sem dizer se as hashtags contam, e não lembra que a primeira linha também precisa caber antes do "mais". Contei sem as hashtags e deixei a primeira linha curta.
 - **Frente 2 (site):** o arquivo do logo (SVG ou PNG em alta) para o post 7 e as capas dos destaques. A dúvida da giárdia é a mesma do site: quem receber a resposta da Aline avisa a outra frente.
 - **Frente 4 (Google):** os posts 3, 4, 6 e 8 podem virar publicações do perfil no Google (PT-I5). Se usar, adaptar pelo canal `google-perfil.md`, sem "link na bio".
 - **Frente 6 (operação):** o link da bio usa a frase "Oi, Aline! Vim pelo Instagram." da sua seção 6, como pedido.
+
+## 17/11/2026: diagnóstico com as capturas do perfil
+- Feito:
+  - `instagram/diagnostico.md` (PT-I1) a partir de duas capturas do perfil público. Hoje: nome "Médica Veterinária | Atendimento Domiciliar em Valinhos e Região" (64 caracteres), 2 posts, 898 seguidores, bio com "exames" (não pode: ela não colhe exame em casa) e quatro emojis, destaques Parceiros, Dia a Dia, Pacientes, Atendimentos e Caixa de Areia, um Reels de pet sitter com animais de clientes (Snow, Margot e Paçoca) sem autorização registrada.
+  - Ordem de arrumação para o Vinícius: arquivar o Reels e os destaques Parceiros, Pacientes e Atendimentos; conferir Dia a Dia; trocar nome, bio, link e botões.
+  - `instagram/perfil.md`: o nome passa a ter as três cidades (recomendado `Veterinária em casa · Campinas, Valinhos e Vinhedo`, 50 caracteres), já que o Instagram aceita mais de 30; nova parte sobre o que fazer com os destaques atuais.
+- Pendências e quem resolve:
+  | Pendência | Quem |
+  |---|---|
+  | Bio inteira, Insights de 30 dias, Insights dos dois posts, cidades do público | Vinícius (app do Instagram) |
+  | Telas de dentro do carrossel da febre e conteúdo dos destaques, para revisão | Vinícius |
+  | Autorização dos tutores de Snow, Margot e Paçoca, se quiser o Reels de volta | Aline |
+  | O gato da foto de perfil e os animais dos destaques: dela ou de clientes? | Aline |
+- Pedidos para outras frentes: frente 3, item 7 acima (limite do nome).

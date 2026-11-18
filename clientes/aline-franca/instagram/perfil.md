@@ -6,17 +6,19 @@
 
 ---
 
-## 1. Nome do perfil (campo "Nome", até 30 caracteres)
+## 1. Nome do perfil (campo "Nome")
 
-O campo "Nome" entra na busca do Instagram. O nome dela já está no usuário (@mv.alinefranca); no "Nome" vale pôr o serviço e a cidade.
+O campo "Nome" entra na busca do Instagram. O nome dela já está no usuário (@mv.alinefranca); no "Nome" vale pôr o serviço e as cidades.
+
+**Limite:** o canal da skill fala em 30 caracteres, mas o nome atual dela tem 64 ("Médica Veterinária | Atendimento Domiciliar em Valinhos e Região"), então o Instagram aceita pelo menos isso. Ver `diagnostico.md`.
 
 | Opção | Caracteres | Comentário |
 |---|---|---|
-| `Veterinária em casa Campinas` | 28 | Só serviço e cidade. Melhor para a busca. **Recomendada.** |
-| `Vet a domicílio · Campinas` | 26 | Usa "a domicílio", que também é buscado; "vet" é mais informal. |
-| `Aline França · Vet em casa` | 26 | Mostra o nome dela, mas perde a cidade na busca. |
+| `Veterinária em casa · Campinas, Valinhos e Vinhedo` | 50 | Serviço e as três cidades. **Recomendada.** |
+| `Veterinária a domicílio · Campinas, Valinhos e Vinhedo` | 54 | Igual, com "a domicílio", que também é buscado. |
+| `Aline França · Veterinária em casa em Campinas e região` | 55 | Mostra o nome dela, mas troca Valinhos e Vinhedo por "região". |
 
-Valinhos e Vinhedo ficam na bio, porque não cabem no nome.
+Hoje o nome diz só "Valinhos e Região". Ela atende Campinas, Valinhos e Vinhedo, e Campinas é onde há mais busca.
 
 ## 2. Bio (até 150 caracteres)
 
@@ -70,7 +72,7 @@ Contagem feita com `len()` do Python, com as quebras de linha.
 
 ## 4. Configurações do perfil profissional (o Vinícius faz)
 
-- **Categoria:** Veterinário.
+- **Categoria:** Veterinário (já está assim).
 - **Botões de contato:** só WhatsApp. **Tirar o botão "Ligar"** (ela não atende ligação) e **não mostrar endereço**.
 - **E-mail:** pode ficar `mv.alinefranca@gmail.com` no botão de e-mail, se ela quiser; não é obrigatório.
 - **Foto do perfil:** retrato de jaleco, sorrindo, fundo claro (foto 1 de `../briefing-fotos.md`), recortada no rosto, porque aparece pequena. Até ela chegar, a foto atual com o gato siamês serve **só se o gato for dela** `[CONFIRMAR: o siamês da foto atual é dela ou de um cliente? Se for de cliente, precisa de autorização em autorizacoes.md]`.
@@ -87,6 +89,13 @@ Cinco destaques. Capa: fundo creme `#F6F1E9` com um traço simples em azul `#2F6
 | 3 | Vacinas | Quais vacinas aplico em casa (V8/V10, antirrábica, polivalente felina, gripe canina, giárdia `[CONFIRMAR: espécie da giárdia]`); a caixa térmica com termômetro (post 6); a carteira de vacinação preenchida. Sem preço. | Semana 3 |
 | 4 | Pet sitter | O que faço na visita de até 1 hora; o que pergunto antes da primeira visita (post 5); exemplo de atualização com uma das gatas dela. Sem tabela de preço aqui: o valor vai no WhatsApp e no site. | Semana 3 |
 | 5 | Avaliações | Prints de avaliações do **Google**, com nome abreviado. **Só abre quando houver a primeira avaliação.** Print de WhatsApp não entra. | Quando o perfil no Google tiver avaliações |
+
+**O que fazer com os destaques de hoje** (Parceiros, Dia a Dia, Pacientes, Atendimentos, Caixa de Areia; ver `diagnostico.md`):
+- **Parceiros:** tirar. Clínica parceira não pode aparecer, e a capa parece mostrar um procedimento.
+- **Pacientes** e **Atendimentos:** tirar do ar até cada animal ter autorização em `../autorizacoes.md`. Os stories com autorização passam para "Gatos" ou "Como funciona".
+- **Dia a Dia:** conferir story por story; o que mostrar documento, tela ou dado de tutor sai.
+- **Caixa de Areia:** o conteúdo é orientação e pode ir para o destaque "Gatos", depois de passar pela copy-chief.
+- Arquivar, não apagar: o destaque some do perfil, mas os stories continuam no arquivo dela.
 
 **Opcional, se a Aline quiser:** "Sobre mim" (a Milka e o logo, as três gatas, os cursos desde os 14 anos, CRMV). Pode juntar com "Gatos" para não passar de cinco.
 
