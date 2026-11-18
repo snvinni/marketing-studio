@@ -53,6 +53,20 @@ São as três cidades confirmadas na entrevista (pergunta 25). Bairros não entr
 - A diretriz do Google diz que empresas que atendem só com hora marcada não devem informar horário. É exatamente o caso.
 - **Não preencha** horário inventado nem "24 horas". O Google mostraria "Aberto agora" ou "Fechado" errado, e "24 horas" sugere urgência, que ela não faz.
 
+### As opções e o efeito de cada uma
+
+| Opção | O que acontece | Usar? |
+|---|---|---|
+| `Aberto com horário normal`, com os dias e horas dela | O Google mostra o horário e escreve "Aberto agora" ou "Fechado" ao lado do nome. Expõe a rotina que ela não quer pública. | **Não.** |
+| `Aberto com horário normal` com "24 horas" ou um horário largo | Horário falso. Sugere urgência e plantão, que ela não faz, e fere a regra de representar a empresa com precisão. | **Não.** |
+| **`Aberto sem horário normal`** | O perfil fica como empresa aberta, sem dias nem horas. É a opção que a diretriz do Google indica para quem atende só com hora marcada. | **Sim.** |
+| Deixar o campo de horário em branco, sem escolher nada | O perfil não diz se a empresa está aberta. A Central não descreve o efeito; o mais provável é o painel do perfil continuar pedindo o horário como item a completar. | Não; use a opção de cima, que diz a mesma coisa de forma explícita. |
+| `Fechado temporariamente` | O perfil aparece como fechado para quem pesquisa. | **Nunca**, nem nas folgas. |
+
+**E "com hora marcada"?** Procurei na Central um atributo do tipo "somente com hora marcada" ou "requer agendamento" e não achei. A informação vai no texto: a descrição (versão A) diz "O atendimento é com hora marcada", e a publicação da semana 1 também. Se, ao editar o perfil, aparecer em `Mais` (atributos) uma opção de agendamento ou de "com hora marcada", pode marcar.
+
+**Conferir depois de salvar:** abra o perfil no Google Maps numa aba anônima e veja que não aparece nenhum dia, hora nem "Aberto agora" ou "Fechado". A Central não mostra como fica a tela com "Aberto sem horário normal"; anote em `../andamento/google.md` o que apareceu.
+
 ## Contato
 Ela não quer ligação, só WhatsApp e o formulário do site.
 

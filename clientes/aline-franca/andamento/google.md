@@ -60,3 +60,5 @@
 7. A Aline pede avaliação aos 3 a 5 tutores, poucos por dia, e depois a cada atendimento. Responder todas (`mensagens-avaliacao.md`).
 8. Com as fotos: subir logo, capa e 10 a 15 fotos; publicar uma atualização por semana (`publicacoes.md`), anotando a data no registro.
 9. Com o site no ar: preencher o campo de site e pôr o botão `Saiba mais` nas publicações.
+- Feito: conferi os pontos que a frente 2 mandou pela coordenação (nome sem "Dra.", cães e gatos nas três cidades, sem horário, sem preço da veterinária nem número de clientes, nada de coleta, fluidoterapia, microchip, urgência ou clínica parceira, site `alinefranca.vet.br`). Todos já estavam nos arquivos da frente 4. Acrescentei em `google/textos-perfil.md` a tabela das opções de horário no Google e o efeito de cada uma, e o que fazer com "com hora marcada" (não há atributo na Central; vai no texto).
+- Diferença com o pedido, seguindo o perfil: o serviço de pet sitter cita exóticos, porque o perfil e a entrevista (pergunta 12) dizem "exóticos só no pet sitter". Na veterinária, só cães e gatos.
