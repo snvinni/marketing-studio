@@ -1,5 +1,34 @@
 # Andamento: frente 1 (Entrevista)
 
+## 18/11/2026: serviços extras (pedido da frente 2)
+- Feito: mensagem de WhatsApp pronta para o Vinícius mandar à Aline (abaixo), a pedido da frente 2 (`andamento/site.md`, commit `caecea0`), aprovado pelo Vinícius.
+- Pendências: mandar a mensagem (Vinícius); responder (Aline).
+- Quando ela responder: gravar as respostas em `entrevista.md` (perguntas 10, 14 e 37) e em `perfil.md` (Oferta e Fatos), e avisar a frente 2 (sessão `local_b6d556fb-f109-4eaa-a08f-51757212605c`) para atualizar a grade de serviços. Só entram no site os itens com "sim".
+
+### Mensagem (para o Vinícius mandar)
+
+> Oi, Aline! Estou fechando a lista de serviços do site e preciso de umas respostas rápidas. Pode responder só com o número, tipo "1 sim, 2 não".
+>
+> **Você faz isto nas visitas?** Só entra no site o que você marcar sim.
+> 1. Corte de unhas
+> 2. Aplicação e orientação de antipulgas e carrapatos
+> 3. Limpeza de ouvido
+> 4. Orientação de alimentação
+> 5. Consulta de pele
+> 6. Atestado para viagem internacional
+> 7. Orientação de comportamento
+>
+> **Se o 6 for sim:** você já emite esse atestado hoje? Para quais países?
+>
+> **Estas frases do site estão certas?** Responda "ok" ou escreva como fica.
+> 8. "Check-up de rotina" como nome de um serviço
+> 9. Giárdia na lista de vacinas para cães
+> 10. Primeiro passo para vacinar: "Me manda uma foto da carteira de vacinação"
+> 11. "Dá para aproveitar a visita da vacina para uma consulta? Sim."
+> 12. "Gato é uma das minhas paixões"
+>
+> Valeu!
+
 ## 17/11/2026: novo domínio
 - Feito: o Vinícius trocou o domínio para **`alinefranca.vet.br`** (no lugar de `draalinefranca.com.br`, que tinha "dra"). `perfil.md` atualizado.
   - Na lista de categorias do registro.br (registro.br/dominio/categorias), `VET.BR` (Veterinários) aparece no filtro de CPF e não tem asterisco de restrição. Dá para registrar no CPF da Aline, sem CNPJ.
