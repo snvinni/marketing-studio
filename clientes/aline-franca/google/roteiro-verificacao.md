@@ -20,6 +20,15 @@ Para a Aline gravar com o Vinícius segurando o celular. PT-G2 do `plano.md`. Us
 
 O nome que aparece no material tem de bater com o nome do perfil: **Aline França**.
 
+### O que o Google pediu para o perfil dela (tela de 18/11/2026)
+O perfil foi criado em 18/11 e o Google ofereceu só a verificação por vídeo ("Submit a Business Video"; a conta está em inglês). A tela pede três coisas **numa gravação contínua, feita na hora, pelo app**. Vídeo gravado antes não é aceito.
+
+| O Google pede | Onde está no roteiro | O que garante |
+|---|---|---|
+| O entorno (placa de rua) | Trecho 1 | Placa com o nome da rua e o número da casa, legíveis |
+| O nome impresso (cartão, licença ou veículo) | Trecho 4 | **A carteira do CRMV-SP é a "licença".** É obrigatória. Jaleco bordado, carimbo e cartão de visita ajudam, mas não substituem. |
+| O equipamento | Trechos 2 e 3 | Maleta aberta e caixa térmica com termômetro |
+
 ---
 
 ## Antes de gravar
@@ -30,7 +39,7 @@ O nome que aparece no material tem de bater com o nome do perfil: **Aline Franç
 | Jaleco (de preferência com o nome bordado) | uniforme | `[CONFIRMAR se tem nome bordado]` |
 | Maleta de atendimento: estetoscópio, termômetro, balança, material de curativo, toalha e petiscos | ferramentas | Tem (entrevista, pergunta 14) |
 | Caixa térmica de vacinas, com o termômetro dela | equipamento; mostra o cuidado com a vacina | Tem (entrevista, pergunta 14) |
-| Carteira do CRMV-SP | documento com o nome | |
+| Carteira do CRMV-SP | o "nome impresso" (licença) que o Google pediu | **Obrigatória.** Sem ela, não grave. |
 | Carimbo com nome e CRMV, e um receituário | documento + "fazer o serviço" | `[CONFIRMAR se tem]` |
 | Cartão de visita com o nome | prova de que o negócio existe | `[CONFIRMAR se tem]`. Se não tiver, pule. |
 | Carro que ela usa para atender | "recurso só da dona" | `[CONFIRMAR se ela atende de carro]`. Se não, use a mochila ou bolsa de trabalho no lugar. |
@@ -39,7 +48,7 @@ Deixe tudo pronto: a maleta e a caixa térmica fechadas dentro do carro (ou pert
 
 ### Prepare o celular
 - Celular com bateria cheia e internet boa (o envio é feito na hora, no fim da gravação).
-- Logado na conta Google que é dona ou administradora do perfil.
+- Logado na **conta Google profissional da Aline** (a dona do perfil). Pode ser o celular dela ou o seu, desde que esteja nessa conta.
 - App **Google Maps** (ou o app Google) atualizado.
 
 ### Escolha a hora
@@ -55,7 +64,7 @@ Façam o percurso inteiro uma vez, com o celular na mão, só olhando. Cronometr
 
 Vinícius segura o celular e anda devagar. Movimentos lentos: o revisor do Google precisa ler o que aparece. A Aline fala com calma. A fala não é obrigatória, mas ajuda quem vai analisar.
 
-Para começar a gravar: no app, abra o perfil > `Fazer verificação` > `Vídeo da empresa` > `Avançar` > `Comece a gravar`.
+Para começar a gravar: no app, abra o perfil > `Fazer verificação` > `Vídeo da empresa` > `Avançar` > `Comece a gravar`. Com a conta em inglês, procure **`Submit a Business Video`** (os outros botões também aparecem em inglês). O app só grava ao vivo: não há opção de escolher um vídeo da galeria.
 
 ### Trecho 1: a rua (0:00 a 0:25)
 **Onde:** na calçada, na frente da casa da Aline.
@@ -66,7 +75,7 @@ Para começar a gravar: no app, abra o perfil > `Fazer verificação` > `Vídeo 
 3. Gire para mostrar a esquina ou um ponto conhecido perto (padaria, praça, prédio com nome).
 
 **A Aline fala (fora da imagem ou de lado):**
-> "Esta é a rua de onde eu saio para os atendimentos, aqui em Campinas."
+> "Esta é a rua de onde eu saio para os atendimentos."
 
 **Não:** começar com a câmera apontando para o chão, ou num terreno sem placa nenhuma.
 

@@ -65,3 +65,15 @@
 - Feito: pendência do pet sitter em feriados fechada. O Vinícius respondeu em 17/11/2026 que o pet sitter funciona em 25/12 e 1/1 ("funciona sim"). Em `google/publicacoes.md`, a semana 4 continua com "nas férias" e ganhou a nota de que o começo pode virar "Vai viajar no fim do ano?" depois que o `perfil.md` registrar a resposta. O horário do perfil não muda (continua sem horário normal).
 - Pedidos para outras frentes:
   - frente 1: registrar no perfil.md que o pet sitter atende nos feriados de 25/12 e 1/1 (resposta do Vinícius em 17/11).
+
+## 18/11/2026
+- Feito (pela coordenação, no Chrome, a pedido do Vinícius): **perfil no Google criado.** Falta a verificação.
+  - Conta dona: conta Google profissional da Aline.
+  - Preenchido na criação: nome `Aline França`; categoria `Veterinarian` (a conta está em inglês); "local que os clientes visitam" = Não; área Campinas, Valinhos e Vinhedo (SP); telefone; site em branco; chat WhatsApp com o link `wa.me` do número dela (o Google ofereceu na criação); dicas do Google = Não.
+  - Endereço de correspondência: digitado pelo Vinícius, oculto. Não fica no repositório.
+  - Verificação: o Google ofereceu só **vídeo** ("Submit a Business Video"). Pede, numa gravação contínua feita na hora pelo app: o entorno (placa de rua), o nome impresso (cartão, licença ou veículo) e o equipamento. Vídeo gravado antes não é aceito.
+- Feito (frente 4): conferi `google/roteiro-verificacao.md` com esses três pedidos. Já cobria os três; acrescentei a tabela "O que o Google pediu" ligando cada pedido a um trecho, deixei a carteira do CRMV-SP como obrigatória (é a "licença" com o nome impresso), o nome do botão em inglês, o aviso de que o app só grava ao vivo e a conta certa no celular. Tirei "aqui em Campinas" da fala do trecho 1, porque o endereço dela pode não ser em Campinas.
+- Pendências:
+  - **Próximo passo:** o Vinícius e a Aline gravam o vídeo no celular, logados na conta Google profissional dela, seguindo `roteiro-verificacao.md`. Antes, confirmar com a Aline jaleco bordado, carimbo, cartão de visita e carro. A análise leva até 5 dias úteis.
+  - Depois de verificado: seguir `textos-perfil.md` (Pet sitter, horário, descrição, serviços, esconder o telefone). Com a conta em inglês, os nomes das telas aparecem em inglês: `Pet sitter` é igual; "Aberto sem horário normal" deve aparecer como "Open with no main hours" (nome em inglês não conferido na Central).
+- Pedidos para outras frentes: nenhum novo.
