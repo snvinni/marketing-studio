@@ -18,7 +18,7 @@ Para a Aline gravar com o Vinícius segurando o celular. PT-G2 do `plano.md`. Us
   3. **Que ela é a responsável:** fazer algo que só a dona faz (abrir o carro de trabalho, usar o material) ou mostrar um documento com o mesmo nome do perfil.
 - A análise leva até 5 dias úteis. Resposta: "Aprovado" ou "Reprovado".
 
-O nome que aparece no material tem de bater com o nome do perfil: **Dra. Aline França**.
+O nome que aparece no material tem de bater com o nome do perfil: **Aline França**.
 
 ---
 
@@ -28,8 +28,8 @@ O nome que aparece no material tem de bater com o nome do perfil: **Dra. Aline F
 | Item | Para quê | Tem? |
 |---|---|---|
 | Jaleco (de preferência com o nome bordado) | uniforme | `[CONFIRMAR se tem nome bordado]` |
-| Maleta de atendimento com estetoscópio, termômetro e material do dia a dia | ferramentas | |
-| Caixa térmica de vacinas, com o termômetro dela | equipamento; mostra o cuidado com a vacina | |
+| Maleta de atendimento: estetoscópio, termômetro, balança, material de curativo, toalha e petiscos | ferramentas | Tem (entrevista, pergunta 14) |
+| Caixa térmica de vacinas, com o termômetro dela | equipamento; mostra o cuidado com a vacina | Tem (entrevista, pergunta 14) |
 | Carteira do CRMV-SP | documento com o nome | |
 | Carimbo com nome e CRMV, e um receituário | documento + "fazer o serviço" | `[CONFIRMAR se tem]` |
 | Cartão de visita com o nome | prova de que o negócio existe | `[CONFIRMAR se tem]`. Se não tiver, pule. |
@@ -87,7 +87,7 @@ Se ela não atende de carro: mostre a Aline pegando a maleta e a caixa térmica 
 **Onde:** em cima do capô, de uma mesa ou do banco do carro.
 
 **Mostrar:**
-1. A Aline abrindo a maleta. Câmera de perto: estetoscópio, termômetro, o que mais tiver.
+1. A Aline abrindo a maleta. Câmera de perto: estetoscópio, termômetro, balança, material de curativo.
 2. A Aline abrindo a caixa térmica. Câmera de perto no termômetro da caixa.
 
 **A Aline fala:**
@@ -103,7 +103,7 @@ Se ela não atende de carro: mostre a Aline pegando a maleta e a caixa térmica 
 4. Se tiver cartão de visita: mostra um cartão.
 
 **A Aline fala:**
-> "Eu sou a Dra. Aline França, médica-veterinária, registrada no CRMV de São Paulo."
+> "Eu sou a Aline França, médica-veterinária, registrada no CRMV de São Paulo."
 
 ### Trecho 5: o fim (1:25 a 1:35)
 **Mostrar:** a Aline fechando a maleta, com a rua ao fundo.

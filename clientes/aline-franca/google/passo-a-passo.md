@@ -12,13 +12,13 @@ Para o Vinícius seguir com a Aline do lado. PT-G1 do `plano.md`.
 ### Tenha em mãos
 | Item | Valor | Situação |
 |---|---|---|
-| Nome do perfil | `Dra. Aline França` | Igual ao do site e do PDF. Ver "Nome", abaixo. |
+| Nome do perfil | `Aline França` | Sem "Dra.", pedido dela na entrevista. Ver "Nome", abaixo. |
 | Categoria principal | `Veterinário` | Decisão do plano |
 | Categoria adicional | `Pet sitter` | Decisão do plano |
-| Telefone | (19) 98181-1227 | Confirmado no `perfil.md` |
+| Telefone | (19) 98181-1227 | Fica cadastrado para a verificação; depois é escondido, porque ela não quer ligação (passo 6) |
 | Endereço da Aline | o endereço real de onde ela trabalha (a casa dela) | Só para o Google. **Fica oculto.** Não vai para nenhum arquivo deste repositório. |
-| Área atendida | `Campinas` por enquanto | Outras cidades e bairros: `[CONFIRMAR, pergunta 25]` |
-| Horários | — | `[CONFIRMAR]`, sai da entrevista (fase 2, `textos-perfil.md`) |
+| Área atendida | `Campinas`, `Valinhos` e `Vinhedo` | Confirmado na entrevista (pergunta 25). Bairros não entram. |
+| Horário | `Aberto sem horário normal` | O horário dela não pode ser público (entrevista, pergunta 26). Ver `textos-perfil.md`. |
 | Site | deixar em branco | O domínio `alinefranca.vet.br` ainda não está no ar |
 | Celular com o app Google Maps ou Google | da Aline ou seu, com a conta dona do perfil | Para a verificação por vídeo |
 
@@ -28,7 +28,7 @@ Crie o perfil **com a conta Google da Aline** (ela é a dona) e depois adicione 
 Depois de verificado: `Editar perfil` > menu de três pontos > `Configurações do Perfil da Empresa` > `Pessoas e acesso` > adicionar o seu e-mail como `Administrador`. (Esse caminho não foi conferido na Central nesta pesquisa; se estiver diferente, procure "Pessoas e acesso" no menu do perfil.)
 
 ### Confira que ela ainda não tem perfil
-Procure no Google Maps por "Aline França veterinária Campinas" e pelo telefone (19) 98181-1227. O perfil não pode ser duplicado: as diretrizes pedem um perfil só por empresa.
+Procure no Google Maps por "Aline França veterinária", "Dra. Aline França" e pelo telefone (19) 98181-1227. O perfil não pode ser duplicado: as diretrizes pedem um perfil só por empresa.
 - Se aparecer um perfil não verificado com o nome dela: não crie outro. Abra o perfil, toque em `Reivindicar esta empresa` > `Gerenciar agora` e siga daí.
 - Se não aparecer nada: siga para a criação.
 
@@ -39,8 +39,8 @@ Procure no Google Maps por "Aline França veterinária Campinas" e pelo telefone
 Comece pelo computador, em **business.google.com/add**, logado na conta da Aline. Clique em `Inclua sua empresa no Google`.
 
 ### 1. Nome da empresa
-- Escreva: **`Dra. Aline França`**
-- **Não faça:** `Dra. Aline França - Veterinária a Domicílio Campinas`, `Aline França Vet em Casa`, `DRA. ALINE FRANÇA`, `Dra. Aline França | Vacina em casa`.
+- Escreva: **`Aline França`**. Sem "Dra.": foi pedido dela na entrevista, e é o nome que ela usa no site e no Instagram.
+- **Não faça:** `Aline França - Veterinária a Domicílio Campinas`, `Aline França Vet em Casa`, `ALINE FRANÇA`, `Aline França | Vacina em casa`.
 - **Por quê:** a regra do Google é que o nome seja o nome real, o mesmo do site e do material. Serviço, cidade, slogan, telefone e letras todas maiúsculas são proibidos no nome. Isso pode levar à suspensão do perfil.
 - Serviço, cidade e área entram nos campos próprios, não no nome.
 
@@ -64,23 +64,23 @@ O Google pode pedir o endereço mesmo assim, para a verificação. Se pedir:
 - **Por quê:** endereço falso é a causa mais comum de suspensão. E a verificação por vídeo vai mostrar a rua desse endereço: se não bater, reprova.
 
 ### 5. Área atendida ("Onde você atende os clientes?" ou parecido)
-- Digite `Campinas` e escolha **Campinas, SP** na lista.
-- Por enquanto, só Campinas. Depois da entrevista, acrescente as cidades ou bairros que ela confirmar `[CONFIRMAR, pergunta 25]`.
+- Digite e escolha da lista, uma por uma: **Campinas, SP**, **Valinhos, SP** e **Vinhedo, SP**.
+- Só essas três (entrevista, pergunta 25). Bairros não entram: ela combina caso a caso.
 - Regras do Google: até 20 áreas; por cidade, bairro ou CEP; **não** pode ser raio de distância; a área toda não deve passar de 2 horas de carro do endereço dela.
 - **Não faça:** colocar "São Paulo (estado)", cidades onde ela não vai, ou bairros só para aparecer.
 
 ### 6. Contato
-- **Telefone:** `(19) 98181-1227`.
+- **Telefone:** `(19) 98181-1227`. Ela não quer ligação, mas o número precisa estar no cadastro: é por ele que vêm os códigos de verificação. Ele é escondido depois que o botão de WhatsApp estiver ativo (ver `textos-perfil.md`, "Contato").
 - **Site:** deixe em branco por enquanto. Quando `alinefranca.vet.br` estiver no ar, coloque o endereço do site.
 - **Não faça:** colocar o link do Instagram ou do WhatsApp no campo de site. A diretriz do Google não aceita página de rede social como site.
-- Se o Google oferecer um botão de mensagem ou de WhatsApp, pode ativar com o mesmo número.
+- O botão de WhatsApp (`Contato` > `Chat` > `WhatsApp`) só aparece depois da verificação. Ver `textos-perfil.md`, "Contato".
 
 ### 7. Verificação
 - O Google escolhe sozinho os métodos que aparecem para cada empresa. Você não escolhe.
 - **Se aparecer "Vídeo" (o mais provável):** não grave agora se a Aline não estiver com o material à mão. Pode sair e voltar depois pelo botão `Fazer verificação` no perfil. Siga `roteiro-verificacao.md`.
 - **Se aparecer telefone ou SMS:** é o mais rápido. O código vai para (19) 98181-1227; a Aline lê e passa para você na hora.
 - **Se aparecer cartão-postal:** o código chega pelo correio no endereço do passo 4, em até 14 dias, e vale 30 dias. Enquanto espera, **não mude nome, endereço nem categoria**, e não peça outro cartão.
-- **Se aparecer chamada de vídeo ao vivo:** só funciona no horário de funcionamento. Use o mesmo roteiro, falando com o atendente.
+- **Se aparecer chamada de vídeo ao vivo:** o Google faz a chamada dentro do horário de funcionamento. Como o perfil dela não terá horário público, prefira o vídeo gravado; se só aparecer a chamada, use o mesmo roteiro, falando com o atendente.
 - A análise leva até 5 dias úteis.
 
 Pule as telas de anúncio pago que o Google oferecer no meio do caminho ("Comece uma campanha", créditos de anúncio). Anúncio é mês 2, frente 6.
@@ -103,10 +103,10 @@ Depois abra o perfil no Google Maps do seu celular, sem estar logado na conta de
 - Não acrescente outras categorias. A regra é usar o menor número possível.
 
 ### 10. Conferir a área atendida
-`Editar perfil` > `Local` > `Área de cobertura` > `Editar`. Confira que está `Campinas, SP`. Mudanças aparecem em até 48 horas.
+`Editar perfil` > `Local` > `Área de cobertura` > `Editar`. Confira que estão `Campinas, SP`, `Valinhos, SP` e `Vinhedo, SP`. Mudanças aparecem em até 48 horas.
 
-### 11. O resto do perfil (fase 2)
-Serviços, descrição de até 750 caracteres, horários, fotos e publicações saem da entrevista e virão em `textos-perfil.md` e `publicacoes.md`. Até lá, **deixe a descrição em branco** em vez de escrever qualquer coisa: nada com `[CONFIRMAR]` vai ao ar.
+### 11. O resto do perfil
+Horário, contato (WhatsApp e telefone escondido), descrição, serviços e fotos: siga `textos-perfil.md`. Publicações semanais: `publicacoes.md`.
 
 Regras que já valem para a descrição: sem link, sem preço, sem oferta, sem promessa de resultado, sem "especialista" (regras do Google e do CFMV).
 

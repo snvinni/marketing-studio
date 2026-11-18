@@ -42,3 +42,21 @@
 - Entrevista feita (perfil: "Fonte: entrevista de 17/11/2026"); o Vinícius aprovou a fase 2.
 - Feito: `google/textos-perfil.md`, com a skill copy-chief (escrever e revisar, veredito AJUSTAR, 3 correções): nome `Aline França` (sem "Dra."), categorias, área (Campinas, Valinhos, Vinhedo), horário `Aberto sem horário normal` (horário dela não é público), contato só por WhatsApp (chat do Google e telefone escondido depois), descrição em duas versões (672 e 668 caracteres), 10 serviços sem preço, fotos.
 - Feito: `google/publicacoes.md`, as quatro primeiras publicações semanais (apresentação, gato que não deixa pegar, vacina em casa, pet sitter nas férias), com a skill copy-chief (escrever e revisar, AJUSTAR, 3 correções), foto e botão de cada uma e tabela de registro. Sem botão até o site estar no ar: a Central proíbe link de mensagens (`wa.me`) nos botões.
+- Feito: arquivos da fase 1 atualizados com a entrevista. `passo-a-passo.md`: nome `Aline França` (sem "Dra."), área Campinas, Valinhos e Vinhedo, horário sem horário normal, telefone só no cadastro e WhatsApp no chat. `roteiro-verificacao.md`: nome sem "Dra." e material confirmado da maleta. `mensagens-avaliacao.md`: assinatura "Aline França" no Google e "Aline" no WhatsApp (pergunta 36), voz pela entrevista, alternativa sem ligação.
+- Pendências:
+  - Site `alinefranca.vet.br` no ar: campo de site e botões das publicações (Vinícius).
+  - Fotos de `briefing-fotos.md` e o logo em quadrado (Aline e Vinícius).
+  - Confirmar com a Aline: jaleco com nome bordado, carimbo, cartão de visita, se atende de carro (vídeo de verificação).
+  - Pergunta interna: pet sitter em feriados (25/12 e 1/1)?
+- Pedidos para outras frentes: nenhum.
+
+### O que o Vinícius faz à mão, nesta ordem (substitui a lista de 16/11)
+1. Confirmar com a Aline o material do vídeo (`roteiro-verificacao.md`, "Separe o material").
+2. Procurar no Maps se já existe perfil dela; se existir, reivindicar em vez de criar.
+3. Criar o perfil com a conta Google da Aline (`passo-a-passo.md`, passos 1 a 6): nome `Aline França`, categoria Veterinário, sem local para clientes, endereço real oculto, as três cidades, telefone, site em branco.
+4. Verificar pelo método que o Google oferecer; se for vídeo, gravar com a Aline (`roteiro-verificacao.md`). Até 5 dias úteis.
+5. Depois de verificado (`passo-a-passo.md`, passos 8 a 10, e `textos-perfil.md`): conferir endereço oculto; acrescentar Pet sitter; horário `Aberto sem horário normal`; chat de WhatsApp; esconder o telefone só depois que o WhatsApp aparecer; descrição versão A; os 10 serviços sem preço; se adicionar como administrador.
+6. Copiar o link de avaliação (`passo-a-passo.md`, passo 12), trocar `[CONFIRMAR: link de avaliação]` nas mensagens e mandar para a Aline.
+7. A Aline pede avaliação aos 3 a 5 tutores, poucos por dia, e depois a cada atendimento. Responder todas (`mensagens-avaliacao.md`).
+8. Com as fotos: subir logo, capa e 10 a 15 fotos; publicar uma atualização por semana (`publicacoes.md`), anotando a data no registro.
+9. Com o site no ar: preencher o campo de site e pôr o botão `Saiba mais` nas publicações.

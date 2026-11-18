@@ -4,7 +4,7 @@ Pedido de avaliação por WhatsApp e modelos de resposta no Google. PT-G4 do `pl
 
 Escrito em 16/11/2026 com a skill copy-chief (modo escrever) e conferido no modo revisar com os canais `whatsapp.md` e `google-perfil.md` e a seção "Por canal" de `setores/veterinaria-br.md`.
 
-**A voz é provisória.** O perfil ainda não tem as palavras da Aline (entrevista pendente). Os textos estão simples e em primeira pessoa; ajuste depois da entrevista.
+**Voz e assinatura atualizadas em 17/11/2026, com a entrevista:** no WhatsApp ela é "Aline"; nas respostas do Google assina "Aline França" (pergunta 36). Tom calmo e sem pressa, sem diminutivos, sem "Dra.", sem "bebê" ou "filho" para o pet.
 
 **Campos entre colchetes:** `[nome]`, `[nome do pet]`, `[consulta/vacina]` são campos para preencher a cada envio. `[CONFIRMAR: link de avaliação]` é o link que só existe depois do perfil verificado (`passo-a-passo.md`, passo 12): troque em todas as mensagens antes de usar.
 
@@ -103,7 +103,7 @@ Sem pressa nenhuma. Obrigada!
 Responda **todas** as avaliações, boas e ruins, em até dois dias. Quem pesquisa lê as respostas, e o Google conta a resposta a favor do perfil.
 
 ### Regras para responder
-- Curta, gentil, assinada "Aline". Sem emoji.
+- Curta, gentil, assinada "Aline França". Sem emoji.
 - **Nada clínico:** nunca cite diagnóstico, exame, remédio nem o que foi feito, mesmo que o tutor tenha contado. Sigilo profissional.
 - **Não confirme que o animal é paciente** e não cite o nome dele se a pessoa não citou. Responda ao que a pessoa escreveu, com as palavras dela.
 - Elogio do tipo "curou", "salvou", "resolveu": agradeça sem repetir.
@@ -124,25 +124,25 @@ Troque `[detalhe]` pelo que a pessoa escreveu (ex.: "que deu para fazer tudo sem
 **Modelo 1**
 ```
 Obrigada, [nome]! Que bom ler [detalhe]. Fico à disposição quando precisarem.
-Aline
+Aline França
 ```
 
 **Modelo 2** (quando a pessoa falou do jeito do gato ou do cão)
 ```
-Obrigada pelas palavras, [nome]. Respeitar o tempo [de cada gato/de cada animal] é o que eu mais cuido numa visita em casa. Até a próxima.
-Aline
+Obrigada pelas palavras, [nome]. Respeitar o tempo [de cada gato/de cada animal], sem forçar, é algo de que eu não abro mão. Até a próxima.
+Aline França
 ```
 
 **Modelo 3** (pet sitter, quando a pessoa contou que viajou)
 ```
 Obrigada, [nome]! Que bom que vocês viajaram tranquilos. Quando precisarem de novo, é só me chamar.
-Aline
+Aline França
 ```
 
 **Só estrelas, sem texto**
 ```
 Obrigada pela avaliação, [nome]!
-Aline
+Aline França
 ```
 
 ### Avaliação neutra (3 estrelas, ou elogio com ressalva)
@@ -150,13 +150,13 @@ Aline
 **Curta**
 ```
 Obrigada por avaliar, [nome]. Quero entender o que poderia ter sido melhor. Se puder, me chama no WhatsApp aqui do perfil.
-Aline
+Aline França
 ```
 
 **Com explicação** (quando a ressalva é clara, ex.: demora para responder, horário)
 ```
 Obrigada por avaliar, [nome]. Você tem razão sobre [assunto, com as palavras da pessoa]. [Uma frase sobre o que mudou, só se for verdade e a Aline confirmar.] Se quiser conversar mais, me chama no WhatsApp aqui do perfil.
-Aline
+Aline França
 ```
 Só use "você tem razão" se foi de fato um erro. Se não foi, tire a frase.
 
@@ -166,19 +166,19 @@ Antes de responder: leia duas vezes e responda no mesmo dia ou no seguinte, nunc
 **Curta**
 ```
 [nome], sinto muito pelo incômodo. Quero entender o que aconteceu. Pode me chamar no WhatsApp aqui do perfil?
-Aline
+Aline França
 ```
 
 **Com explicação** (reclamação de encaminhamento: algo que não se faz em casa)
 ```
 [nome], sinto muito pela frustração. Alguns cuidados, como cirurgia, não podem ser feitos em casa pelas regras do Conselho Federal de Medicina Veterinária, e nesses casos eu indico uma clínica. Se quiser conversar sobre isso, me chama no WhatsApp aqui do perfil.
-Aline
+Aline França
 ```
 
 **Pessoa que ela não reconhece como cliente**
 ```
 Olá, [nome]. Não encontrei o seu atendimento no meu registro. Se puder, me chama no WhatsApp aqui do perfil para eu entender.
-Aline
+Aline França
 ```
 Se a avaliação for claramente falsa (ofensa, propaganda, pessoa que nunca foi cliente), denuncie pelo menu da própria avaliação no Google. Não acuse ninguém na resposta.
 
@@ -196,7 +196,5 @@ Se a avaliação for claramente falsa (ofensa, propaganda, pessoa que nunca foi 
 
 ## Pendências
 - `[CONFIRMAR: link de avaliação]`: só existe depois do perfil verificado (Vinícius, `passo-a-passo.md`, passo 12).
-- `[CONFIRMAR, pergunta 36]`: se ela assina "Aline" no WhatsApp e no Google.
-- Lista de clientes atuais para o pedido 1: pergunta 33 da entrevista (frente 1).
-- Voz: ajustar com as palavras da Aline depois da entrevista.
-- Botão de WhatsApp no perfil do Google: as respostas dizem "WhatsApp aqui do perfil". Se o Google não oferecer esse botão para o perfil dela, troque por "me chama pelo telefone do perfil".
+- Lista de clientes atuais para o pedido 1: de 3 a 5 tutores que toparam avaliar (pergunta 33). Os nomes ficam com a Aline e o Vinícius, fora do Git.
+- Botão de WhatsApp no perfil do Google: as respostas dizem "WhatsApp aqui do perfil". Se o Google não oferecer esse botão para o perfil dela, troque por "me chama no WhatsApp, pelo número do perfil" (ela não atende ligação).
