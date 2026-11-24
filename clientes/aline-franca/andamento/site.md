@@ -409,3 +409,35 @@ Pedido do Vinícius, pela sessão Frente 2 execution: usar o megabrain para revi
   6. **Preço de qualquer coisa que pareça procedimento clínico**, mesmo dentro de serviço não veterinário (medicação no pet sitter): tratar como proibido até confirmar com o CRMV. CFMV 1.649, art. 6º, V.
   7. **Formação:** a Res. 1.649 (art. 4º, §2º) pede transparência para conferir a veracidade. Lembrar a cliente de que instituição e ano ajudam.
 - **Design:** o megabrain não tem nada para web. Duas referências servem como checklist: `visual-self-review.md` (defeitos em capturas) e `audience-driven-design.md`.
+
+## 24/11/2026: trocas da copy-counsel aplicadas no site
+
+O Vinícius aprovou ("Sim, aplicar"), pela sessão Frente 2 execution, as trocas que não dependem de decisão. Commit no `line-vet`: `1d14ebe`.
+
+- **Privacidade nova (CA-01 a CA-04):** é a página proposta no relatório. Ela diz:
+  - que a Vercel recebe os dados técnicos da visita;
+  - que o navegador anota a origem durante a visita;
+  - que o texto do formulário passa pelo WhatsApp (Meta);
+  - o direito a cópia do prontuário e "apagar o que eu não for obrigada a guardar";
+  - nova descrição da página.
+- **`[CONFIRMAR]` que ficaram na privacidade:** empresa de hospedagem e plano, prazo dos registros de acesso, onde fica o prontuário, prazo de guarda do prontuário, "não vendo dados" e a data. Por isso `PUBLICAR=1` barra a página. Também falta a revisão do advogado.
+- **Trocas de texto:**
+  - CA-07: "assim que eu perceber";
+  - CA-08: preço de feriado sem "minha disponibilidade" e "entre outras";
+  - CA-09: sai "a agenda enche rápido";
+  - CA-10: "Se quiser parcelar, eu passo as condições antes", até a Aline dizer as condições;
+  - CA-11: pets idosos;
+  - CA-12: "Sem viagem para ele";
+  - CA-13: "a parte mais difícil";
+  - CA-16: o material de parceria ganhou o aviso de emergência no rodapé e passou a dizer "Qualquer encaminhamento acontece somente com a sua orientação e autorização". A frase do site fala em "deslocamento", mas a regra da frente 6 proíbe a palavra no material;
+  - CA-18: "as suas dúvidas".
+- **CA-19:** saiu o comentário da galeria do `sobre.html`, que citava `autorizacoes.md`. A regra foi para o README. O site não tem build, então a conferência `PUBLICAR=1` agora barra qualquer comentário HTML que não seja marca de cabeçalho ou rodapé.
+- **Testes:** em `tests/conteudo.spec.js`, novo bloco "revisão copy-counsel", que confere que as frases trocadas não voltam, a privacidade nova e o material. A regra "nenhum [CONFIRMAR]" tem exceção só para `/privacidade`, que segue barrada na publicação. Resultado: 397 passaram e 29 foram pulados. Com `PUBLICAR=1`, sobram as marcas de prévia e as fotos, mais os `[CONFIRMAR]` da privacidade.
+- **Ainda não aplicadas, porque dependem de decisão:**
+  - CA-05: vacina, opção A ou B (Vinícius);
+  - CA-06: preço da medicação (Aline);
+  - CA-14: pós-graduação (Aline);
+  - CA-15: galeria (quando houver fotos);
+  - CA-17: eutanásia (Aline);
+  - F-15: cancelamento (Aline);
+  - F-12: plano da Vercel (Vinícius).
