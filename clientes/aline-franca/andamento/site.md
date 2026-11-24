@@ -377,3 +377,35 @@ Pedido do Vinícius: os textos da fase 2 estavam ruins, poéticos e com detalhe 
   - aproveitar a visita da vacina para uma consulta;
   - "gato é uma das minhas paixões".
 - **Pendências:** as de antes (fotos, paleta, domínio) e a validação da Aline.
+
+## 24/11/2026: revisão dos textos com a copy-counsel (megabrain)
+
+Pedido do Vinícius, pela sessão Frente 2 execution: usar o megabrain para revisar os textos e o design do site.
+
+- **Relatório:** `site/revisao-copy-counsel.md`. Usei a skill `copy-counsel` do megabrain (commit `98426df`), adaptada de app para site:
+  - no lugar de código nativo, li o HTML, `site.js`, `vercel.json` e os formulários;
+  - conferi no ar os servidores, os cookies e o que fica no navegador.
+  - Só Brasil e pt-BR. Não fiz termos de uso nem pesquisa de voz, porque o perfil e a copy-chief já cobrem a voz.
+- **Resultado (682 trechos):** 2 BLOCKER, 4 HIGH, 10 MEDIUM e 3 BRAND. Também há uma proposta de nova página de privacidade, como rascunho para advogado.
+- **Nada foi aplicado no site.** As trocas esperam o ok do Vinícius e, quando mexem em fato, o da Aline.
+- **BLOCKER (privacidade, impedem publicar):**
+  - "nenhum terceiro recebe dados da sua visita" é falso: a Vercel recebe IP, navegador e página.
+  - "O que o site guarda: Nada" é falso: o navegador guarda por onde a pessoa chegou (`sessionStorage`) durante a visita.
+- **Fora do texto:** se a conta da Vercel for do plano Hobby (gratuito), os termos dela só permitem uso pessoal e não comercial. O Vinícius precisa conferir antes de ligar o domínio.
+- **Decisões pendentes:**
+  - **Vinícius:** aplicar as trocas; o plano da Vercel; se a caixa térmica volta só na resposta "vacina em casa é segura?" (CA-05, opção B).
+  - **Aline:**
+    - preço da medicação no pet sitter (CA-06): manter a faixa de R$ 10 a R$ 60 ou "combinado antes";
+    - parcelamento: em quantas vezes e se tem juros;
+    - instituição e ano da pós, se quiser publicar;
+    - onde fica o prontuário digital;
+    - tom do item eutanásia.
+- **Pedido para a frente 3 (skill copy-chief):** a copy-counsel pegou coisas que a copy-chief não pega. Sugiro acrescentar ao checklist de revisão:
+  1. **Afirmação de privacidade** ("não guardamos", "nenhum terceiro") só depois de conferir o código e o que o site carrega. A copy-chief não lê código.
+  2. **Exceção à regra de que a resposta começa com "Sim" ou "Não":** em pergunta sobre segurança ou resultado de ato veterinário ("é seguro?", "vai melhorar?"), responder com um fato, sem garantir. CFMV 1.649, art. 6º, III.
+  3. **Palavras absolutas em promessa de serviço** ("imediatamente", "na hora", "todas", "sem a ida até a clínica"): pela oferta que obriga (CDC art. 30), trocar por "assim que", "as suas dúvidas".
+  4. **Parcelamento:** só citar com o número de parcelas e se há juros (CDC art. 52).
+  5. **Escassez** ("a agenda enche rápido") só com fato no perfil.
+  6. **Preço de qualquer coisa que pareça procedimento clínico**, mesmo dentro de serviço não veterinário (medicação no pet sitter): tratar como proibido até confirmar com o CRMV. CFMV 1.649, art. 6º, V.
+  7. **Formação:** a Res. 1.649 (art. 4º, §2º) pede transparência para conferir a veracidade. Lembrar a cliente de que instituição e ano ajudam.
+- **Design:** o megabrain não tem nada para web. Duas referências servem como checklist: `visual-self-review.md` (defeitos em capturas) e `audience-driven-design.md`.
